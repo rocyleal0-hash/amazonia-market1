@@ -113,8 +113,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#FFFFFF",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_LACTEOS_d65ddd91.webp"
   },
   "CHARCUTERIA": {
     "icon": "🏷️",
@@ -126,8 +126,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#FFFFFF",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_CHARCUTERIA_abf3c127.webp"
   },
   "ROPA": {
     "icon": "🏷️",
@@ -139,8 +139,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#FFFFFF",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_ROPA_ba10a73f.webp"
   },
   "COSMETICO": {
     "icon": "🏷️",
@@ -152,8 +152,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#FFFFFF",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_COSMETICO_2d9dd569.webp"
   },
   "CARNICERIA": {
     "icon": "🏷️",
@@ -165,8 +165,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#FFFFFF",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_CARNICERIA_edc6af43.webp"
   },
   "VEGETALES Y VERDURAS": {
     "icon": "🥦",
@@ -178,8 +178,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#FFFFFF",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_VEGETALES_Y_VERDURAS_03b14595.webp"
   },
   "FRUTAS Y HORTALIZAS": {
     "icon": "🏷️",
@@ -191,8 +191,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#FFFFFF",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_FRUTAS_Y_HORTALIZAS_80c5b63d.webp"
   },
   "HELADOS": {
     "icon": "🏷️",
@@ -204,8 +204,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#FFFFFF",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_HELADOS_8658072a.webp"
   },
   "BOLSOS Y CARTERAS": {
     "icon": "🏷️",
@@ -217,8 +217,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#FFFFFF",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_BOLSOS_Y_CARTERAS_1e3fa53b.webp"
   },
   "FERRETERIA": {
     "icon": "🏷️",
@@ -230,8 +230,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#FFFFFF",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_FERRETERIA_9546d9a0.webp"
   },
   "PANADERIA": {
     "icon": "🏷️",
@@ -243,8 +243,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#FFFFFF",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_PANADERIA_da37c6e8.webp"
   },
   "PAPELERIA": {
     "icon": "🏷️",
@@ -256,8 +256,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#FFFFFF",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_PAPELERIA_5b81049e.webp"
   },
   "TELEFONIA": {
     "icon": "🏷️",
