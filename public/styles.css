@@ -17,7 +17,11 @@
 * { box-sizing: border-box; }
 html, body {
   margin: 0; padding: 0;
-  background: var(--bg-gray);
+  /* FONDOS: Se aplica la imagen gris de los carritos en mosaico */
+  background-color: var(--bg-gray);
+  background-image: url('./product_images/body_bg.png');
+  background-repeat: repeat;
+  background-size: 400px auto;
   color: var(--text);
   font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -30,7 +34,12 @@ img { max-width: 100%; }
 
 /* =============== TOPBAR AZUL =============== */
 .am-topbar {
-  background: var(--primary);
+  /* FONDOS: Se aplica la imagen azul con los logos */
+  background-color: var(--primary);
+  background-image: url('./product_images/header_bg.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #fff;
   box-shadow: 0 4px 14px rgba(0,0,0,.12);
   padding-bottom: 10px;
@@ -42,7 +51,7 @@ img { max-width: 100%; }
 .am-delivery-banner {
   overflow: hidden;
   border-bottom: 1px solid rgba(255,255,255,.18);
-  background: rgba(0,0,0,.18);
+  background: rgba(0,0,0,.25); /* Ligero oscurecido para legibilidad */
   padding: 16px 0 18px;
   min-height: 56px;
   display: flex; align-items: center;
@@ -196,10 +205,11 @@ img { max-width: 100%; }
 
 /* =============== CIRCULOS DE CATEGORIAS =============== */
 .am-cats-wrap {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #E5E7EB;
   padding: 8px 0 10px;
   margin-bottom: 12px;
+  backdrop-filter: blur(4px);
 }
 .am-cats-scroll {
   max-width: 1280px; margin: 0 auto;
