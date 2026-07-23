@@ -1,11 +1,5 @@
 /* =========================================================
-   AMAZONIA MARKET - app.js  (versión mejorada)
-   - Lee TODAS las opciones que guarda agregar_producto.py:
-     colores de la barra azul, color del texto "Delivery gratis",
-     imagen de fondo con blur/brillo/saturación/opacidad,
-     botones ☰ 🔍 🛒, panel del menú, botón "Ver más",
-     colores del carrito, borde de imágenes de producto,
-     alineación/tamaño/desplazamiento del logo, ocultar logo/títulos.
+   AMAZONIA MARKET - app.js
    ========================================================= */
 (() => {
 'use strict';
@@ -21,18 +15,26 @@ const truthy = v => /^(1|true|yes|si|sí)$/i.test(String(v ?? '').trim());
 const intOr  = (v, d) => { const n = parseInt(v, 10); return Number.isFinite(n) ? n : d; };
 const numOr  = (v, d) => { const n = parseFloat(v);   return Number.isFinite(n) ? n : d; };
 
+// FUNCIÓN CORREGIDA PARA RUTAS DE IMÁGENES
 function fixImgSrc(path) {
-  if (!path) return '';
-  let p = String(path).trim();
-  if (p.startsWith('data:') || p.startsWith('http://') || p.startsWith('https://')) return p;
-  p = p.replace(/^\/+/, '');
-  if (!p.includes('product_images/')) {
-    p = p.replace(/^public\//, '');
-    p = 'public/product_images/' + p;
-  } else if (!p.startsWith('public/')) {
-    p = 'public/' + p;
+  if (!path) return 'https://via.placeholder.com/300?text=Sin+Imagen';
+  let p = String(path).trim().replace(/\\/g, '/');
+  
+  if (p.startsWith('data:') || p.startsWith('http://') || p.startsWith('https://')) {
+    return p;
   }
-  return './' + p;
+  
+  // Limpiar diagonales iniciales
+  p = p.replace(/^\/+/, '');
+  
+  // Extraer solo el nombre del archivo si contiene subrutas repetidas
+  if (p.includes('product_images/')) {
+    p = p.split('product_images/').pop();
+  } else if (p.includes('public/')) {
+    p = p.split('public/').pop();
+  }
+  
+  return './public/product_images/' + p;
 }
 
 function fetchJSON(path, fallback) {
@@ -107,14 +109,13 @@ let CATEGORIES = [];
 let CAT_STYLES = {};
 let ANUNCIOS = {};
 
-/* ---------------- TEMA (aplica TODOS los ajustes del editor) ---------------- */
+/* ---------------- TEMA ---------------- */
 function applyTheme() {
   const s = SETTINGS || {};
   const root = document.documentElement.style;
 
   const setVar = (name, val) => { if (val !== undefined && val !== null && String(val).trim() !== '') root.setProperty(name, String(val).trim()); };
 
-  // Barra superior (topbar)
   setVar('--tb-bg',          s.topbar_bg_color || s.hero_bg_color);
   setVar('--tb-delivery-fg', s.delivery_text_color);
   setVar('--tb-menu-bg',     s.btn_menu_bg);
@@ -124,34 +125,28 @@ function applyTheme() {
   setVar('--tb-cart-bg',     s.btn_cart_bg);
   setVar('--tb-cart-fg',     s.btn_cart_fg);
 
-  // Menú lateral
   setVar('--menu-bg', s.menu_panel_bg);
   setVar('--menu-fg', s.menu_panel_fg);
 
-  // Botón "Ver más"
   setVar('--more-bg', s.section_more_bg);
   setVar('--more-fg', s.section_more_fg);
 
-  // Borde de imágenes de producto
   setVar('--img-border-color', s.img_border_color);
   const bw = intOr(s.img_border_width, null);
   if (bw !== null) root.setProperty('--img-border-width', bw + 'px');
 
-  // Carrito
   setVar('--cart-card-bg',  s.cart_card_bg);
   setVar('--cart-name-fg',  s.cart_name_color);
   setVar('--cart-unit-fg',  s.cart_unit_color);
   setVar('--cart-price-bg', s.cart_price_bg);
   setVar('--cart-price-fg', s.cart_price_fg);
 
-  // Alineación / desplazamiento del logo
   const align = String(s.logo_align || 'left').toLowerCase();
   const justify = align === 'center' ? 'center' : (align === 'right' ? 'flex-end' : 'flex-start');
   root.setProperty('--brand-justify', justify);
   const off = intOr(s.logo_offset_x, 0);
   root.setProperty('--brand-offset-x', off + 'px');
 
-  // Imagen de fondo de la barra + blur/brillo/saturación/opacidad
   const tb = document.getElementById('topbar');
   const imgB64 = String(s.topbar_bg_image_b64 || s.hero_bg_b64 || '').trim();
   const styleId = 'am-topbar-bgimg';
@@ -246,7 +241,6 @@ function renderMenuPanel() {
       `<div class="am-menu-head">Apartados</div>` +
       (items || `<div style="padding:14px 18px;opacity:.85;font-size:13px;">Aún no hay apartados.</div>`);
   }
-  // Botón ☰ abre/cierra
   const btn = $('#btnMenu');
   if (btn && mp && !btn._wired) {
     btn._wired = true;
@@ -281,8 +275,7 @@ function renderCategoryCircles() {
     let inner, bg;
     if (s.use_image && s.image_path) {
       const imgSrc = fixImgSrc(s.image_path);
-      inner = `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(cat)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"/>
-               <span style="display:none;font-size:${Math.round(sz*0.46)}px;">${escapeHtml(icon)}</span>`;
+      inner = `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(cat)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=Error';"/>`;
       bg = `background:${s.circle_color};`;
     } else {
       inner = `<span style="font-size:${Math.round(sz*0.46)}px;">${escapeHtml(icon)}</span>`;
@@ -391,7 +384,9 @@ function buildHomeTile(cat) {
   const preview = catProds.slice(0, 4);
   let items = preview.map(p => `
     <a class="am-quad-item" href="?cat=${encodeURIComponent(cat)}">
-      <div class="am-quad-imgwrap"><img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/></div>
+      <div class="am-quad-imgwrap">
+        <img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=Sin+Imagen';"/>
+      </div>
       <div class="am-quad-name">${escapeHtml(p.nombre || '')}</div>
     </a>
   `).join('');
@@ -449,7 +444,7 @@ function viewSearch(main, q) {
 function renderProductGrid(main, prods) {
   const html = `<div class="am-grid">` + prods.map(p => `
     <div class="am-card">
-      <img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/>
+      <img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300?text=Sin+Imagen';"/>
       <div class="am-name">${escapeHtml(p.nombre||'')}</div>
       <div><span class="am-price">${escapeHtml(formatPrice(p.precio))}</span></div>
       <button class="am-add-btn" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>
@@ -483,7 +478,7 @@ function viewCart(main) {
 
   const rows = items.map(([name, it]) => `
     <div class="am-cart-row" data-name="${escapeAttr(name)}">
-      <img src="${escapeAttr(fixImgSrc(it.imagen))}" alt="${escapeAttr(name)}"/>
+      <img src="${escapeAttr(fixImgSrc(it.imagen))}" alt="${escapeAttr(name)}" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=Sin+Imagen';"/>
       <div class="am-cart-name">${escapeHtml(name)}</div>
       <div class="am-cart-price"><span class="am-cart-unit">${escapeHtml(formatPrice(it.precio))}</span></div>
       <div class="am-cart-qty">
@@ -511,7 +506,6 @@ function viewCart(main) {
     </div>
   `);
 
-  // Interacciones
   $$('.am-cart-row', main).forEach(row => {
     const name = row.getAttribute('data-name');
     const inp = $('input[data-op="input"]', row);
@@ -547,7 +541,9 @@ function rerenderCart() {
 let _qtyProd = null;
 function openQtyModal(prod) {
   _qtyProd = prod;
-  $('#qtyImg').src = fixImgSrc(prod.imagen);
+  const imgEl = $('#qtyImg');
+  imgEl.src = fixImgSrc(prod.imagen);
+  imgEl.onerror = function() { this.src = 'https://via.placeholder.com/300?text=Sin+Imagen'; };
   $('#qtyName').textContent = prod.nombre;
   $('#qtyPrice').textContent = formatPrice(prod.precio);
   $('#qtyInput').value = 1;
@@ -604,7 +600,7 @@ async function boot() {
     fetchJSON(base + 'anuncios.json', {}),
   ]);
 
-  applyTheme();          // <- primero el tema, para que la barra se vea correcta
+  applyTheme();
   renderDeliveryBanner();
   renderBrand();
   renderSocials();
