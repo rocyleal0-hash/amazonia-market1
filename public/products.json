@@ -9,7 +9,7 @@
   {
     "id": "435b8c9f11c14ea7841a270fc0febc2a",
     "nombre": "Aceite Vatel",
-    "precio": 3.0,
+    "precio": 2.99,
     "imagen": "product_images/32b1c21a7c53449b9d9116b18ebfe0da.webp",
     "categoria": "VIVERES"
   },
@@ -23,14 +23,14 @@
   {
     "id": "1f057c716e4b431496c271ebf6405cdb",
     "nombre": "Mayonesa Mavesa",
-    "precio": 1.0,
+    "precio": 0.99,
     "imagen": "product_images/5afce7bb1ee7490da8f083288c292717.png",
     "categoria": "VIVERES"
   },
   {
     "id": "633d2f96d5d4413da5e964e82d7258dd",
     "nombre": "CHOCOLATE SAVOY 130G",
-    "precio": 6.0,
+    "precio": 5.99,
     "imagen": "product_images/9ccde252bbf64d9bbf38dc1b24603dd7.jpg",
     "categoria": "CONFITERIA"
   },
@@ -114,7 +114,7 @@
   {
     "id": "02ed3a8affab4a428323613bba48380a",
     "nombre": "CHOCOLATE CARRE 25G",
-    "precio": 2.0,
+    "precio": 1.99,
     "imagen": "product_images/98c6ed412a844e22943ef9dc39dc11b2.jpg",
     "categoria": "CONFITERIA"
   },
@@ -170,7 +170,7 @@
   {
     "id": "501cd8a8d53940de803296f8241d3ec0",
     "nombre": "TRIDENT 8,5G",
-    "precio": 1.0,
+    "precio": 0.99,
     "imagen": "product_images/214b7b270ad14c638d5cd4e807d046f3.jpg",
     "categoria": "CONFITERIA"
   },
@@ -205,7 +205,7 @@
   {
     "id": "bb9d0a2f864c4e2cb28cc6d49fb8c975",
     "nombre": "HALLS BARRA 24,75G",
-    "precio": 1.0,
+    "precio": 0.99,
     "imagen": "product_images/185b6a45af0b4f2490f62248051e3d2a.jpg",
     "categoria": "CONFITERIA"
   },
@@ -282,7 +282,7 @@
   {
     "id": "12a012f50bea43c0a5db578d1cf7bdbc",
     "nombre": "PIRULIN 60G",
-    "precio": 3.0,
+    "precio": 2.99,
     "imagen": "product_images/6e62e2de2a2b4a7d9ebe0456bf86e43e.jpg",
     "categoria": "CONFITERIA"
   },
@@ -303,7 +303,7 @@
   {
     "id": "31e465e9457e4e4f8d30c9e9e5ac08af",
     "nombre": "GOTAS CHOCOLATE KRON 250G",
-    "precio": 5.0,
+    "precio": 4.99,
     "imagen": "product_images/c7a4eb61b66d4fabaa3ecc1d9ec7cd6a.jpg",
     "categoria": "CONFITERIA"
   },
@@ -541,35 +541,35 @@
   {
     "id": "07af792320ff49d899e010de1df25d77",
     "nombre": "GALLETA TIP-TOP CHOCO COCHO 96G",
-    "precio": 1.0,
+    "precio": 0.99,
     "imagen": "product_images/e041afb629fa4273bdc9f8cf314639e1.jpg",
     "categoria": "CONFITERIA"
   },
   {
     "id": "2de9642f747a417fb0cab636e984300d",
     "nombre": "GALLETA TIP-TOP VAINILLA 96G",
-    "precio": 1.0,
+    "precio": 0.99,
     "imagen": "product_images/5eef9c8a1a9348d3b9157198db818c21.jpg",
     "categoria": "CONFITERIA"
   },
   {
     "id": "5c249ecc3985451c988285c985f6530b",
     "nombre": "GALLETA TIP-TOP CHOCO 96G",
-    "precio": 1.0,
+    "precio": 0.99,
     "imagen": "product_images/75c41b85d5b947afb9cb697eda525701.jpg",
     "categoria": "CONFITERIA"
   },
   {
     "id": "74a96186875e4cc5a07aea80905260a7",
     "nombre": "GALLETA TIP-TOP COCO 96G",
-    "precio": 1.0,
+    "precio": 0.99,
     "imagen": "product_images/65a1cafefc174d0ebbf2ffc31c396d82.jpg",
     "categoria": "CONFITERIA"
   },
   {
     "id": "fe322b72392c4c678d06d7a5d8cddf2c",
     "nombre": "GALLETA TIP-TOP MANI 96G",
-    "precio": 1.0,
+    "precio": 0.99,
     "imagen": "product_images/b58fdc84969e429db7263180cdd0c1da.jpg",
     "categoria": "CONFITERIA"
   },
@@ -695,21 +695,21 @@
   {
     "id": "9469238be84f40c2bdc45645302eea10",
     "nombre": "LOVELLA CREMA CACAO 300G",
-    "precio": 3.0,
+    "precio": 2.99,
     "imagen": "product_images/49a4998c2def4a8e907c39a4b3eb4d2c.jpg",
     "categoria": "CONFITERIA"
   },
   {
     "id": "480191b7fc7f472ca0b8b1c58f79ef8b",
     "nombre": "LANDOR CHOCOLATE 180G",
-    "precio": 3.0,
+    "precio": 2.99,
     "imagen": "product_images/142b59f6512049cc924e00dfb3f7344f.jpg",
     "categoria": "CONFITERIA"
   },
   {
     "id": "145760fe3ac44eed861b4ad3bda4259e",
     "nombre": "CREMA DE MANI KALDINI 227G",
-    "precio": 5.0,
+    "precio": 4.99,
     "imagen": "product_images/20fed52c864e4166b0172f6f042f1c88.jpeg",
     "categoria": "CONFITERIA"
   },
@@ -800,7 +800,7 @@
   {
     "id": "fdefa3fb03df4b96bee0b56952e2d9fa",
     "nombre": "GALLETA POLVORONES 75G",
-    "precio": 1.0,
+    "precio": 0.99,
     "imagen": "product_images/a516d042c89a42198f03b7e0bcdad2cd.jpeg",
     "categoria": "CONFITERIA"
   },
@@ -891,7 +891,7 @@
   {
     "id": "3d334ab18b224d2d85b5d89fea3130d0",
     "nombre": "AZUCARADAS MAIZORITOS 240G",
-    "precio": 4.0,
+    "precio": 3.99,
     "imagen": "product_images/b7bd030246bd48cd98faac45a44b2458.jpg",
     "categoria": "CONFITERIA"
   },
@@ -905,7 +905,7 @@
   {
     "id": "72d5becdf6ab444cbef119d1c9da5416",
     "nombre": "FRUTY AROS MAIZORITOS 240G",
-    "precio": 4.0,
+    "precio": 3.99,
     "imagen": "product_images/700abb61f71840d2b39cf5dae0ca656f.jpg",
     "categoria": "CONFITERIA"
   },
@@ -919,7 +919,7 @@
   {
     "id": "09c4ee1c4fc74555b6e82dc9214129cb",
     "nombre": "DE TODITO XXL 360G",
-    "precio": 7.0,
+    "precio": 6.99,
     "imagen": "product_images/0034cd8fed7541c5ba8c0e9ea5c4e93e.jpg",
     "categoria": "CONFITERIA"
   },
@@ -947,7 +947,7 @@
   {
     "id": "c3da3655666b4c9b94d36f13e7e1ec06",
     "nombre": "CRONCH FLAKES 300G",
-    "precio": 4.0,
+    "precio": 3.99,
     "imagen": "product_images/cd7708fdbf544b2688cbeeee0be59f31.jpg",
     "categoria": "CONFITERIA"
   },
@@ -1150,7 +1150,7 @@
   {
     "id": "2985472870f64c448e1f1d4ef44065f8",
     "nombre": "TOSTON TOM GRANDE 140G",
-    "precio": 2.0,
+    "precio": 1.99,
     "imagen": "product_images/0a0e1319a8ea4387aea8319f7cd2849d.jpg",
     "categoria": "CONFITERIA"
   },
@@ -1297,7 +1297,7 @@
   {
     "id": "fec1432afd194a4e9b8fba98febd4d01",
     "nombre": "BOMBONES FERRERO ROCHER X3",
-    "precio": 5.0,
+    "precio": 4.99,
     "imagen": "product_images/ded9b799daa243f090382a9d6dfbc7e8.jpg",
     "categoria": "CONFITERIA"
   },
@@ -1311,7 +1311,7 @@
   {
     "id": "af72a0c8863c41f88b229a8ef61567d8",
     "nombre": "NUTELLA 140G",
-    "precio": 8.0,
+    "precio": 7.99,
     "imagen": "product_images/aa90bf3347f8433cb1ead154ea94e43d.jpg",
     "categoria": "CONFITERIA"
   },
@@ -1367,14 +1367,14 @@
   {
     "id": "49bc40b62d62423da66e85d1ee191470",
     "nombre": "GALLETA MARIA CALEDONIA LIMON X6",
-    "precio": 2.0,
+    "precio": 1.99,
     "imagen": "product_images/7cf5cbad524f4b02bddefe7c613449b2.jpg",
     "categoria": "CONFITERIA"
   },
   {
     "id": "ebcd146f82ca4c8597de42ee63773899",
     "nombre": "DELICIAS MARIA CHOCOLATE 272G",
-    "precio": 8.0,
+    "precio": 7.99,
     "imagen": "product_images/b706800d24234d3e99548cae524485db.jpg",
     "categoria": "CONFITERIA"
   },
@@ -1402,7 +1402,7 @@
   {
     "id": "8d181f230efc4829bdf4b4635c24ce0d",
     "nombre": "DORITO X12 45G MANGA",
-    "precio": 15.0,
+    "precio": 14.99,
     "imagen": "product_images/2bc8421d07ea415bb92a5074c75bdbba.jpg",
     "categoria": "CONFITERIA"
   },
@@ -1521,7 +1521,7 @@
   {
     "id": "49303c6ab08648fc9365d3c2ca2e0512",
     "nombre": "JUGO JUCOSA 1L",
-    "precio": 2.0,
+    "precio": 1.99,
     "imagen": "product_images/c86b9509c435439894af5478a7e1b9c6.jpg",
     "categoria": "BEBIDAS"
   },
@@ -1556,7 +1556,7 @@
   {
     "id": "7ada5968d40a4d89bceebf7e7a597f6d",
     "nombre": "SODA MINALBA 355CM",
-    "precio": 2.0,
+    "precio": 1.99,
     "imagen": "product_images/1a75228982b74b2891c3a8170cc6cf2a.jpg",
     "categoria": "BEBIDAS"
   },
@@ -1619,7 +1619,7 @@
   {
     "id": "44159b505d024a7f826c16dab9818358",
     "nombre": "REFRESCO SUN 1L",
-    "precio": 1.0,
+    "precio": 0.99,
     "imagen": "product_images/bd8efe89abf94d4196b7aa67393f9da8.jpg",
     "categoria": "BEBIDAS"
   },
@@ -1745,35 +1745,35 @@
   {
     "id": "421fb82226d649fb8b4264567e98351e",
     "nombre": "PANA RON 1L",
-    "precio": 4.0,
+    "precio": 3.99,
     "imagen": "product_images/ab08927cfaa742a4bfd009b06286f4cc.jpg",
     "categoria": "BEBIDAS"
   },
   {
     "id": "466ab1c6c9b04a7c8b1be2f1d216bffd",
     "nombre": "WISKEY BLACK WHITE 0.75L",
-    "precio": 19.0,
+    "precio": 18.99,
     "imagen": "product_images/ecb2e1d3be224024973bf343f7429551.jpg",
     "categoria": "BEBIDAS"
   },
   {
     "id": "b544ae4061af491693d34e7430b0c567",
     "nombre": "CERVEZA POLAR LATA PEQ X24",
-    "precio": 26.0,
+    "precio": 25.99,
     "imagen": "product_images/e569f47a4caa429d937c032040dfd9d8.jpg",
     "categoria": "BEBIDAS"
   },
   {
     "id": "840b3d1433df4d91b07a669ed8ba1c3d",
     "nombre": "WISKY OLD PARR 12 AÑOS",
-    "precio": 30.0,
+    "precio": 29.99,
     "imagen": "product_images/892dd9ae4d7b499eb6ee328c24b7300c.jpg",
     "categoria": "BEBIDAS"
   },
   {
     "id": "e3ba55831c11464080db2cf2ba56eec6",
     "nombre": "CAROREÑA 1.75L",
-    "precio": 7.0,
+    "precio": 6.99,
     "imagen": "product_images/7246f30c8d9c4866908215f39374a538.jpg",
     "categoria": "BEBIDAS"
   },
@@ -1836,14 +1836,14 @@
   {
     "id": "ce6f78d29482407bafedea1a3e2eb5af",
     "nombre": "AGUA MINALBA 1.5",
-    "precio": 2.0,
+    "precio": 1.99,
     "imagen": "product_images/40b7f2ca980c498d9b38e3c274592fc3.jpg",
     "categoria": "BEBIDAS"
   },
   {
     "id": "f971b3b71be2465298ffd43dc5b1206a",
     "nombre": "MALTA LATA",
-    "precio": 1.0,
+    "precio": 0.99,
     "imagen": "product_images/14fd519134794d6c9b87affdca1fdb24.jpg",
     "categoria": "BEBIDAS"
   },
