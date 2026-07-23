@@ -1475,5 +1475,397 @@
     "precio": 0.3,
     "imagen": "product_images/85fa5b86d766443a81dadf83ff2a80ed.jpg",
     "categoria": "CONFITERIA"
+  },
+  {
+    "id": "fff265f79aec4ce19db98304b4dd6ae8",
+    "nombre": "BOKA 10G",
+    "precio": 0.45,
+    "imagen": "product_images/2b6429617ebe4ea19e7bf418b4d3c289.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "bb93c36b7634419c821c4cd1d63b41dd",
+    "nombre": "JUGO NARANJA JUSTY 1,5L",
+    "precio": 1.45,
+    "imagen": "product_images/5ddcfc879b15444ab5c3d2f93d305a9a.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "98087fafd21c48b6be27ccf9a203f4b6",
+    "nombre": "JUGO FRUBYS 330ML",
+    "precio": 0.8,
+    "imagen": "product_images/0d98d746af7241aeae69f1dae290ffdc.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "6999efc7b4a54c2fa7443400b708062a",
+    "nombre": "JUGO FRUGY 1.5L",
+    "precio": 1.5,
+    "imagen": "product_images/1817e78ddc044d4789db5b3f50ad36af.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "5b6c7368b0264c36ac63172b7228cd72",
+    "nombre": "LECHE DESCREMADA PURISIMA 1 LITRO",
+    "precio": 3.7,
+    "imagen": "product_images/3b1cbbbdd26d48bbb5025964f889f2a7.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "6c701b333f7b49bd97ee27206771b7ca",
+    "nombre": "JUGO YUKERY 1.5L",
+    "precio": 5.6,
+    "imagen": "product_images/cb35af692f5d4730974e5ccb25da34fd.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "49303c6ab08648fc9365d3c2ca2e0512",
+    "nombre": "JUGO JUCOSA 1L",
+    "precio": 2.0,
+    "imagen": "product_images/c86b9509c435439894af5478a7e1b9c6.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "2aad2c2ebabb410380ef7e40dc3c4fe0",
+    "nombre": "JUGO NATULAC 1L",
+    "precio": 3.4,
+    "imagen": "product_images/349874be678e4b5ab4de983945a4024b.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "1968e9e839874e71981b75087c8fb64a",
+    "nombre": "CHICHA EL CHICHERO 1L",
+    "precio": 5.6,
+    "imagen": "product_images/ea507b5ee6d84239839101baf8dfbf02.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "33498565675148b8a7f49f9034da6e96",
+    "nombre": "JUGO PULP 250ML",
+    "precio": 1.2,
+    "imagen": "product_images/bf5ea94f25524c058c1c90d4ba9e5c24.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "e1a4f41478794eed8381729c051134b5",
+    "nombre": "CHICHA SAN SIMON 1L",
+    "precio": 3.6,
+    "imagen": "product_images/b5e583f9be114b8a8a05db88b99e4433.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "7ada5968d40a4d89bceebf7e7a597f6d",
+    "nombre": "SODA MINALBA 355CM",
+    "precio": 2.0,
+    "imagen": "product_images/1a75228982b74b2891c3a8170cc6cf2a.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "ea73e282bd444f66967806d6570e37fd",
+    "nombre": "SPEED MAX 310ML",
+    "precio": 1.6,
+    "imagen": "product_images/affe813fabbe4dafb247461e165043fb.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "15dd7a4f4a054753a5d6e3d92d3a56ee",
+    "nombre": "JUGO NATULAC 500CM",
+    "precio": 1.5,
+    "imagen": "product_images/49f03a81416c47b79529df7e5c31b415.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "745c3beb91a246448e3be3be124d165d",
+    "nombre": "REFRESCO COCA COLA 350 ML",
+    "precio": 0.6,
+    "imagen": "product_images/25c09e3e3cc344f780613e3b6f8467cf.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "cf13f9b4f2b0421a82bd22bd81fd26fd",
+    "nombre": "REFRESCO PEPSI 350ML",
+    "precio": 0.6,
+    "imagen": "product_images/c82e6d82054e4503ba12fe4a28ec85e7.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "25d081860a84413488305c5bfbc66659",
+    "nombre": "MALTA 250ML",
+    "precio": 0.67,
+    "imagen": "product_images/401611589b7c49d19f11eeec415fb80c.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "6b612f56f99c4b67b7a7cbcaa33e005a",
+    "nombre": "REFRESCO FIRST 2L",
+    "precio": 1.48,
+    "imagen": "product_images/de9a3485b3c041b99a8e6c47cf882fe1.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "465e16a44fa84b8faca28f52025392de",
+    "nombre": "REFRESCO SUN 400ML",
+    "precio": 0.55,
+    "imagen": "product_images/7d695f5ca094462c9fb4f3bac70b8669.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "3f2f0358d8ce4fffbbe3ce005f9e4e15",
+    "nombre": "REFRESCO PEPSI 1L",
+    "precio": 1.2,
+    "imagen": "product_images/154bf91642354a758e2a2afbe83a0f22.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "44159b505d024a7f826c16dab9818358",
+    "nombre": "REFRESCO SUN 1L",
+    "precio": 1.0,
+    "imagen": "product_images/bd8efe89abf94d4196b7aa67393f9da8.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "c46dea24c8a04379a647d7a67f856ae3",
+    "nombre": "REFRESCO COCA COLA 1L",
+    "precio": 1.2,
+    "imagen": "product_images/0938ff65f67d46198751e480b876876e.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "19f9cf24a93343c28cc00f9d3b979942",
+    "nombre": "REFRESCO BIG COLA 2L",
+    "precio": 1.4,
+    "imagen": "product_images/55ea4598765f4fd6bdfe462e2ea59cda.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "2bf8349e6fc042c6a0368ac17bbeba1c",
+    "nombre": "REFRESCO PEPSI 1.5L",
+    "precio": 1.55,
+    "imagen": "product_images/d8a0f51a196b4f72a83abd75fd3b492e.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "e2b7c98f540a4ef9a2d5c997934a977b",
+    "nombre": "REFRESCO COCA COLA 1.5L",
+    "precio": 1.6,
+    "imagen": "product_images/77d58e52a6c84ed78da0d247dc0872c5.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "b09de6691c5a4ae69c32ea2b56eca85a",
+    "nombre": "REFRESCO PEPSI 2L",
+    "precio": 2.1,
+    "imagen": "product_images/0945223a41b9426ab54f99e1bc7256c4.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "08232ac09e344fe7b7a5f7795c20c6b8",
+    "nombre": "REFRESCO COCA COLA 2L",
+    "precio": 2.1,
+    "imagen": "product_images/d1bc8c0674cf48ce9af6a7b025cc84c6.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "75f6b58db50841f3a64bd14f4c0a7611",
+    "nombre": "AGUA NEVADA 1.5L",
+    "precio": 1.8,
+    "imagen": "product_images/c95dbf6292ea40e5ad84f2ccf20495c1.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "cee7090279704882aa34afca51afb4b4",
+    "nombre": "REFRESCO PEPSI 1.25L",
+    "precio": 1.01,
+    "imagen": "product_images/f6bd004c194946988136bc35cba7a0e0.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "c088d389901644d3a1df8ef4a7d034af",
+    "nombre": "MALTA 1.5L",
+    "precio": 2.5,
+    "imagen": "product_images/4d9c9a7238724eb29f7033dba3e7198c.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "5223230f9f0e4b328b667099a6b288bf",
+    "nombre": "AGUA MOYA 500ML",
+    "precio": 0.8,
+    "imagen": "product_images/820f0e21843d446eb898bb4258f22214.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "0606b937b95d4a8e88b694f85f03fb44",
+    "nombre": "AGUA CRISTAL 300ML",
+    "precio": 0.5,
+    "imagen": "product_images/15b9d835cb7948dca664a81ad6361103.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "cf44671e092a4751aeb8e74342955df1",
+    "nombre": "MALTA MALTIN DESECHABLE DE BOTELLA",
+    "precio": 0.95,
+    "imagen": "product_images/0df90f696d0a44c3a4cfc1fcbf816d11.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "15208f4d9ec84f6798dd03bed9d33e8f",
+    "nombre": "REFRESCO SUN 2L",
+    "precio": 1.45,
+    "imagen": "product_images/db9e9d10f5124d28a9a2c8cc2b97f498.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "3bc8c13afec34be0aea3359b4bf1d1d5",
+    "nombre": "MIGURT 250G",
+    "precio": 3.22,
+    "imagen": "product_images/474d385b4d7a4c89b078695aa9295bf6.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "926831f661644c9d90ff10d7e40f3c2d",
+    "nombre": "AGUA NEVADA GASIFICADA SABORES 1.5L",
+    "precio": 1.7,
+    "imagen": "product_images/345dddf2a85c4f159876497fbfe04357.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "ce2bd2377df443e6b2789098302bf119",
+    "nombre": "REFRESCO COCA COLA 1.25L",
+    "precio": 1.06,
+    "imagen": "product_images/e06ab4797aa348149afc65e235139b0f.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "469a499b4c8141fbba1b0363ef54116e",
+    "nombre": "JUGO DEL VALLE 1.5L",
+    "precio": 1.7,
+    "imagen": "product_images/90c1eed09cdf4f9eb46478f6070886bf.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "421fb82226d649fb8b4264567e98351e",
+    "nombre": "PANA RON 1L",
+    "precio": 4.0,
+    "imagen": "product_images/ab08927cfaa742a4bfd009b06286f4cc.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "466ab1c6c9b04a7c8b1be2f1d216bffd",
+    "nombre": "WISKEY BLACK WHITE 0.75L",
+    "precio": 19.0,
+    "imagen": "product_images/ecb2e1d3be224024973bf343f7429551.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "b544ae4061af491693d34e7430b0c567",
+    "nombre": "CERVEZA POLAR LATA PEQ X24",
+    "precio": 26.0,
+    "imagen": "product_images/e569f47a4caa429d937c032040dfd9d8.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "840b3d1433df4d91b07a669ed8ba1c3d",
+    "nombre": "WISKY OLD PARR 12 AÑOS",
+    "precio": 30.0,
+    "imagen": "product_images/892dd9ae4d7b499eb6ee328c24b7300c.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "e3ba55831c11464080db2cf2ba56eec6",
+    "nombre": "CAROREÑA 1.75L",
+    "precio": 7.0,
+    "imagen": "product_images/7246f30c8d9c4866908215f39374a538.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "2bd75861c1a541e19f0ea01ecbb63e34",
+    "nombre": "JUGO EL TUNAL 500ML",
+    "precio": 2.2,
+    "imagen": "product_images/bd0b0ac61be7485fb04f14b6dd0345ee.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "77949970229442eaad0be7106d867f8c",
+    "nombre": "JUGO NATULAC 330ML",
+    "precio": 1.8,
+    "imagen": "product_images/1c343cb26f7f4c9aa281fd1d907bd1b3.jpeg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "c6fd8ba4b36a498dbd8f86ed0cd08c3f",
+    "nombre": "REFRESCO FANTA 2L",
+    "precio": 1.5,
+    "imagen": "product_images/635a1eeed24b447ebeeb098c5f30b000.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "29f5dc85671e4a3f88f89a212f62b4d9",
+    "nombre": "SODA LATA SPARLINK 355",
+    "precio": 1.45,
+    "imagen": "product_images/b2a4886b0e3b4194b1ae30d124c2ae95.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "5203cfeb3ba94bfab06b45672ddeb0f4",
+    "nombre": "JUGO YUKIPAK 250ML",
+    "precio": 1.26,
+    "imagen": "product_images/67b780f19a44439d844aa176cbe4433f.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "52d7838fb83b4b169aa227c78dbb1b6e",
+    "nombre": "AGUA NEVADA 355ML",
+    "precio": 0.86,
+    "imagen": "product_images/164baad86c2a49358533264e6f6bbc2b.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "7bc3e6d06aa9407393a1e1336f57a198",
+    "nombre": "CHICHA EL CHICHERO 250ML",
+    "precio": 2.19,
+    "imagen": "product_images/8a93f38c7310421ba78cf437b3707a92.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "ddced3858cc94c8c857e38a2ccbc9652",
+    "nombre": "RIKO MALT 250ML",
+    "precio": 1.8,
+    "imagen": "product_images/12c3397fca5747a699129382fed51d40.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "ce6f78d29482407bafedea1a3e2eb5af",
+    "nombre": "AGUA MINALBA 1.5",
+    "precio": 2.0,
+    "imagen": "product_images/40b7f2ca980c498d9b38e3c274592fc3.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "f971b3b71be2465298ffd43dc5b1206a",
+    "nombre": "MALTA LATA",
+    "precio": 1.0,
+    "imagen": "product_images/14fd519134794d6c9b87affdca1fdb24.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "4bf16f136d2d4aabba4cb8f04bd70275",
+    "nombre": "LIPTON LIMON 500ML",
+    "precio": 2.5,
+    "imagen": "product_images/e6022dbf6680473f9d3b746d7f9ab8b8.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "1ac5b34dfa8c4b9bae42640c6081db61",
+    "nombre": "ULTRA FERR 10ML",
+    "precio": 1.5,
+    "imagen": "product_images/8cb4596fb72b4bc6a81f838850e90ddb.jpg",
+    "categoria": "BEBIDAS"
+  },
+  {
+    "id": "2dbb530b458e46b79717bc791f9c305f",
+    "nombre": "GATORADE 500ML",
+    "precio": 2.7,
+    "imagen": "product_images/b2d300e54ffd4e97bcc0de46f241605e.jpg",
+    "categoria": "BEBIDAS"
   }
 ]
