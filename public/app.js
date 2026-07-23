@@ -494,11 +494,11 @@ function rerender() {
 async function init() {
   // Cargar todos los JSON en paralelo
   [SETTINGS, PRODUCTS, CATEGORIES, CAT_STYLES, ANUNCIOS] = await Promise.all([
-    fetchJSON('site_settings.json', {}),
-    fetchJSON('products.json', []),
-    fetchJSON('categories.json', []),
-    fetchJSON('category_styles.json', {}),
-    fetchJSON('anuncios.json', { cards: [] }),
+    fetchJSON('public/site_settings.json', {}),
+    fetchJSON('public/products.json', []),
+    fetchJSON('public/categories.json', []),
+    fetchJSON('public/category_styles.json', {}),
+    fetchJSON('public/anuncios.json', { cards: [] }),
   ]);
 
   // Si categories.json está vacío, deducir desde CAT_STYLES o productos
