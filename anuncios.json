@@ -1,0 +1,9 @@
+# Ignora archivos temporales del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+__pycache__/
+*.pyc
+.vscode/
+.idea/
