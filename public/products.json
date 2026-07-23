@@ -3190,5 +3190,369 @@
     "precio": 15.31,
     "imagen": "product_images/af950ec4238e4235a4cccaed57efd515.jpg",
     "categoria": "VIVERES"
+  },
+  {
+    "id": "42c8b2d55baf4e328832218413d1cc98",
+    "nombre": "TODDY 200G",
+    "precio": 4.2,
+    "imagen": "product_images/eb6d5a5d04d74791813850e977a2fb0b.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "c36f7d1f36e54481ba2e6cea74edcdf7",
+    "nombre": "TODDY 400G",
+    "precio": 7.8,
+    "imagen": "product_images/de62d289c6484576bd645ab36337de6a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "9e4cb4d31f8548f3b69e7577784c88d2",
+    "nombre": "TODDY 100G",
+    "precio": 2.25,
+    "imagen": "product_images/eea5e8e73113470aa949fb4d2c56f4f1.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "af43c9498ed74a349afab08f7f04e3f5",
+    "nombre": "CUBITO COMARICO",
+    "precio": 0.2,
+    "imagen": "product_images/afe4eb9d88984cbebc12feb3923a073c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "048209e4cda44f0a849c52372ea84cb1",
+    "nombre": "CUBITO MAGGI",
+    "precio": 0.31,
+    "imagen": "product_images/d2af02b795464427ad6a8ee19e4f3145.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "4561195bb82a4364b07f6f12c65afdd6",
+    "nombre": "CUBITO LAILA",
+    "precio": 0.35,
+    "imagen": "product_images/8ed59d201c684c28ad654ec09f1f436f.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "86d47b45952246f7ba420c05155b1c7a",
+    "nombre": "VAINILLA TASTI 212ML",
+    "precio": 1.02,
+    "imagen": "product_images/db104f6fcf9242f19b0fd733ee536519.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "fa1470bc1dd945b4bd1a91af150100df",
+    "nombre": "SALSA INGLESA INSAVE",
+    "precio": 1.2,
+    "imagen": "product_images/c54ee2351b7841a1a9af880f5d088e30.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "3f916162aec6475482ae67acbca37de7",
+    "nombre": "SALSA DE AJO INSAVE",
+    "precio": 1.2,
+    "imagen": "product_images/0597c12e215d4ec1a49736708f245448.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "2bff663b9c5c4923a46b0e9b5de8efba",
+    "nombre": "MOSTAZA FRITZ 970G",
+    "precio": 6.0,
+    "imagen": "product_images/2b1c7232164d45ea8f14033372869d3d.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "eb53b163356e4c4e91a60e19e16a462b",
+    "nombre": "SALSA DE TOMATE PAMPERO MD 397G",
+    "precio": 2.6,
+    "imagen": "product_images/0fd98bc52d78429c8d5a91a6320b790d.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "c07b1fd9d2be4d90898cdcb80e1289bb",
+    "nombre": "SALSA PIZZA BONARE 300G",
+    "precio": 1.7,
+    "imagen": "product_images/4e85c9883ce647afb3bfa4a1d048f36c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "535bb14ca5974c668ab228bbb0415602",
+    "nombre": "SALSA TRADICIONAL BONARE 300G",
+    "precio": 1.38,
+    "imagen": "product_images/df87e4e9600d43d8880705520f6d0d77.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "99896e0e73a2409eb17367b64b1c778b",
+    "nombre": "SALSA BOLONHESA BONARE 300G",
+    "precio": 1.85,
+    "imagen": "product_images/8621c63d0c2647bd9c17aab16227278d.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "340fa1a7ed8b41cc89152796afd10512",
+    "nombre": "ALIÑO ARACUA PQ",
+    "precio": 2.0,
+    "imagen": "product_images/9c81cd1d15af43ec9b5846483fde6f8f.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "42d0243a666e43288bd56d7a0e43a647",
+    "nombre": "ALIÑO ARACUA MD",
+    "precio": 4.0,
+    "imagen": "product_images/47eee132c0274396a23e14c849b8d957.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "0f2c985296194b289340a7440ce21420",
+    "nombre": "SALSA PICANTE FRITZ 310G",
+    "precio": 2.95,
+    "imagen": "product_images/b5546783acc3465091e70fc747d6a364.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "b4b5c9e684954b289baadbae6d7a80e0",
+    "nombre": "SALSA DE AJO FRITZ 300CM",
+    "precio": 2.0,
+    "imagen": "product_images/3da91795379740b9bc5f28431c4d8f45.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "55f4af3fa981464a9d0b80572039fb72",
+    "nombre": "SALSA INGLESA FRITZ 300CM",
+    "precio": 2.0,
+    "imagen": "product_images/e26062dc43dc49fcaf83540af126bb98.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "0dba2983d7ae45d4bb4c9a09a9ccfaf1",
+    "nombre": "SALSA SOYA FRITZ 300CM",
+    "precio": 2.0,
+    "imagen": "product_images/15030b84471d4605ae1b2f933a6e64f5.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "9bba7716ceeb440498fc5516b0c0857b",
+    "nombre": "SALSA AGRIDULCE LA CHINA 150CM",
+    "precio": 1.5,
+    "imagen": "product_images/78e5b6766d82486f9043830a2113fb3d.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "8ec515dd6bbf44e6be78dcf62a64a7f3",
+    "nombre": "SALSA AJI PICANTE LA CHINA 150CM",
+    "precio": 1.5,
+    "imagen": "product_images/cff31be7c6994478b7bbbbc2ade2e2de.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "0cab6e81ea5241178445fb7357ee9d21",
+    "nombre": "VAINILLA TASTY 800ML",
+    "precio": 3.5,
+    "imagen": "product_images/f6cf3694062947a6b7435d7d683c6297.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "94618daebda149e69590a77d51425389",
+    "nombre": "ALIÑO ARACUA GD",
+    "precio": 5.58,
+    "imagen": "product_images/901c51fa22a948e1a3d34a7f76a63099.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "39d2e9604dba4b23b6e8044a42f84b5f",
+    "nombre": "SABROSEADOR IBERIA 180G",
+    "precio": 4.0,
+    "imagen": "product_images/c1cbeb6891b44b3a9e06457e891ecfd0.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "7db0fe7dbf2d49a4902f923897c9f91e",
+    "nombre": "DIABLITO 115G",
+    "precio": 4.0,
+    "imagen": "product_images/b14d3fa4b4824cf0bcca5d9ba033d04b.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "17d97ca598874a00abba7dbdd28c68da",
+    "nombre": "PEPITONAS MARGARITA 140G",
+    "precio": 2.42,
+    "imagen": "product_images/f412636cce5e45f48e59ccfe9d2d6347.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "1678e6103c06447b82bc6a8c9d87917b",
+    "nombre": "MAIZ DULCE GARDEN 425G",
+    "precio": 2.8,
+    "imagen": "product_images/4446726885f94b709929051a97050c37.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "0df813b7e5774b618e930aa697bad934",
+    "nombre": "CHAMPIÑONES GARDEN LATA 425G",
+    "precio": 4.0,
+    "imagen": "product_images/467b9b95bf864a48b3469b8f6c8ce4bb.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "603109d31dc84d558896139fe6670c46",
+    "nombre": "VEGETALES VARIOS TIGO LATA 300G",
+    "precio": 1.7,
+    "imagen": "product_images/6636d85276fb4adb860f1fc6d4ede398.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "3cbbec5a228f4ee183521c8f1ce5fbb7",
+    "nombre": "LECHE CONDENSADA 395G",
+    "precio": 3.8,
+    "imagen": "product_images/a084088eafab4502b768a0bf3d134ac3.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "2acd81a05baa4e718c587836303ffe51",
+    "nombre": "SALSA BOLOÑESA OSOLE 200G",
+    "precio": 1.88,
+    "imagen": "product_images/08de39b33c9140569864458a267fc426.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "157f2a0f839947129ab4e148da9afe8b",
+    "nombre": "SALSA NAPOLITANA OSOLE 200G",
+    "precio": 1.66,
+    "imagen": "product_images/1020afd106204d0b8772d4e1ab7f3bbc.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "55ccf72ff682496e912f84bd18c2bdb4",
+    "nombre": "SALSA PIZZA OSOLE 200G",
+    "precio": 1.65,
+    "imagen": "product_images/e09ff17610af41509a61590aeca4f370.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "fabe42cc77fe45fcbd33d29c07348c5c",
+    "nombre": "SALSA DE TOMATE SOBRE 80G",
+    "precio": 0.72,
+    "imagen": "product_images/8262460091c24e479b1bfa63e3a12b78.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "8cf319ab6d5f4e5aa2987dc94a2676b2",
+    "nombre": "SALSA FRITZ SABOR QUESO 145G",
+    "precio": 1.9,
+    "imagen": "product_images/655a87f27f1d4fd7b7323a7a264fa31e.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "3f47d7bf1908490db365bc7fcd694c90",
+    "nombre": "SALSA MOSTAZA FRITZ 160G",
+    "precio": 1.9,
+    "imagen": "product_images/01eff41cc6e34f7294ad91bfa7010ad5.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "636445f06e5a40daa7eef6192cbf9307",
+    "nombre": "SALSA BBQ KIERO 230G",
+    "precio": 3.0,
+    "imagen": "product_images/6b31199e82604c6e90ce6499ec5fea52.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "9b720ce8b39f49f695316fa4e21d04ca",
+    "nombre": "SALSA SABOR MAIZ FRITZ 145G",
+    "precio": 3.0,
+    "imagen": "product_images/fac319db1a8a490194d9fd935f5814a7.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "fcc47759d176411e99e6669c22b4ff6e",
+    "nombre": "SALSA SABOR TOCINETA AHUM FRITZ 145G",
+    "precio": 1.9,
+    "imagen": "product_images/b3676b3c71e549e0a1771f41e6f3872e.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "8930f7a57eb14548ae88c08dde07742e",
+    "nombre": "COMPOTA NATULAC 113G",
+    "precio": 1.2,
+    "imagen": "product_images/4699570e51d347259d8813e61748599a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "a0eaa09b463a46aa8b0e72a21a5167b5",
+    "nombre": "COMPOTA NATULAC 186G",
+    "precio": 1.48,
+    "imagen": "product_images/76f376fcbac14023a5955fd34302c5a1.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "76dae22a3b33422b8b50dbfacad6938a",
+    "nombre": "COMPOTA OSOLE 100G",
+    "precio": 0.84,
+    "imagen": "product_images/279cd589a795407d8708eaee6e73063d.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "40325c3e3442458589604b310e74f397",
+    "nombre": "MEZCLA PARA SALSA 45G",
+    "precio": 2.59,
+    "imagen": "product_images/ed65729a3b9144ce9fd799868717fc35.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "aeb41f246f7d474e80c9674286767833",
+    "nombre": "PAPAS PERRO 1K",
+    "precio": 7.7,
+    "imagen": "product_images/3a8b26d57ab44f0d846523b451e0a34a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "587ae415ce624cc9a8d8e28266b7785a",
+    "nombre": "SALSA AHUMADITA FRITZ 1K",
+    "precio": 6.0,
+    "imagen": "product_images/a6fcc1a1a97d4e3f81eb0e197bc2b89c.png",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "8bebfbf9fd9f4c2b840e3a179a28c776",
+    "nombre": "SALSA BBQ 1KG FRITZ",
+    "precio": 5.35,
+    "imagen": "product_images/5948b264aaa84e16badb6e4aa73a1c1c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "f240b4363f7e48cdbe31d371c9b37730",
+    "nombre": "NESTUM 25G",
+    "precio": 0.66,
+    "imagen": "product_images/f13349e5ee4444d690e41b51f46c2eec.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "4846cd993f1044e7811c5360cdcfc0f4",
+    "nombre": "VAINILLA TASTY 450ML",
+    "precio": 2.2,
+    "imagen": "product_images/cbf04d1acf2748b997b1f8f1de3ba519.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "4796065e4e5145779b7652180e5d7d15",
+    "nombre": "MASA FACIL 400G",
+    "precio": 1.55,
+    "imagen": "product_images/33e46225096f41c18908ea12473bf535.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "e32a6b5e0afb4b0cbec36cf94a7f7992",
+    "nombre": "PICANTE CRIOLLO LA COLMENA 230GR",
+    "precio": 2.38,
+    "imagen": "product_images/3b418a9d49d74f8bbb69f9a7bd4fa58f.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "efaf8f5a71b84c0dae6479cbef1b9a35",
+    "nombre": "BASE PARA SALSA BECHAMEL",
+    "precio": 2.86,
+    "imagen": "product_images/545c68bbf0b64b5e85b97f494afe7f1e.jpg",
+    "categoria": "VIVERES"
   }
 ]
