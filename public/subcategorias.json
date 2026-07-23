@@ -1,29 +1,15 @@
 {
-  "_ejemplo_borrar": "Este archivo lo edita el botón 'Editar imágenes y texto de apartado'. Formato: por cada apartado, hasta 4 mosaicos con nombre, imagen (image_b64 o image_path) y keywords para filtrar productos.",
   "VIVERES": [
     {
-      "nombre": "Aceite y Azúcar",
-      "image_path": "subcat_images/viveres_aceite.jpg",
+      "nombre": "El mejor arroz",
+      "image_path": "subcat_images/sub_8bcda959d5574f84b65bbcad87d3add8.png",
       "image_b64": "",
-      "keywords": ["aceite", "azucar", "azúcar"]
-    },
-    {
-      "nombre": "Harina y Pasta",
-      "image_path": "subcat_images/viveres_harina.jpg",
-      "image_b64": "",
-      "keywords": ["harina", "pasta", "spaghetti", "fideo"]
-    },
-    {
-      "nombre": "Arroz y Granos",
-      "image_path": "",
-      "image_b64": "",
-      "keywords": ["arroz", "caraota", "frijol", "lenteja", "granos"]
-    },
-    {
-      "nombre": "Enlatados",
-      "image_path": "",
-      "image_b64": "",
-      "keywords": ["atun", "atún", "sardina", "enlatado"]
+      "keywords": [
+        "Arros",
+        "arros",
+        "Arroz",
+        "arroz"
+      ]
     }
   ]
 }
