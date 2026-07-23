@@ -523,7 +523,7 @@ img { max-width: 100%; }
 /* =============== RESPONSIVE =============== */
 @media (max-width: 1100px) {
   .am-topbar-row { flex-wrap: wrap; row-gap: 10px; }
-  .am-tb-account, .am-socials { display: none; }
+  .am-socials { display: none; }
   .am-tiles-row, .am-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
   .am-ads-cards { grid-template-columns: repeat(2,1fr); margin-top: -40px; }
 }
