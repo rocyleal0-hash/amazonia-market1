@@ -148,10 +148,12 @@
     "circle_size": 70,
     "label_color": "#0F172A",
     "label_size": 14,
-    "title_color": "#0000ff",
+    "title_color": "#000000",
     "title_size": 22,
-    "more_bg": "#0000ff",
-    "more_fg": "#FFFFFF"
+    "more_bg": "#000000",
+    "more_fg": "#FFFFFF",
+    "use_image": false,
+    "image_path": ""
   },
   "CARNICERIA": {
     "icon": "🏷️",
