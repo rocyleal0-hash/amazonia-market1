@@ -2,7 +2,7 @@
   "CONFITERIA": {
     "icon": "🍫",
     "circle_color": "#0000ff",
-    "circle_size": 70,
+    "circle_size": 30,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#0000ff",
