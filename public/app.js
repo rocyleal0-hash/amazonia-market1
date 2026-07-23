@@ -1,5 +1,11 @@
 /* =========================================================
-   AMAZONIA MARKET - app.js
+   AMAZONIA MARKET - app.js  (versión mejorada)
+   - Lee TODAS las opciones que guarda agregar_producto.py:
+     colores de la barra azul, color del texto "Delivery gratis",
+     imagen de fondo con blur/brillo/saturación/opacidad,
+     botones ☰ 🔍 🛒, panel del menú, botón "Ver más",
+     colores del carrito, borde de imágenes de producto,
+     alineación/tamaño/desplazamiento del logo, ocultar logo/títulos.
    ========================================================= */
 (() => {
 'use strict';
@@ -11,39 +17,28 @@ const escapeHtml = s => String(s ?? '')
   .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 const escapeAttr = escapeHtml;
 
+const truthy = v => /^(1|true|yes|si|sí)$/i.test(String(v ?? '').trim());
+const intOr  = (v, d) => { const n = parseInt(v, 10); return Number.isFinite(n) ? n : d; };
+const numOr  = (v, d) => { const n = parseFloat(v);   return Number.isFinite(n) ? n : d; };
+
 function fixImgSrc(path) {
   if (!path) return '';
   let p = String(path).trim();
-  
-  // Si ya es Base64 o URL de internet, se deja tal cual
-  if (p.startsWith('data:') || p.startsWith('http://') || p.startsWith('https://')) {
-    return p;
-  }
-  
-  // Limpiamos barras iniciales
+  if (p.startsWith('data:') || p.startsWith('http://') || p.startsWith('https://')) return p;
   p = p.replace(/^\/+/, '');
-
-  // Ajuste para GitHub Pages: apunta a public/product_images/
   if (!p.includes('product_images/')) {
     p = p.replace(/^public\//, '');
     p = 'public/product_images/' + p;
   } else if (!p.startsWith('public/')) {
     p = 'public/' + p;
   }
-
   return './' + p;
 }
 
 function fetchJSON(path, fallback) {
   return fetch(path, { cache: 'no-store' })
-    .then(r => {
-      if (!r.ok) throw new Error('http ' + r.status);
-      return r.json();
-    })
-    .catch(e => {
-      console.warn('No se pudo cargar', path, e);
-      return fallback;
-    });
+    .then(r => { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+    .catch(e => { console.warn('No se pudo cargar', path, e); return fallback; });
 }
 
 function formatPrice(p, currency='$') {
@@ -69,27 +64,17 @@ function iconForCategory(name) {
   return map[n] || '🏷️';
 }
 
+/* ---------------- CARRITO (localStorage) ---------------- */
 const CART_KEY = 'amazonia_cart_v1';
-function loadCart() {
-  try { return JSON.parse(localStorage.getItem(CART_KEY) || '{}'); }
-  catch { return {}; }
-}
+function loadCart() { try { return JSON.parse(localStorage.getItem(CART_KEY) || '{}'); } catch { return {}; } }
 function saveCart(c) { localStorage.setItem(CART_KEY, JSON.stringify(c)); updateCartBadge(); }
-function cartCount() {
-  const c = loadCart();
-  return Object.values(c).reduce((s, it) => s + (Number(it.qty)||0), 0);
-}
-function cartTotal() {
-  const c = loadCart();
-  return Object.values(c).reduce((s, it) => s + (Number(it.precio)||0) * (Number(it.qty)||0), 0);
-}
+function cartCount() { return Object.values(loadCart()).reduce((s, it) => s + (Number(it.qty)||0), 0); }
+function cartTotal() { return Object.values(loadCart()).reduce((s, it) => s + (Number(it.precio)||0)*(Number(it.qty)||0), 0); }
 function cartAdd(prod, qty=1) {
   const c = loadCart();
   const name = prod.nombre;
-  if (!c[name]) {
-    c[name] = { id: prod.id, nombre: prod.nombre, precio: Number(prod.precio)||0,
-                imagen: prod.imagen, categoria: prod.categoria, qty: 0 };
-  }
+  if (!c[name]) c[name] = { id: prod.id, nombre: prod.nombre, precio: Number(prod.precio)||0,
+                            imagen: prod.imagen, categoria: prod.categoria, qty: 0 };
   c[name].qty += qty;
   if (c[name].qty <= 0) delete c[name];
   saveCart(c);
@@ -101,34 +86,106 @@ function cartSet(name, qty) {
   saveCart(c);
 }
 function cartClear() { saveCart({}); }
-
 function updateCartBadge() {
-  const n = cartCount();
-  const b = $('#cartBadge');
+  const n = cartCount(); const b = $('#cartBadge');
   if (!b) return;
-  if (n > 0) { b.textContent = n; b.hidden = false; }
-  else       { b.hidden = true; }
+  if (n > 0) { b.textContent = n; b.hidden = false; } else b.hidden = true;
 }
 
 let toastTimer = null;
 function toast(msg) {
-  const t = $('#toast');
-  if (!t) return;
-  t.textContent = msg;
-  t.hidden = false;
+  const t = $('#toast'); if (!t) return;
+  t.textContent = msg; t.hidden = false;
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => { t.hidden = true; }, 1800);
 }
 
+/* ---------------- ESTADO ---------------- */
 let SETTINGS = {};
 let PRODUCTS = [];
 let CATEGORIES = [];
 let CAT_STYLES = {};
 let ANUNCIOS = {};
 
+/* ---------------- TEMA (aplica TODOS los ajustes del editor) ---------------- */
+function applyTheme() {
+  const s = SETTINGS || {};
+  const root = document.documentElement.style;
+
+  const setVar = (name, val) => { if (val !== undefined && val !== null && String(val).trim() !== '') root.setProperty(name, String(val).trim()); };
+
+  // Barra superior (topbar)
+  setVar('--tb-bg',          s.topbar_bg_color || s.hero_bg_color);
+  setVar('--tb-delivery-fg', s.delivery_text_color);
+  setVar('--tb-menu-bg',     s.btn_menu_bg);
+  setVar('--tb-menu-fg',     s.btn_menu_fg);
+  setVar('--tb-search-bg',   s.btn_search_bg);
+  setVar('--tb-search-fg',   s.btn_search_fg);
+  setVar('--tb-cart-bg',     s.btn_cart_bg);
+  setVar('--tb-cart-fg',     s.btn_cart_fg);
+
+  // Menú lateral
+  setVar('--menu-bg', s.menu_panel_bg);
+  setVar('--menu-fg', s.menu_panel_fg);
+
+  // Botón "Ver más"
+  setVar('--more-bg', s.section_more_bg);
+  setVar('--more-fg', s.section_more_fg);
+
+  // Borde de imágenes de producto
+  setVar('--img-border-color', s.img_border_color);
+  const bw = intOr(s.img_border_width, null);
+  if (bw !== null) root.setProperty('--img-border-width', bw + 'px');
+
+  // Carrito
+  setVar('--cart-card-bg',  s.cart_card_bg);
+  setVar('--cart-name-fg',  s.cart_name_color);
+  setVar('--cart-unit-fg',  s.cart_unit_color);
+  setVar('--cart-price-bg', s.cart_price_bg);
+  setVar('--cart-price-fg', s.cart_price_fg);
+
+  // Alineación / desplazamiento del logo
+  const align = String(s.logo_align || 'left').toLowerCase();
+  const justify = align === 'center' ? 'center' : (align === 'right' ? 'flex-end' : 'flex-start');
+  root.setProperty('--brand-justify', justify);
+  const off = intOr(s.logo_offset_x, 0);
+  root.setProperty('--brand-offset-x', off + 'px');
+
+  // Imagen de fondo de la barra + blur/brillo/saturación/opacidad
+  const tb = document.getElementById('topbar');
+  const imgB64 = String(s.topbar_bg_image_b64 || s.hero_bg_b64 || '').trim();
+  const styleId = 'am-topbar-bgimg';
+  let st = document.getElementById(styleId);
+  if (!st) { st = document.createElement('style'); st.id = styleId; document.head.appendChild(st); }
+  if (tb && imgB64) {
+    const blur = intOr(s.topbar_bg_blur ?? s.hero_blur, 0);
+    const bri  = intOr(s.topbar_bg_brightness ?? s.hero_brightness_pct ?? Math.round(numOr(s.hero_brightness, 1) * 100), 100);
+    const sat  = intOr(s.topbar_bg_saturation, 100);
+    const opRaw = s.topbar_bg_opacity ?? s.hero_opacity_pct;
+    const op   = opRaw !== undefined
+      ? Math.max(0, Math.min(1, intOr(opRaw, 100) / 100))
+      : Math.max(0, Math.min(1, numOr(s.hero_opacity, 1)));
+    st.textContent = `
+      .am-topbar { position: relative; isolation: isolate; overflow: hidden; }
+      .am-topbar::before {
+        content:''; position:absolute; inset:0; z-index:-1;
+        background: url('data:image/png;base64,${imgB64}') center/cover no-repeat;
+        filter: blur(${blur}px) brightness(${bri}%) saturate(${sat}%);
+        opacity: ${op.toFixed(2)};
+        pointer-events: none;
+      }
+    `;
+  } else {
+    st.textContent = '';
+  }
+}
+
+/* ---------------- RENDERS ---------------- */
 function renderDeliveryBanner() {
   const text = SETTINGS.delivery_text || '🚚 Delivery GRATIS en toda la zona de Coro';
-  const one = `<span>${escapeHtml(text)}</span>`;
+  const color = (SETTINGS.delivery_text_color || '').trim();
+  const style = color ? ` style="color:${escapeAttr(color)};"` : '';
+  const one = `<span${style}>${escapeHtml(text)}</span>`;
   const group = one.repeat(6);
   const el = $('#deliveryTrack');
   if (el) el.innerHTML = group + group;
@@ -140,21 +197,26 @@ function renderBrand() {
 
   const logoB64 = (SETTINGS.site_logo_b64 || '').trim();
   const logoEl = $('#brandLogo');
-  const hideLogo = String(SETTINGS.hide_logo || '0').match(/^(1|true|yes)$/i);
-  if (logoEl && logoB64 && !hideLogo) {
-    logoEl.src = 'data:image/png;base64,' + logoB64;
-    logoEl.style.display = 'block';
-    const sz = parseInt(SETTINGS.logo_size || 54, 10) || 54;
-    logoEl.style.height = sz + 'px';
+  const hideLogo = truthy(SETTINGS.hide_logo);
+  if (logoEl) {
+    if (logoB64 && !hideLogo) {
+      logoEl.src = 'data:image/png;base64,' + logoB64;
+      logoEl.style.display = 'block';
+      const sz = intOr(SETTINGS.logo_size, 54);
+      logoEl.style.height = sz + 'px';
+    } else {
+      logoEl.style.display = 'none';
+    }
   }
 
-  const hideTitles = String(SETTINGS.hide_titles || '0').match(/^(1|true|yes)$/i);
-  const titlesHtml = hideTitles ? '' : `
-    <div class="am-brand-name">${escapeHtml(siteName)}</div>
-    <div class="am-brand-market">${escapeHtml(siteMarket)}</div>
-  `;
+  const hideTitles = truthy(SETTINGS.hide_titles);
   const bt = $('#brandTitles');
-  if (bt) bt.innerHTML = titlesHtml;
+  if (bt) {
+    bt.innerHTML = hideTitles ? '' : `
+      <div class="am-brand-name">${escapeHtml(siteName)}</div>
+      <div class="am-brand-market">${escapeHtml(siteMarket)}</div>
+    `;
+  }
 }
 
 function renderSocials() {
@@ -162,8 +224,8 @@ function renderSocials() {
   const ig = (SETTINGS.social_instagram_url || '').trim();
   const tk = (SETTINGS.social_tiktok_url || '').trim();
   const svg = {
-    fb: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>`,
-    ig: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.265.058-1.645.07-4.849.07-3.205 0-3.584-.012-4.849-.07-1.366-.062-2.633-.336-3.608-1.311-.975-.975-2.242-1.249-3.608-1.311C2.175 15.647 2.163 15.268 2.163 12s.012-3.584.07-4.849c.062-1.366.336-2.633 1.311-3.608.975-.975 2.242-1.249 3.608-1.311C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.148 0-3.523.011-4.767.068-1.006.046-1.554.213-1.918.353-.482.187-.827.41-1.188.771-.361.361-.584.706-.771 1.188-.14.364-.307.912-.353 1.918C2.976 8.477 2.965 8.852 2.965 12s.011 3.523.068 4.767c.046 1.006.213 1.554.353 1.918.187.482.41.827.771 1.188.361.361.706.584 1.188.771.364.14.912.307 1.918.353 1.244.057 1.619.068 4.767.068s3.523-.011 4.767-.068c1.006-.046 1.554-.213 1.918-.353.482-.187.827-.41 1.188-.771.361-.361.706-.584.771-1.188.364-.14.912-.307-1.918-.353C15.523 3.976 15.148 3.965 12 3.965zm0 3.063A4.972 4.972 0 1 1 12 16.972 4.972 4.972 0 0 1 12 7.028zm0 8.203A3.231 3.231 0 1 0 12 8.769a3.231 3.231 0 0 0 0 6.462zm5.171-8.406a1.163 1.163 0 1 1-2.326 0 1.163 1.163 0 0 1 2.326 0z"/></svg>`,
+    fb: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.325C24 .593 23.407 0 22.675 0z"/></svg>`,
+    ig: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.332.014 7.052.072 2.695.272.273 2.69.073 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.332 23.986 8.741 24 12 24s3.668-.014 4.948-.072c4.354-.2 6.782-2.618 6.979-6.98.058-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.163 6.163 0 1 0 0 12.326 6.163 6.163 0 0 0 0-12.326zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>`,
     tk: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.66a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.09z"/></svg>`,
   };
   const items = [];
@@ -184,6 +246,12 @@ function renderMenuPanel() {
       `<div class="am-menu-head">Apartados</div>` +
       (items || `<div style="padding:14px 18px;opacity:.85;font-size:13px;">Aún no hay apartados.</div>`);
   }
+  // Botón ☰ abre/cierra
+  const btn = $('#btnMenu');
+  if (btn && mp && !btn._wired) {
+    btn._wired = true;
+    btn.addEventListener('click', () => { mp.hidden = !mp.hidden; });
+  }
 }
 
 function catStyle(name) {
@@ -191,26 +259,26 @@ function catStyle(name) {
     icon:'', circle_color:'#2A2A9C', circle_size:96,
     label_color:'#0F172A', label_size:14,
     title_color:'#2A2A9C', title_size:22,
-    more_bg:'#2A2A9C', more_fg:'#FFFFFF',
+    more_bg: SETTINGS.section_more_bg || '#2A2A9C',
+    more_fg: SETTINGS.section_more_fg || '#FFFFFF',
     use_image:false, image_path:''
   };
   const s = Object.assign({}, defaults, CAT_STYLES[name] || {});
-  s.circle_size = parseInt(s.circle_size || 96, 10) || 96;
+  s.circle_size = intOr(s.circle_size, 96);
   return s;
 }
 
 function renderCategoryCircles() {
-  const cw = $('#catsWrap');
-  const cs = $('#catsScroll');
+  const cw = $('#catsWrap'); const cs = $('#catsScroll');
   if (!cw || !cs) return;
   if (!CATEGORIES.length) { cw.style.display='none'; return; }
+  cw.style.display = '';
 
   const html = CATEGORIES.map(cat => {
     const s = catStyle(cat);
     const icon = s.icon || iconForCategory(cat);
     const sz = s.circle_size;
     let inner, bg;
-
     if (s.use_image && s.image_path) {
       const imgSrc = fixImgSrc(s.image_path);
       inner = `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(cat)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"/>
@@ -220,7 +288,6 @@ function renderCategoryCircles() {
       inner = `<span style="font-size:${Math.round(sz*0.46)}px;">${escapeHtml(icon)}</span>`;
       bg = `background: radial-gradient(circle at 30% 30%, color-mix(in srgb, ${s.circle_color} 78%, white) 0%, ${s.circle_color} 78%);`;
     }
-
     return `<a class="am-cat-circle" href="?cat=${encodeURIComponent(cat)}" style="min-width:${Math.max(sz+20,80)}px;">
       <div class="bubble" style="width:${sz}px;height:${sz}px;${bg}display:flex;align-items:center;justify-content:center;overflow:hidden;">${inner}</div>
       <div class="label" style="color:${s.label_color};font-size:${s.label_size}px;">${escapeHtml(cat)}</div>
@@ -243,10 +310,10 @@ function renderAnunciosBanner(container) {
   }
   if (!slides.length && !hasCards) return;
 
-  const bh   = parseInt(ANUNCIOS.banner_height, 10) || 320;
-  const brt  = parseInt(ANUNCIOS.banner_brightness, 10) || 100;
-  const blur = parseInt(ANUNCIOS.banner_blur, 10) || 0;
-  const ovr  = parseInt(ANUNCIOS.banner_overlay, 10) || 0;
+  const bh   = intOr(ANUNCIOS.banner_height, 320);
+  const brt  = intOr(ANUNCIOS.banner_brightness, 100);
+  const blur = intOr(ANUNCIOS.banner_blur, 0);
+  const ovr  = intOr(ANUNCIOS.banner_overlay, 0);
 
   const slidesHtml = slides.map((s, i) => {
     const href = s.url || '#';
@@ -255,7 +322,6 @@ function renderAnunciosBanner(container) {
       <img src="data:image/png;base64,${s.b64}" style="filter: brightness(${brt}%) blur(${blur}px);"/>
     </a>`;
   }).join('');
-
   const heroStyle = `height:${bh}px;`;
   const ovrHtml = ovr>0 ? `<div class="ovr" style="background:rgba(0,0,0,${(ovr/100).toFixed(2)});"></div>` : '';
 
@@ -289,24 +355,22 @@ function renderAnunciosBanner(container) {
   if (slides.length > 1) {
     let idx = 0;
     setInterval(() => {
-      const el = $('#adsHero');
-      if (!el) return;
-      const items = $$('.am-slide', el);
-      if (!items.length) return;
+      const el = $('#adsHero'); if (!el) return;
+      const items = $$('.am-slide', el); if (!items.length) return;
       items[idx].classList.remove('active');
       idx = (idx + 1) % items.length;
       items[idx].classList.add('active');
-    }, 1500);
+    }, 4000);
   }
 }
 
 function cap(s){ s=String(s||''); return s.charAt(0).toUpperCase()+s.slice(1).toLowerCase(); }
 
+/* ---------------- VISTAS ---------------- */
 function viewHome(main) {
   renderAnunciosBanner(main);
   if (!CATEGORIES.length) {
-    main.insertAdjacentHTML('beforeend',
-      `<div class="am-empty">Aún no hay apartados.<br>Crea apartados desde la app de escritorio.</div>`);
+    main.insertAdjacentHTML('beforeend', `<div class="am-empty">Aún no hay apartados.<br>Crea apartados desde la app de escritorio.</div>`);
     return;
   }
   const PER_ROW = 4;
@@ -338,7 +402,7 @@ function buildHomeTile(cat) {
     : `<div class="am-quad-grid"><div class="am-empty" style="grid-column:1/-1;margin:0;">Aún no hay productos.</div></div>`;
 
   return `<div class="am-tile">
-    <div class="am-tile-title" style="color:${s.title_color};">
+    <div class="am-tile-title" style="color:${s.title_color};font-size:${s.title_size}px;">
       ${escapeHtml(emoji)} ${escapeHtml(cap(cat))}
       <span class="am-tile-count">· ${catProds.length} producto(s)</span>
     </div>
@@ -357,8 +421,7 @@ function viewCategory(main, cat) {
   `);
   const prods = PRODUCTS.filter(p => p.categoria === cat);
   if (!prods.length) {
-    main.insertAdjacentHTML('beforeend',
-      `<div class="am-empty">No hay productos en este apartado todavía.</div>`);
+    main.insertAdjacentHTML('beforeend', `<div class="am-empty">No hay productos en este apartado todavía.</div>`);
     return;
   }
   renderProductGrid(main, prods);
@@ -372,19 +435,13 @@ function viewSearch(main, q) {
       <a class="am-btn am-btn-ghost" href="./">← Volver al inicio</a>
     </div>
   `);
-  if (!q) {
-    main.insertAdjacentHTML('beforeend',`<div class="am-empty">Escribe algo en la barra de búsqueda.</div>`);
-    return;
-  }
+  if (!q) { main.insertAdjacentHTML('beforeend',`<div class="am-empty">Escribe algo en la barra de búsqueda.</div>`); return; }
   const ql = q.toLowerCase();
   const results = PRODUCTS.filter(p =>
     String(p.nombre||'').toLowerCase().includes(ql) ||
     String(p.categoria||'').toLowerCase().includes(ql)
   );
-  if (!results.length) {
-    main.insertAdjacentHTML('beforeend',`<div class="am-empty">No se encontraron productos que coincidan.</div>`);
-    return;
-  }
+  if (!results.length) { main.insertAdjacentHTML('beforeend',`<div class="am-empty">No se encontraron productos que coincidan.</div>`); return; }
   main.insertAdjacentHTML('beforeend', `<p style="color:var(--muted);font-size:13px;">${results.length} resultado(s) en toda la tienda.</p>`);
   renderProductGrid(main, results);
 }
@@ -409,6 +466,7 @@ function renderProductGrid(main, prods) {
   });
 }
 
+/* ---------------- CARRITO ---------------- */
 function viewCart(main) {
   const cart = loadCart();
   const items = Object.entries(cart);
@@ -427,7 +485,7 @@ function viewCart(main) {
     <div class="am-cart-row" data-name="${escapeAttr(name)}">
       <img src="${escapeAttr(fixImgSrc(it.imagen))}" alt="${escapeAttr(name)}"/>
       <div class="am-cart-name">${escapeHtml(name)}</div>
-      <div class="am-cart-price">${escapeHtml(formatPrice(it.precio))}</div>
+      <div class="am-cart-price"><span class="am-cart-unit">${escapeHtml(formatPrice(it.precio))}</span></div>
       <div class="am-cart-qty">
         <button data-op="minus">−</button>
         <input type="number" min="1" value="${it.qty}" data-op="input"/>
@@ -444,157 +502,119 @@ function viewCart(main) {
       <div class="am-cart-actions">
         <a class="am-btn am-btn-primary" href="./">＋ Añadir más productos</a>
         <button class="am-btn am-btn-danger" id="btnCartClear">🗑 Vaciar carrito</button>
+        <a class="am-btn am-btn-success" id="btnCartWhatsapp" href="#">📲 Enviar pedido por WhatsApp</a>
       </div>
       <div class="am-cart-total-box">
-        <div>
-          <div class="am-cart-total-label">Total a pagar:</div>
-          <div class="am-cart-total">${escapeHtml(formatPrice(cartTotal()))}</div>
-        </div>
-        <button class="am-btn am-btn-success" id="btnCartPay" style="font-size:18px;padding:14px 28px;">💳  Pagar ahora</button>
+        <div class="am-cart-total-label">Total:</div>
+        <div class="am-cart-total">${escapeHtml(formatPrice(cartTotal()))}</div>
       </div>
     </div>
   `);
 
+  // Interacciones
   $$('.am-cart-row', main).forEach(row => {
     const name = row.getAttribute('data-name');
-    const bMinus = row.querySelector('[data-op="minus"]');
-    const bPlus  = row.querySelector('[data-op="plus"]');
-    const bDel   = row.querySelector('[data-op="del"]');
-    const input  = row.querySelector('[data-op="input"]');
-
-    if (bMinus) bMinus.onclick = () => { const c=loadCart(); if(!c[name])return; cartSet(name, c[name].qty-1); rerender(); };
-    if (bPlus)  bPlus.onclick  = () => { const c=loadCart(); if(!c[name])return; cartSet(name, c[name].qty+1); rerender(); };
-    if (bDel)   bDel.onclick   = () => { cartSet(name, 0); rerender(); };
-    if (input)  input.onchange  = (e) => {
-      const q = Math.max(0, parseInt(e.target.value,10)||0);
-      cartSet(name, q); rerender();
-    };
+    const inp = $('input[data-op="input"]', row);
+    $('button[data-op="minus"]', row).addEventListener('click', () => { cartSet(name, (Number(inp.value)||1) - 1); rerenderCart(); });
+    $('button[data-op="plus"]',  row).addEventListener('click', () => { cartSet(name, (Number(inp.value)||1) + 1); rerenderCart(); });
+    inp.addEventListener('change', () => { cartSet(name, Math.max(1, Number(inp.value)||1)); rerenderCart(); });
+    $('button[data-op="del"]', row).addEventListener('click', () => { cartSet(name, 0); rerenderCart(); });
   });
-
   const btnClear = $('#btnCartClear');
-  const btnPay   = $('#btnCartPay');
-  if (btnClear) btnClear.onclick = () => { if(confirm('¿Vaciar el carrito?')){ cartClear(); rerender(); } };
-  if (btnPay)   btnPay.onclick   = () => alert('¡Gracias por tu compra!');
-}
+  if (btnClear) btnClear.addEventListener('click', () => {
+    if (confirm('¿Vaciar el carrito?')) { cartClear(); rerenderCart(); }
+  });
 
-let PENDING_PROD = null;
-function openQtyModal(prod) {
-  PENDING_PROD = prod;
-  const qImg   = $('#qtyImg');
-  const qName  = $('#qtyName');
-  const qPrice = $('#qtyPrice');
-  const qInput = $('#qtyInput');
-  const qModal = $('#qtyModal');
-
-  if (qImg)   { qImg.src = fixImgSrc(prod.imagen); qImg.alt = prod.nombre || ''; }
-  if (qName)  qName.textContent = prod.nombre || '';
-  if (qPrice) qPrice.textContent = formatPrice(prod.precio);
-  if (qInput) qInput.value = 1;
-  if (qModal) qModal.hidden = false;
-}
-
-function closeQtyModal() {
-  const qModal = $('#qtyModal');
-  if (qModal) qModal.hidden = true;
-  PENDING_PROD = null;
-}
-
-function currentParams() {
-  const p = new URLSearchParams(location.search);
-  return { view: p.get('view')||'', cat: p.get('cat')||'', q: p.get('q')||'' };
-}
-
-function rerender() {
-  updateCartBadge();
-  const main = $('#mainContent');
-  if (!main) return;
-  main.innerHTML = '';
-  const { view, cat, q } = currentParams();
-  if (view === 'cart') viewCart(main);
-  else if (view === 'search') viewSearch(main, q);
-  else if (cat) viewCategory(main, cat);
-  else viewHome(main);
-}
-
-function init() {
-  Promise.all([
-    fetchJSON('public/site_settings.json', {}),
-    fetchJSON('public/products.json', []),
-    fetchJSON('public/categories.json', []),
-    fetchJSON('public/category_styles.json', {}),
-    fetchJSON('public/anuncios.json', { cards: [] }),
-  ]).then(([s, p, c, cs, a]) => {
-    SETTINGS = s;
-    PRODUCTS = p;
-    CATEGORIES = c;
-    CAT_STYLES = cs;
-    ANUNCIOS = a;
-
-    if (!Array.isArray(CATEGORIES) || !CATEGORIES.length) {
-      CATEGORIES = Object.keys(CAT_STYLES);
-      if (!CATEGORIES.length) {
-        const seen = new Set();
-        PRODUCTS.forEach(item => { if (item.categoria && !seen.has(item.categoria)) { seen.add(item.categoria); CATEGORIES.push(item.categoria); } });
-      }
-    }
-
-    renderDeliveryBanner();
-    renderBrand();
-    renderSocials();
-    renderMenuPanel();
-    renderCategoryCircles();
-    rerender();
-
-    const btnMenu = $('#btnMenu');
-    if (btnMenu) {
-      btnMenu.onclick = () => {
-        const panel = $('#menuPanel');
-        if (panel) panel.hidden = !panel.hidden;
-      };
-    }
-
-    const searchForm = $('#searchForm');
-    if (searchForm) {
-      searchForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const input = $('#searchInput');
-        const q = (input ? input.value : '').trim();
-        if (q) location.href = '?view=search&q=' + encodeURIComponent(q);
-        else location.href = './';
-      });
-    }
-
-    const { q } = currentParams();
-    const searchInput = $('#searchInput');
-    if (q && searchInput) searchInput.value = q;
-
-    const btnMinus = $('#qtyMinus');
-    const btnPlus  = $('#qtyPlus');
-    const btnCanc  = $('#qtyCancel');
-    const btnConf  = $('#qtyConfirm');
-    const modal    = $('#qtyModal');
-
-    if (btnMinus) btnMinus.onclick = () => { const i=$('#qtyInput'); if(i) i.value = Math.max(1, (parseInt(i.value,10)||1)-1); };
-    if (btnPlus)  btnPlus.onclick  = () => { const i=$('#qtyInput'); if(i) i.value = (parseInt(i.value,10)||1)+1; };
-    if (btnCanc)  btnCanc.onclick  = closeQtyModal;
-    if (btnConf)  btnConf.onclick  = () => {
-      if (!PENDING_PROD) return;
-      const i = $('#qtyInput');
-      const qty = Math.max(1, parseInt(i ? i.value : 1, 10)||1);
-      cartAdd(PENDING_PROD, qty);
-      toast(`Añadido ${qty} × ${PENDING_PROD.nombre}`);
-      closeQtyModal();
-    };
-    if (modal) {
-      modal.addEventListener('click', (e) => {
-        if (e.target.id === 'qtyModal') closeQtyModal();
-      });
-    }
-
-    updateCartBadge();
+  const wa = $('#btnCartWhatsapp');
+  if (wa) wa.addEventListener('click', (e) => {
+    e.preventDefault();
+    const phone = (SETTINGS.whatsapp_phone || '').replace(/[^\d]/g,'');
+    const lines = Object.values(loadCart()).map(it => `• ${it.qty} x ${it.nombre} — ${formatPrice(it.precio*it.qty)}`);
+    const msg = `Hola, quisiera pedir:\n${lines.join('\n')}\n\nTotal: ${formatPrice(cartTotal())}`;
+    const url = phone
+      ? `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
+      : `https://wa.me/?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
   });
 }
 
-document.addEventListener('DOMContentLoaded', init);
+function rerenderCart() {
+  const main = $('#mainContent'); if (!main) return;
+  main.innerHTML = ''; viewCart(main); updateCartBadge();
+}
 
+/* ---------------- MODAL cantidad ---------------- */
+let _qtyProd = null;
+function openQtyModal(prod) {
+  _qtyProd = prod;
+  $('#qtyImg').src = fixImgSrc(prod.imagen);
+  $('#qtyName').textContent = prod.nombre;
+  $('#qtyPrice').textContent = formatPrice(prod.precio);
+  $('#qtyInput').value = 1;
+  $('#qtyModal').hidden = false;
+}
+function closeQtyModal() { $('#qtyModal').hidden = true; _qtyProd = null; }
+function wireQtyModal() {
+  const modal = $('#qtyModal'); if (!modal) return;
+  $('#qtyMinus').addEventListener('click', () => { const i=$('#qtyInput'); i.value = Math.max(1, (Number(i.value)||1)-1); });
+  $('#qtyPlus').addEventListener('click',  () => { const i=$('#qtyInput'); i.value = Math.max(1, (Number(i.value)||1)+1); });
+  $('#qtyCancel').addEventListener('click', closeQtyModal);
+  $('#qtyConfirm').addEventListener('click', () => {
+    if (!_qtyProd) return closeQtyModal();
+    const q = Math.max(1, Number($('#qtyInput').value)||1);
+    cartAdd(_qtyProd, q);
+    toast(`✔ ${q} x ${_qtyProd.nombre} añadido al carrito`);
+    closeQtyModal();
+  });
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeQtyModal(); });
+}
+
+/* ---------------- ROUTER ---------------- */
+function route() {
+  const main = $('#mainContent'); if (!main) return;
+  main.innerHTML = '';
+  const params = new URLSearchParams(location.search);
+  const view = (params.get('view')||'').toLowerCase();
+  const cat  = params.get('cat');
+  const q    = params.get('q');
+  if (view === 'cart') return viewCart(main);
+  if (cat) return viewCategory(main, cat);
+  if (q !== null) return viewSearch(main, q);
+  viewHome(main);
+}
+
+function wireSearch() {
+  const f = $('#searchForm'); const i = $('#searchInput');
+  if (!f || !i) return;
+  f.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const q = (i.value||'').trim();
+    location.href = './?q=' + encodeURIComponent(q);
+  });
+}
+
+/* ---------------- BOOT ---------------- */
+async function boot() {
+  const base = './public/';
+  [SETTINGS, PRODUCTS, CATEGORIES, CAT_STYLES, ANUNCIOS] = await Promise.all([
+    fetchJSON(base + 'site_settings.json', {}),
+    fetchJSON(base + 'products.json', []),
+    fetchJSON(base + 'categories.json', []),
+    fetchJSON(base + 'category_styles.json', {}),
+    fetchJSON(base + 'anuncios.json', {}),
+  ]);
+
+  applyTheme();          // <- primero el tema, para que la barra se vea correcta
+  renderDeliveryBanner();
+  renderBrand();
+  renderSocials();
+  renderMenuPanel();
+  renderCategoryCircles();
+  wireSearch();
+  wireQtyModal();
+  updateCartBadge();
+  route();
+}
+
+document.addEventListener('DOMContentLoaded', boot);
 })();
