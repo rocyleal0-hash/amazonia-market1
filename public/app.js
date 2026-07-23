@@ -13,15 +13,22 @@ const escapeHtml = s => String(s ?? '')
 const escapeAttr = escapeHtml;
 
 // Helper para corregir rutas de imágenes apuntando a public/
+// Helper para corregir rutas de imágenes apuntando siempre a public/
 function fixImgSrc(path) {
   if (!path) return '';
-  const p = String(path).trim();
+  let p = String(path).trim();
   if (p.startsWith('data:') || p.startsWith('http://') || p.startsWith('https://')) {
     return p;
   }
-  if (p.startsWith('public/')) {
-    return p;
+  // Limpiar slashes iniciales
+  p = p.replace(/^\/+/, '');
+  
+  // Si no empieza con public/, se lo anteponemos
+  if (!p.startsWith('public/')) {
+    p = 'public/' + p;
   }
+  return p;
+}
   return 'public/' + p.replace(/^\//, '');
 }
 
