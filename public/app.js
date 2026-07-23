@@ -12,6 +12,19 @@ const escapeHtml = s => String(s ?? '')
   .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 const escapeAttr = escapeHtml;
 
+// Helper para corregir rutas de imágenes apuntando a public/
+function fixImgSrc(path) {
+  if (!path) return '';
+  const p = String(path).trim();
+  if (p.startsWith('data:') || p.startsWith('http://') || p.startsWith('https://')) {
+    return p;
+  }
+  if (p.startsWith('public/')) {
+    return p;
+  }
+  return 'public/' + p.replace(/^\//, '');
+}
+
 // -------- helpers de datos --------
 async function fetchJSON(path, fallback) {
   try {
@@ -111,9 +124,8 @@ let ANUNCIOS = {};
 // TOPBAR
 // =========================================================
 function renderDeliveryBanner() {
-  const text = SETTINGS.delivery_text || '🚚  Delivery GRATIS en toda la zona de Coro';
+  const text = SETTINGS.delivery_text || '🚚 Delivery GRATIS en toda la zona de Coro';
   const one = `<span>${escapeHtml(text)}</span>`;
-  // 2 grupos idénticos, animación -50%
   const group = one.repeat(6);
   $('#deliveryTrack').innerHTML = group + group;
 }
@@ -122,7 +134,6 @@ function renderBrand() {
   const siteName   = SETTINGS.site_name   || 'Amazonia';
   const siteMarket = SETTINGS.site_market || 'MARKET';
 
-  // Logo pequeño (site_logo_b64) — si no existe, se oculta
   const logoB64 = (SETTINGS.site_logo_b64 || '').trim();
   const logoEl = $('#brandLogo');
   const hideLogo = String(SETTINGS.hide_logo || '0').match(/^(1|true|yes)$/i);
@@ -147,7 +158,7 @@ function renderSocials() {
   const tk = (SETTINGS.social_tiktok_url || '').trim();
   const svg = {
     fb: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>`,
-    ig: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.265.058-1.645.07-4.849.07-3.205 0-3.584-.012-4.849-.07-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608C2.175 15.647 2.163 15.268 2.163 12s.012-3.584.07-4.849c.062-1.366.336-2.633 1.311-3.608.975-.975 2.242-1.249 3.608-1.311C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.148 0-3.523.011-4.767.068-1.006.046-1.554.213-1.918.353-.482.187-.827.41-1.188.771-.361.361-.584.706-.771 1.188-.14.364-.307.912-.353 1.918C2.976 8.477 2.965 8.852 2.965 12s.011 3.523.068 4.767c.046 1.006.213 1.554.353 1.918.187.482.41.827.771 1.188.361.361.706.584 1.188.771.364.14.912.307 1.918.353 1.244.057 1.619.068 4.767.068s3.523-.011 4.767-.068c1.006-.046 1.554-.213 1.918-.353.482-.187.827-.41 1.188-.771.361-.361.584-.706.771-1.188.14-.364.307-.912.353-1.918.057-1.244.068-1.619.068-4.767s-.011-3.523-.068-4.767c-.046-1.006-.213-1.554-.353-1.918-.187-.482-.41-.827-.771-1.188-.361-.361-.706-.584-1.188-.771-.364-.14-.912-.307-1.918-.353C15.523 3.976 15.148 3.965 12 3.965zm0 3.063A4.972 4.972 0 1 1 12 16.972 4.972 4.972 0 0 1 12 7.028zm0 8.203A3.231 3.231 0 1 0 12 8.769a3.231 3.231 0 0 0 0 6.462zm5.171-8.406a1.163 1.163 0 1 1-2.326 0 1.163 1.163 0 0 1 2.326 0z"/></svg>`,
+    ig: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.265.058-1.645.07-4.849.07-3.205 0-3.584-.012-4.849-.07-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608C2.175 15.647 2.163 15.268 2.163 12s.012-3.584.07-4.849c.062-1.366.336-2.633 1.311-3.608.975-.975 2.242-1.249 3.608-1.311C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.148 0-3.523.011-4.767.068-1.006.046-1.554.213-1.918.353-.482.187-.827.41-1.188.771-.361.361-.584.706-.771 1.188-.14.364-.307.912-.353 1.918C2.976 8.477 2.965 8.852 2.965 12s.011 3.523.068 4.767c.046 1.006.213 1.554.353 1.918.187.482.41.827.771 1.188.361.361.706.584 1.188.771.364.14.912.307 1.918.353 1.244.057 1.619.068 4.767.068s3.523-.011 4.767-.068c1.006-.046 1.554-.213 1.918-.353.482-.187.827-.41 1.188-.771.361-.361.706-.584.771-1.188.14-.364.307-.912.353-1.918.057-1.244.068-1.619.068-4.767s-.011-3.523-.068-4.767c-.046-1.006-.213-1.554-.353-1.918-.187-.482-.41-.827-.771-1.188-.361-.361-.706-.584-1.188-.771-.364-.14-.912-.307-1.918-.353C15.523 3.976 15.148 3.965 12 3.965zm0 3.063A4.972 4.972 0 1 1 12 16.972 4.972 4.972 0 0 1 12 7.028zm0 8.203A3.231 3.231 0 1 0 12 8.769a3.231 3.231 0 0 0 0 6.462zm5.171-8.406a1.163 1.163 0 1 1-2.326 0 1.163 1.163 0 0 1 2.326 0z"/></svg>`,
     tk: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.66a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.09z"/></svg>`,
   };
   const items = [];
@@ -190,7 +201,7 @@ function renderCategoryCircles() {
     const sz = s.circle_size;
     let inner, bg;
     if (s.use_image && s.image_path) {
-      inner = `<img src="${escapeAttr(s.image_path)}" alt="${escapeAttr(cat)}"/>`;
+      inner = `<img src="${escapeAttr(fixImgSrc(s.image_path))}" alt="${escapeAttr(cat)}"/>`;
       bg = `background:${s.circle_color};`;
     } else {
       inner = escapeHtml(icon);
@@ -307,7 +318,7 @@ function buildHomeTile(cat) {
   const preview = catProds.slice(0, 4);
   let items = preview.map(p => `
     <a class="am-quad-item" href="?cat=${encodeURIComponent(cat)}">
-      <div class="am-quad-imgwrap"><img src="${escapeAttr(p.imagen || '')}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/></div>
+      <div class="am-quad-imgwrap"><img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/></div>
       <div class="am-quad-name">${escapeHtml(p.nombre || '')}</div>
     </a>
   `).join('');
@@ -372,7 +383,7 @@ function viewSearch(main, q) {
 function renderProductGrid(main, prods) {
   const html = `<div class="am-grid">` + prods.map(p => `
     <div class="am-card">
-      <img src="${escapeAttr(p.imagen||'')}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/>
+      <img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/>
       <div class="am-name">${escapeHtml(p.nombre||'')}</div>
       <div><span class="am-price">${escapeHtml(formatPrice(p.precio))}</span></div>
       <button class="am-add-btn" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>
@@ -409,7 +420,7 @@ function viewCart(main) {
 
   const rows = items.map(([name, it]) => `
     <div class="am-cart-row" data-name="${escapeAttr(name)}">
-      <img src="${escapeAttr(it.imagen||'')}" alt="${escapeAttr(name)}"/>
+      <img src="${escapeAttr(fixImgSrc(it.imagen))}" alt="${escapeAttr(name)}"/>
       <div class="am-cart-name">${escapeHtml(name)}</div>
       <div class="am-cart-price">${escapeHtml(formatPrice(it.precio))}</div>
       <div class="am-cart-qty">
@@ -460,7 +471,7 @@ function viewCart(main) {
 let PENDING_PROD = null;
 function openQtyModal(prod) {
   PENDING_PROD = prod;
-  $('#qtyImg').src = prod.imagen || '';
+  $('#qtyImg').src = fixImgSrc(prod.imagen);
   $('#qtyImg').alt = prod.nombre || '';
   $('#qtyName').textContent = prod.nombre || '';
   $('#qtyPrice').textContent = formatPrice(prod.precio);
@@ -492,7 +503,7 @@ function rerender() {
 }
 
 async function init() {
-  // Cargar todos los JSON en paralelo
+  // Cargar todos los JSON en paralelo desde la carpeta public
   [SETTINGS, PRODUCTS, CATEGORIES, CAT_STYLES, ANUNCIOS] = await Promise.all([
     fetchJSON('public/site_settings.json', {}),
     fetchJSON('public/products.json', []),
