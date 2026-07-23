@@ -21,7 +21,7 @@ function fixImgSrc(path) {
   if (!p.startsWith('public/')) {
     p = 'public/' + p;
   }
-  return p;
+  return './' + p;
 }
 
 function fetchJSON(path, fallback) {
@@ -200,14 +200,15 @@ function renderCategoryCircles() {
     const sz = s.circle_size;
     let inner, bg;
     if (s.use_image && s.image_path) {
-      inner = `<img src="${escapeAttr(fixImgSrc(s.image_path))}" alt="${escapeAttr(cat)}"/>`;
+      const imgSrc = fixImgSrc(s.image_path);
+      inner = `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(cat)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.outerHTML='<span style=\\'font-size:${Math.round(sz*0.46)}px;\\'>${escapeHtml(icon)}</span>'"/>`;
       bg = `background:${s.circle_color};`;
     } else {
-      inner = escapeHtml(icon);
-      bg = `background: radial-gradient(circle at 30% 30%, color-mix(in srgb, ${s.circle_color} 78%, white) 0%, ${s.circle_color} 78%); font-size:${Math.round(sz*0.46)}px;`;
+      inner = `<span style="font-size:${Math.round(sz*0.46)}px;">${escapeHtml(icon)}</span>`;
+      bg = `background: radial-gradient(circle at 30% 30%, color-mix(in srgb, ${s.circle_color} 78%, white) 0%, ${s.circle_color} 78%);`;
     }
     return `<a class="am-cat-circle" href="?cat=${encodeURIComponent(cat)}" style="min-width:${Math.max(sz+20,80)}px;">
-      <div class="bubble" style="width:${sz}px;height:${sz}px;${bg}">${inner}</div>
+      <div class="bubble" style="width:${sz}px;height:${sz}px;${bg}display:flex;align-items:center;justify-content:center;overflow:hidden;">${inner}</div>
       <div class="label" style="color:${s.label_color};font-size:${s.label_size}px;">${escapeHtml(cat)}</div>
     </a>`;
   }).join('');
