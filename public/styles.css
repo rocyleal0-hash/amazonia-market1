@@ -365,7 +365,10 @@ img { max-width: 100%; }
   .am-topbar-row { flex-wrap: wrap; row-gap: 10px; }
   .am-tb-account, .am-socials { display: none; }
   .am-tiles-row, .am-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
-  .am-ads-cards { grid-template-columns: repeat(2,1fr); margin-top: -40px; }
+  .am-ads-cards { grid-template-columns: repeat(4,1fr); gap: 10px; margin-top: -50px; padding: 0 14px; }
+  .am-ads-card { padding: 10px 8px 8px; border-radius: 8px; }
+  .am-ads-card .t { font-size: 13px; margin-bottom: 6px; }
+  .am-ads-card .lnk { font-size: 11px; margin-top: 6px; }
 }
 @media (max-width: 780px) {
   .am-topbar-row { gap: 8px; }
@@ -377,6 +380,14 @@ img { max-width: 100%; }
   .am-cart-btn { width: 46px; height: 46px; font-size: 22px; }
   .am-tb-menu { min-width: 46px; height: 46px; }
   .am-tiles-row, .am-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+  /* Anuncios: mantener misma estructura que PC pero más compacto */
+  .am-ads-wrap { padding: 0 6px; }
+  .am-ads-hero { height: 180px !important; border-radius: 10px; }
+  .am-ads-cards { grid-template-columns: repeat(4,1fr); gap: 6px; margin-top: -32px; padding: 0 8px; }
+  .am-ads-card { padding: 6px 5px 6px; border-radius: 7px; box-shadow: 0 3px 8px rgba(0,0,0,.10); }
+  .am-ads-card .t { font-size: 10px; margin-bottom: 4px; line-height: 1.1; }
+  .am-ads-card .imgbox { border-radius: 4px; }
+  .am-ads-card .lnk { font-size: 9px; margin-top: 4px; }
   .am-cart-row {
     grid-template-columns: 70px 1fr 60px;
     grid-template-areas:
@@ -396,6 +407,19 @@ img { max-width: 100%; }
 }
 @media (max-width: 520px) {
   .am-tiles-row, .am-grid { grid-template-columns: 1fr; }
-  .am-ads-cards { grid-template-columns: 1fr; margin-top: -20px; }
-  .am-wrap, .am-wrap-wide { padding: 0 12px; }
+  /* Se mantienen 4 tarjetas de anuncios en fila como en PC, aún más pequeñas */
+  .am-ads-wrap { padding: 0 4px; }
+  .am-ads-hero { height: 140px !important; border-radius: 8px; }
+  .am-ads-cards { grid-template-columns: repeat(4,1fr); gap: 4px; margin-top: -24px; padding: 0 6px; }
+  .am-ads-card { padding: 5px 3px 5px; border-radius: 6px; }
+  .am-ads-card .t { font-size: 9px; margin-bottom: 3px; }
+  .am-ads-card .lnk { font-size: 8px; margin-top: 3px; }
+  .am-wrap, .am-wrap-wide { padding: 0 10px; }
+}
+@media (max-width: 380px) {
+  .am-ads-hero { height: 115px !important; }
+  .am-ads-cards { margin-top: -20px; gap: 3px; padding: 0 4px; }
+  .am-ads-card { padding: 4px 3px; }
+  .am-ads-card .t { font-size: 8px; }
+  .am-ads-card .lnk { font-size: 7px; }
 }
