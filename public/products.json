@@ -1,33 +1,5 @@
 [
   {
-    "id": "d434f973430546b489cad3abc91795a9",
-    "nombre": "Mantequilla Mavesa",
-    "precio": 2.2,
-    "imagen": "product_images/9ac83dd9939945c8943b7721fdbe9892.jpeg",
-    "categoria": "VIVERES"
-  },
-  {
-    "id": "435b8c9f11c14ea7841a270fc0febc2a",
-    "nombre": "Aceite Vatel",
-    "precio": 2.99,
-    "imagen": "product_images/32b1c21a7c53449b9d9116b18ebfe0da.webp",
-    "categoria": "VIVERES"
-  },
-  {
-    "id": "0f60c57069904fa996730b48752e0e11",
-    "nombre": "Harina Pan",
-    "precio": 1.5,
-    "imagen": "product_images/d5002dc242984610be8fa63750461bc4.webp",
-    "categoria": "VIVERES"
-  },
-  {
-    "id": "1f057c716e4b431496c271ebf6405cdb",
-    "nombre": "Mayonesa Mavesa",
-    "precio": 0.99,
-    "imagen": "product_images/5afce7bb1ee7490da8f083288c292717.png",
-    "categoria": "VIVERES"
-  },
-  {
     "id": "633d2f96d5d4413da5e964e82d7258dd",
     "nombre": "CHOCOLATE SAVOY 130G",
     "precio": 5.99,
@@ -1867,5 +1839,1356 @@
     "precio": 2.7,
     "imagen": "product_images/b2d300e54ffd4e97bcc0de46f241605e.jpg",
     "categoria": "BEBIDAS"
+  },
+  {
+    "id": "fe1e4d8293ef47f4b4742a0c1248c059",
+    "nombre": "MAIZINA AMERICANA 400G",
+    "precio": 3.63,
+    "imagen": "product_images/d299377d37df45b68eef31205825a0c7.png",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "97a8fe145a944d14b719bdd62d10514b",
+    "nombre": "MAIZINA AMERICANA 200G",
+    "precio": 1.7,
+    "imagen": "product_images/f78dadf3167c4ebe83c6f1e2e160cf7b.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "11f2937eb7144060985180172e9a38f4",
+    "nombre": "MAIZINA AMERICANA 90G",
+    "precio": 1.0,
+    "imagen": "product_images/9c0e7a9000ad4034827d3b1751259519.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "8a52f61480b4496e9876239c3462c094",
+    "nombre": "CREMA DE ARROZ PRIMOR 450G",
+    "precio": 2.4,
+    "imagen": "product_images/28c5f26e47b647adb614d5dd21781e55.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "1e13f87acaf94f8e9b4b080714609079",
+    "nombre": "CREMA DE ARROZ PRIMOR 225G",
+    "precio": 1.78,
+    "imagen": "product_images/42230f4ab0d54e03aba1335244155a9f.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "5005a7846c3442d3b8c4ef513f269d2a",
+    "nombre": "CREMA DE ARROZ PRIMOR 900G",
+    "precio": 2.85,
+    "imagen": "product_images/fbe2145a562d45478eb106cdde6e2340.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "9a5a5006d06142b896d1b72174f19fdb",
+    "nombre": "CHICHA CON LECHE SAN SIMON 250G",
+    "precio": 2.1,
+    "imagen": "product_images/1f52dac8d4774bca847c1d24a6f89406.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "bbcd620fafa04da185ddfcc28c8660c4",
+    "nombre": "CHICHA CON LECHE SAN SIMON 500G",
+    "precio": 4.87,
+    "imagen": "product_images/1189377f9ddf406f886767971d6e06fd.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "b02f73770770497cbd110d0e641661e6",
+    "nombre": "CERELAC 400G",
+    "precio": 8.6,
+    "imagen": "product_images/7d762cc83e4a46059d7365edb9b8cd51.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "e21dad977e40484fb62dc11bebd8915b",
+    "nombre": "NESTUM 225G",
+    "precio": 6.4,
+    "imagen": "product_images/fec0429c8df1479f886435bcbb23e42d.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "56f5b95b59e045e090437e06b24a275c",
+    "nombre": "CREMA DE ARROZ MARY 450G",
+    "precio": 1.1,
+    "imagen": "product_images/e858993dbfba4815ad6c8d9b59526134.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "4e2c2a1105b043929f66474fc0ef05fd",
+    "nombre": "FORORO VALLE HONDO 800G",
+    "precio": 1.2,
+    "imagen": "product_images/3d32c0bc68c34a76a65524685b32bf92.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "46d65eedb1d84596a54d57f6534f3ef7",
+    "nombre": "FORORO VALLE HONDO 250G",
+    "precio": 0.7,
+    "imagen": "product_images/f39b798d842245a6a9730c26abc0eb55.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "c18f9b3f74f24a8db7e132ea14e5d87d",
+    "nombre": "AVENA VICONE 200G",
+    "precio": 0.92,
+    "imagen": "product_images/e7503005f014414e915aac9669a9096c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "ae88e2c5adc04a4e8b35ca05d910200d",
+    "nombre": "AVENA VICONE 400G",
+    "precio": 1.9,
+    "imagen": "product_images/49bdbeca6188457eb37e673fbb3ce526.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "caa82397895148268ff7d04a2083aeb5",
+    "nombre": "AVENA VICONE 800G",
+    "precio": 2.9,
+    "imagen": "product_images/9010e50ca75f4faba0407c3e26f2dce1.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "c51a488f5b044898ad8b6bba5df46659",
+    "nombre": "AVENA QUAKER 200G",
+    "precio": 1.1,
+    "imagen": "product_images/00ecb6b4f2e14006bd9d010491d127ae.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "7de8ec34eecf45a8ad4f9a883593cc32",
+    "nombre": "AVENA QUAKER 400G",
+    "precio": 2.2,
+    "imagen": "product_images/ac382607331146ad89d839f561fda544.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "605dfecbe1a2499ab37ea4bc1e916a18",
+    "nombre": "AVENA QUAKER 800G",
+    "precio": 4.0,
+    "imagen": "product_images/15262894f47440b7a644395ff8188975.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "8265373ba2134826a705162b9a3a7c68",
+    "nombre": "CAFE BRASIL 400G",
+    "precio": 8.87,
+    "imagen": "product_images/5a1f1a5483534ebbb67eebb7d66b4a3a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "9dfcfda8459c4bc2aaa3960cd7ef5630",
+    "nombre": "CAFE AMANECER 500G",
+    "precio": 7.65,
+    "imagen": "product_images/34d1fde7a2444fbab61239bb7a79ab96.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "e28019401e2f4cb1a8cf963763b9f747",
+    "nombre": "CAFE SELLO ROJO 125G",
+    "precio": 1.7,
+    "imagen": "product_images/db11ebd905dc4e73be4f182b1a8e4aa8.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "e96a27c97c8b4014a12f09d89217c52f",
+    "nombre": "CAFE ALVARIGUA 100G",
+    "precio": 1.69,
+    "imagen": "product_images/152951397aa14eb593cad7ca216d8b50.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "a7420d1f42974f97a15705b3feff55ea",
+    "nombre": "CAFE BRASIL 100G",
+    "precio": 2.2,
+    "imagen": "product_images/cf8e4d96103e45be852f8824d2f15b0c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "39038d879f2e499788da51951bcbc635",
+    "nombre": "CAFE BRASIL 200G",
+    "precio": 4.2,
+    "imagen": "product_images/c1789aa4d4ab46f7ab6efdf5e50835e4.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "d4d7c4bba9aa40aa814d4e47e38259e7",
+    "nombre": "CAFE AMANECER 200G",
+    "precio": 3.05,
+    "imagen": "product_images/fdcf954f0ac74c38ad78001da32826c7.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "1118e221f6c545f6bb185bbfa4111056",
+    "nombre": "CAFE AMANECER 100G",
+    "precio": 1.7,
+    "imagen": "product_images/1f52fe3ee179406fb12aa93f32f97ab5.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "76842f662a634ad9b32c82bdf70f6e9c",
+    "nombre": "CAFE FAVORITO 50G",
+    "precio": 0.76,
+    "imagen": "product_images/6883dcaf61694b4985c8d46ddb5410f1.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "9ac87ef15289481a9e055cbf29521c0c",
+    "nombre": "CAFE SELLO ROJO 50G",
+    "precio": 1.56,
+    "imagen": "product_images/3fff2e1767514966a7a111ad7b245328.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "358cbc1624cb4044aa40369c42a89307",
+    "nombre": "LECHE CAMPESTRE 125G",
+    "precio": 3.1,
+    "imagen": "product_images/2db7d1b79f6f4ba6b924772530efb65c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "1d7424ef588249fe86146dbc5d446ad8",
+    "nombre": "LECHE CAMPESTRE 400G",
+    "precio": 9.7,
+    "imagen": "product_images/e4a429f0aa364674ade41336fdb9313c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "8bf5890cf7284be68c80392851d66da6",
+    "nombre": "LECHE CAMPESTRE 900G",
+    "precio": 18.62,
+    "imagen": "product_images/6ad77fe89d2b4197add41257264c4e9f.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "d4126083914b487da7022211d0431614",
+    "nombre": "LECHE MONTAÑA FRESCA 125G",
+    "precio": 3.5,
+    "imagen": "product_images/d7185ac2a12a4df29fc691bc6a3d22a0.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "8c52b8f8555c43a7946b387226d1fea1",
+    "nombre": "LECHE MONTAÑA FRESCA 400G",
+    "precio": 4.5,
+    "imagen": "product_images/8e661560a8cc4444bbcb143540aa0466.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "1fc5df63565a41e0a43060045fd6c824",
+    "nombre": "LECHE DOBOM 120G",
+    "precio": 1.85,
+    "imagen": "product_images/bf2c61a577ef46388cf103c653f17b9f.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "8ab1a7b4a3a74d81b9884fa97a2f279b",
+    "nombre": "LECHE SAN SIMON 125G",
+    "precio": 2.85,
+    "imagen": "product_images/5b39679d60da4eb1b7d918f1f9e94970.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "e59654ecface4582bebc2d4618b524bb",
+    "nombre": "LECHE SAN SIMON 400G",
+    "precio": 8.55,
+    "imagen": "product_images/9ec8331b51aa49e1bead56b652ec71ae.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "d1b1ca3cfcb3423887e741e91de74456",
+    "nombre": "LECHE SAN SIMON 900G",
+    "precio": 19.6,
+    "imagen": "product_images/f7e5be8993fe42f4bd14ca41cc944632.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "f1ab10a0d664494abd56f2066b6c1546",
+    "nombre": "HARINA MIMASA 900G",
+    "precio": 1.24,
+    "imagen": "product_images/7754da369dbb4d1b89988d203f93adc7.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "caabd57f0b824cf49935bdd897f44946",
+    "nombre": "HARINA PAM 1K",
+    "precio": 1.66,
+    "imagen": "product_images/48b2a89b9fec4bf7a3cb4c6663187347.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "35b6bc633e51497e890d0387c13d7127",
+    "nombre": "HARINA KALY 900G",
+    "precio": 1.23,
+    "imagen": "product_images/5fe670d97a9d42eb92b7daeee1d0c9f0.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "91b29af8814d4bcab147903fe5f22e1c",
+    "nombre": "HARINA SANTONI 900G",
+    "precio": 1.26,
+    "imagen": "product_images/529df2107b1847e3a42f1414fa0c5108.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "1e0fc7d779a542498c3e97180eb2f17a",
+    "nombre": "SALSA DE TOMATE PAMPERO 198G",
+    "precio": 1.8,
+    "imagen": "product_images/4b99ee5532cc4c8781e7d320ec67c234.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "29e99ff5fc5040d5ba810bdb017ebe36",
+    "nombre": "MAYONESA FRITZ 850G",
+    "precio": 8.85,
+    "imagen": "product_images/e73db56ac2584da1aa2fea04fd1f18e1.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "0ced24e5a26245a59e3875227aa148b0",
+    "nombre": "QUESO DE AÑO FRITZ 180G",
+    "precio": 4.8,
+    "imagen": "product_images/9a354a35a0ba4921ab17896f05dfc504.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "bc76816dd33e4be3997224e86a2cd0a9",
+    "nombre": "ARROZ PRIMOR",
+    "precio": 2.0,
+    "imagen": "product_images/ffd4f83d03c44bb8bc31b0d8ac10e694.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "21b1244e9ddb4f8e8989629c60d8e8f8",
+    "nombre": "ARROZ MASIA 1K",
+    "precio": 1.71,
+    "imagen": "product_images/bad0cfc3da9c45b3abc95bbfb722355f.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "01ff583a65dd4415a2cf67cbaaab462e",
+    "nombre": "ARROZ MARY TRADICIONAL 900G",
+    "precio": 1.25,
+    "imagen": "product_images/e9e4a22360794423a59bd5c52fdee900.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "463ff47b009f4accbefb59e94659c13d",
+    "nombre": "ARROZ AGUA BLANCA 900G",
+    "precio": 2.13,
+    "imagen": "product_images/08ad69f7fa4348bfaee039c2ba52b08d.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "4dbce5b8f2d44a82aa03ccf3cabaec87",
+    "nombre": "SAL 500G",
+    "precio": 0.3,
+    "imagen": "product_images/ef975d1f924f429bbea384e09dfbc984.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "1a484247c89f4301b2bf69ed74060da0",
+    "nombre": "SAL 1K",
+    "precio": 0.5,
+    "imagen": "product_images/b197d3faa7d9446394d2d8a6beae615a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "10da95963965453f9ac94320d94362e8",
+    "nombre": "HARINA TRIGO LEUDANTE LA PAMPA 920G",
+    "precio": 1.58,
+    "imagen": "product_images/cdc6643847194fd7a4a0f3bfe104cec1.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "da4df389891b48ee80f3983509576528",
+    "nombre": "HARINA TRIGO TODO USO LA PAMPA 500G",
+    "precio": 0.95,
+    "imagen": "product_images/0678a13418cc4124b54f4adf4c4fb27c.webp",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "83aa00f3dfdf40938db0c345804c0ace",
+    "nombre": "HARINA TRIGO LEUDANTE LA PAMPA 500G",
+    "precio": 1.0,
+    "imagen": "product_images/257b747295b84cefa62d5bdf76924698.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "f1b5300e3f614a4496a1ce560b385f38",
+    "nombre": "HARINA TRIGO TODO USO MARY 900G",
+    "precio": 1.1,
+    "imagen": "product_images/113cdd7310a3466ab71a2a79eab579ec.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "e6f02cde47cc4fa0b710cff2934d959a",
+    "nombre": "HARINA TRIGO LEUDANTE MARY 900G",
+    "precio": 1.1,
+    "imagen": "product_images/10f57ea7440a4b73a0388ff9073e2832.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "365d71c077324d5d83544d941353e17f",
+    "nombre": "AZUCAR 1K",
+    "precio": 1.89,
+    "imagen": "product_images/a9890e9773c944e1a8d5eb1a365d4f0b.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "f75ad7c5d2034fa39144df181d4d5713",
+    "nombre": "PASTA LARGA MULTLU 500G",
+    "precio": 1.2,
+    "imagen": "product_images/158e03ab5f4c485b8c7538cc7ff7587e.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "98411b3c96404978a0b2d458df008a6e",
+    "nombre": "PASTA CORTA CAPRI 500G",
+    "precio": 1.31,
+    "imagen": "product_images/321de6975ee24e23a1fad9ad212c2942.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "5501ca73b3f44979979e1fd9618d2ecb",
+    "nombre": "PASTA CORTA MARY 500G",
+    "precio": 1.37,
+    "imagen": "product_images/385cf32865c14bb2a34385f00a1a49c9.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "0e054f3a14b745f5963cc10e752cb8e2",
+    "nombre": "PASTA LARGA MARY 500G",
+    "precio": 1.48,
+    "imagen": "product_images/ccae9d20f18e402d879370d963280115.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "777636fc28ed4be1b1e9db211f21d4ef",
+    "nombre": "PASTA LARGA BANETTI 500G",
+    "precio": 1.34,
+    "imagen": "product_images/d8224794663b401fb9acbdf81317e532.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "be1aa65dd01a42bdb17584f5382a12f7",
+    "nombre": "PASTA LARGA PRIMOR 1K",
+    "precio": 2.76,
+    "imagen": "product_images/853a66ec2938441fa59a0c22a4e27e5b.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "c29c91ba3c06407ca2b496af3419270c",
+    "nombre": "PASTA LARGA MARY 1K",
+    "precio": 2.3,
+    "imagen": "product_images/8a3479697f104fc9bf9eed996538670a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "0b7d62d2324043cb8d13277a16a26800",
+    "nombre": "PASTA CORTA MARY 1K",
+    "precio": 2.8,
+    "imagen": "product_images/666c7779cbf3407da415b552252b0954.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "6bd17ceaccdc4608b649104d57496f4a",
+    "nombre": "PASTA CORTA PRIMOR 1K",
+    "precio": 2.76,
+    "imagen": "product_images/dc2d4e895fc24178a7a133d21d36bbcb.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "6c80aa87abd148ae9a9ce087d4eb8560",
+    "nombre": "PASTA CORTA SINDONI 1K",
+    "precio": 2.33,
+    "imagen": "product_images/6c1ff80ba227491a8da8fc975fb802f8.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "0f532fc9b1c8433cb30329b6eba52e8e",
+    "nombre": "MANTEQUILLA MAVESA PQ 250G",
+    "precio": 1.93,
+    "imagen": "product_images/286c7c75e7994214b7576a84cd9f9e3e.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "35b9b040b07748338478483370337b92",
+    "nombre": "MANTEQUILLA NELLY PQ 250G",
+    "precio": 1.65,
+    "imagen": "product_images/0291d75e8deb4dba88fb0a4a40e06d0e.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "d0c80105038c4451aa268974074e36cf",
+    "nombre": "MANTEQUILLA NELLY MD 500G",
+    "precio": 3.23,
+    "imagen": "product_images/bb0cb606ebc7466cbad796eceda9a5db.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "7d2995bdf4214fc899cd36cf99d32464",
+    "nombre": "MANTEQUILLA MAVESA MD 500G",
+    "precio": 3.5,
+    "imagen": "product_images/d46ca14544134df78fbbfee51b06e90e.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "1d05442ad2a24450afc7c8c04fcf4167",
+    "nombre": "MANTEQUILLA MAVESA GD 1K",
+    "precio": 6.6,
+    "imagen": "product_images/239fde1c490040a9bc1528f1d8dc48d9.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "55d0a522b8454995ba4008bfa95b92d1",
+    "nombre": "MAYONESA MAVESA PQ 175G",
+    "precio": 2.49,
+    "imagen": "product_images/249fdc28d13e4abf8458f5f42e0b7b05.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "e87684c257404374b1cee51bf4e479e7",
+    "nombre": "MAYONESA MAVESA MD 445G",
+    "precio": 5.0,
+    "imagen": "product_images/39a94133fad14ad59acfc415cd7e78b1.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "ef890cf6ebe6416cab8171f153e7b087",
+    "nombre": "MAYONESA MAVESA GD 910G",
+    "precio": 9.5,
+    "imagen": "product_images/6d6652db49814cd5b7fd5f5fea534e31.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "3460a9aff3db413891215f81d55fa410",
+    "nombre": "PASTA PASTICHO 250G",
+    "precio": 2.4,
+    "imagen": "product_images/9a19d9129f644bf1bf75c862295d0e44.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "7c5390a9ba2d4b7ba32d1ff0ca586139",
+    "nombre": "LENTEJAS 400G",
+    "precio": 3.0,
+    "imagen": "product_images/65e79f75a5294807b6e291f70fbbb9c9.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "dc86e407967148fa8e9f5732a85f63bf",
+    "nombre": "PASTA PASTICHO SINDONI 250G",
+    "precio": 1.9,
+    "imagen": "product_images/466555dab6a44c20bb3e172ff186c46f.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "29a642bc0c97419ea4d012539d14228c",
+    "nombre": "CARAOTAS ROJAS 400G",
+    "precio": 3.1,
+    "imagen": "product_images/02340ee634de405b83e8c018c89c874f.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "11d558b87b014abb96fad3183c7f2cc1",
+    "nombre": "PASTA INSTANTANEA BANETTI 65G",
+    "precio": 0.8,
+    "imagen": "product_images/9356e0cd4a814029b0a993869e8bb651.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "f3d7990b74bf460a8f0ae88504edf3e0",
+    "nombre": "CARAOTAS NEGRA ELITE",
+    "precio": 1.9,
+    "imagen": "product_images/7052f301ff5f4a31baf641b0048f75b8.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "2bea61c4d00147349fd6829f0e98b070",
+    "nombre": "ARVEJAS VERDES PARTIDAS AURORA 400G",
+    "precio": 1.7,
+    "imagen": "product_images/93a962a67b124dc0ad3efd4391e5dbd9.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "f6730a6914304be1a28923166173074d",
+    "nombre": "MAIZ PARA COTUFAS ALVARIGUA 400G",
+    "precio": 2.0,
+    "imagen": "product_images/29ad2523acda4a5c866b2395eccdd606.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "eaee564b8a304c5181355a0ac4b0ca39",
+    "nombre": "QUINCHONCHO VICONE 500G",
+    "precio": 2.16,
+    "imagen": "product_images/34566ad761c245d7b4a696822096cd13.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "9f35a53307e5454a9a97986541a137ce",
+    "nombre": "RIKESA CHEDDAR 200G",
+    "precio": 5.34,
+    "imagen": "product_images/2810b50968974523ba595466a6b769ee.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "2c6f02a0cfc443eca8f828e8be59d4bc",
+    "nombre": "MOSTAZA HEINZ 113G",
+    "precio": 2.9,
+    "imagen": "product_images/8ceba50b47414cf3bee951b4640bbf5c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "f00e9acc5a7a491997fd7cb7a84a6da8",
+    "nombre": "CARAOTAS BLANCAS MARY 500G",
+    "precio": 3.56,
+    "imagen": "product_images/99154206b2c2483e8f99bbb17afb0839.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "fc2bf93fe44c4ad99586ef8af524c71c",
+    "nombre": "MOSTAZA HEINZ 195G",
+    "precio": 3.2,
+    "imagen": "product_images/19e0237930814e45ae36b231dc86b777.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "4475a483f13d48f9ad0ef7e427edd973",
+    "nombre": "SALSA SOYA VAINICOOL 180ML",
+    "precio": 1.6,
+    "imagen": "product_images/0b4839b544b74be8aec15f236f4ddf6f.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "e9df81f1386a4e8e935adb4001de92df",
+    "nombre": "SALSA SOYA LA CHINA 150CM",
+    "precio": 1.7,
+    "imagen": "product_images/0741e93f973740ab8033e3a4f7cacb44.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "656d3d7a56824ef7ab90fd9a0b75f331",
+    "nombre": "SALSA DE SOYA LA CHINA 300CM",
+    "precio": 3.1,
+    "imagen": "product_images/6dbf73f11e2c43cb9157f857e308b85e.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "1a03c42f269541c3b51004d226a18477",
+    "nombre": "MOSTAZA HEINZ 490G",
+    "precio": 5.8,
+    "imagen": "product_images/d2d3e13b168e49fbb8784e872a222a29.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "d526ea05ec8c406fa576a8b5f3ae4b49",
+    "nombre": "ACEITE 220ML",
+    "precio": 0.93,
+    "imagen": "product_images/5e55555b91b24e27b8f2b06f217bd5fb.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "fce88bcc8f9f40d2bb3450f33adc6323",
+    "nombre": "ACEITE 450ML",
+    "precio": 1.85,
+    "imagen": "product_images/385d81621ab44839944869d3e009fb38.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "5860acc042e14d75beb34031fbcf49ee",
+    "nombre": "ACEITE VATEL 500ML",
+    "precio": 2.32,
+    "imagen": "product_images/7bab89318f72457eae71542860420252.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "c4f976a20ee34da398e108ef2ef26b55",
+    "nombre": "VINAGRE MAVESA 500ML",
+    "precio": 1.66,
+    "imagen": "product_images/55f3ed7bff5d44d0a12eb021262d024c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "8d31e2be4bc946e4aae4ab6fdb480c73",
+    "nombre": "ACEITE 900ML",
+    "precio": 3.71,
+    "imagen": "product_images/0137561d5b9f4ee19ab28d3b6378ee5e.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "e604725c6dec4f3eafee3292837700dc",
+    "nombre": "ACEITE VATEL 1L",
+    "precio": 4.9,
+    "imagen": "product_images/0a2d4d9ffdf440bf8f5dc085451240b5.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "c7e35335c4544d3d9ff4dd6a97400066",
+    "nombre": "ACEITE MAZEITE 1L",
+    "precio": 8.15,
+    "imagen": "product_images/fba76a7e32a74a99b9bef6b35593c586.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "0790d9cc4e124c1d965fd1586fe2ba0e",
+    "nombre": "VINAGRE MAVESA 1L",
+    "precio": 2.8,
+    "imagen": "product_images/beb42b4a5259469c98c09a2f826e8bae.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "b2f39d5d6e454433b46b84b6272ad7f6",
+    "nombre": "ATUN MARGARITA 140G",
+    "precio": 3.8,
+    "imagen": "product_images/6a7dcd8854384029bb145340fd4f94fe.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "49bd30acf89e41759e67398fa2342c7a",
+    "nombre": "SARDINA MARGARITA 60G",
+    "precio": 1.45,
+    "imagen": "product_images/5a22f4bdd2c441069a08e10f8546332a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "12b3a2568d0146fdb73499cb82ecaf56",
+    "nombre": "ATUN BEEN 170G",
+    "precio": 2.2,
+    "imagen": "product_images/1572a85925ef4573873e16687b4059d2.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "150bb285fbb549c0a1d658bbbd4dfe4c",
+    "nombre": "ATUN FRESH SEA 140G",
+    "precio": 3.6,
+    "imagen": "product_images/4993008b03df4e32b1393d0d7d699c55.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "b7fe28657d5d4545b1d70537c986c092",
+    "nombre": "SARDINAS OMEGA 170G",
+    "precio": 1.26,
+    "imagen": "product_images/a28b0f01520e4365b756246e305b4cb2.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "cb86f6b25d4b4513bb2f8359f7327d1e",
+    "nombre": "DIABLITO 54G",
+    "precio": 3.0,
+    "imagen": "product_images/c53d6921d50d447f881ee96c46d88e98.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "e2c84bb495034424977c77fb3bce09f4",
+    "nombre": "CAFE FAVORITO 100G",
+    "precio": 1.8,
+    "imagen": "product_images/a05712532b0443a991c1e8e0f911503e.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "fd19072c8f1c4864b88f49839971a009",
+    "nombre": "HARINA TRIGO DULCEMAR LEUDANTE 1K",
+    "precio": 1.6,
+    "imagen": "product_images/ce464afb721f4c0fb45673cc4d963680.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "02f7cad374204b849edec0536bb0f702",
+    "nombre": "HARINA MAIZ MARY 1K",
+    "precio": 1.51,
+    "imagen": "product_images/e276832a7a384b8d950339449f6f0d58.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "f780702b1bf148cba4350041d2f57a8c",
+    "nombre": "CERELAC 100G",
+    "precio": 2.5,
+    "imagen": "product_images/8087936cbfc84a389089c1dc6d727438.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "981275ca4ca24e67b364d49b0e11bbf6",
+    "nombre": "FORORO VALLE HONDO 400G",
+    "precio": 1.05,
+    "imagen": "product_images/77cb9d50381e43828e7a0908c4127472.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "8b99df94412a4763af8b0a56ce4a0754",
+    "nombre": "MOSTAZA SOBRE LA CONSTANCIA 80G",
+    "precio": 0.9,
+    "imagen": "product_images/21fde61f37a844fb9bb22af383585d5a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "384c868e03e7434ab0b5f86a3de4bfbb",
+    "nombre": "TRIFOGON 2,3G",
+    "precio": 0.11,
+    "imagen": "product_images/b92809743a7246869c42edf2d8f32ae2.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "feafa412ab02426d8512076736c6f778",
+    "nombre": "SOPA MAGGI 62G",
+    "precio": 1.77,
+    "imagen": "product_images/da24b4b70f064b7fa872dc16935f9fbf.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "a747decd151544fe931fbaa86f86959e",
+    "nombre": "CAFE ALVARIGUA 200G",
+    "precio": 3.38,
+    "imagen": "product_images/4f73c918dce94fc3a3fddf446b993fda.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "f3bf60ded79f4cd5864a990eb89b820c",
+    "nombre": "ARROZA MARY DORADO 800G",
+    "precio": 1.67,
+    "imagen": "product_images/4d76bdaac412411ebe35707295104051.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "fa094c7de0284ee7bb5a7a3c5965c8c8",
+    "nombre": "ARROZ SANTONI 900 GR",
+    "precio": 1.8,
+    "imagen": "product_images/fcc2320d112a4d60ab187e646d85d097.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "4b709ab70d3342eaa986bfa5457ea708",
+    "nombre": "GELATINA SOBRE YELIGHT 9G",
+    "precio": 1.69,
+    "imagen": "product_images/58b74447cab741dba2461cb7af9d981c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "072eedac885e451cb0ccbaf4a5e8f7ee",
+    "nombre": "NESTEA TE FRIO 90G",
+    "precio": 2.2,
+    "imagen": "product_images/5604d8337ba0486daf2d24569d445c77.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "c91ad5076975421290262d35d5234386",
+    "nombre": "GELATINA WYNCO ZERO 12G",
+    "precio": 0.97,
+    "imagen": "product_images/b48739a372f6433087a019020bc17798.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "4070e89589a24a499aebae7d7379f5b4",
+    "nombre": "PAPELON SABOR A LIMON 115G",
+    "precio": 1.73,
+    "imagen": "product_images/a16529e7c0fa4a5ebeaa14aacc7c70df.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "7d4ffe7223eb4e28b5919b34586d4f91",
+    "nombre": "MANTEQUILLA PURISIMA SIN SAL 200G",
+    "precio": 6.4,
+    "imagen": "product_images/df3514c0186448e790dc6edc9416f47d.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "fbcb7b31a74542038f98c6d427b05d64",
+    "nombre": "MANTEQUILLA PURISIMA CON SAL 200G",
+    "precio": 6.8,
+    "imagen": "product_images/da11b0b87bcc4925a27a2e0b3a82ac79.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "96e63b597cca4805ab93b1c0c3b9e618",
+    "nombre": "CARAOTA NEGRA 400G",
+    "precio": 1.43,
+    "imagen": "product_images/e25563c7224441a69873aaf9d6901993.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "7c06dbd179b2469899ebab1a85f1c9b6",
+    "nombre": "GELATINA YELIGHT SIN AZUCAR 12G",
+    "precio": 1.63,
+    "imagen": "product_images/22ac4a11b4ff4b20ac944135f9dc4d5e.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "d40e54c1d4e5480ba907daa57ef60e57",
+    "nombre": "LECHE DOBOM 200G",
+    "precio": 4.05,
+    "imagen": "product_images/aadbc8befe104fc99c5e81d385cc92a0.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "f4029231548649f9a713246578ea8192",
+    "nombre": "HARINA DE AVENA 400G",
+    "precio": 2.5,
+    "imagen": "product_images/893d016eaabd4b6fab3e61f9c2b99639.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "8ba3d7d2390c4c39a3ac4f85ac7c87cc",
+    "nombre": "CAFE FAVORITO 200G",
+    "precio": 2.71,
+    "imagen": "product_images/f4174e4882b946bbbfffabc296a3fec5.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "bdb739e386fc42c892fc5bb5f24421f0",
+    "nombre": "PASTA BANETTI FIDEOS 500G",
+    "precio": 1.65,
+    "imagen": "product_images/bec33c209744402c8854c5dceb15763a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "38adfdabee564046a0509704bed23741",
+    "nombre": "MEZCLA CACHAPA JUANA 400G",
+    "precio": 3.46,
+    "imagen": "product_images/90af79cc3b1c4cd5a92b44ef0cb92e2d.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "9ad5ae87875a4fb1877912f82f495a3d",
+    "nombre": "FIDEOS CAPRI 250G",
+    "precio": 1.4,
+    "imagen": "product_images/5a86ff4d3491493da37cc104dcf79236.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "866bffa0200d448ca0c72e487e44495c",
+    "nombre": "GELATINA TIGO 30G",
+    "precio": 1.0,
+    "imagen": "product_images/c83ff2133c984fafa586ed064f65f584.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "e66416adbbc94c1498e7af45a562882f",
+    "nombre": "ACEITE AGROIL 500ML",
+    "precio": 2.56,
+    "imagen": "product_images/ca39bcd0af5845038512ed8d4449eee5.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "ea2482e445e64da79d36b5311d4371cb",
+    "nombre": "LECHE EN POLVO LA CAMPIÑA 125G",
+    "precio": 3.0,
+    "imagen": "product_images/91f72a4d165949ccb834a68905b2e890.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "de0b5147e6294040b836f63a8ea65637",
+    "nombre": "GUISANTE OSOLE 280G",
+    "precio": 1.8,
+    "imagen": "product_images/ad3cc72546c84ad79c84206aac0f8eea.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "9fb1bcc7194147fc91584b47e90b6532",
+    "nombre": "LECHE SUR DEL LAGO 125G",
+    "precio": 2.3,
+    "imagen": "product_images/3b3fb9404d914b4f8f0894ad56788995.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "6a98fb5ff8294f889e38e6fc2e42de43",
+    "nombre": "HARINA MASIA 900G",
+    "precio": 1.4,
+    "imagen": "product_images/d0518f17e4f64a4f89add8e7d8884587.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "a161782fb89946b7be68516709c910dc",
+    "nombre": "ACEITUNA RELLENA 125G",
+    "precio": 1.7,
+    "imagen": "product_images/7e2c3a45dbca40d3a7140c7ad1e2e358.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "c250ed937ab74488a93b209f12e72264",
+    "nombre": "ALCAPARRAS 125G",
+    "precio": 1.25,
+    "imagen": "product_images/0f43f45277ff4caa8da0eebddc27117f.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "7c729f4ebe7b4d71888ca99c88bf4cbd",
+    "nombre": "UVA PASA 125G",
+    "precio": 1.35,
+    "imagen": "product_images/54afe5ec64f247cbbcb0cf08af5cd7f7.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "639cb816c9bd4d858a55a2f14e4d38a6",
+    "nombre": "LECHE LA CAMPIÑA 800G",
+    "precio": 18.26,
+    "imagen": "product_images/c31614badc524fe29106f756740eabfc.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "2e8dbb68b6764d5299f7dc98fac68077",
+    "nombre": "CAFE AURORA 100G",
+    "precio": 1.4,
+    "imagen": "product_images/aaaaa7e2cc044f5bb5058d18753ceb55.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "27a7ce1399524032a20aa8403bcc4e08",
+    "nombre": "CARAOTAS NEGRAS AURORA 400G",
+    "precio": 1.45,
+    "imagen": "product_images/0de61444765d4773960d07ab6efa4353.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "77df88e5493c4dedb7fe202ed0e60e92",
+    "nombre": "LENTEJAS AURORA 400G",
+    "precio": 2.13,
+    "imagen": "product_images/847bfcc89a44403291f1a7c00456ea23.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "6a22a9bdec954e928c85e01c88dd5af6",
+    "nombre": "PASTA INSTANTANEA BANETTI",
+    "precio": 2.2,
+    "imagen": "product_images/bc4524a7d18d49c69fdb9040231ba86c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "efd7da4ba3034b5ea1897dc7c830b496",
+    "nombre": "MAIZ DE COTUFA AURORA 400G",
+    "precio": 1.9,
+    "imagen": "product_images/9255d304d9f148dea1d26b07fe5b49b4.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "9db24476ee0643d5b9e858510b58d637",
+    "nombre": "CAFE AURORA 200GR",
+    "precio": 2.8,
+    "imagen": "product_images/27660244736d428cbfd7f49e4dd657fc.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "804eb9bc68df4a779ad90198777d5ab5",
+    "nombre": "ACEITE AMANECER 500ML",
+    "precio": 2.6,
+    "imagen": "product_images/d3ef0c72bc684b97ae6f5cad94b1d66c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "dbd20ac73bd842389d3e7d66a3dc087b",
+    "nombre": "SALSA DE AJO LA MARQUESA 150ML",
+    "precio": 1.56,
+    "imagen": "product_images/06e4424f4f5845eeb434efed36bd5e9f.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "ebe1550baa19448a9605e45541e827f8",
+    "nombre": "MEDIO BULTO HARINA PAN",
+    "precio": 17.0,
+    "imagen": "product_images/7cca438c00704e9db5d47f574df7362a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "cb5c0a67110849459d6c783202c3e9af",
+    "nombre": "COMINO",
+    "precio": 0.45,
+    "imagen": "product_images/1fd35ad8d9f7423fb85b0fbe81eed400.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "ff07dfab97de4bf88ab2af2438cbb089",
+    "nombre": "SABROSEADOR SOBRE",
+    "precio": 0.45,
+    "imagen": "product_images/1c0df769219c4deb8faa6a8e07605de5.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "5940939ad930433698bc1e722b7f8a18",
+    "nombre": "SAZONATODO MAGGI 200G",
+    "precio": 4.9,
+    "imagen": "product_images/8d73031a30e243d2bd5ef6dd0def28e6.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "982b5ad7c92f43be96f1764da293dd40",
+    "nombre": "CREMA LECHE NESTLE LATA 300G",
+    "precio": 5.32,
+    "imagen": "product_images/600939253a6c4213a46b422e89838ced.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "e87a6b7c172749c4b801c3b954ad59b1",
+    "nombre": "COMPOTA GERBER 113G",
+    "precio": 1.73,
+    "imagen": "product_images/ad8925ee81ff489fad93b0d9c147290c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "3cd8588faca04a42bb587399ad928ca2",
+    "nombre": "ARROZ MARY PREMIUM",
+    "precio": 1.8,
+    "imagen": "product_images/51ae06464c5a460bbae28daedad1723c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "d7c3db11588442758c38b89f1edf2937",
+    "nombre": "LECHE AMANECER 125G",
+    "precio": 2.8,
+    "imagen": "product_images/74b868a1bd8f4ff8ade399e81b72fd38.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "079b10ecf5834ca781647d0b0c5cf7ff",
+    "nombre": "HARINA DE TRIGO TODO USO DULCE MAR",
+    "precio": 2.11,
+    "imagen": "product_images/8c5f9ee645504eae838efb096acd7d42.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "7646d84e9fb84b7b9edc3aec3629cb08",
+    "nombre": "FLAN ISABELLA 100G",
+    "precio": 3.7,
+    "imagen": "product_images/7dfd51fff0f047f2984a414e0f6b0b4a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "2e455a9489b74477861db1a66536d8fd",
+    "nombre": "LECHE DOBOM 400G",
+    "precio": 6.0,
+    "imagen": "product_images/6fc4a28034c24c61b945276416db980a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "9c0836f531e4493d8379790f30519960",
+    "nombre": "PASTA CORTA PRIMOR 500G",
+    "precio": 1.35,
+    "imagen": "product_images/4d9149485eed4bd0af194c3e3f657af1.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "66908e4c761c4f41bc489b880e41727b",
+    "nombre": "PASTA PRIMOR LARGA 500G",
+    "precio": 1.4,
+    "imagen": "product_images/0f76d7c8fa83421c8f9c00f7bd7fdfc5.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "63130c29836e44f482e539a330cf511b",
+    "nombre": "SOBRE SALSA BECHAMEL 50G",
+    "precio": 1.6,
+    "imagen": "product_images/7d6bcc703f3247e69c39c8b9bb64e5c2.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "80d37e0cb26e40fd88a0d4d8456c15de",
+    "nombre": "CALDO MAGGI 9G",
+    "precio": 0.24,
+    "imagen": "product_images/ab873adbcffd44cc8fbf5066d39f3d83.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "80c920e372184959b18bb466d1856eb9",
+    "nombre": "ACEITE AURORA 500ML",
+    "precio": 2.6,
+    "imagen": "product_images/704d97adab8b464fa655ab75eaf78417.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "09a22caeabb449f09854c8243980abbb",
+    "nombre": "HARINA DE TRIGO RIBIN HOOD LEUDANTE 900",
+    "precio": 1.51,
+    "imagen": "product_images/aa254f98138d4d4f8855cbc74b78ceae.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "511892aa810b4d84bcbbe4e1aac0b725",
+    "nombre": "HARINA DE TRIGO ROBIN HOOD TODO USO 900",
+    "precio": 1.4,
+    "imagen": "product_images/50aa39bfa3cf4ea7b175c739f90f318b.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "fab1e3775ceb4270876054d7f9b84ace",
+    "nombre": "SOPA INSTANTANEA DUDOMI",
+    "precio": 1.45,
+    "imagen": "product_images/84f6ef4b96e244c79e9221abad197063.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "c58efcd5530c4f7fad674617a12be089",
+    "nombre": "ARROZ FAVORITO 1K",
+    "precio": 1.78,
+    "imagen": "product_images/5f8536fcae7a4ab6869ba73ba1f2e0bb.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "18a3f02d71d84b0688cdb739d4022c31",
+    "nombre": "GUISANTE GARDEN 425G",
+    "precio": 1.8,
+    "imagen": "product_images/c5a5a4af2f46408791f4abccd0bd593a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "d6d25e77817c48fc8778e7ed2e67b553",
+    "nombre": "VINAGRE INSAVE 500ML",
+    "precio": 0.85,
+    "imagen": "product_images/c8e399c1f70f4e27bf3c943f048557d9.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "f100effbdb2b4d60af999ed506c22fc7",
+    "nombre": "VINAGRE INSAVE 250ML",
+    "precio": 0.65,
+    "imagen": "product_images/294c5240110a4e0a9a372d25be775b33.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "4922a1f0cf7942e09dabc24c3408d28a",
+    "nombre": "LECHE CAMPESINA 800G",
+    "precio": 14.5,
+    "imagen": "product_images/f282750b2cd349f88dfb314146a4657b.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "eb2ec8dc13a44b94b70bdccbab5e2569",
+    "nombre": "ADOBO MAGGI 35G",
+    "precio": 0.96,
+    "imagen": "product_images/4b13c308057f4903b0c185b71a1da608.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "dc79a0335e214a869f6939132f0c1c04",
+    "nombre": "COMPOTA GERBER 100G",
+    "precio": 2.15,
+    "imagen": "product_images/faaa194202554274918650bffa6141c4.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "5ccdee08fd2241adaad0f4400b16d37d",
+    "nombre": "PASTA DELLA NONNA CORTA 1K",
+    "precio": 2.83,
+    "imagen": "product_images/df2905a134d741069906d18711d5fe93.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "6965d08429a2469492d82b4a4210dab2",
+    "nombre": "PASTA DELLANONNA LARGA 1K",
+    "precio": 2.84,
+    "imagen": "product_images/f89fcf99037f460fa42f782754850897.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "be9a5b8aea444936a33c4d11ac88a299",
+    "nombre": "HARINA SEMILLAS NUTRITIVAS 500G",
+    "precio": 3.09,
+    "imagen": "product_images/e7a371965d044f7b9551ae5a2897200d.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "fd7b992585714d8d8f0c8ff8f3df60dd",
+    "nombre": "ARROZ AMANECER 900G",
+    "precio": 1.65,
+    "imagen": "product_images/db69c78dba974d6083dc4b85467237e6.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "ae8626ab68484781b4798fd80968f7c7",
+    "nombre": "ARROZ MARY SUPERIOR 900G",
+    "precio": 1.3,
+    "imagen": "product_images/e01a3369f4004c66a3e5413b139ebfdb.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "3cee23829ff843c5a3c11152bd20f937",
+    "nombre": "MAIZ PARA COTUFAS MARY 400G",
+    "precio": 1.43,
+    "imagen": "product_images/24405a3de4854ddaadfb33c544c2ba3c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "fb2fa2caf99b4ed48a7ed56e3ba86356",
+    "nombre": "SARDINA DELLA NONNA 170G",
+    "precio": 0.98,
+    "imagen": "product_images/e21a9dbc8ec048c0b2a6bd451988bedf.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "f733b69b067241489c94c3ff8d342137",
+    "nombre": "VINAGRE DE MANZANA HEINZ",
+    "precio": 2.0,
+    "imagen": "product_images/8dbf1c4ff3364dd5ac6e21abff32973c.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "c1cebb3e94ac4f1bb6036ea9c149969f",
+    "nombre": "PASTA CORTA BANETTI 500G",
+    "precio": 1.12,
+    "imagen": "product_images/02158602896243499169572777781c6a.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "318b7cd781f74387bcd67c9e6256644e",
+    "nombre": "CARAOTA PANTERA",
+    "precio": 1.44,
+    "imagen": "product_images/4ac50946d97d469d842517da37021beb.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "76c6ee525cf74cf28e824eaff694cc9c",
+    "nombre": "LECHE EN POLVO CAMPESINA 400G",
+    "precio": 8.7,
+    "imagen": "product_images/59c9330cc9f844c2bf80e4e7c038b954.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "7bfce55a3d2e45298f1e3edbb0779459",
+    "nombre": "PASTA TOMATE TIGO 350G",
+    "precio": 2.0,
+    "imagen": "product_images/c359c3ec57634e15861b176c5a723528.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "b4cb114067fb4ca191a683243a358c3a",
+    "nombre": "SALSA PARA PASTA HEINZ 195G",
+    "precio": 2.25,
+    "imagen": "product_images/1dcbe3ba5534454b839c03dee1e2d49d.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "9fd6fd02a6704856ab4438c2f00264e2",
+    "nombre": "CAFE DELLANONA100G",
+    "precio": 1.65,
+    "imagen": "product_images/eecc5332f12947c18a5b46ccd5525723.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "78504c6fa1af4420b5829a8b02f66c5b",
+    "nombre": "ADOBO COMPLETO 100G",
+    "precio": 1.8,
+    "imagen": "product_images/b4e2ce71bf4847c2bdd2c4c67b31342e.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "5794c4f82984402a965402b63c61c001",
+    "nombre": "ARROZ MARY ESMERALDA 900G",
+    "precio": 1.5,
+    "imagen": "product_images/94f57b679d7c4ccabe2385d3ba62ced0.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "5b27c7aa25774c8bb32a977908550a37",
+    "nombre": "SALSA BBQ DETALLADA",
+    "precio": 0.65,
+    "imagen": "product_images/57882892bb4047c087aed94af24e40ae.jpg",
+    "categoria": "VIVERES"
+  },
+  {
+    "id": "3166d8e8858445d3bd54a49d76d59119",
+    "nombre": "LECHE EN POLVO CARABOBO 900",
+    "precio": 15.31,
+    "imagen": "product_images/af950ec4238e4235a4cccaed57efd515.jpg",
+    "categoria": "VIVERES"
   }
 ]
