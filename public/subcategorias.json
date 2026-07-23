@@ -1,7 +1,7 @@
 {
   "VIVERES": [
     {
-      "nombre": "El mejor arroz",
+      "nombre": "Arroz",
       "image_path": "subcat_images/sub_8bcda959d5574f84b65bbcad87d3add8.png",
       "image_b64": "",
       "keywords": [
@@ -9,6 +9,39 @@
         "arros",
         "Arroz",
         "arroz"
+      ]
+    },
+    {
+      "nombre": "Aceites",
+      "image_path": "subcat_images/sub_f2bcec0c1892456eabd68f5c9409ac89.png",
+      "image_b64": "",
+      "keywords": [
+        "aseite",
+        "Aseite",
+        "Aceites",
+        "acites"
+      ]
+    },
+    {
+      "nombre": "Salsas Soya",
+      "image_path": "subcat_images/sub_948e6e0fa3324700a6697b3acbbc1e19.png",
+      "image_b64": "",
+      "keywords": [
+        "Salsa Soya",
+        "Salsa soya",
+        "salsa soya",
+        "zalsa zoya"
+      ]
+    },
+    {
+      "nombre": "Mayonesas y Mantequillas",
+      "image_path": "subcat_images/sub_fae01f1900ce46b1bb15b4a85a6c1552.png",
+      "image_b64": "",
+      "keywords": [
+        "mayonesa",
+        "mantequillas",
+        "bayonesa",
+        "mantequiyas"
       ]
     }
   ]
