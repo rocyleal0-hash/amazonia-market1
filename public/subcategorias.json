@@ -46,5 +46,76 @@
         "mantequilla"
       ]
     }
+  ],
+  "BEBIDAS": [
+    {
+      "nombre": "Refrescos",
+      "image_path": "subcat_images/sub_e371ecd95c514ee6919657c7266fae45.png",
+      "image_b64": "",
+      "keywords": [
+        "Refresco"
+      ]
+    },
+    {
+      "nombre": "Jugo y Chicha",
+      "image_path": "subcat_images/sub_ad59c69f83704177b256c77a9ed951f6.png",
+      "image_b64": "",
+      "keywords": [
+        "Jugo",
+        "Chicha"
+      ]
+    },
+    {
+      "nombre": "Jugo de Naranja",
+      "image_path": "subcat_images/sub_c5ca68ddc3d24657aea81bdd013f1b30.png",
+      "image_b64": "",
+      "keywords": []
+    },
+    {
+      "nombre": "Alcohol",
+      "image_path": "subcat_images/sub_0e3085d0d0f94c6fbccb03d05b0bba71.png",
+      "image_b64": "",
+      "keywords": [
+        "wiskey",
+        "wisky",
+        "cerveza"
+      ]
+    }
+  ],
+  "CONFITERIA": [
+    {
+      "nombre": "Pepitos",
+      "image_path": "subcat_images/sub_f4bd666464984580ad41bec537a78474.png",
+      "image_b64": "",
+      "keywords": [
+        "dorito",
+        "pedrito",
+        "de todito"
+      ]
+    },
+    {
+      "nombre": "Chupetas",
+      "image_path": "subcat_images/sub_dd090987a4394517a8b0c816ce77b67e.png",
+      "image_b64": "",
+      "keywords": [
+        "chupeta"
+      ]
+    },
+    {
+      "nombre": "Chocolates",
+      "image_path": "subcat_images/sub_8326e0af87f04e53a8be6fe042757881.png",
+      "image_b64": "",
+      "keywords": [
+        "Chocolate"
+      ]
+    },
+    {
+      "nombre": "Galleta",
+      "image_path": "subcat_images/sub_88cffb4902934628a170fd473cfba2ab.png",
+      "image_b64": "",
+      "keywords": [
+        "Galleta"
+      ]
+    }
   ]
 }
