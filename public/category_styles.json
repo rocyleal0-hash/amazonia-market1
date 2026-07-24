@@ -8,7 +8,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_CONFITERIA_8643fe63.png"
   },
@@ -21,7 +21,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#ffffff",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_VIVERES_6e756e29.png"
   },
@@ -34,7 +34,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_BEBIDAS_47196932.png"
   },
@@ -47,7 +47,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_HIGIENE_PERSONAL_2d92f812.png"
   },
@@ -60,7 +60,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_ESCOLAR_c92eeb66.png"
   },
@@ -73,7 +73,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_JUGETERIA_e0fd2ca5.png"
   },
@@ -86,7 +86,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_QUINCALLERIA_daed6a73.png"
   },
@@ -99,7 +99,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_LACTEOS_d65ddd91.webp"
   },
@@ -112,7 +112,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_ROPA_ba10a73f.webp"
   },
@@ -125,7 +125,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_COSMETICO_2d9dd569.webp"
   },
@@ -138,7 +138,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_CARNICERIA_edc6af43.webp"
   },
@@ -151,7 +151,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_VEGETALES_Y_VERDURAS_03b14595.webp"
   },
@@ -164,7 +164,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_FRUTAS_Y_HORTALIZAS_80c5b63d.webp"
   },
@@ -177,7 +177,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_HELADOS_8658072a.webp"
   },
@@ -190,7 +190,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_BOLSOS_Y_CARTERAS_1e3fa53b.webp"
   },
@@ -203,7 +203,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_FERRETERIA_9546d9a0.webp"
   },
@@ -216,7 +216,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_PANADERIA_da37c6e8.webp"
   },
@@ -229,7 +229,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_PAPELERIA_5b81049e.webp"
   },
@@ -268,7 +268,7 @@
     "title_color": "#000000",
     "title_size": 22,
     "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
+    "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_LIMPIEZA_82143137.png"
   }
