@@ -1,7 +1,7 @@
 {
   "VIVERES": [
     {
-      "nombre": "Arroz",
+      "nombre": "ARROZ",
       "image_path": "subcat_images/sub_8bcda959d5574f84b65bbcad87d3add8.png",
       "image_b64": "",
       "keywords": [
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "nombre": "Aceites",
+      "nombre": "ACEITES",
       "image_path": "subcat_images/sub_f2bcec0c1892456eabd68f5c9409ac89.png",
       "image_b64": "",
       "keywords": [
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "nombre": "Salsas Soya",
+      "nombre": "SALSAS SOYA",
       "image_path": "subcat_images/sub_948e6e0fa3324700a6697b3acbbc1e19.png",
       "image_b64": "",
       "keywords": [
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "nombre": "Mayonesas y Mantequillas",
+      "nombre": "MAYONESA Y MANTEQUILLA",
       "image_path": "subcat_images/sub_fae01f1900ce46b1bb15b4a85a6c1552.png",
       "image_b64": "",
       "keywords": [
@@ -49,7 +49,7 @@
   ],
   "BEBIDAS": [
     {
-      "nombre": "Refrescos",
+      "nombre": "REFRESCO",
       "image_path": "subcat_images/sub_e371ecd95c514ee6919657c7266fae45.png",
       "image_b64": "",
       "keywords": [
@@ -57,7 +57,7 @@
       ]
     },
     {
-      "nombre": "Jugo y Chicha",
+      "nombre": "JUGO Y CHICHA",
       "image_path": "subcat_images/sub_ad59c69f83704177b256c77a9ed951f6.png",
       "image_b64": "",
       "keywords": [
@@ -66,13 +66,13 @@
       ]
     },
     {
-      "nombre": "Jugo de Naranja",
+      "nombre": "JUGO DE NARANJA",
       "image_path": "subcat_images/sub_c5ca68ddc3d24657aea81bdd013f1b30.png",
       "image_b64": "",
       "keywords": []
     },
     {
-      "nombre": "Alcohol",
+      "nombre": "ALCOHOL",
       "image_path": "subcat_images/sub_0e3085d0d0f94c6fbccb03d05b0bba71.png",
       "image_b64": "",
       "keywords": [
@@ -84,7 +84,7 @@
   ],
   "CONFITERIA": [
     {
-      "nombre": "Pepitos",
+      "nombre": "PEPITOS",
       "image_path": "subcat_images/sub_f4bd666464984580ad41bec537a78474.png",
       "image_b64": "",
       "keywords": [
@@ -94,7 +94,7 @@
       ]
     },
     {
-      "nombre": "Chupetas",
+      "nombre": "CHUPETAS",
       "image_path": "subcat_images/sub_dd090987a4394517a8b0c816ce77b67e.png",
       "image_b64": "",
       "keywords": [
@@ -102,7 +102,7 @@
       ]
     },
     {
-      "nombre": "Chocolates",
+      "nombre": "CHOCOLATES",
       "image_path": "subcat_images/sub_8326e0af87f04e53a8be6fe042757881.png",
       "image_b64": "",
       "keywords": [
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "nombre": "Galleta",
+      "nombre": "GALLETA",
       "image_path": "subcat_images/sub_88cffb4902934628a170fd473cfba2ab.png",
       "image_b64": "",
       "keywords": [

@@ -12,19 +12,6 @@
     "use_image": true,
     "image_path": "cat_CONFITERIA_8643fe63.png"
   },
-  "LIMPIEZA": {
-    "icon": "🧹",
-    "circle_color": "#0000ff",
-    "circle_size": 70,
-    "label_color": "#000000",
-    "label_size": 14,
-    "title_color": "#000000",
-    "title_size": 22,
-    "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
-    "use_image": true,
-    "image_path": "cat_LIMPIEZA_82143137.png"
-  },
   "VIVERES": {
     "icon": "🌽",
     "circle_color": "#0000ff",
@@ -115,19 +102,6 @@
     "more_fg": "#FFFFFF",
     "use_image": true,
     "image_path": "cat_LACTEOS_d65ddd91.webp"
-  },
-  "CHARCUTERIA": {
-    "icon": "🏷️",
-    "circle_color": "#0000ff",
-    "circle_size": 70,
-    "label_color": "#0F172A",
-    "label_size": 14,
-    "title_color": "#000000",
-    "title_size": 22,
-    "more_bg": "#000000",
-    "more_fg": "#FFFFFF",
-    "use_image": true,
-    "image_path": "cat_CHARCUTERIA_abf3c127.webp"
   },
   "ROPA": {
     "icon": "🏷️",
@@ -271,5 +245,31 @@
     "more_fg": "#FFFFFF",
     "use_image": false,
     "image_path": ""
+  },
+  "dsd": {
+    "icon": "🏷️",
+    "circle_color": "#0000ff",
+    "circle_size": 70,
+    "label_color": "#0F172A",
+    "label_size": 14,
+    "title_color": "#000000",
+    "title_size": 22,
+    "more_bg": "#000000",
+    "more_fg": "#FFFFFF",
+    "use_image": true,
+    "image_path": "cat_CHARCUTERIA_abf3c127.webp"
+  },
+  "CHARCUTERIA": {
+    "icon": "🧹",
+    "circle_color": "#0000ff",
+    "circle_size": 70,
+    "label_color": "#000000",
+    "label_size": 14,
+    "title_color": "#000000",
+    "title_size": 22,
+    "more_bg": "#000000",
+    "more_fg": "#FFFFFF",
+    "use_image": true,
+    "image_path": "cat_LIMPIEZA_82143137.png"
   }
 }
