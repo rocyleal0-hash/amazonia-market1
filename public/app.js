@@ -88,23 +88,8 @@ function cartSet(name, qty) {
 function cartClear() { saveCart({}); }
 function updateCartBadge() {
   const n = cartCount(); const b = $('#cartBadge');
-  if (b) {
-    if (n > 0) { b.textContent = n; b.hidden = false; } else b.hidden = true;
-  }
-  // Botón flotante "Pagar ahora": solo visible cuando hay items en el carrito
-  const pay = document.getElementById('btnPayNow');
-  if (pay) pay.hidden = n <= 0;
-}
-
-/* ---------------- CONFIG WHATSAPP ---------------- */
-const WA_PHONE = '584246687700';
-const WA_GREETING =
-  '¡Hola! 👋 Me gustaría hacer un pedido en Amazonia MARKET. '
-  + '¿Me podrían ayudar con la información para realizar mi compra? '
-  + '¡Muchas gracias! 🛒';
-
-function waFloatUrl() {
-  return 'https://wa.me/' + WA_PHONE + '?text=' + encodeURIComponent(WA_GREETING);
+  if (!b) return;
+  if (n > 0) { b.textContent = n; b.hidden = false; } else b.hidden = true;
 }
 
 let toastTimer = null;
@@ -362,7 +347,6 @@ function renderAnunciosBanner(container) {
     <div class="am-ads-wrap">
       <div class="am-ads-hero" id="adsHero" style="${heroStyle}">
         ${slidesHtml}${ovrHtml}
-        <img class="am-cashea-logo" src="public/cashea.png" alt="Cashea" onerror="this.style.display='none'"/>
       </div>
       ${cardsHtml}
     </div>
@@ -544,16 +528,13 @@ function viewCart(main) {
   const wa = $('#btnCartWhatsapp');
   if (wa) wa.addEventListener('click', (e) => {
     e.preventDefault();
-    const phone = ((SETTINGS.whatsapp_phone || WA_PHONE) + '').replace(/[^\d]/g,'') || WA_PHONE;
-    const lines = Object.values(loadCart())
-      .map(it => `* ${it.qty}x ${it.nombre} - ${formatPrice(it.precio*it.qty)}`);
-    const msg =
-      `🛒 ¡HOLA! QUIERO CONFIRMAR MI PEDIDO:\n\n` +
-      `${lines.join('\n\n')}\n\n` +
-      `💰 TOTAL A PAGAR: ${formatPrice(cartTotal())}\n\n` +
-      `-----------------------------------\n\n` +
-      `Por favor indíquenme los datos para concretar el pago y el envío. 📦`;
-    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+    const phone = (SETTINGS.whatsapp_phone || '').replace(/[^\d]/g,'');
+    const lines = Object.values(loadCart()).map(it => `• ${it.qty} x ${it.nombre} — ${formatPrice(it.precio*it.qty)}`);
+    const msg = `Hola, quisiera pedir:\n${lines.join('\n')}\n\nTotal: ${formatPrice(cartTotal())}`;
+    const url = phone
+      ? `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
+      : `https://wa.me/?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
   });
 }
 
@@ -637,24 +618,3 @@ async function boot() {
 
 document.addEventListener('DOMContentLoaded', boot);
 })();
-
-
-/* ---------------- BOTONES FLOTANTES (WhatsApp + Pagar ahora) ---------------- */
-function wireFloatingButtons() {
-  const wa = document.getElementById('btnWaFloat');
-  if (wa) wa.setAttribute('href', waFloatUrl());
-  const pay = document.getElementById('btnPayNow');
-  if (pay) {
-    pay.addEventListener('click', (e) => {
-      e.preventDefault();
-      location.href = './?view=cart';
-    });
-  }
-  // Sincroniza visibilidad del botón "Pagar ahora" al cargar
-  updateCartBadge();
-}
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', wireFloatingButtons);
-} else {
-  wireFloatingButtons();
-}
