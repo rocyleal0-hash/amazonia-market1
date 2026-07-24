@@ -4723,5 +4723,285 @@
     "precio": 0.96,
     "imagen": "product_images/9a94fd3498ac449d9b6bc14460a112e1.jpg",
     "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "5325f18dbab34b66865d1644452b96ac",
+    "nombre": "CUADERNO CUADRICULADO FAMA",
+    "precio": 2.0,
+    "imagen": "product_images/ba474db03bad419db9851adc73fb5a96.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "298ec9ea7ad54a1589f5869c27830a45",
+    "nombre": "CUADERNO 100 RAYAS FAMA",
+    "precio": 2.1,
+    "imagen": "product_images/cc50686fb3e848998020ecb42752bcab.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "a2a3c717e81c4b38b14df1f49440e6f7",
+    "nombre": "CUADERNO DOBLE LINEA",
+    "precio": 2.1,
+    "imagen": "product_images/bd1d4eed641d4ce5907d071bf1b071e1.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "088c406243904bbe9cc7aee3110a528e",
+    "nombre": "CUADERNO PEQ",
+    "precio": 2.1,
+    "imagen": "product_images/8136157771764936a7b3511d0dbd3668.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "7ed933805da0401b9372c06d6cea7256",
+    "nombre": "HOJAS DE EXAMEN",
+    "precio": 0.13,
+    "imagen": "product_images/39e20c737614407fbf1ddd5d7bf4598b.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "799f16f80e244ee2863d95efba34c83b",
+    "nombre": "LIBRO NUEVO MI JARDIN",
+    "precio": 3.0,
+    "imagen": "product_images/bfd973cb5f584e728803cd834c0e9df1.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "59dcfbcea86542a4868864244cb632ec",
+    "nombre": "LIBRO ANGELITO",
+    "precio": 2.5,
+    "imagen": "product_images/ff16a5f1118f40e1a8728c3169980c5f.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "889ab24927c948869a7e077cf32391df",
+    "nombre": "TEMPERAS MARFIL X6",
+    "precio": 3.2,
+    "imagen": "product_images/5b4672cb85b842d7beb1c8ceb1be05b6.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "7a461bca9eb548bd9550c64070532a51",
+    "nombre": "TEMPERA COLORES OSI X6",
+    "precio": 3.2,
+    "imagen": "product_images/de5801baee2d4f98b3b49dde7e3e310d.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "4444bae6175b45bfb78fc1ae9e0c33c1",
+    "nombre": "MARCADORES COLOR FIBRE X24",
+    "precio": 3.5,
+    "imagen": "product_images/afc475add4984617a6eb7ca3b5ed1a49.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "5d51d2315640408296e3400245bda23b",
+    "nombre": "MARCADORES COLOR FIBRE X12",
+    "precio": 2.5,
+    "imagen": "product_images/2d71b7d990be4bcda4ad419a1860ae64.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "de027e6dbf7e44cbaf6b7ac1323d7db9",
+    "nombre": "SET COMPAS REGLAS",
+    "precio": 3.0,
+    "imagen": "product_images/b55269d00d2a4d75be11a2ef795dbe25.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "760482aba2d34c4a8a28457c1795658d",
+    "nombre": "LAPIZ MONGOL",
+    "precio": 0.8,
+    "imagen": "product_images/e3314388b5d341e2a0a4fbdbde717bac.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "0bcdfcf2d5274a9cbf07f4d28eff8676",
+    "nombre": "COLORES MAKSIM X12",
+    "precio": 4.0,
+    "imagen": "product_images/34636dd28f36496cb1c1b62395921064.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "1d0747981cbe42adb1389a35f245d965",
+    "nombre": "BOLIGRAFO KUROMI",
+    "precio": 1.0,
+    "imagen": "product_images/1106c0564ed14a25a5b6502e3e9dc600.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "cc312de6bd2e4cd795c33305567b178f",
+    "nombre": "COMPAS WEIBO",
+    "precio": 4.0,
+    "imagen": "product_images/237bea8a16314d7b9071420d9d84aeb8.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "7afdbcaa1a77426f933aaa1b8b72cb5f",
+    "nombre": "GRAPADORA CORREAS",
+    "precio": 3.0,
+    "imagen": "product_images/7bb28d86a389439da273a222df7375cd.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "0272c3e39c22459cbcde0142a16bd9d0",
+    "nombre": "PORTA MINA",
+    "precio": 1.2,
+    "imagen": "product_images/46bccdf356944ca2bd6734853db8dd98.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "00cc522fef354155a55cdb48ffca6d13",
+    "nombre": "SACAPUNTA METAL",
+    "precio": 0.4,
+    "imagen": "product_images/ede76694559c44729f8ebecb745cfbe3.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "b409fb51379a4d9bb040eb6ddfb6c69a",
+    "nombre": "TIZA BLANCA",
+    "precio": 0.15,
+    "imagen": "product_images/fc4cb1c2a56b492383d7435a0f15aa28.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "05424053498c451dbf38c047cb1d51f6",
+    "nombre": "BORRADOR GD POINTER",
+    "precio": 0.6,
+    "imagen": "product_images/4a0faf3c37ab4990be7cf2a2274baa2b.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "6728151950e34ec887a4f881ad2ea375",
+    "nombre": "LAPIZ CORRECTOR POINTER 9ML",
+    "precio": 1.0,
+    "imagen": "product_images/c5c6c63c302f4489aa1a5ba5076d1cbf.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "7d1b7e84cf054a989e050353203e80db",
+    "nombre": "LIGA PARA PELO",
+    "precio": 0.6,
+    "imagen": "product_images/3bd646b58ae8474f86c2598553d28c07.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "11fdd32cc7714ab8bc99b1e21e597891",
+    "nombre": "MARCADOR PERMANTE BERNICE",
+    "precio": 1.0,
+    "imagen": "product_images/06fd8636ca7441689cde8bfb4a8a2d25.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "8346f93b1855456ca5e749f5239643b8",
+    "nombre": "MARCADOR PIZARRA BERNICE",
+    "precio": 1.0,
+    "imagen": "product_images/4e7161e8f7b648a88362b9e863779b7c.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "a0367a335fac4602af40f78fffda6268",
+    "nombre": "GOMA BARRA GRANDE",
+    "precio": 1.2,
+    "imagen": "product_images/858f81a04c2b420a9620857c3698ba39.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "bec502fdf5a847bb97d917570562b75f",
+    "nombre": "GOMA BARRA PEQ",
+    "precio": 0.7,
+    "imagen": "product_images/634c7bd7df8a43beba21b0220a89ae9b.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "ad24396040b04418804fce8ba33459e0",
+    "nombre": "PEGA BLANCA 40G",
+    "precio": 1.2,
+    "imagen": "product_images/bfca7557f3a34ba39a57af122a725a32.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "43c77d80f2844be48fa451414f0ae3dd",
+    "nombre": "PEGA BLANCA 60G",
+    "precio": 1.3,
+    "imagen": "product_images/2f2941d19de24c03a8ec57c19fd185b6.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "f018acdd8f8e4bd0a80c226cdd5ea9b8",
+    "nombre": "PEGA BLANCA 80G",
+    "precio": 1.5,
+    "imagen": "product_images/ba99b303f8ef4907b922b65fd96a0220.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "3815dcce34a245b3928f4534ced0a75a",
+    "nombre": "CRAYON MAKSIM X12",
+    "precio": 1.5,
+    "imagen": "product_images/e8c3a814b25f4a2b9b87cfe43e324026.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "bf937e75175e4b9487b2abb331d00fda",
+    "nombre": "PINCELES",
+    "precio": 0.6,
+    "imagen": "product_images/397324ca617e485cb4636aab831c9379.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "d6b4bc4a2e584b35953f364cc1adc3c7",
+    "nombre": "PAPEL BON",
+    "precio": 0.5,
+    "imagen": "product_images/f7d4d981b8d64304bfc29b6f9ee2f8c6.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "e224c692763f42f187e4d82c2c2eb89c",
+    "nombre": "CARTULINA FOSFORECENTE",
+    "precio": 1.7,
+    "imagen": "product_images/ad4a09ea67e645afb417f98985707c90.png",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "16d561ae6e5d46f491bcc135a1f8c694",
+    "nombre": "SACA PUNTA DOBLE POINT",
+    "precio": 1.2,
+    "imagen": "product_images/b72fb39537224a55ab529fad77f176f3.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "f83b41fa6cb443ae8135dc37c5a3c262",
+    "nombre": "CARTULINA ESCARCHADA GRANDE",
+    "precio": 2.0,
+    "imagen": "product_images/e41f8c8af00d45338ac88f1f29f53d4f.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "fc325468ea8d4f4da74641a11dfe9804",
+    "nombre": "TIRRO GRUESO",
+    "precio": 2.5,
+    "imagen": "product_images/dacf9ac1cf4443ed8a2a69e5ea28d3fe.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "d6e8ed868aa84746a131040febe3a8df",
+    "nombre": "PLASTILINA BOSSITO 12UND",
+    "precio": 3.0,
+    "imagen": "product_images/e057240e86d34c8fa4cd64616f1754f5.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "0debf19d0dd244f99445592711c79da4",
+    "nombre": "PEGA BLANCA 120G",
+    "precio": 1.5,
+    "imagen": "product_images/5a21a897f4964b5e817ce39cb4ffcaa6.jpg",
+    "categoria": "ESCOLAR"
+  },
+  {
+    "id": "a7506095340a485b8da02e9fb4a8b93c",
+    "nombre": "BLOCK DE DIBUJO GRANDE",
+    "precio": 5.41,
+    "imagen": "product_images/fe5488e41f3942b8afcab136f65c1367.jpg",
+    "categoria": "ESCOLAR"
   }
 ]
