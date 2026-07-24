@@ -355,6 +355,7 @@ function renderAnunciosBanner(container) {
     <div class="am-ads-wrap">
       <div class="am-ads-hero" id="adsHero" style="${heroStyle}">
         ${slidesHtml}${ovrHtml}
+        <img class="am-ads-cashea" src="./public/cashea.png" alt="Cashea"/>
       </div>
       ${cardsHtml}
     </div>
@@ -427,7 +428,7 @@ function buildHomeTile(cat) {
   return `<div class="am-tile">
     <div class="am-tile-head">
       <div class="am-tile-title" style="color:${s.title_color};font-size:${s.title_size}px;">
-        ${escapeHtml(emoji)} ${escapeHtml(cap(cat))}
+        ${escapeHtml(cap(cat))}
         <span class="am-tile-count">· ${catProds.length} producto(s)</span>
       </div>
       <a class="am-tile-more" href="?cat=${encodeURIComponent(cat)}" style="color:${s.more_fg || s.more_bg};">Ver más →</a>
@@ -437,7 +438,6 @@ function buildHomeTile(cat) {
 }
 
 function viewCategory(main, cat, subName) {
-  const emoji = iconForCategory(cat);
   // Si viene ?sub= filtramos por las keywords del mosaico correspondiente.
   let sub = null;
   if (subName) {
@@ -447,7 +447,7 @@ function viewCategory(main, cat, subName) {
   const titleTxt = sub ? `${cap(cat)} · ${sub.nombre}` : cap(cat);
   main.insertAdjacentHTML('beforeend', `
     <div class="am-view-head">
-      <div class="am-view-title">${escapeHtml(emoji)} ${escapeHtml(titleTxt)}</div>
+      <div class="am-view-title">${escapeHtml(titleTxt)}</div>
       <a class="am-btn am-btn-ghost" href="${sub ? '?cat=' + encodeURIComponent(cat) : './'}">← ${sub ? cap(cat) : 'Apartados'}</a>
     </div>
   `);
@@ -494,10 +494,12 @@ function viewSearch(main, q) {
 function renderProductGrid(main, prods) {
   const html = `<div class="am-grid">` + prods.map(p => `
     <div class="am-card">
-      <img class="am-cashea-badge" src="./public/cashea.png" alt="Cashea" loading="lazy"/>
       <img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/>
       <div class="am-name">${escapeHtml(p.nombre||'')}</div>
-      <div><span class="am-price">${escapeHtml(formatPrice(p.precio))}</span></div>
+      <div class="am-price-row">
+        <span class="am-price">${escapeHtml(formatPrice(p.precio))}</span>
+        <img class="am-cashea-inline" src="./public/cashea.png" alt="Cashea" loading="lazy"/>
+      </div>
       <button class="am-add-btn" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>
     </div>
   `).join('') + `</div>`;
