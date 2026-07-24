@@ -69,7 +69,10 @@
       "nombre": "JUGO DE NARANJA",
       "image_path": "subcat_images/sub_c5ca68ddc3d24657aea81bdd013f1b30.png",
       "image_b64": "",
-      "keywords": []
+      "keywords": [
+        "jugo naranja",
+        "jugo"
+      ]
     },
     {
       "nombre": "ALCOHOL",
