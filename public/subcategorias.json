@@ -117,5 +117,46 @@
         "Galleta"
       ]
     }
+  ],
+  "CHARCUTERIA": [
+    {
+      "nombre": "JAMON",
+      "image_path": "subcat_images/sub_7c0ca401f3124a44b134f2c64366b042.jpg",
+      "image_b64": "",
+      "keywords": [
+        "JAMON",
+        "Jamon",
+        "jamon"
+      ]
+    },
+    {
+      "nombre": "QUESO",
+      "image_path": "subcat_images/sub_06f9c7d8acfb48c18ccef5328da49f35.jpg",
+      "image_b64": "",
+      "keywords": [
+        "QUESO",
+        "queso"
+      ]
+    },
+    {
+      "nombre": "SALCHICHA",
+      "image_path": "subcat_images/sub_715f9a03a626467a9a6e36b2099db5c0.jpg",
+      "image_b64": "",
+      "keywords": [
+        "SALCHICHA",
+        "Salchicha",
+        "salchicha"
+      ]
+    },
+    {
+      "nombre": "RECORTES",
+      "image_path": "subcat_images/sub_09a4a37eeadd40a58aeb462145dc5ddb.jpg",
+      "image_b64": "",
+      "keywords": [
+        "RECORTES",
+        "Recorte",
+        "recorte"
+      ]
+    }
   ]
 }

@@ -3554,5 +3554,1174 @@
     "precio": 2.86,
     "imagen": "product_images/545c68bbf0b64b5e85b97f494afe7f1e.jpg",
     "categoria": "VIVERES"
+  },
+  {
+    "id": "7b9c8d6e354d42d7892ba20fe1bcd86a",
+    "nombre": "QUESO DE RES 1K",
+    "precio": 8.15,
+    "imagen": "product_images/38302856cd8b480580c103d22408c3c0.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "363459043ff548639bcbc75e90af14c8",
+    "nombre": "QUESO DE CABRA 1K",
+    "precio": 8.15,
+    "imagen": "product_images/dd23205e9eb74a5da7eac9806c156762.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "9f773093c97244a4ab7849f8fef2ffac",
+    "nombre": "JAMON DE PIERNA VILLA JULIA",
+    "precio": 10.94,
+    "imagen": "product_images/3a9570c64fa64593b3d7f58eacc13320.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "ad4562e4fe8b405eb872cefcf82be742",
+    "nombre": "QUESO MOZZARELLA",
+    "precio": 13.92,
+    "imagen": "product_images/293b644b31ec4045bd4b4a5f69fda78d.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "e12e993e4b8643a6bc74ec714ad42a25",
+    "nombre": "MORTADELA 1K",
+    "precio": 4.67,
+    "imagen": "product_images/b6a337ebdb6948b28f99d88d9c4bd5c0.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "3de8e56bfec245798513732c26d99064",
+    "nombre": "MORTADELA POLLO DEL CORRAL 500G",
+    "precio": 2.98,
+    "imagen": "product_images/4a81bf4f0bc546c0b3459eb07d4d523f.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "4aaba2deac9a4bbfad7d32cdfb8dd445",
+    "nombre": "JAMON AHUMADO",
+    "precio": 15.91,
+    "imagen": "product_images/dfcc1910bb4442fea0f7f32343a9dd24.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "46de6cd26b4945fd82fbc559a6f8e889",
+    "nombre": "MORTADELA TAPARA PISTACHO",
+    "precio": 10.94,
+    "imagen": "product_images/d8ca1039756c4ab4aac5bd98445224f9.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "db3a799210e24fa98eba510699bd59b8",
+    "nombre": "QUESO AMARILLO MONTESANO",
+    "precio": 20.88,
+    "imagen": "product_images/7dc71e5c411a4c2fb0c986230152cc02.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "a34efbae64c349038daeffb3e27a111f",
+    "nombre": "JAMON AHUMADO BOLA",
+    "precio": 10.94,
+    "imagen": "product_images/992bee9957e1477190622932c982c5ba.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "bd05fefb4c874c059c63e2b1b2a1e5c3",
+    "nombre": "SALCHICHA DELICHIP",
+    "precio": 10.94,
+    "imagen": "product_images/524a9e79ab1044edac0627a9d1412257.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "fe003bd4439b4cea945d8e3d46cabb2a",
+    "nombre": "JAMON PIERNA RICCI",
+    "precio": 15.61,
+    "imagen": "product_images/d500574e9d87405a977ab6d6f49b59dd.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "c3fc5acf91184664a8eecf7eb5447a62",
+    "nombre": "SALCHICHA DETALLADA",
+    "precio": 5.5,
+    "imagen": "product_images/74129457e20d47d4a362a4e510881752.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "900ff500b1a7461992830aa99e605472",
+    "nombre": "JAMON DE POLLO HERMON",
+    "precio": 13.67,
+    "imagen": "product_images/6e13d0b1c07c494089375f61d5a342fe.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "ae3ab24005d64d7eaae45e617e02d746",
+    "nombre": "RECORTES CHARCUTERIA",
+    "precio": 2.39,
+    "imagen": "product_images/0b5011360aa3408791e5655fb571ed71.jpg",
+    "categoria": "CHARCUTERIA"
+  },
+  {
+    "id": "c20a6fb52f1f4dac8f01d2752b3989fb",
+    "nombre": "SERVILLETA Z 160 UND",
+    "precio": 1.94,
+    "imagen": "product_images/35d5492807804ee9b3c1054948f9cc65.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "2daa535297834563bc771ede7cf64a22",
+    "nombre": "TOALLIN DON 50 HOJAS",
+    "precio": 1.42,
+    "imagen": "product_images/ae46ae8e9de54e3389da770b9188c62d.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "32e69f9388934ca6ada0124de6c71d86",
+    "nombre": "PAPEL TOALET ALISOF X1",
+    "precio": 0.5,
+    "imagen": "product_images/034856e277d945b9a2ca0c1a4987c6fa.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "56792ed0ccb24ece9eea010a68c04575",
+    "nombre": "TOALLIN 80 HOJAS",
+    "precio": 1.81,
+    "imagen": "product_images/79372093a9304366998850821cbafeb5.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "347178ffc74d45af96ea4d866e886b36",
+    "nombre": "PAEPL TOALET ROSAL PLUS P X4",
+    "precio": 1.65,
+    "imagen": "product_images/9fed24f33ea84fdea479dfe85679bde9.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "150fe8c1908e4abe8c3af5cd5654eb5d",
+    "nombre": "PAPEL TOALET LUCIANO 251 HOJAS",
+    "precio": 1.25,
+    "imagen": "product_images/688aefd29c374ed59db250f243878b74.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "816d03ec80ef47a0a516ee3e22790745",
+    "nombre": "PAPEL TOALET ROSAL PLUS XG X4",
+    "precio": 3.3,
+    "imagen": "product_images/59c722f938bb43f9901ae3d40f4d6c29.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "acd7fe49848643489110069bfa988fa9",
+    "nombre": "PAPEL TOALET ROSAL PLUS XXXG X4",
+    "precio": 5.34,
+    "imagen": "product_images/81809344d6f44ccb9b03560927a3b22f.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "689e6c267e284d57a8923751f147d345",
+    "nombre": "PAÑAL BABY FINGER XG X16",
+    "precio": 10.44,
+    "imagen": "product_images/522cc32957d74c6a8c7e32220a5ff8d9.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "250e7bd433e74b8c8a992fced2ebcd33",
+    "nombre": "PAÑAL BABY FINGER M X18",
+    "precio": 6.92,
+    "imagen": "product_images/d503ef4328fe423384f12c1e9b2a148f.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "5161686fe00b46feaccd40fe75f8993b",
+    "nombre": "PAÑAL BABY FINGER P X20",
+    "precio": 8.95,
+    "imagen": "product_images/909d911316974272af0a380238412995.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "a1c562f48c794509a3a779d324e8cb7b",
+    "nombre": "PAÑAL BABY FINGER G X10",
+    "precio": 6.4,
+    "imagen": "product_images/4477116b663a4a10b6600959d4a731e1.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "dd02844e61e740fdbc3a7cce0c4bbeab",
+    "nombre": "PAÑAL BABY FINGER M X10",
+    "precio": 3.2,
+    "imagen": "product_images/e732d55a058b411ea9b4e4d94bd79c59.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "a545e84d7ed3418db7ae2cc0a4f66889",
+    "nombre": "PAÑAL BABY FINGER P",
+    "precio": 6.4,
+    "imagen": "product_images/38354bd54ea24ec385ad09556afe04c7.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "fe9299b28e8842269182002adf0d78d5",
+    "nombre": "PAÑAL HUGME G X10",
+    "precio": 4.97,
+    "imagen": "product_images/7a7940b321174f7e8c5c8ee53dc471f9.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "5f5e219cbf784b2b895a26115bfdbe08",
+    "nombre": "PAÑAL HUGME XG X40",
+    "precio": 19.88,
+    "imagen": "product_images/488965673c804652ba8c6da5002dc2dc.webp",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "2c4f6c61dd674a4bace27bc277c54860",
+    "nombre": "PAÑAL HUGME P X40",
+    "precio": 16.9,
+    "imagen": "product_images/d1577feaf7874165b4f9bd72a779462b.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "3b6c1e13d6c34b228d00ea5a9c0612d0",
+    "nombre": "PAÑAL HUGME XG X20",
+    "precio": 8.37,
+    "imagen": "product_images/f9f1a53ffeac45a594b8a1adb50bd355.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "f9826acc49ea4309b0c1b6bc88fd3cde",
+    "nombre": "PAÑAL HUGME M X20",
+    "precio": 9.44,
+    "imagen": "product_images/34a1a971958a4097b9f3d47e7b430f6d.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "64582e9667294f5497b1c79ec77aabfb",
+    "nombre": "PAÑAL HUGME G X20",
+    "precio": 7.55,
+    "imagen": "product_images/1aa6d5dc86a34615ad3fe5b8abf788a5.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "0ae6e4cccbc74bbca02afaacedac04f8",
+    "nombre": "PAÑAL ADULTO DR COMFORT M X8",
+    "precio": 12.92,
+    "imagen": "product_images/9e8a34c65ce3455e8bad709bc8651b2f.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "284ab22f917e42128c1fe98b3ecdd80e",
+    "nombre": "PAÑAL ADULTO ALIVE M X6",
+    "precio": 12.92,
+    "imagen": "product_images/5adbb6ac94a7470da9c96ead66c31a5c.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "eaa7e016029a434a926eb05301ae02c1",
+    "nombre": "PAÑAL ADULTO HUGME G X8",
+    "precio": 11.93,
+    "imagen": "product_images/f9a9ce41e634480fbeb4eff4ed3e0b4d.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "6cee01811cba4a658bf738cdcfafc576",
+    "nombre": "SHAMPOO PANTENE SOBRE 18ML",
+    "precio": 0.7,
+    "imagen": "product_images/b2c56f48c33d4ffbaf32666d9e953d9a.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "5bc82cc4a68e468ca060c585ff35bd37",
+    "nombre": "ACONDICIONADOR PANTENE SOBRE 18 ML",
+    "precio": 0.7,
+    "imagen": "product_images/327a53cdddaf40388eb2ae4d50ec341a.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "c6453536f7a841339a8e76fbc1e5320b",
+    "nombre": "SHAMPOO SAVITAL SOBRE",
+    "precio": 0.6,
+    "imagen": "product_images/ae114739840a48d18d00daa1478b3e6c.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "1bf92e5a0446478a8c814b48cb589af5",
+    "nombre": "ACONDICIONADOR SAVITAL SOBRE 22ML",
+    "precio": 0.6,
+    "imagen": "product_images/6dedac3bf31c4fffa1b5b9689c241c08.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "1ffcd61e11014e859eb777335c46a72f",
+    "nombre": "CREMA PEINAR RIZOS SAVITAL SOBRE 2ML",
+    "precio": 0.6,
+    "imagen": "product_images/58b30ebbca684a7cab665d6bd018653e.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "151a33ab27104a0e829e36646484a2e6",
+    "nombre": "DESODORANTE SBR LADY SPEED STICK CL",
+    "precio": 1.14,
+    "imagen": "product_images/c588cd873b55484d87b8bfdaa4026fb0.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "176a65887ef4488face977318717cd63",
+    "nombre": "DESODORANTE SOBRE BALANCE MEN 0.32 OZ",
+    "precio": 0.99,
+    "imagen": "product_images/7c73577743934fe4a90824fd1bf72d06.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "01b11a08d88141098562f9a496a45e21",
+    "nombre": "DESODORANTE SOBRE BALANCE CLINICAL WOM",
+    "precio": 1.19,
+    "imagen": "product_images/4a006f3fd4954ec8a6ccaf8846ac272e.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "c0c2553eca784f3d9acf1f1b16ed9301",
+    "nombre": "DESODORANTE SOBRE BALANCE",
+    "precio": 0.5,
+    "imagen": "product_images/5f52073f9c454de0b47af3b63a625a2f.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "b817dc6c5c82462eb3be4da46be62c10",
+    "nombre": "DESODORANTE SOBRE LADY SPEED STICK",
+    "precio": 0.8,
+    "imagen": "product_images/216fb5fae8144a1d8891e8eb54555343.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "cfebc3b1bf1541d5b9166cd1e38caec9",
+    "nombre": "PROTECTOR DIARIO HUGME X20",
+    "precio": 0.89,
+    "imagen": "product_images/be8009e4413a4ec78c7475b275bc57ed.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "aa7f95daddaf4194bf8ecfaaea7a1cb9",
+    "nombre": "TOALLAS SANITARIAS WANITA DIA X10",
+    "precio": 1.19,
+    "imagen": "product_images/75a40d179d3d4f53a33a50d07d5c30c4.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "a138b2d53d8f4cba983e1d7b589f520d",
+    "nombre": "TOALLAS SANITARIAS HUGME NH 290CM X10",
+    "precio": 1.49,
+    "imagen": "product_images/05d5fe3a3950434a8428df0d364e4670.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "08a57454e20648f9b9e316bcfadcf8c0",
+    "nombre": "TOALLAS SANITARIAS OHIKOOL DIA X10",
+    "precio": 1.19,
+    "imagen": "product_images/8d019b8a7e754969b411bdd0d5d81599.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "69a2808155274fd7ae74240ce22b6a6f",
+    "nombre": "TOALLAS SANITARIAS ALIVE DIA X8",
+    "precio": 0.99,
+    "imagen": "product_images/36f72b5ca3bd4bc4989645f978381bdf.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "241b775ce61d42ac9b69a24a5cee6980",
+    "nombre": "TOALLAS SANITARIA ALIVE NOCHE X8",
+    "precio": 1.59,
+    "imagen": "product_images/facd0d8fd48e4453970298ee99dcae4f.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "2ff0291380da4de68e1219754ab53809",
+    "nombre": "TOALLAS SANITARIAS HUGME NH 320CM X10",
+    "precio": 1.76,
+    "imagen": "product_images/352a63aff65d4f38bb908287a7a96f3b.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "d6b5668db45646a591a8f2692b8a31a4",
+    "nombre": "TOALLAS HUMEDAS OKI X20",
+    "precio": 1.49,
+    "imagen": "product_images/415b941cec7d4c48834fca224e886827.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "643c70a1f76a4f648f29a1cb82ae6107",
+    "nombre": "TOALLAS HUMEDAS BABY F X50",
+    "precio": 2.14,
+    "imagen": "product_images/2135c36902bd47029376a20fafc00473.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "9012916384c74fe6bbfe668b4590da65",
+    "nombre": "TOALLAS HUMEDAS HUGME X50",
+    "precio": 1.99,
+    "imagen": "product_images/940d53e0317747bab439c67fe804b0c5.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "795cf512f49c4dfa8a6ea840847fa42b",
+    "nombre": "TOALLAS HUMEDAS PREDO X120",
+    "precio": 1.34,
+    "imagen": "product_images/0930068b8a6c41c98c671f06e5a5e033.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "79c11393fcbd4aff9a79fe0d674461b2",
+    "nombre": "TOALLAS HUMEDAS OKI X72",
+    "precio": 1.26,
+    "imagen": "product_images/f064b7cabbe8401aa6d870e5987a6cc6.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "8b8c82c3a7ff4d43a34e8c65326cb0e4",
+    "nombre": "JABON PALMOLIVE 80G",
+    "precio": 2.24,
+    "imagen": "product_images/b99875ab63cc4c0689863c01172e953c.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "0859a1a9c94b4e8eb6c655db86d159ca",
+    "nombre": "JABON ANITA 125G",
+    "precio": 1.53,
+    "imagen": "product_images/98d1917f7e1b4a0088c184d0a42481d3.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "ee671b0b9c5040789bd706ffdb3dcae4",
+    "nombre": "JABON AZUL ESPECIAL 250G",
+    "precio": 1.09,
+    "imagen": "product_images/5e36308b1ae64b2da455aece6bdcd238.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "ad6ea4c9cf2a4f5f8483075937ea6034",
+    "nombre": "JABON AZUL SOCIAL 200G",
+    "precio": 1.19,
+    "imagen": "product_images/d696939fde1c4bb895c9d6340061489e.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "f58c6e31a4d54909ab998859ebab33bd",
+    "nombre": "JABON AZUL LAS LLAVES 200G",
+    "precio": 1.29,
+    "imagen": "product_images/fd6e51578b73474b96f5c1ebddaf0bb2.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "e27e95fefa1c4e3e96596853793215a1",
+    "nombre": "JABON AZUL FRESCA FRAGANCIA 160G",
+    "precio": 1.56,
+    "imagen": "product_images/300cd3ac35d2420fb19de5ae9a972233.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "5b28185d9f4b49bdbd9399cfdaf62981",
+    "nombre": "JABON POPULAR 150G",
+    "precio": 1.31,
+    "imagen": "product_images/8c00e7ae4b564fe2beb53f129e8d3978.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "2d737bff2052468e8be6c206acb6e56a",
+    "nombre": "JABON DALAN 115G",
+    "precio": 1.0,
+    "imagen": "product_images/fc254631ec874842a39404ae739a84f0.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "f21c6bdc4d864cb5aaaad0a364738f1e",
+    "nombre": "JABON PURO AVENA 80G",
+    "precio": 0.7,
+    "imagen": "product_images/fbf23c17c897401087b6a45787c58977.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "d2cd23bb4d1044ff8face00ce73b0869",
+    "nombre": "JABON ANITA 80G",
+    "precio": 1.79,
+    "imagen": "product_images/fa51c5cc61404fc98e8749d2c9b7ea75.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "90967b33a10a4f5b9a07a9146e97f309",
+    "nombre": "JABON MEDICARE 90G",
+    "precio": 1.29,
+    "imagen": "product_images/18e0c614fc35488ebe9d77706e6306b1.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "441aa6c82e494cfaaef16fee40d82a1e",
+    "nombre": "JABON PROTEX 110G",
+    "precio": 2.75,
+    "imagen": "product_images/c8a3069ffcdf4c749c1a55c9d2976481.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "8f4b8e8a561744c783fb45a4ad207627",
+    "nombre": "JABON HUG 75G",
+    "precio": 0.66,
+    "imagen": "product_images/db0a3acfed824122af198fb0191cef1f.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "e35e44335fc94033a39b6f1cce27d5cd",
+    "nombre": "TALCO PARA NIÑOS HUGME 200G",
+    "precio": 2.98,
+    "imagen": "product_images/2c6f3fa5e6b84e3a9d5352f1bec76d81.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "42acde08c5c444949ec1971aced2d2a6",
+    "nombre": "COLONIA PARA NIÑOS HUGME 200ML",
+    "precio": 2.49,
+    "imagen": "product_images/f5666f6a9795456e933baf7c506f2864.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "6868ffab3a8d46f08d824912cd4cd6cf",
+    "nombre": "CREMA PARA PEINAR HUGME 200ML",
+    "precio": 1.89,
+    "imagen": "product_images/95753941bb464108833ba1fe5b1233a2.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "5fa94b67ad594bd0b5710337ee80235a",
+    "nombre": "CHAMPU KARICIAS 350ML",
+    "precio": 2.68,
+    "imagen": "product_images/d4a5fc608fc34175876c33a08c51818c.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "d3cdc2718320460884f9a641e3a783c1",
+    "nombre": "SHAMPOO ALIVE 413ML",
+    "precio": 3.86,
+    "imagen": "product_images/077e3923e0a34f8992efd65c7faf5060.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "c3434e22565f46b3a72c876bcc132670",
+    "nombre": "CHAMPU ALIVE GOLD 350ML",
+    "precio": 3.85,
+    "imagen": "product_images/87afaff184964bd9a3e3c03569d2b56c.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "f0d4d270ec7749489b23114a9cd6ba80",
+    "nombre": "SHAMPOO ELSE HERBAL 320ML",
+    "precio": 1.89,
+    "imagen": "product_images/b8b42b8d322b4ba39b905f5c17d3f721.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "d0a1ca0e28df4ba084f92a2db5c5589f",
+    "nombre": "CHAMPU HUG 200ML",
+    "precio": 2.09,
+    "imagen": "product_images/61136c0a26ea490782c036d8f03eeb9d.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "f1a91558caf14c718d28eda774dd67b6",
+    "nombre": "CHAMPU DOXA 600ML",
+    "precio": 2.98,
+    "imagen": "product_images/29e5ac44f8764181bf7bebbb619d4954.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "db25d22d39d048e2a51fa77b5f7da5e2",
+    "nombre": "MASCARILLA CAPILAR HUGME 200ML",
+    "precio": 1.99,
+    "imagen": "product_images/d2afd5f352fd4895a7e989a61ef44019.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "f5035ff92b3d42d9abeb24dd88c840a2",
+    "nombre": "CHAMPOO ACONDICIONADOR 2 EN 1 350 ML",
+    "precio": 2.49,
+    "imagen": "product_images/da38fc61956e42b09fce2f020f537ee5.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "a246cfefb3764622b0364f5cb933f08f",
+    "nombre": "CREMA DENTAL ALIDENT PEQ 50G",
+    "precio": 0.55,
+    "imagen": "product_images/5456f6d36b16480bb2cd0b388af838c2.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "afef6dbeae534092b8aea3062e49d75c",
+    "nombre": "JABON TOCADOR LEMON 115G",
+    "precio": 1.23,
+    "imagen": "product_images/b89264e171de40949e36339b0ee0dd4a.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "7b789cf68bdb4e5a8aba4c218a70878f",
+    "nombre": "CREMA DENTAL ALIDENT 100G",
+    "precio": 1.49,
+    "imagen": "product_images/878240a26a5549f1beb14d158a5184a0.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "b8873e4920f34e5194506c1db9ace0d9",
+    "nombre": "CREMA DENTAL COLGATE 90G",
+    "precio": 2.14,
+    "imagen": "product_images/519452bcc5ae4e6c9b15626ff03cb68b.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "fb1c63a71c52447db571f65c0654db56",
+    "nombre": "CHAMPOO NIÑOS BABY FINGER 200ML",
+    "precio": 2.98,
+    "imagen": "product_images/0141526e1ca64eab983b88fd73ffe6b2.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "24c46250a6814bc6b954fa7c955cc022",
+    "nombre": "LOCION PARA NIÑOS HUGME 200ML",
+    "precio": 2.98,
+    "imagen": "product_images/fbf1a5a59cb646da99337770ffc9aebb.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "0af63a014cad4b31ac601ae17dda91aa",
+    "nombre": "SHAMPOO NIÑOS BABY FINGER 100ML",
+    "precio": 1.79,
+    "imagen": "product_images/0dca5b9ff3aa4f4e926acac81e9fcf50.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "33468d66066745d984ecbff6adad9d54",
+    "nombre": "CHAMPU HUGME 300ML",
+    "precio": 3.98,
+    "imagen": "product_images/054903fa02474fda9f2c42f34c4d579f.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "ff18c360a647484195aca7cb4becd712",
+    "nombre": "CEPILLO DE DIENTE COBOR",
+    "precio": 0.99,
+    "imagen": "product_images/7596c6c94f0346bf870d0cf3b885c1b5.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "69ef4674abf543b09ff996ce53de8407",
+    "nombre": "JABON BAÑO DOVE 106G",
+    "precio": 1.95,
+    "imagen": "product_images/a740de5eed58451db2f1371ed8233433.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "b3b91ff3648043ec91e8cbe8a34a75cd",
+    "nombre": "CEPILLO DE DIENTE COLGATE",
+    "precio": 1.77,
+    "imagen": "product_images/2762d16ccd4840768d381f1fb4a104e7.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "a89cda0c409a40bfbea458b64a6f5344",
+    "nombre": "CEPILLO DE DIENTE TRY-DENT",
+    "precio": 0.99,
+    "imagen": "product_images/8a5c203693424339b96b3cf0eee90880.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "fc94eda033614810ab10a9b3ff2f5c08",
+    "nombre": "ACEITE PARA NIÑOS BABY FINGER 100ML",
+    "precio": 2.49,
+    "imagen": "product_images/246bc1cbf96f4a71bb2f4a213f7647d4.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "9c9500abbe534abb8ae6abc3d0f471bb",
+    "nombre": "ACEITE PARA NIÑOS HUGME 200ML",
+    "precio": 3.98,
+    "imagen": "product_images/12ca1af7a7a64b7284de694b4197b3b1.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "ee58dbce6fb64d3db2aff3b215a4c299",
+    "nombre": "CHAMPO PANTENE PRO-V 820ML",
+    "precio": 14.91,
+    "imagen": "product_images/357d6e6de479414599567ca3e12f6430.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "b58172aa643c44ba8a375b2d2976f992",
+    "nombre": "SHAMPOO SAVITAL FAMILIAR 510ML",
+    "precio": 7.95,
+    "imagen": "product_images/4feb5373f2e740579c7f8ceea7d6b164.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "01f4ad405aed49d3bda3e1785470d9a6",
+    "nombre": "CREMA PARA PEINAR SKALA GENETIQS 1K",
+    "precio": 7.46,
+    "imagen": "product_images/a5eb9a3926fd4ccca7e236ae46416a68.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "31796e81860d42be805c16d14d900ed8",
+    "nombre": "ACONDICIONADOR SAVITAL 490ML",
+    "precio": 7.95,
+    "imagen": "product_images/a8b1dc675a4b4690b3b1caa827d3cdf1.webp",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "1b2437d862df46b8b9d1aa9a6c80bae3",
+    "nombre": "CREMA PARA PEINAR SKALA EXPERT 1K",
+    "precio": 7.46,
+    "imagen": "product_images/ab2d4576d59149da9bee0b0e24433428.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "519568c6a50d45efb401ca241967946d",
+    "nombre": "ROOTANA LOCION CORPORAL 400ML",
+    "precio": 5.96,
+    "imagen": "product_images/0395a0fd0c414f89a8aab302af2c0c23.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "855b1b3baa6c4904b347618ef931bf9b",
+    "nombre": "AGUA OXIGENADA 120ML",
+    "precio": 2.98,
+    "imagen": "product_images/d256946807b642d097db678ace5b3d31.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "34f04d4aa28847238f51160242b9e766",
+    "nombre": "TINTE CABELLO LOVIA",
+    "precio": 2.49,
+    "imagen": "product_images/ebeed1a757cd4728ac8e6133027677b0.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "d2c867e995c346ceb43099d9be4b034c",
+    "nombre": "GEL FIJADOR EVERY NIGTH 500G",
+    "precio": 4.93,
+    "imagen": "product_images/e0f563e3f9b94df7975fcd01f3e42ba2.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "91f7c6bfe1664443a5a90537c9816700",
+    "nombre": "GEL FIJADOR ROLDA 500G",
+    "precio": 5.31,
+    "imagen": "product_images/5582e201acd84f0bafd60593353fdc88.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "1735e9fe65b44796bfa9e6939d3c2466",
+    "nombre": "GEL FIJADOR EVERY NIGHT 250G",
+    "precio": 3.8,
+    "imagen": "product_images/1b168cae6b1e4d0a9ba2879cf0117c84.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "29d32db5a7db4861998aa0451aa7c80e",
+    "nombre": "GEL FIJADOR EGO 110ML",
+    "precio": 2.19,
+    "imagen": "product_images/7523070eff714f2dbd5945bb09905f2a.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "8d8bf775164f4addab3d75b1fa5ed732",
+    "nombre": "GEL FIJADOR EVERY NIGHT 100G",
+    "precio": 3.21,
+    "imagen": "product_images/62ea016506bd402485cbd6e85abf6a71.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "ef4cab98cc414b7b894807167fe3f539",
+    "nombre": "GEL FIJADOR ROLDA 250G",
+    "precio": 5.3,
+    "imagen": "product_images/0eb4543f17994ff38bba144724ba9adb.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "98717508ed3c4f968483c64cd29be158",
+    "nombre": "GEL FRIO PARA CUERPO ALIVE 235G",
+    "precio": 4.97,
+    "imagen": "product_images/9bcf24168dec48e593b01c4a563b247b.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "0dacde6d5a924c5d8c6231c0ac251949",
+    "nombre": "DESODORANTE LADY SPEED STICK 65G",
+    "precio": 5.96,
+    "imagen": "product_images/51632ff4240648e89a2fd8f81bc1cce1.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "6d9a19bd9575431eb657f922c278d4d8",
+    "nombre": "DESODORANTE SPEED STICK CREMA 30G",
+    "precio": 1.99,
+    "imagen": "product_images/7366f3cfd1ca461b8e318ec14ba7507a.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "2b8d824533254e9f98b37547c67ceb6c",
+    "nombre": "DESODORANTE BALANCE CLINICAL CREMA 30G",
+    "precio": 1.99,
+    "imagen": "product_images/9b0aae0ba7e144129c4a8cd2a643f71a.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "8613f9c579a64665ae8abc66a53d818b",
+    "nombre": "CONDON DUO X3",
+    "precio": 0.99,
+    "imagen": "product_images/818b813033af446ab574045e639ab33d.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "1492f14756f1484582c9a94d6d65a7ad",
+    "nombre": "GEL FIJADOR ROLDA 120G",
+    "precio": 3.3,
+    "imagen": "product_images/c1dbd3db708740ba86ee178942352ee5.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "8e20d068e9c44c9bba71dc0a734b143e",
+    "nombre": "DESODORANTE LDY SPED STICK CLINI CR 30G",
+    "precio": 1.99,
+    "imagen": "product_images/cfffdc7a013949a79ce3d902cd6cbf39.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "6302c886732345758c0032faf37cb270",
+    "nombre": "DESODORANTE BALANCE CREMA 30G",
+    "precio": 1.99,
+    "imagen": "product_images/03243b11703245a79025dce7867c2bfc.webp",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "d234e4792eed49bdb747400d2528f1af",
+    "nombre": "CREMA ZAPATO CHERRY 30G",
+    "precio": 1.99,
+    "imagen": "product_images/19d464a1e13a4cb6b52260843d2cf1b6.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "b6e732f80b0643f8997ecac737fa0cff",
+    "nombre": "CURITAS MEDICARE PQ",
+    "precio": 0.05,
+    "imagen": "product_images/d8d8d67e305447bdb4cd440d71f57542.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "ff1d89eb8b634a5d89e3bd1a4df0a18b",
+    "nombre": "PALILLOS DENTALES DOLARES",
+    "precio": 1.59,
+    "imagen": "product_images/1e4a5f1492034ee6b18852a555e66dae.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "850ef54762b24711a6421589054a90bc",
+    "nombre": "CARTUCHOS MQ AFEITAR X4",
+    "precio": 4.97,
+    "imagen": "product_images/a57025d1ddc449728e0248b6ce8a5d52.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "10c56262be8b4b3295aeedc22e8c9ff1",
+    "nombre": "CREMA DENTAL COLGATE TRIPLE ACCION 60ML",
+    "precio": 2.56,
+    "imagen": "product_images/1fed98195c744668afe70e97aa1eed41.png",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "deab5205060a4b2789b9777547a811a8",
+    "nombre": "AFEITADORA GILLETTE MAX 3",
+    "precio": 11.93,
+    "imagen": "product_images/d1673f93ec044184bf1a870f28b95cf5.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "5d5d27d49f014ffab1e8a92a95f5c874",
+    "nombre": "CARTUCHOS GILLETTE MAX 3",
+    "precio": 13.92,
+    "imagen": "product_images/61472251f3074a10adb2d8adda7a174e.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "5ec95b300826416d8b2c71a99476b70b",
+    "nombre": "JABON DE LAVAR ARIEL 400G",
+    "precio": 2.75,
+    "imagen": "product_images/95f09d0379534798beefdc781f6061f8.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "8a5457b79e5c41929bb47e87a1066813",
+    "nombre": "PROTECTOR DIARIO ALIVE X20",
+    "precio": 1.49,
+    "imagen": "product_images/7ee1a69bee7e417e986ecbf6c0c14504.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "b41317c64ec54764aafafdd887cf643a",
+    "nombre": "CORTA CUTICULAS",
+    "precio": 2.98,
+    "imagen": "product_images/e4e5d7f22513495992cf60b117e81b9d.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "2c83922430c24ee6b0f33b077bcd6143",
+    "nombre": "PAÑAL DESECHABLE DETALLADO",
+    "precio": 0.6,
+    "imagen": "product_images/424e5f7f735344dbaccafc902c5dde24.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "8b04fadd9f0f49eba74aa6e407624af8",
+    "nombre": "PAPEL PLUS DETALLADO",
+    "precio": 1.33,
+    "imagen": "product_images/49f5fa024efc41baa9b2104b38fdce9a.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "2a4413ddfff141699322a8baec2e1f31",
+    "nombre": "CEPILLO ORAL B",
+    "precio": 1.09,
+    "imagen": "product_images/6d845e71f27840dda81fa5ad1443ca55.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "aa31c852742042eca72ce26215873013",
+    "nombre": "DESODORANTE SOBRE SPEED STICK 9G",
+    "precio": 0.8,
+    "imagen": "product_images/c03bf9b0f4664440ae5ea59d0fe0cbe9.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "311d9052110c4de7b265456ca2d26867",
+    "nombre": "TALCO BOROCANFORT",
+    "precio": 4.47,
+    "imagen": "product_images/2a1fdab55f3c4d1bbef9ca6228d88229.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "2cd148645cf64f0692ea6866ae68c2e9",
+    "nombre": "LABIAL MOISTURE LIP CREAM",
+    "precio": 0.7,
+    "imagen": "product_images/92111959564540e3963a01ccc3f4bb76.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "97d14b0ca9d84ea6b3f928d176286c94",
+    "nombre": "SHAMPOO HEAD SHOULDERS SOBRE",
+    "precio": 0.7,
+    "imagen": "product_images/b2d0cb3767bb4505998a6278ec3cc78b.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "e377b9eae2234bf49a191e04acde010d",
+    "nombre": "NUTRIBELA",
+    "precio": 1.49,
+    "imagen": "product_images/a3837f5c71c24d77aabb542e206e40f8.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "70c80f75141d45b3bd28a4f90a7908db",
+    "nombre": "DESODORANTE SPEED STICK BARRA 50G",
+    "precio": 6.71,
+    "imagen": "product_images/ae4604765a8d4b7fb6853db3d78d7a10.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "f9637a44efb74a5a920768d564245fbe",
+    "nombre": "TOALLA FEMENINA HUGME X10 DIA",
+    "precio": 1.09,
+    "imagen": "product_images/3dbb4c12112e4d96833ab8a1f4867941.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "02413e15dc9a4366bd19a034b32c1aad",
+    "nombre": "TOALLA FEMENINA ALIVE EXTRA LARGA X8 NOC",
+    "precio": 1.69,
+    "imagen": "product_images/593cb945da64493fb23521952daf6284.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "695cf7e9eb1c4d97a2316236ec9cc073",
+    "nombre": "PAÑAL HUGGIES XXG X20",
+    "precio": 10.94,
+    "imagen": "product_images/9e59147ecdb047a6b34b23b3ac63cf7c.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "184d235bd8d34f17bcfab306f5a4c5b4",
+    "nombre": "LISTERINE ORIGINAL 500ML",
+    "precio": 12.23,
+    "imagen": "product_images/995ecdf6552b47a5b7c2e58dfe4dd076.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "66436152024d4a029e443122f5367db4",
+    "nombre": "PAÑAL HUGME G X40",
+    "precio": 16.9,
+    "imagen": "product_images/d1a0ce999f674d539b313964f7a47847.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "ed407b4f12214124af89013d6a675bb4",
+    "nombre": "DESODORANTE GILLETTE GEL 82G",
+    "precio": 7.95,
+    "imagen": "product_images/3f56e7b05c844be1ab0fadcd9821247e.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "120291decb36435499c499cca860edc8",
+    "nombre": "LAMPAZO TIPO B",
+    "precio": 4.97,
+    "imagen": "product_images/359bbacd21d644a5884321b292dda823.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "b906e95ee47f469994fc04539489200c",
+    "nombre": "PAÑAL HUGME M X40",
+    "precio": 16.9,
+    "imagen": "product_images/7934efafd47c497eb8eadbb7898a3d90.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "f7118145e3dd4ac7a4a8f5d7381a84c9",
+    "nombre": "PAÑAL HUGME PARA ADULTO L X8",
+    "precio": 12.92,
+    "imagen": "product_images/6450c8d0f96b46139221d81c4a5aa7bd.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "ae95e8632d2c4f6aa2a38bb9d488ef85",
+    "nombre": "PAÑAL HUGME PARA ADULTO XL X8",
+    "precio": 13.92,
+    "imagen": "product_images/fae97ef1aeff486c834adf9fadc8b682.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "2498a5d3f4e1481d98739cbc0d050b97",
+    "nombre": "DESODORANTE LADY SPPED STICK ROLL ON",
+    "precio": 4.77,
+    "imagen": "product_images/5d2d7b07e4c246ae8a7473aa4d86c997.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "68841b89d5764dd79ee42530f1dd1efa",
+    "nombre": "ACEITE DE COCO 350ML",
+    "precio": 8.95,
+    "imagen": "product_images/535a74541ca14ffeb62013881aa62b64.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "5f42a18ffcbf43f7ac8ef42eb7851556",
+    "nombre": "HS CHAMPU PROTEC CAIDA 375CC",
+    "precio": 11.93,
+    "imagen": "product_images/b2ad47b6b1fd45a9852d7552c843e236.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "032eb95787a34666893163b99a724e75",
+    "nombre": "CHAMPU HUG 2EN1 400ML",
+    "precio": 3.98,
+    "imagen": "product_images/3326c462986c47238a3e36e6bed03ce4.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "2ea7eef196004fd1a9ef7d93f651adc3",
+    "nombre": "PAÑAL ADULTO ALIVE XG X6",
+    "precio": 13.92,
+    "imagen": "product_images/1062f588f9f3439d897ff793a22c1dee.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "b30433d068d74770aa491dff2ab7319a",
+    "nombre": "JABON DOXA 125GR",
+    "precio": 1.14,
+    "imagen": "product_images/c3b19a0b24ad423da86a78c0fc960d24.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "680af4566acd4a0ebeed60863e64b938",
+    "nombre": "JABON ACE 400G",
+    "precio": 2.2,
+    "imagen": "product_images/e4fc69250c984c65b707c35e44ea0410.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "9194251b239a452c85c2bdac1333a283",
+    "nombre": "JABON PROTEX 75G",
+    "precio": 1.29,
+    "imagen": "product_images/f3a4c87c42c24a81bd494df3eb0aaedf.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "58ed41d5c1d141e6a12f1199b5fdcf67",
+    "nombre": "CREMA DENTAL ORAL B",
+    "precio": 3.17,
+    "imagen": "product_images/c8e022fb541b40a4ba6276cf2ffc32fa.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "6e7edebac6be4071866284a5beeb6dd5",
+    "nombre": "PAPEL ROSAL INDIBIDUAL",
+    "precio": 0.41,
+    "imagen": "product_images/72f05ba337ee4530b7bcbbec50b312c0.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "0e3d057a6f4d4d44bf1c6d85f7deac55",
+    "nombre": "DESODORANTE SOBRE SPEED STICK CLINICAL 9",
+    "precio": 0.7,
+    "imagen": "product_images/535df03931f8401b8c73447802877507.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "36e2e1200358461c914052e20fc4ecf4",
+    "nombre": "CREMA DENTAL COLGATE TRIPLE A XTRA B 75M",
+    "precio": 4.37,
+    "imagen": "product_images/65cc1f414d89482a866938898f5928c0.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "2bdb5b36930a4d4fa405749f0680649d",
+    "nombre": "CREMA COLGATE KIDS 50G",
+    "precio": 2.58,
+    "imagen": "product_images/31516c01fba042679972cb323fc12149.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "9e93e209bb414fb9a9ee31e1434c25aa",
+    "nombre": "TOALLA ALWAYS DIA",
+    "precio": 3.98,
+    "imagen": "product_images/32332c2b14c74a398e9ffdd8dca5ea5a.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "7c3f318f74274a718cfd3c36ac9f2d93",
+    "nombre": "TOALLA ALWAYS NOCHE",
+    "precio": 3.48,
+    "imagen": "product_images/5841bebf1f8a43f8affef90e82cb2d79.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "37d9990fae564ccabbdb54fc5a532ace",
+    "nombre": "DESODORANTE GILLETE 45G",
+    "precio": 4.57,
+    "imagen": "product_images/2d61e93e22f0489889ffe10d26474781.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "072a16bfeee54892b99cd674ef750d9a",
+    "nombre": "CEPILLO DENTAL COLGATE NIÑO",
+    "precio": 0.99,
+    "imagen": "product_images/a28efef6cd8c4a34971721c09e2eb94a.jpg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "f2f6b49e1ed94a72ab40110d9c92a41b",
+    "nombre": "JABON 3N FRUTAL",
+    "precio": 0.96,
+    "imagen": "product_images/9a94fd3498ac449d9b6bc14460a112e1.jpg",
+    "categoria": "HIGIENE PERSONAL"
   }
 ]
