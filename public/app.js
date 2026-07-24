@@ -26,6 +26,11 @@ function fixImgSrc(path) {
   let p = String(path).trim();
   if (p.startsWith('data:') || p.startsWith('http://') || p.startsWith('https://')) return p;
   p = p.replace(/^\/+/, '');
+  // Rutas ya-relativas a carpetas conocidas (subcat_images/, cat_images/, etc.)
+  if (/^(public\/)?(subcat_images|cat_images|banner_images|ads_images)\//.test(p)) {
+    if (!p.startsWith('public/')) p = 'public/' + p;
+    return './' + p;
+  }
   if (!p.includes('product_images/')) {
     p = p.replace(/^public\//, '');
     p = 'public/product_images/' + p;
@@ -106,6 +111,7 @@ let PRODUCTS = [];
 let CATEGORIES = [];
 let CAT_STYLES = {};
 let ANUNCIOS = {};
+let SUBCATS   = {};   // { "VIVERES": [ {nombre, image_path, image_b64, keywords:[...] }, ... ] }
 
 /* ---------------- TEMA (aplica TODOS los ajustes del editor) ---------------- */
 function applyTheme() {
@@ -388,18 +394,40 @@ function buildHomeTile(cat) {
   const catProds = PRODUCTS.filter(p => p.categoria === cat);
   const s = catStyle(cat);
   const emoji = s.icon || iconForCategory(cat);
-  const preview = catProds.slice(0, 4);
-  let items = preview.map(p => `
-    <a class="am-quad-item" href="?cat=${encodeURIComponent(cat)}">
-      <div class="am-quad-imgwrap"><img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/></div>
-      <div class="am-quad-name">${escapeHtml(p.nombre || '')}</div>
-    </a>
-  `).join('');
-  for (let k=preview.length; k<4; k++) items += `<div class="am-quad-item am-quad-empty"></div>`;
-
-  const grid = preview.length
-    ? `<div class="am-quad-grid">${items}</div>`
-    : `<div class="am-quad-grid"><div class="am-empty" style="grid-column:1/-1;margin:0;">Aún no hay productos.</div></div>`;
+  // Preferir los mosaicos de subcategoría definidos desde el editor (subcategorias.json).
+  // Si no hay, caer al preview clásico con thumbnails de productos.
+  const subs = Array.isArray(SUBCATS[cat]) ? SUBCATS[cat].slice(0, 4) : [];
+  let grid;
+  if (subs.length) {
+    let items = subs.map(sub => {
+      const nombre = sub.nombre || '';
+      const imgSrc = sub.image_b64
+        ? ('data:image/png;base64,' + String(sub.image_b64).trim())
+        : fixImgSrc(sub.image_path || '');
+      const href = `?cat=${encodeURIComponent(cat)}&sub=${encodeURIComponent(nombre)}`;
+      const imgHtml = imgSrc
+        ? `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(nombre)}" loading="lazy"/>`
+        : `<div style="color:#aaa;font-size:12px;display:flex;align-items:center;justify-content:center;height:100%;">Sin imagen</div>`;
+      return `<a class="am-quad-item" href="${escapeAttr(href)}">
+        <div class="am-quad-imgwrap">${imgHtml}</div>
+        <div class="am-quad-name">${escapeHtml(nombre)}</div>
+      </a>`;
+    }).join('');
+    for (let k=subs.length; k<4; k++) items += `<div class="am-quad-item am-quad-empty"></div>`;
+    grid = `<div class="am-quad-grid">${items}</div>`;
+  } else {
+    const preview = catProds.slice(0, 4);
+    let items = preview.map(p => `
+      <a class="am-quad-item" href="?cat=${encodeURIComponent(cat)}">
+        <div class="am-quad-imgwrap"><img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/></div>
+        <div class="am-quad-name">${escapeHtml(p.nombre || '')}</div>
+      </a>
+    `).join('');
+    for (let k=preview.length; k<4; k++) items += `<div class="am-quad-item am-quad-empty"></div>`;
+    grid = preview.length
+      ? `<div class="am-quad-grid">${items}</div>`
+      : `<div class="am-quad-grid"><div class="am-empty" style="grid-column:1/-1;margin:0;">Aún no hay productos.</div></div>`;
+  }
 
   return `<div class="am-tile">
     <div class="am-tile-title" style="color:${s.title_color};font-size:${s.title_size}px;">
@@ -411,17 +439,37 @@ function buildHomeTile(cat) {
   </div>`;
 }
 
-function viewCategory(main, cat) {
+function viewCategory(main, cat, subName) {
   const emoji = iconForCategory(cat);
+  // Si viene ?sub= filtramos por las keywords del mosaico correspondiente.
+  let sub = null;
+  if (subName) {
+    const list = Array.isArray(SUBCATS[cat]) ? SUBCATS[cat] : [];
+    sub = list.find(x => String(x.nombre||'').toLowerCase() === String(subName).toLowerCase()) || null;
+  }
+  const titleTxt = sub ? `${cap(cat)} · ${sub.nombre}` : cap(cat);
   main.insertAdjacentHTML('beforeend', `
     <div class="am-view-head">
-      <div class="am-view-title">${escapeHtml(emoji)} ${escapeHtml(cap(cat))}</div>
-      <a class="am-btn am-btn-ghost" href="./">← Apartados</a>
+      <div class="am-view-title">${escapeHtml(emoji)} ${escapeHtml(titleTxt)}</div>
+      <a class="am-btn am-btn-ghost" href="${sub ? '?cat=' + encodeURIComponent(cat) : './'}">← ${sub ? cap(cat) : 'Apartados'}</a>
     </div>
   `);
-  const prods = PRODUCTS.filter(p => p.categoria === cat);
+  let prods = PRODUCTS.filter(p => p.categoria === cat);
+  if (sub) {
+    const kws = (sub.keywords || []).map(k => String(k||'').toLowerCase().trim()).filter(Boolean);
+    if (kws.length) {
+      prods = prods.filter(p => {
+        const hay = (String(p.nombre||'') + ' ' + String(p.descripcion||'')).toLowerCase();
+        return kws.some(k => hay.includes(k));
+      });
+    } else {
+      // Sin palabras clave: intentar coincidir con el nombre del mosaico.
+      const n = String(sub.nombre||'').toLowerCase();
+      if (n) prods = prods.filter(p => String(p.nombre||'').toLowerCase().includes(n));
+    }
+  }
   if (!prods.length) {
-    main.insertAdjacentHTML('beforeend', `<div class="am-empty">No hay productos en este apartado todavía.</div>`);
+    main.insertAdjacentHTML('beforeend', `<div class="am-empty">No hay productos${sub ? ' que coincidan con "'+escapeHtml(sub.nombre)+'"' : ''} todavía.</div>`);
     return;
   }
   renderProductGrid(main, prods);
@@ -576,9 +624,10 @@ function route() {
   const params = new URLSearchParams(location.search);
   const view = (params.get('view')||'').toLowerCase();
   const cat  = params.get('cat');
+  const sub  = params.get('sub');
   const q    = params.get('q');
   if (view === 'cart') return viewCart(main);
-  if (cat) return viewCategory(main, cat);
+  if (cat) return viewCategory(main, cat, sub);
   if (q !== null) return viewSearch(main, q);
   viewHome(main);
 }
@@ -603,6 +652,7 @@ async function boot() {
     fetchJSON(base + 'category_styles.json', {}),
     fetchJSON(base + 'anuncios.json', {}),
   ]);
+  SUBCATS = await fetchJSON(base + 'subcategorias.json', {});
 
   applyTheme();          // <- primero el tema, para que la barra se vea correcta
   renderDeliveryBanner();
