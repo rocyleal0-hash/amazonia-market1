@@ -444,6 +444,7 @@ img { max-width: 100%; }
   .am-add-btn { font-size: 9px; min-height: 26px; padding: 5px 3px; }
 }
 
+
 /* =========================================================
    AÑADIDOS: logo Cashea en banner + botones flotantes
    ========================================================= */
@@ -493,7 +494,7 @@ img { max-width: 100%; }
 }
 .am-float-wa svg { display: block; }
 
-/* Pagar ahora: abajo DERECHA */
+/* Pagar ahora: abajo DERECHA (aparece solo con items en carrito) */
 .am-float-pay {
   right: 20px;
   height: 54px;

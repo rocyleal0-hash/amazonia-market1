@@ -91,16 +91,9 @@ function updateCartBadge() {
   if (b) {
     if (n > 0) { b.textContent = n; b.hidden = false; } else b.hidden = true;
   }
+  // Botón flotante "Pagar ahora": solo visible cuando hay items en el carrito
   const pay = document.getElementById('btnPayNow');
   if (pay) pay.hidden = n <= 0;
-}
-
-let toastTimer = null;
-function toast(msg) {
-  const t = $('#toast'); if (!t) return;
-  t.textContent = msg; t.hidden = false;
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => { t.hidden = true; }, 1800);
 }
 
 /* ---------------- CONFIG WHATSAPP ---------------- */
@@ -112,6 +105,14 @@ const WA_GREETING =
 
 function waFloatUrl() {
   return 'https://wa.me/' + WA_PHONE + '?text=' + encodeURIComponent(WA_GREETING);
+}
+
+let toastTimer = null;
+function toast(msg) {
+  const t = $('#toast'); if (!t) return;
+  t.textContent = msg; t.hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.hidden = true; }, 1800);
 }
 
 /* ---------------- ESTADO ---------------- */
@@ -191,38 +192,6 @@ function applyTheme() {
     `;
   } else {
     st.textContent = '';
-  }
-}
-
-/* ---------------- FONDO DE PÁGINA (page_bg_*) ---------------- */
-function applyPageBg() {
-  const s = SETTINGS || {};
-  const type = String(s.page_bg_type || 'color').toLowerCase();
-  const styleId = 'am-page-bg';
-  let st = document.getElementById(styleId);
-  if (!st) { st = document.createElement('style'); st.id = styleId; document.head.appendChild(st); }
-
-  const blur = intOr(s.page_bg_blur, 0);
-  const bri  = intOr(s.page_bg_brightness, 100);
-  const op   = Math.max(0, Math.min(1, intOr(s.page_bg_opacity, 100) / 100));
-
-  if (type === 'image' && String(s.page_bg_image_b64 || '').trim()) {
-    const b64 = String(s.page_bg_image_b64).trim();
-    st.textContent = `
-      html, body { background: transparent !important; }
-      body::before {
-        content:''; position: fixed; inset: 0; z-index: -1;
-        background: url('data:image/*;base64,${b64}') center/cover no-repeat fixed;
-        filter: blur(${blur}px) brightness(${bri}%);
-        opacity: ${op.toFixed(2)};
-        pointer-events: none;
-      }
-    `;
-  } else {
-    const color = String(s.page_bg_color || '').trim() || '#F4F5F7';
-    st.textContent = `
-      html, body { background: ${color} !important; }
-    `;
   }
 }
 
@@ -322,19 +291,21 @@ function renderCategoryCircles() {
 
   const html = CATEGORIES.map(cat => {
     const s = catStyle(cat);
+    const icon = s.icon || iconForCategory(cat);
     const sz = s.circle_size;
     let inner, bg;
     if (s.use_image && s.image_path) {
       const imgSrc = fixImgSrc(s.image_path);
-      inner = `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(cat)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';"/>`;
+      inner = `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(cat)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"/>
+               <span style="display:none;font-size:${Math.round(sz*0.46)}px;">${escapeHtml(icon)}</span>`;
       bg = `background:${s.circle_color};`;
     } else {
-      inner = '';
+      inner = `<span style="font-size:${Math.round(sz*0.46)}px;">${escapeHtml(icon)}</span>`;
       bg = `background: radial-gradient(circle at 30% 30%, color-mix(in srgb, ${s.circle_color} 78%, white) 0%, ${s.circle_color} 78%);`;
     }
     return `<a class="am-cat-circle" href="?cat=${encodeURIComponent(cat)}" style="min-width:${Math.max(sz+20,80)}px;">
       <div class="bubble" style="width:${sz}px;height:${sz}px;${bg}display:flex;align-items:center;justify-content:center;overflow:hidden;">${inner}</div>
-      <div class="label" style="color:#000000;font-weight:700;font-size:${s.label_size}px;">${escapeHtml(cat)}</div>
+      <div class="label" style="color:${s.label_color};font-size:${s.label_size}px;">${escapeHtml(cat)}</div>
     </a>`;
   }).join('');
   cs.innerHTML = html;
@@ -391,7 +362,7 @@ function renderAnunciosBanner(container) {
     <div class="am-ads-wrap">
       <div class="am-ads-hero" id="adsHero" style="${heroStyle}">
         ${slidesHtml}${ovrHtml}
-        <img class="am-cashea-logo" src="public/cashea.png" alt="Cashea"/>
+        <img class="am-cashea-logo" src="public/cashea.png" alt="Cashea" onerror="this.style.display='none'"/>
       </div>
       ${cardsHtml}
     </div>
@@ -653,7 +624,6 @@ async function boot() {
   ]);
 
   applyTheme();          // <- primero el tema, para que la barra se vea correcta
-  applyPageBg();         // <- fondo de página (color o imagen desde site_settings.json)
   renderDeliveryBanner();
   renderBrand();
   renderSocials();
@@ -661,10 +631,13 @@ async function boot() {
   renderCategoryCircles();
   wireSearch();
   wireQtyModal();
-  wireFloatingButtons();
   updateCartBadge();
   route();
 }
+
+document.addEventListener('DOMContentLoaded', boot);
+})();
+
 
 /* ---------------- BOTONES FLOTANTES (WhatsApp + Pagar ahora) ---------------- */
 function wireFloatingButtons() {
@@ -677,7 +650,11 @@ function wireFloatingButtons() {
       location.href = './?view=cart';
     });
   }
+  // Sincroniza visibilidad del botón "Pagar ahora" al cargar
+  updateCartBadge();
 }
-
-document.addEventListener('DOMContentLoaded', boot);
-})();
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', wireFloatingButtons);
+} else {
+  wireFloatingButtons();
+}
