@@ -445,91 +445,70 @@ img { max-width: 100%; }
 }
 
 /* =========================================================
-   PARCHE: ESTRUCTURA "MADISON CENTER" (SUB-APARTADOS)
-   Sección por apartado con título + "Ver más" + fila de mosaicos.
+   AÑADIDOS: logo Cashea en banner + botones flotantes
    ========================================================= */
 
-.am-sect {
-  background: #fff;
-  border-radius: 14px;
-  padding: 16px 16px 14px;
-  margin: 14px auto;
-  max-width: 1280px;
-  box-shadow: 0 2px 10px rgba(0,0,0,.06);
-  border: 1px solid #eef1f5;
-}
-.am-sect-head {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; margin-bottom: 12px;
-}
-.am-sect-title {
-  font-weight: 900; font-size: 22px; line-height: 1.1;
-  color: var(--primary); letter-spacing: .3px;
-  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
-}
-.am-sect-count { font-size: 12px; font-weight: 600; color: #6b7280; }
-.am-sect-more {
-  text-decoration: none; font-weight: 700; font-size: 14px;
-  color: var(--primary); white-space: nowrap;
-}
-.am-sect-more:hover { text-decoration: underline; }
-
-.am-subs-row {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-}
-.am-sub-tile {
-  display: flex; flex-direction: column; align-items: stretch;
-  text-decoration: none; color: inherit;
-  background: #fff;
+/* Logo Cashea en la esquina superior derecha del banner */
+.am-ads-hero { position: relative; }
+.am-cashea-logo {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  height: 44px;
+  width: auto;
+  z-index: 5;
   border-radius: 10px;
-  padding: 6px;
-  transition: transform .15s, box-shadow .15s;
+  background: rgba(255,255,255,0.92);
+  padding: 4px 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.25);
+  pointer-events: none;
 }
-.am-sub-tile:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.08); }
-.am-sub-empty { background: transparent; box-shadow: none; pointer-events: none; }
-.am-sub-imgbox {
-  width: 100%; aspect-ratio: 1/1;
-  background: #f4f5f7;
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid #e5e7eb;
-}
-.am-sub-imgbox img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.am-sub-noimg { font-size: 42px; color: #94a3b8; }
-.am-sub-name {
-  margin-top: 8px; text-align: center;
-  font-weight: 700; font-size: 14px; color: #0f172a;
-  line-height: 1.2;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-  overflow: hidden;
-  min-height: 34px;
+@media (max-width: 640px) {
+  .am-cashea-logo { height: 34px; top: 8px; right: 8px; }
 }
 
-/* Chips en la vista de categoría (filtro rápido) */
-.am-chips {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin: 6px 0 14px;
-}
-.am-chip {
+/* Botones flotantes (WhatsApp + Pagar ahora) */
+.am-float {
+  position: fixed;
+  bottom: 20px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  padding: 7px 14px; border-radius: 999px;
-  background: #fff; color: #0f172a;
-  border: 1px solid #e5e7eb;
-  font-weight: 600; font-size: 13px;
-  transition: background .12s, transform .12s, border-color .12s;
+  font-family: 'Poppins', system-ui, sans-serif;
+  box-shadow: 0 8px 22px rgba(0,0,0,.28);
+  transition: transform .15s ease, box-shadow .15s ease;
 }
-.am-chip:hover { background: #f4f5f7; }
-.am-chip-active {
-  background: var(--primary); color: #fff; border-color: var(--primary);
-}
+.am-float:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0,0,0,.35); }
+.am-float:active { transform: translateY(0); }
 
-@media (max-width: 780px) {
-  .am-sect { border-radius: 10px; padding: 12px 10px 10px; margin: 10px 6px; }
-  .am-sect-title { font-size: 18px; }
-  .am-sect-more { font-size: 12px; }
-  .am-subs-row { gap: 8px; }
-  .am-sub-name { font-size: 12px; min-height: 30px; }
+/* WhatsApp: abajo IZQUIERDA */
+.am-float-wa {
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+}
+.am-float-wa svg { display: block; }
+
+/* Pagar ahora: abajo DERECHA */
+.am-float-pay {
+  right: 20px;
+  height: 54px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #16A34A;
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+.am-float-pay::before { content: "💳"; margin-right: 8px; font-size: 18px; }
+
+@media (max-width: 640px) {
+  .am-float-wa { width: 54px; height: 54px; left: 14px; bottom: 14px; }
+  .am-float-pay { height: 48px; padding: 0 18px; font-size: 14px; right: 14px; bottom: 14px; }
 }

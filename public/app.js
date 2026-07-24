@@ -1,11 +1,11 @@
 /* =========================================================
-   AMAZONIA MARKET - app.js (versión con SUBAPARTADOS estilo Madison)
-   - Cada apartado (Víveres, Bebidas, etc.) puede tener hasta 4
-     "sub-mosaicos" (imagen + texto + palabras clave).
-   - Se leen desde public/subcategorias.json
-   - Botón "Ver más" abre el apartado completo (?cat=XXX)
-   - Click en un sub-mosaico abre el apartado filtrado por palabras
-     clave (?cat=XXX&sub=INDICE)
+   AMAZONIA MARKET - app.js  (versión mejorada)
+   - Lee TODAS las opciones que guarda agregar_producto.py:
+     colores de la barra azul, color del texto "Delivery gratis",
+     imagen de fondo con blur/brillo/saturación/opacidad,
+     botones ☰ 🔍 🛒, panel del menú, botón "Ver más",
+     colores del carrito, borde de imágenes de producto,
+     alineación/tamaño/desplazamiento del logo, ocultar logo/títulos.
    ========================================================= */
 (() => {
 'use strict';
@@ -33,24 +33,6 @@ function fixImgSrc(path) {
     p = 'public/' + p;
   }
   return './' + p;
-}
-
-/* Fuente flexible para imágenes de sub-apartados:
-   - Si trae "image_b64" -> data URI
-   - Si trae "image_path" -> ruta (public/subcat_images/... o similar) */
-function subImgSrc(sub) {
-  if (!sub) return '';
-  const b64 = String(sub.image_b64 || '').trim();
-  if (b64) {
-    const mime = (sub.image_mime || 'image/png').trim();
-    return `data:${mime};base64,${b64}`;
-  }
-  const p = String(sub.image_path || '').trim();
-  if (!p) return '';
-  if (p.startsWith('data:') || p.startsWith('http')) return p;
-  const clean = p.replace(/^\/+/, '');
-  if (clean.startsWith('public/')) return './' + clean;
-  return './public/' + clean;
 }
 
 function fetchJSON(path, fallback) {
@@ -106,8 +88,11 @@ function cartSet(name, qty) {
 function cartClear() { saveCart({}); }
 function updateCartBadge() {
   const n = cartCount(); const b = $('#cartBadge');
-  if (!b) return;
-  if (n > 0) { b.textContent = n; b.hidden = false; } else b.hidden = true;
+  if (b) {
+    if (n > 0) { b.textContent = n; b.hidden = false; } else b.hidden = true;
+  }
+  const pay = document.getElementById('btnPayNow');
+  if (pay) pay.hidden = n <= 0;
 }
 
 let toastTimer = null;
@@ -118,20 +103,32 @@ function toast(msg) {
   toastTimer = setTimeout(() => { t.hidden = true; }, 1800);
 }
 
+/* ---------------- CONFIG WHATSAPP ---------------- */
+const WA_PHONE = '584246687700';
+const WA_GREETING =
+  '¡Hola! 👋 Me gustaría hacer un pedido en Amazonia MARKET. '
+  + '¿Me podrían ayudar con la información para realizar mi compra? '
+  + '¡Muchas gracias! 🛒';
+
+function waFloatUrl() {
+  return 'https://wa.me/' + WA_PHONE + '?text=' + encodeURIComponent(WA_GREETING);
+}
+
 /* ---------------- ESTADO ---------------- */
 let SETTINGS = {};
 let PRODUCTS = [];
 let CATEGORIES = [];
 let CAT_STYLES = {};
 let ANUNCIOS = {};
-let SUBCATS  = {};   // <-- NUEVO: subcategorias.json
 
-/* ---------------- TEMA ---------------- */
+/* ---------------- TEMA (aplica TODOS los ajustes del editor) ---------------- */
 function applyTheme() {
   const s = SETTINGS || {};
   const root = document.documentElement.style;
+
   const setVar = (name, val) => { if (val !== undefined && val !== null && String(val).trim() !== '') root.setProperty(name, String(val).trim()); };
 
+  // Barra superior (topbar)
   setVar('--tb-bg',          s.topbar_bg_color || s.hero_bg_color);
   setVar('--tb-delivery-fg', s.delivery_text_color);
   setVar('--tb-menu-bg',     s.btn_menu_bg);
@@ -140,25 +137,35 @@ function applyTheme() {
   setVar('--tb-search-fg',   s.btn_search_fg);
   setVar('--tb-cart-bg',     s.btn_cart_bg);
   setVar('--tb-cart-fg',     s.btn_cart_fg);
+
+  // Menú lateral
   setVar('--menu-bg', s.menu_panel_bg);
   setVar('--menu-fg', s.menu_panel_fg);
+
+  // Botón "Ver más"
   setVar('--more-bg', s.section_more_bg);
   setVar('--more-fg', s.section_more_fg);
+
+  // Borde de imágenes de producto
   setVar('--img-border-color', s.img_border_color);
   const bw = intOr(s.img_border_width, null);
   if (bw !== null) root.setProperty('--img-border-width', bw + 'px');
+
+  // Carrito
   setVar('--cart-card-bg',  s.cart_card_bg);
   setVar('--cart-name-fg',  s.cart_name_color);
   setVar('--cart-unit-fg',  s.cart_unit_color);
   setVar('--cart-price-bg', s.cart_price_bg);
   setVar('--cart-price-fg', s.cart_price_fg);
 
+  // Alineación / desplazamiento del logo
   const align = String(s.logo_align || 'left').toLowerCase();
   const justify = align === 'center' ? 'center' : (align === 'right' ? 'flex-end' : 'flex-start');
   root.setProperty('--brand-justify', justify);
   const off = intOr(s.logo_offset_x, 0);
   root.setProperty('--brand-offset-x', off + 'px');
 
+  // Imagen de fondo de la barra + blur/brillo/saturación/opacidad
   const tb = document.getElementById('topbar');
   const imgB64 = String(s.topbar_bg_image_b64 || s.hero_bg_b64 || '').trim();
   const styleId = 'am-topbar-bgimg';
@@ -187,7 +194,39 @@ function applyTheme() {
   }
 }
 
-/* ---------------- RENDERS BÁSICOS (sin cambios) ---------------- */
+/* ---------------- FONDO DE PÁGINA (page_bg_*) ---------------- */
+function applyPageBg() {
+  const s = SETTINGS || {};
+  const type = String(s.page_bg_type || 'color').toLowerCase();
+  const styleId = 'am-page-bg';
+  let st = document.getElementById(styleId);
+  if (!st) { st = document.createElement('style'); st.id = styleId; document.head.appendChild(st); }
+
+  const blur = intOr(s.page_bg_blur, 0);
+  const bri  = intOr(s.page_bg_brightness, 100);
+  const op   = Math.max(0, Math.min(1, intOr(s.page_bg_opacity, 100) / 100));
+
+  if (type === 'image' && String(s.page_bg_image_b64 || '').trim()) {
+    const b64 = String(s.page_bg_image_b64).trim();
+    st.textContent = `
+      html, body { background: transparent !important; }
+      body::before {
+        content:''; position: fixed; inset: 0; z-index: -1;
+        background: url('data:image/*;base64,${b64}') center/cover no-repeat fixed;
+        filter: blur(${blur}px) brightness(${bri}%);
+        opacity: ${op.toFixed(2)};
+        pointer-events: none;
+      }
+    `;
+  } else {
+    const color = String(s.page_bg_color || '').trim() || '#F4F5F7';
+    st.textContent = `
+      html, body { background: ${color} !important; }
+    `;
+  }
+}
+
+/* ---------------- RENDERS ---------------- */
 function renderDeliveryBanner() {
   const text = SETTINGS.delivery_text || '🚚 Delivery GRATIS en toda la zona de Coro';
   const color = (SETTINGS.delivery_text_color || '').trim();
@@ -201,6 +240,7 @@ function renderDeliveryBanner() {
 function renderBrand() {
   const siteName   = SETTINGS.site_name   || 'Amazonia';
   const siteMarket = SETTINGS.site_market || 'MARKET';
+
   const logoB64 = (SETTINGS.site_logo_b64 || '').trim();
   const logoEl = $('#brandLogo');
   const hideLogo = truthy(SETTINGS.hide_logo);
@@ -214,6 +254,7 @@ function renderBrand() {
       logoEl.style.display = 'none';
     }
   }
+
   const hideTitles = truthy(SETTINGS.hide_titles);
   const bt = $('#brandTitles');
   if (bt) {
@@ -251,6 +292,7 @@ function renderMenuPanel() {
       `<div class="am-menu-head">Apartados</div>` +
       (items || `<div style="padding:14px 18px;opacity:.85;font-size:13px;">Aún no hay apartados.</div>`);
   }
+  // Botón ☰ abre/cierra
   const btn = $('#btnMenu');
   if (btn && mp && !btn._wired) {
     btn._wired = true;
@@ -277,23 +319,22 @@ function renderCategoryCircles() {
   if (!cw || !cs) return;
   if (!CATEGORIES.length) { cw.style.display='none'; return; }
   cw.style.display = '';
+
   const html = CATEGORIES.map(cat => {
     const s = catStyle(cat);
-    const icon = s.icon || iconForCategory(cat);
     const sz = s.circle_size;
     let inner, bg;
     if (s.use_image && s.image_path) {
       const imgSrc = fixImgSrc(s.image_path);
-      inner = `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(cat)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"/>
-               <span style="display:none;font-size:${Math.round(sz*0.46)}px;">${escapeHtml(icon)}</span>`;
+      inner = `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(cat)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';"/>`;
       bg = `background:${s.circle_color};`;
     } else {
-      inner = `<span style="font-size:${Math.round(sz*0.46)}px;">${escapeHtml(icon)}</span>`;
+      inner = '';
       bg = `background: radial-gradient(circle at 30% 30%, color-mix(in srgb, ${s.circle_color} 78%, white) 0%, ${s.circle_color} 78%);`;
     }
     return `<a class="am-cat-circle" href="?cat=${encodeURIComponent(cat)}" style="min-width:${Math.max(sz+20,80)}px;">
       <div class="bubble" style="width:${sz}px;height:${sz}px;${bg}display:flex;align-items:center;justify-content:center;overflow:hidden;">${inner}</div>
-      <div class="label" style="color:${s.label_color};font-size:${s.label_size}px;">${escapeHtml(cat)}</div>
+      <div class="label" style="color:#000000;font-weight:700;font-size:${s.label_size}px;">${escapeHtml(cat)}</div>
     </a>`;
   }).join('');
   cs.innerHTML = html;
@@ -303,6 +344,7 @@ function renderAnunciosBanner(container) {
   if (!container) return;
   const _cards = ANUNCIOS.cards || [];
   const hasCards = _cards.some(c => (c.img_b64 || c.title));
+
   let slides = (ANUNCIOS.banner_slides || [])
     .map(s => ({ b64: (s.img_b64||'').trim(), url: (s.url||'').trim() }))
     .filter(s => s.b64);
@@ -311,10 +353,12 @@ function renderAnunciosBanner(container) {
     if (legacy) slides.push({ b64: legacy, url:'' });
   }
   if (!slides.length && !hasCards) return;
+
   const bh   = intOr(ANUNCIOS.banner_height, 320);
   const brt  = intOr(ANUNCIOS.banner_brightness, 100);
   const blur = intOr(ANUNCIOS.banner_blur, 0);
   const ovr  = intOr(ANUNCIOS.banner_overlay, 0);
+
   const slidesHtml = slides.map((s, i) => {
     const href = s.url || '#';
     const target = s.url ? 'target="_blank" rel="noopener"' : '';
@@ -324,6 +368,7 @@ function renderAnunciosBanner(container) {
   }).join('');
   const heroStyle = `height:${bh}px;`;
   const ovrHtml = ovr>0 ? `<div class="ovr" style="background:rgba(0,0,0,${(ovr/100).toFixed(2)});"></div>` : '';
+
   let cardsHtml = '';
   if (hasCards) {
     cardsHtml = `<div class="am-ads-cards">` + _cards.map(c => {
@@ -341,14 +386,17 @@ function renderAnunciosBanner(container) {
       </a>`;
     }).join('') + `</div>`;
   }
+
   container.insertAdjacentHTML('beforeend', `
     <div class="am-ads-wrap">
       <div class="am-ads-hero" id="adsHero" style="${heroStyle}">
         ${slidesHtml}${ovrHtml}
+        <img class="am-cashea-logo" src="public/cashea.png" alt="Cashea"/>
       </div>
       ${cardsHtml}
     </div>
   `);
+
   if (slides.length > 1) {
     let idx = 0;
     setInterval(() => {
@@ -363,129 +411,62 @@ function renderAnunciosBanner(container) {
 
 function cap(s){ s=String(s||''); return s.charAt(0).toUpperCase()+s.slice(1).toLowerCase(); }
 
-/* ---------------- HOME (estilo Madison con subapartados) ---------------- */
+/* ---------------- VISTAS ---------------- */
 function viewHome(main) {
   renderAnunciosBanner(main);
   if (!CATEGORIES.length) {
     main.insertAdjacentHTML('beforeend', `<div class="am-empty">Aún no hay apartados.<br>Crea apartados desde la app de escritorio.</div>`);
     return;
   }
+  const PER_ROW = 4;
   let out = '';
-  for (const cat of CATEGORIES) {
-    out += buildCategorySection(cat);
+  for (let i=0; i<CATEGORIES.length; i+=PER_ROW) {
+    const row = CATEGORIES.slice(i, i+PER_ROW);
+    let cards = row.map(cat => buildHomeTile(cat)).join('');
+    for (let k=row.length; k<PER_ROW; k++) cards += `<div class="am-tile am-tile-empty"></div>`;
+    out += `<div class="am-tiles-row">${cards}</div>`;
   }
   main.insertAdjacentHTML('beforeend', out);
 }
 
-/* Devuelve las subcats configuradas para una categoría (busca por
-   coincidencia case-insensitive para tolerar diferencias). */
-function subsFor(cat) {
-  if (!SUBCATS) return [];
-  if (Array.isArray(SUBCATS[cat])) return SUBCATS[cat];
-  const key = Object.keys(SUBCATS).find(k => k.toLowerCase() === String(cat).toLowerCase());
-  return key ? (SUBCATS[key] || []) : [];
-}
-
-function buildCategorySection(cat) {
+function buildHomeTile(cat) {
   const catProds = PRODUCTS.filter(p => p.categoria === cat);
   const s = catStyle(cat);
   const emoji = s.icon || iconForCategory(cat);
-  const subs = subsFor(cat).slice(0, 4);
+  const preview = catProds.slice(0, 4);
+  let items = preview.map(p => `
+    <a class="am-quad-item" href="?cat=${encodeURIComponent(cat)}">
+      <div class="am-quad-imgwrap"><img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/></div>
+      <div class="am-quad-name">${escapeHtml(p.nombre || '')}</div>
+    </a>
+  `).join('');
+  for (let k=preview.length; k<4; k++) items += `<div class="am-quad-item am-quad-empty"></div>`;
 
-  let tilesHtml = '';
-  if (subs.length) {
-    // Fila estilo Madison: 4 mosaicos (imagen + nombre)
-    let items = subs.map((sub, idx) => {
-      const src = subImgSrc(sub);
-      const name = sub.nombre || sub.name || '';
-      const imgTag = src
-        ? `<img src="${escapeAttr(src)}" alt="${escapeAttr(name)}" loading="lazy"/>`
-        : `<div class="am-sub-noimg">${escapeHtml(emoji)}</div>`;
-      return `<a class="am-sub-tile" href="?cat=${encodeURIComponent(cat)}&sub=${idx}">
-        <div class="am-sub-imgbox">${imgTag}</div>
-        <div class="am-sub-name">${escapeHtml(name)}</div>
-      </a>`;
-    }).join('');
-    for (let k = subs.length; k < 4; k++) items += `<div class="am-sub-tile am-sub-empty"></div>`;
-    tilesHtml = `<div class="am-subs-row">${items}</div>`;
-  } else {
-    // Fallback: mostrar hasta 4 productos como preview
-    const preview = catProds.slice(0, 4);
-    let items = preview.map(p => `
-      <a class="am-sub-tile" href="?cat=${encodeURIComponent(cat)}">
-        <div class="am-sub-imgbox"><img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/></div>
-        <div class="am-sub-name">${escapeHtml(p.nombre || '')}</div>
-      </a>
-    `).join('');
-    for (let k = preview.length; k < 4; k++) items += `<div class="am-sub-tile am-sub-empty"></div>`;
-    tilesHtml = preview.length
-      ? `<div class="am-subs-row">${items}</div>`
-      : `<div class="am-empty" style="margin:0;">Aún no hay productos.</div>`;
-  }
+  const grid = preview.length
+    ? `<div class="am-quad-grid">${items}</div>`
+    : `<div class="am-quad-grid"><div class="am-empty" style="grid-column:1/-1;margin:0;">Aún no hay productos.</div></div>`;
 
-  return `<section class="am-sect">
-    <div class="am-sect-head">
-      <div class="am-sect-title" style="color:${s.title_color};">
-        ${escapeHtml(emoji)} ${escapeHtml(String(cat).toUpperCase())}
-        <span class="am-sect-count">· ${catProds.length} producto(s)</span>
-      </div>
-      <a class="am-sect-more" href="?cat=${encodeURIComponent(cat)}" style="color:${s.more_bg};">Ver más →</a>
+  return `<div class="am-tile">
+    <div class="am-tile-title" style="color:${s.title_color};font-size:${s.title_size}px;">
+      ${escapeHtml(emoji)} ${escapeHtml(cap(cat))}
+      <span class="am-tile-count">· ${catProds.length} producto(s)</span>
     </div>
-    ${tilesHtml}
-  </section>`;
+    ${grid}
+    <a class="am-tile-more" href="?cat=${encodeURIComponent(cat)}" style="background:${s.more_bg};color:${s.more_fg};">Ver más →</a>
+  </div>`;
 }
 
-/* ---------------- CATEGORÍA (con filtro por sub-apartado) ---------------- */
-function normalizeText(t) {
-  return String(t || '')
-    .toLowerCase()
-    .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-}
-
-function subMatches(sub, prod) {
-  const kws = (sub && (sub.keywords || sub.palabras || [])) || [];
-  if (!kws.length) return false;
-  const hay = normalizeText(prod.nombre || '');
-  return kws.some(k => {
-    const kk = normalizeText(k);
-    return kk && hay.includes(kk);
-  });
-}
-
-function viewCategory(main, cat, subIdx) {
+function viewCategory(main, cat) {
   const emoji = iconForCategory(cat);
-  const subs = subsFor(cat);
-  const activeSub = (subIdx !== null && subIdx !== undefined && subs[subIdx]) ? subs[subIdx] : null;
-
-  const titleText = activeSub
-    ? `${cap(cat)} · ${activeSub.nombre || activeSub.name || ''}`
-    : cap(cat);
-
   main.insertAdjacentHTML('beforeend', `
     <div class="am-view-head">
-      <div class="am-view-title">${escapeHtml(emoji)} ${escapeHtml(titleText)}</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        ${activeSub ? `<a class="am-btn am-btn-ghost" href="?cat=${encodeURIComponent(cat)}">← Todo ${escapeHtml(cap(cat))}</a>` : ''}
-        <a class="am-btn am-btn-ghost" href="./">← Apartados</a>
-      </div>
+      <div class="am-view-title">${escapeHtml(emoji)} ${escapeHtml(cap(cat))}</div>
+      <a class="am-btn am-btn-ghost" href="./">← Apartados</a>
     </div>
   `);
-
-  // Chips de sub-apartados (siempre visibles si hay definidos)
-  if (subs.length) {
-    const chips = subs.map((sub, idx) => {
-      const nm = sub.nombre || sub.name || `Sub ${idx+1}`;
-      const active = (activeSub && idx === subIdx) ? ' am-chip-active' : '';
-      return `<a class="am-chip${active}" href="?cat=${encodeURIComponent(cat)}&sub=${idx}">${escapeHtml(nm)}</a>`;
-    }).join('');
-    main.insertAdjacentHTML('beforeend', `<div class="am-chips">${chips}</div>`);
-  }
-
-  let prods = PRODUCTS.filter(p => p.categoria === cat);
-  if (activeSub) prods = prods.filter(p => subMatches(activeSub, p));
-
+  const prods = PRODUCTS.filter(p => p.categoria === cat);
   if (!prods.length) {
-    main.insertAdjacentHTML('beforeend', `<div class="am-empty">No hay productos que coincidan.</div>`);
+    main.insertAdjacentHTML('beforeend', `<div class="am-empty">No hay productos en este apartado todavía.</div>`);
     return;
   }
   renderProductGrid(main, prods);
@@ -520,6 +501,7 @@ function renderProductGrid(main, prods) {
     </div>
   `).join('') + `</div>`;
   main.insertAdjacentHTML('beforeend', html);
+
   $$('.am-add-btn', main).forEach(btn => {
     btn.addEventListener('click', () => {
       const name = btn.getAttribute('data-add');
@@ -543,6 +525,7 @@ function viewCart(main) {
     main.insertAdjacentHTML('beforeend', `<div class="am-empty">Tu carrito está vacío.</div>`);
     return;
   }
+
   const rows = items.map(([name, it]) => `
     <div class="am-cart-row" data-name="${escapeAttr(name)}">
       <img src="${escapeAttr(fixImgSrc(it.imagen))}" alt="${escapeAttr(name)}"/>
@@ -557,6 +540,7 @@ function viewCart(main) {
       <button class="am-cart-del" data-op="del" title="Quitar">🗑️</button>
     </div>
   `).join('');
+
   main.insertAdjacentHTML('beforeend', `
     <div class="am-cart-page">
       ${rows}
@@ -571,6 +555,8 @@ function viewCart(main) {
       </div>
     </div>
   `);
+
+  // Interacciones
   $$('.am-cart-row', main).forEach(row => {
     const name = row.getAttribute('data-name');
     const inp = $('input[data-op="input"]', row);
@@ -583,18 +569,23 @@ function viewCart(main) {
   if (btnClear) btnClear.addEventListener('click', () => {
     if (confirm('¿Vaciar el carrito?')) { cartClear(); rerenderCart(); }
   });
+
   const wa = $('#btnCartWhatsapp');
   if (wa) wa.addEventListener('click', (e) => {
     e.preventDefault();
-    const phone = (SETTINGS.whatsapp_phone || '').replace(/[^\d]/g,'');
-    const lines = Object.values(loadCart()).map(it => `• ${it.qty} x ${it.nombre} — ${formatPrice(it.precio*it.qty)}`);
-    const msg = `Hola, quisiera pedir:\n${lines.join('\n')}\n\nTotal: ${formatPrice(cartTotal())}`;
-    const url = phone
-      ? `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
-      : `https://wa.me/?text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
+    const phone = ((SETTINGS.whatsapp_phone || WA_PHONE) + '').replace(/[^\d]/g,'') || WA_PHONE;
+    const lines = Object.values(loadCart())
+      .map(it => `* ${it.qty}x ${it.nombre} - ${formatPrice(it.precio*it.qty)}`);
+    const msg =
+      `🛒 ¡HOLA! QUIERO CONFIRMAR MI PEDIDO:\n\n` +
+      `${lines.join('\n\n')}\n\n` +
+      `💰 TOTAL A PAGAR: ${formatPrice(cartTotal())}\n\n` +
+      `-----------------------------------\n\n` +
+      `Por favor indíquenme los datos para concretar el pago y el envío. 📦`;
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
   });
 }
+
 function rerenderCart() {
   const main = $('#mainContent'); if (!main) return;
   main.innerHTML = ''; viewCart(main); updateCartBadge();
@@ -634,10 +625,8 @@ function route() {
   const view = (params.get('view')||'').toLowerCase();
   const cat  = params.get('cat');
   const q    = params.get('q');
-  const subRaw = params.get('sub');
-  const sub = subRaw !== null ? parseInt(subRaw, 10) : null;
   if (view === 'cart') return viewCart(main);
-  if (cat) return viewCategory(main, cat, Number.isFinite(sub) ? sub : null);
+  if (cat) return viewCategory(main, cat);
   if (q !== null) return viewSearch(main, q);
   viewHome(main);
 }
@@ -655,15 +644,16 @@ function wireSearch() {
 /* ---------------- BOOT ---------------- */
 async function boot() {
   const base = './public/';
-  [SETTINGS, PRODUCTS, CATEGORIES, CAT_STYLES, ANUNCIOS, SUBCATS] = await Promise.all([
+  [SETTINGS, PRODUCTS, CATEGORIES, CAT_STYLES, ANUNCIOS] = await Promise.all([
     fetchJSON(base + 'site_settings.json', {}),
     fetchJSON(base + 'products.json', []),
     fetchJSON(base + 'categories.json', []),
     fetchJSON(base + 'category_styles.json', {}),
     fetchJSON(base + 'anuncios.json', {}),
-    fetchJSON(base + 'subcategorias.json', {}),
   ]);
-  applyTheme();
+
+  applyTheme();          // <- primero el tema, para que la barra se vea correcta
+  applyPageBg();         // <- fondo de página (color o imagen desde site_settings.json)
   renderDeliveryBanner();
   renderBrand();
   renderSocials();
@@ -671,8 +661,22 @@ async function boot() {
   renderCategoryCircles();
   wireSearch();
   wireQtyModal();
+  wireFloatingButtons();
   updateCartBadge();
   route();
+}
+
+/* ---------------- BOTONES FLOTANTES (WhatsApp + Pagar ahora) ---------------- */
+function wireFloatingButtons() {
+  const wa = document.getElementById('btnWaFloat');
+  if (wa) wa.setAttribute('href', waFloatUrl());
+  const pay = document.getElementById('btnPayNow');
+  if (pay) {
+    pay.addEventListener('click', (e) => {
+      e.preventDefault();
+      location.href = './?view=cart';
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', boot);
