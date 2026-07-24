@@ -93,6 +93,8 @@ function cartSet(name, qty) {
 function cartClear() { saveCart({}); }
 function updateCartBadge() {
   const n = cartCount(); const b = $('#cartBadge');
+  const payBtn = document.getElementById('amPayNow');
+  if (payBtn) payBtn.style.display = n > 0 ? 'flex' : 'none';
   if (!b) return;
   if (n > 0) { b.textContent = n; b.hidden = false; } else b.hidden = true;
 }
@@ -492,6 +494,7 @@ function viewSearch(main, q) {
 function renderProductGrid(main, prods) {
   const html = `<div class="am-grid">` + prods.map(p => `
     <div class="am-card">
+      <img class="am-cashea-badge" src="./public/cashea.png" alt="Cashea" loading="lazy"/>
       <img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/>
       <div class="am-name">${escapeHtml(p.nombre||'')}</div>
       <div><span class="am-price">${escapeHtml(formatPrice(p.precio))}</span></div>
@@ -571,12 +574,16 @@ function viewCart(main) {
   const wa = $('#btnCartWhatsapp');
   if (wa) wa.addEventListener('click', (e) => {
     e.preventDefault();
-    const phone = (SETTINGS.whatsapp_phone || '').replace(/[^\d]/g,'');
-    const lines = Object.values(loadCart()).map(it => `• ${it.qty} x ${it.nombre} — ${formatPrice(it.precio*it.qty)}`);
-    const msg = `Hola, quisiera pedir:\n${lines.join('\n')}\n\nTotal: ${formatPrice(cartTotal())}`;
-    const url = phone
-      ? `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
-      : `https://wa.me/?text=${encodeURIComponent(msg)}`;
+    const phone = '584246687700';
+    const items = Object.values(loadCart());
+    const lines = items.map(it => `* ${it.qty}x ${String(it.nombre||'').toUpperCase()} - ${formatPrice(it.precio*it.qty)}`);
+    const msg =
+      `🛒 ¡HOLA! QUIERO CONFIRMAR MI PEDIDO:\n\n` +
+      `${lines.join('\n')}\n\n` +
+      `💰 TOTAL A PAGAR: ${formatPrice(cartTotal())}\n\n` +
+      `-----------------------------------\n\n` +
+      `Por favor indíquenme los datos para concretar el pago y el envío. 📦`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
   });
 }
