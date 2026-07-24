@@ -379,14 +379,7 @@ function viewHome(main) {
     main.insertAdjacentHTML('beforeend', `<div class="am-empty">Aún no hay apartados.<br>Crea apartados desde la app de escritorio.</div>`);
     return;
   }
-  const PER_ROW = 4;
-  let out = '';
-  for (let i=0; i<CATEGORIES.length; i+=PER_ROW) {
-    const row = CATEGORIES.slice(i, i+PER_ROW);
-    let cards = row.map(cat => buildHomeTile(cat)).join('');
-    for (let k=row.length; k<PER_ROW; k++) cards += `<div class="am-tile am-tile-empty"></div>`;
-    out += `<div class="am-tiles-row">${cards}</div>`;
-  }
+  const out = CATEGORIES.map(cat => `<div class="am-tiles-row">${buildHomeTile(cat)}</div>`).join('');
   main.insertAdjacentHTML('beforeend', out);
 }
 
@@ -430,12 +423,14 @@ function buildHomeTile(cat) {
   }
 
   return `<div class="am-tile">
-    <div class="am-tile-title" style="color:${s.title_color};font-size:${s.title_size}px;">
-      ${escapeHtml(emoji)} ${escapeHtml(cap(cat))}
-      <span class="am-tile-count">· ${catProds.length} producto(s)</span>
+    <div class="am-tile-head">
+      <div class="am-tile-title" style="color:${s.title_color};font-size:${s.title_size}px;">
+        ${escapeHtml(emoji)} ${escapeHtml(cap(cat))}
+        <span class="am-tile-count">· ${catProds.length} producto(s)</span>
+      </div>
+      <a class="am-tile-more" href="?cat=${encodeURIComponent(cat)}" style="color:${s.more_fg || s.more_bg};">Ver más →</a>
     </div>
     ${grid}
-    <a class="am-tile-more" href="?cat=${encodeURIComponent(cat)}" style="background:${s.more_bg};color:${s.more_fg};">Ver más →</a>
   </div>`;
 }
 
