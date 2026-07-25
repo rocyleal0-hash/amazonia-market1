@@ -64,32 +64,6 @@
     "use_image": true,
     "image_path": "cat_ESCOLAR_c92eeb66.png"
   },
-  "JUGETERIA": {
-    "icon": "🏷️",
-    "circle_color": "#0000ff",
-    "circle_size": 70,
-    "label_color": "#0F172A",
-    "label_size": 14,
-    "title_color": "#000000",
-    "title_size": 22,
-    "more_bg": "#000000",
-    "more_fg": "#000000",
-    "use_image": true,
-    "image_path": "cat_JUGETERIA_e0fd2ca5.png"
-  },
-  "QUINCALLERIA": {
-    "icon": "🏷️",
-    "circle_color": "#0000ff",
-    "circle_size": 70,
-    "label_color": "#0F172A",
-    "label_size": 14,
-    "title_color": "#000000",
-    "title_size": 22,
-    "more_bg": "#000000",
-    "more_fg": "#000000",
-    "use_image": true,
-    "image_path": "cat_QUINCALLERIA_daed6a73.png"
-  },
   "LACTEOS": {
     "icon": "🏷️",
     "circle_color": "#0000ff",
@@ -181,19 +155,6 @@
     "use_image": true,
     "image_path": "cat_HELADOS_8658072a.webp"
   },
-  "BOLSOS Y CARTERAS": {
-    "icon": "🏷️",
-    "circle_color": "#0000ff",
-    "circle_size": 70,
-    "label_color": "#0F172A",
-    "label_size": 14,
-    "title_color": "#000000",
-    "title_size": 22,
-    "more_bg": "#000000",
-    "more_fg": "#000000",
-    "use_image": true,
-    "image_path": "cat_BOLSOS_Y_CARTERAS_1e3fa53b.webp"
-  },
   "FERRETERIA": {
     "icon": "🏷️",
     "circle_color": "#0000ff",
@@ -271,5 +232,44 @@
     "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_LIMPIEZA_82143137.png"
+  },
+  "LIMPIEZA": {
+    "icon": "🏷️",
+    "circle_color": "#0000ff",
+    "circle_size": 70,
+    "label_color": "#0F172A",
+    "label_size": 14,
+    "title_color": "#000000",
+    "title_size": 22,
+    "more_bg": "#000000",
+    "more_fg": "#000000",
+    "use_image": true,
+    "image_path": "cat_JUGETERIA_e0fd2ca5.png"
+  },
+  "vbvb": {
+    "icon": "🏷️",
+    "circle_color": "#0000ff",
+    "circle_size": 70,
+    "label_color": "#0F172A",
+    "label_size": 14,
+    "title_color": "#000000",
+    "title_size": 22,
+    "more_bg": "#000000",
+    "more_fg": "#000000",
+    "use_image": true,
+    "image_path": "cat_BOLSOS_Y_CARTERAS_1e3fa53b.webp"
+  },
+  "BOLSOS Y CARTERAS": {
+    "icon": "🏷️",
+    "circle_color": "#0000ff",
+    "circle_size": 70,
+    "label_color": "#0F172A",
+    "label_size": 14,
+    "title_color": "#000000",
+    "title_size": 22,
+    "more_bg": "#000000",
+    "more_fg": "#000000",
+    "use_image": true,
+    "image_path": "cat_QUINCALLERIA_daed6a73.png"
   }
 }

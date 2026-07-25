@@ -5003,5 +5003,516 @@
     "precio": 5.41,
     "imagen": "product_images/fe5488e41f3942b8afcab136f65c1367.jpg",
     "categoria": "ESCOLAR"
+  },
+  {
+    "id": "f9f3328da95447a88ecca44612b5291c",
+    "nombre": "LAVAPLATOS AXION 450G",
+    "precio": 3.65,
+    "imagen": "product_images/2136d77c31764764a2ad8773a9b3af58.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "556610e57b85498a9254fccdc9cff127",
+    "nombre": "LAVAPLATOS AXION 150G",
+    "precio": 1.73,
+    "imagen": "product_images/d6992be88f1a4d4ca7f49664a4b15cb5.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "d67884374b454f518299cf0b6129bf64",
+    "nombre": "LAVAPLATOS AXION 235G",
+    "precio": 2.0,
+    "imagen": "product_images/3949640642f64cc1a03efba44f8951d3.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "ce02b861a5e04c14aa0e08bd39f10e41",
+    "nombre": "LAVAPLATOS PREMIO 150G",
+    "precio": 1.2,
+    "imagen": "product_images/85488dfd23504df6ad4ec2258aeb08f7.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "332bebf7b0b249b79d977436a346a594",
+    "nombre": "ESPONJA JABONOSA",
+    "precio": 0.45,
+    "imagen": "product_images/4091b28e361f45fcab9f8d4c8894f68d.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "2f330aafb2454043b08285ccdeda45d4",
+    "nombre": "ESPONJA DE ALAMBRE POLY",
+    "precio": 0.93,
+    "imagen": "product_images/04e2a9abc6ad427c8b0eb4769341dafd.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "2ed317084b2340bc8d630d677551b6f6",
+    "nombre": "ESPONJA AMARILLA DOBLE",
+    "precio": 0.75,
+    "imagen": "product_images/4cadda4473ac4b038a6e5a1bbc31779d.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "e7fb57c8c2d44952ac08d8dccf00bcfd",
+    "nombre": "ESPONJA MULTIUSOS COLIBRI",
+    "precio": 1.39,
+    "imagen": "product_images/9e2f96c95adc46f68411a47ed9d3541c.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "3f8dc59656e24941bb54802634abbcc9",
+    "nombre": "JABON LAVAR DERSA 1K",
+    "precio": 5.5,
+    "imagen": "product_images/e4474b56163645a2962ff6f28b5f6ea5.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "3bba56c83abd4f6d8a972dcec4d194e0",
+    "nombre": "JABON LAVAR DERSA 500G",
+    "precio": 2.8,
+    "imagen": "product_images/08c45b25907541ecbe8603404348fd02.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "0a12c800dc144fa087b6ae36a2f20671",
+    "nombre": "JABON LAVAR DERSA 125G",
+    "precio": 0.8,
+    "imagen": "product_images/d040d9f00c4b4ccd97887bd3e63995a4.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "9036426cb97f4f9790d14064eee0f8b5",
+    "nombre": "JABON LAVAR BEBE 1K",
+    "precio": 3.02,
+    "imagen": "product_images/39123d418b4c4af58391408e79cd1eba.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "70b477c1b5284f34beecc5a15c422579",
+    "nombre": "JABON LAVAR BEBE 500G",
+    "precio": 1.4,
+    "imagen": "product_images/2fd167153e1f4bb5b6c01e967bbd2ec6.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "a49eef61691a46c0b5a4d324b7c4c44f",
+    "nombre": "JABON LAVAR BEBE 125G",
+    "precio": 0.58,
+    "imagen": "product_images/ec42cb62fe2043dba1d6a3f21c05cb02.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "e506c40c0f9742fb90b3a4ea8acec3ea",
+    "nombre": "JABON LAVAR LAS LLAVES 400G",
+    "precio": 1.94,
+    "imagen": "product_images/6938cc2c5c154e34a44c2e1a36f76cc4.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "5b927789980641ee91009e6f693aa06a",
+    "nombre": "JABON LAVAR ARIEL 800G",
+    "precio": 5.79,
+    "imagen": "product_images/241675ce2c044f5eb6109c4fccc150fc.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "b848e523c36a411991d91787fa2d929a",
+    "nombre": "JAVON LAVAR LAS LLAVES 900G",
+    "precio": 4.78,
+    "imagen": "product_images/68087edf675744ffbca2596e3a23f6e3.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "aec8990a0ab240558c2fd2ecb609a428",
+    "nombre": "JABON LAVAR ALIVE 1K",
+    "precio": 3.5,
+    "imagen": "product_images/04fa89eb1214423093ee7132615e42a9.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "5133daee932c4a649697391efc99aa69",
+    "nombre": "JABON LAVAR ALIVE 500G",
+    "precio": 1.67,
+    "imagen": "product_images/b7cde914032a41bc97f68a783ccb3517.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "3e8539b96c92403da38e4ef17ee714c7",
+    "nombre": "JABON LAVAR ALIVE 200G",
+    "precio": 0.7,
+    "imagen": "product_images/413ccf3331954ca2b4ddeec7102e29fa.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "b5613b63839f402393843f42ff6adffe",
+    "nombre": "JABON LAVAR KH 1K",
+    "precio": 3.87,
+    "imagen": "product_images/54ce7e88ff3042d3bfddafba4d4048a1.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "702ef538742f4016955a95d01da8d9ea",
+    "nombre": "JABON LAVAR KH 500G",
+    "precio": 2.84,
+    "imagen": "product_images/ba554e43edfe49fcbe88b01f9fcedbb6.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "33faa1d29c054b04b6c987893c374f8c",
+    "nombre": "JABON LAVAR MULTI CLEAN 400G",
+    "precio": 1.63,
+    "imagen": "product_images/d48b7eb4f10445fc94d19febcfbce95c.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "44281600bbc64e5980e00d1f9be10a41",
+    "nombre": "SUAVITEL 180ML",
+    "precio": 1.6,
+    "imagen": "product_images/7416d9b9c7a2496ab05385fb83b10e80.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "86e6ef2142914952b2a86544d6520771",
+    "nombre": "FABULOSO",
+    "precio": 1.6,
+    "imagen": "product_images/2066c7c802df40619032a303cb10ff36.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "c22f6324ba6c48c4934574006021f3a9",
+    "nombre": "SUAVITEL 500ML",
+    "precio": 3.63,
+    "imagen": "product_images/3bcdfe58c5c943eca031bf41d1726b23.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "5c08652f6e2b4545a408cf0780cf05aa",
+    "nombre": "SUAVITEL 1L",
+    "precio": 6.5,
+    "imagen": "product_images/76f4346152074caca05bde1084d85d9c.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "561e459f81a041e3b555781ffbd1ad78",
+    "nombre": "SUAVITEL 1.9L",
+    "precio": 9.9,
+    "imagen": "product_images/f2d88b4dbc3a4f8e9ca3d5b2d03e3ae7.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "bcc5de38236449568a1a9a18b2569d23",
+    "nombre": "SUAVISANTE DOWNY INTENSE 700ML",
+    "precio": 4.93,
+    "imagen": "product_images/13d81f9b0a8044d1aa46708d4262f9dc.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "669312ab305f436097901547947d24dd",
+    "nombre": "SUAVITEL BABY 1L",
+    "precio": 5.6,
+    "imagen": "product_images/1eec014f35124a4c991f43c725fe9f91.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "022fd761ca6b4fcb863681ffed18a0bc",
+    "nombre": "AROMAX 10G",
+    "precio": 0.7,
+    "imagen": "product_images/cb2025b671514ed088b30273572e94f9.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "ecdbfa7d7c1c41908ed9fcaa01922387",
+    "nombre": "DIABLO ROJO 300G",
+    "precio": 6.45,
+    "imagen": "product_images/97f98fe8f86a40c2a67b74b62ff32ab1.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "84b955c9672a4b668c9144509b743225",
+    "nombre": "CLORO BLANCOX 500ML",
+    "precio": 2.0,
+    "imagen": "product_images/973f05da459243ecb156497610e6a8b8.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "a84b5c9e589c409f970f3396fbea7b8b",
+    "nombre": "MISTOLIN 828 ML",
+    "precio": 2.05,
+    "imagen": "product_images/c5718e1559964c3d9a31322beb62e4e4.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "7f174909ad8e44a0bba773a653833c84",
+    "nombre": "POLVO ABRASIVO 500G",
+    "precio": 2.6,
+    "imagen": "product_images/802a94b3089a4ed18ef84d4850ccf7f3.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "5d2b8b2fd8f1418b9cee563efe41b3ee",
+    "nombre": "LIMPIA HORNO TAPA AMARILLA 255G",
+    "precio": 5.81,
+    "imagen": "product_images/59770b0ea6f841a5bddc035ab250044c.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "8452fb5dd27746e6b1727893ba501031",
+    "nombre": "LIMPIADOR DE POCETAS MAS PEQ 360MC",
+    "precio": 6.0,
+    "imagen": "product_images/52b4210c624b41eeaad35b85f4b38bd8.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "b56521b47a7b4d48b9b29372844a4b7a",
+    "nombre": "BOLSA BASURA GD",
+    "precio": 0.33,
+    "imagen": "product_images/0a889f5c25ba47a4b23b7322011194f5.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "1f478c9ebf4a47829f4bc8d842400f42",
+    "nombre": "FABULOSO 500ML",
+    "precio": 3.95,
+    "imagen": "product_images/6e7f07a43ae840a489caab3ede250c26.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "c0363894da9748cfac7896785a9465f1",
+    "nombre": "AROMATIZANTE INSAVE 1LT",
+    "precio": 1.68,
+    "imagen": "product_images/6565960f9de249e6bbc69cd6c75dc56b.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "c2b38f59ca94475dabb2273a30694883",
+    "nombre": "ESPONJA ORO Y PLATA M HOGAR",
+    "precio": 1.86,
+    "imagen": "product_images/38208b7b5c6e4d908e39123fffefbc61.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "4962a47f138e477593d611b4657be974",
+    "nombre": "JABON 3N 400G",
+    "precio": 1.99,
+    "imagen": "product_images/92500cb0a72d420fa9457cbb460a87a7.jpg",
+    "categoria": "LIMPIEZA"
+  },
+  {
+    "id": "f1347b3fd990436b864927dd15d2a4c9",
+    "nombre": "CARTERA DE FIESTA PEQUEÑA CON CADENA",
+    "precio": 13.99,
+    "imagen": "product_images/cfb4895d6ad944868eaf9b372f9b546b.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "789929e2316a45388200043ab79d95b6",
+    "nombre": "CARTERA DE FIESTA CORAZÓN",
+    "precio": 13.99,
+    "imagen": "product_images/555bd8b50af94afb84db5d801a80281c.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "84c4f3c24f77477d9e57b4614651a522",
+    "nombre": "CARTERA TIPO BANDOLERO",
+    "precio": 13.99,
+    "imagen": "product_images/65b8bf1d6b304b24bef85bc58a913c77.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "e321235780f946b893e1734086b83ea1",
+    "nombre": "CARTERA TIPO BANDOLERO",
+    "precio": 13.99,
+    "imagen": "product_images/e261fc40764b4be9bf1d760d6035bea6.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "424f148dc3ce4ddb930f90657803d820",
+    "nombre": "CARTERA DE FIESTA PEQUEÑA CON PIEDRA",
+    "precio": 13.99,
+    "imagen": "product_images/d09a99eb280e493bb18e3b92088e49c9.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "5ae71b8c61a3494ca0cf7717d98b7191",
+    "nombre": "CARTERA TIPO BANDOLERO",
+    "precio": 13.99,
+    "imagen": "product_images/8fb84c7f85e046358765f2da1a106551.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "01a4a53ebdae4be4b48e4956c461ef9e",
+    "nombre": "BOLSO PEQUEÑO TELA FASHION JINGPIN",
+    "precio": 5.99,
+    "imagen": "product_images/faac1e6747ed43df83607053b3d8cedd.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "492cd60bccfe495d92e623bc1badb5eb",
+    "nombre": "BOLSO PEQUEÑO TELA FASHION JINGPIN",
+    "precio": 5.99,
+    "imagen": "product_images/7675d17a1a9247b59658f3d201818904.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "2a91a13de5de47d0b79af59ee31d8981",
+    "nombre": "BOLSITO PEQUEÑO DE CUERO CIERRE FLOR",
+    "precio": 3.99,
+    "imagen": "product_images/fb8c2cf6319941b7add3105b32b300d3.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "5f67716a08dd4961a8168ed82a5e7e03",
+    "nombre": "BOLSITO PEQUEÑO DE CUERO CIERRE FLOR",
+    "precio": 3.99,
+    "imagen": "product_images/29a2fe7cbad84e4bbff2b0a71c0fc88b.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "57a26a5e8a034b29bda9bbb0b90fa235",
+    "nombre": "BOLSO PEQUEÑO TELA FASHION JINGPIN",
+    "precio": 5.99,
+    "imagen": "product_images/c50c56d02ea14494a09f0bacf054b8e6.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "6667cd73b10247dd892297d16e79e7c0",
+    "nombre": "BOLSO VIAJERO",
+    "precio": 17.99,
+    "imagen": "product_images/5d51d7a0bf044f44b688775330a4701d.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "e9a98bd0e3264889874f31de0307fb5a",
+    "nombre": "BOLSO MORRAL DE DAMA",
+    "precio": 15.99,
+    "imagen": "product_images/d06ca5308ead431f988590ed5dc1757b.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "248610b7926942f59ab3349fae7bb6d7",
+    "nombre": "BOLSO MORRAL DE DAMA",
+    "precio": 15.99,
+    "imagen": "product_images/5390557b8b9d4d19b78ecd016be92412.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "019b94779d5d4c04a511516ed7e682f4",
+    "nombre": "BOLSO VIAJERO",
+    "precio": 17.99,
+    "imagen": "product_images/31e49b6dcf9a45018547dfc6a68105b8.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "9e71907772ea4dac89f02b568daa33ef",
+    "nombre": "BOLSO MORRAL DE DAMA",
+    "precio": 15.99,
+    "imagen": "product_images/cf6c68dcbdaa430aae92f22e4b90313b.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "45fa24efb32f471198a37d59a2efcdc7",
+    "nombre": "BOLSO LONCHERA TÉRMICO",
+    "precio": 4.99,
+    "imagen": "product_images/f5b9f7f0359f4f5bab4a66c86c8bdd93.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "a548dfeecbca4a97949095ccd61667a9",
+    "nombre": "BOLSO MORRAL DE DAMA",
+    "precio": 15.99,
+    "imagen": "product_images/4b30f06e911c4d0b87aef8c33a00966e.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "fdf3a8b0f60d4247a17bfd5b92a59d1a",
+    "nombre": "SET DE BOLSO DE 3 GRENOBIL",
+    "precio": 21.99,
+    "imagen": "product_images/192a215b7b49451ca2fd3a191e83a2c9.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "63c24ae6945344f6acb6a5eb221ce908",
+    "nombre": "BOLSO MORRAL CUERO DAMA",
+    "precio": 19.99,
+    "imagen": "product_images/ef97d78803164b489a0525d61cf44515.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "0c9b664dce3644579c0663066b8b8559",
+    "nombre": "BOLSO ESCOLAR",
+    "precio": 15.99,
+    "imagen": "product_images/aeea9fc137d74c2f8b261d7c9d8ed0d3.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "ed4869eeda214708a057de299e5dfc18",
+    "nombre": "SET DE BOLSO DE 3 GRENOBIL",
+    "precio": 21.99,
+    "imagen": "product_images/aa583484c2984c26b46711b176b2cf43.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "14c7e0f5da9f48ae87316ffa9dbf8be7",
+    "nombre": "BOLSO ESCOLAR",
+    "precio": 15.99,
+    "imagen": "product_images/02cd352f18f94a2585daa6cd4c432797.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "68ecaf665c914e07ab4af9a1a94d5535",
+    "nombre": "BOLSO ESCOLAR",
+    "precio": 15.99,
+    "imagen": "product_images/1dd0fd0bee664829a30047e24fbd7806.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "c63363a0b47f40a6b13b3348df30b088",
+    "nombre": "PORTA COSMÉTICO PLÁSTICO",
+    "precio": 2.99,
+    "imagen": "product_images/258d995cb5444252a2f9e60fd2f18a38.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "a6654c7bd62b4354a4823f8bd61a644d",
+    "nombre": "BOLSO ESCOLAR",
+    "precio": 15.99,
+    "imagen": "product_images/ef17c04c6b0744bfa1acacc3ec8fdf7e.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "708cd097825d4778b80b5a3bb0680a57",
+    "nombre": "PORTA COSMÉTICO PLÁSTICO",
+    "precio": 2.99,
+    "imagen": "product_images/d2183edbb81c416d87a0493a0f8be6c0.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "548ae0d23fd146b4af4e01003de31baa",
+    "nombre": "PORTA COSMÉTICO PLÁSTICO",
+    "precio": 2.99,
+    "imagen": "product_images/77a41df8dcf745ed90abc608d40c8cde.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "4e12abcd24f8495880cf6d2cc92e89e2",
+    "nombre": "PORTA COSMÉTICO PLÁSTICO",
+    "precio": 2.99,
+    "imagen": "product_images/af467870b0e449098523ca0d76744040.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "c5a4dd2341a347fe9109d857f7f5e7d7",
+    "nombre": "PORTA COSMÉTICO PLÁSTICO",
+    "precio": 2.99,
+    "imagen": "product_images/a4d80ff8950642ea97b404316baefd63.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "b8169c4aeb3348d1930755716eb54698",
+    "nombre": "PORTA COSMÉTICO PLÁSTICO",
+    "precio": 2.99,
+    "imagen": "product_images/cdbb15325799406b9a54cd49e9a77311.jpeg",
+    "categoria": "BOLSOS Y CARTERAS"
   }
 ]
