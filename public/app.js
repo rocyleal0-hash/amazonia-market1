@@ -189,37 +189,86 @@ function applyTheme() {
 
   /* ============================================================
      Mejora #1: FONDO COMPLETO DE LA WEB
-     Toma la imagen guardada por agregar_producto_corregido.py en
-     site_settings.json (clave "site_bg_b64") y la aplica como
-     fondo de TODO el <body>, respetando brillo y opacidad.
+     Compatible con la ventana "Fondo completo de la página web"
+     de agregar_producto_corregido.py.
+
+     El editor nuevo guarda:
+       - page_bg_type: color | image | none
+       - page_bg_color
+       - page_bg_image_b64
+       - page_bg_blur / page_bg_brightness / page_bg_opacity
+
+     También conserva compatibilidad con la clave vieja site_bg_b64.
      ============================================================ */
-  const pageBg = String(s.site_bg_b64 || '').trim();
   const pageStyleId = 'am-page-bgimg';
   let pst = document.getElementById(pageStyleId);
   if (!pst) { pst = document.createElement('style'); pst.id = pageStyleId; document.head.appendChild(pst); }
-  if (pageBg) {
-    const pBright = numOr(s.site_bg_brightness, 1);      // 0..2
-    const pOpac   = numOr(s.site_bg_opacity, 0.6);       // 0..1
-    const briPct  = Math.max(0, Math.min(200, Math.round(pBright * 100)));
-    const opClamp = Math.max(0, Math.min(1, pOpac)).toFixed(2);
-    // Detecta formato: si empieza por /9j/ es JPEG, si no PNG
-    const mime = pageBg.startsWith('/9j/') ? 'image/jpeg' : 'image/png';
+
+  const pageBg = String(s.page_bg_image_b64 || s.site_bg_b64 || '').trim();
+  const savedType = String(s.page_bg_type || '').trim().toLowerCase();
+  const pageType = savedType || (pageBg ? 'image' : (s.page_bg_color ? 'color' : ''));
+  const pageColor = String(s.page_bg_color || '#F4F5F7').trim();
+
+  const pct = (value, fallback) => {
+    const n = numOr(value, fallback);
+    // Claves viejas: 1.00 / 0.60. Claves nuevas: 100 / 60.
+    return n <= 2 ? Math.round(n * 100) : Math.round(n);
+  };
+  const ratio = (value, fallback) => {
+    const n = numOr(value, fallback);
+    return n > 1 ? n / 100 : n;
+  };
+  const mimeFromB64 = (b64) => {
+    if (b64.startsWith('data:')) return '';
+    if (b64.startsWith('/9j/')) return 'image/jpeg';
+    if (b64.startsWith('iVBORw0KGgo')) return 'image/png';
+    if (b64.startsWith('UklGR')) return 'image/webp';
+    if (b64.startsWith('R0lGOD')) return 'image/gif';
+    return 'image/jpeg';
+  };
+
+  if (pageType === 'none') {
     pst.textContent = `
       html, body { background: transparent !important; }
-      body { position: relative; min-height: 100vh; }
+      body::before { content: none !important; }
+    `;
+  } else if (pageType === 'image' && pageBg) {
+    const blur = Math.max(0, Math.min(30, intOr(s.page_bg_blur, 0)));
+    const briPct = Math.max(0, Math.min(200, pct(s.page_bg_brightness ?? s.site_bg_brightness, 100)));
+    const opClamp = Math.max(0, Math.min(1, ratio(s.page_bg_opacity ?? s.site_bg_opacity, 100))).toFixed(2);
+    const mime = mimeFromB64(pageBg);
+    const imageUrl = pageBg.startsWith('data:') ? pageBg : `data:${mime};base64,${pageBg}`;
+    const blurScale = blur > 0 ? 1.04 : 1;
+
+    pst.textContent = `
+      html { min-height: 100%; background: ${pageColor} !important; }
+      body {
+        position: relative;
+        min-height: 100vh;
+        background: transparent !important;
+        isolation: isolate;
+      }
       body::before {
         content: '';
         position: fixed;
         inset: 0;
         z-index: -1;
-        background: url('data:${mime};base64,${pageBg}') center center / cover no-repeat fixed;
-        filter: brightness(${briPct}%);
+        background-image: url("${imageUrl}");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        filter: blur(${blur}px) brightness(${briPct}%);
         opacity: ${opClamp};
+        transform: scale(${blurScale});
         pointer-events: none;
       }
     `;
   } else {
-    pst.textContent = '';
+    pst.textContent = `
+      html, body { background: ${pageColor} !important; }
+      body::before { content: none !important; }
+    `;
   }
 }
 
