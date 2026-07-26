@@ -231,7 +231,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_LIMPIEZA_82143137.png"
+    "image_path": "cat_CHARCUTERIA_6a305b5e.png"
   },
   "LIMPIEZA": {
     "icon": "🏷️",
@@ -244,7 +244,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_JUGETERIA_e0fd2ca5.png"
+    "image_path": "cat_LIMPIEZA_41375ba6.png"
   },
   "vbvb": {
     "icon": "🏷️",
@@ -270,6 +270,6 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_QUINCALLERIA_daed6a73.png"
+    "image_path": "cat_BOLSOS_Y_CARTERAS_36cff4cd.png"
   }
 }
