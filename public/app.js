@@ -186,6 +186,41 @@ function applyTheme() {
   } else {
     st.textContent = '';
   }
+
+  /* ============================================================
+     Mejora #1: FONDO COMPLETO DE LA WEB
+     Toma la imagen guardada por agregar_producto_corregido.py en
+     site_settings.json (clave "site_bg_b64") y la aplica como
+     fondo de TODO el <body>, respetando brillo y opacidad.
+     ============================================================ */
+  const pageBg = String(s.site_bg_b64 || '').trim();
+  const pageStyleId = 'am-page-bgimg';
+  let pst = document.getElementById(pageStyleId);
+  if (!pst) { pst = document.createElement('style'); pst.id = pageStyleId; document.head.appendChild(pst); }
+  if (pageBg) {
+    const pBright = numOr(s.site_bg_brightness, 1);      // 0..2
+    const pOpac   = numOr(s.site_bg_opacity, 0.6);       // 0..1
+    const briPct  = Math.max(0, Math.min(200, Math.round(pBright * 100)));
+    const opClamp = Math.max(0, Math.min(1, pOpac)).toFixed(2);
+    // Detecta formato: si empieza por /9j/ es JPEG, si no PNG
+    const mime = pageBg.startsWith('/9j/') ? 'image/jpeg' : 'image/png';
+    pst.textContent = `
+      html, body { background: transparent !important; }
+      body { position: relative; min-height: 100vh; }
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: url('data:${mime};base64,${pageBg}') center center / cover no-repeat fixed;
+        filter: brightness(${briPct}%);
+        opacity: ${opClamp};
+        pointer-events: none;
+      }
+    `;
+  } else {
+    pst.textContent = '';
+  }
 }
 
 /* ---------------- RENDERS ---------------- */
@@ -404,7 +439,7 @@ function buildHomeTile(cat) {
       const imgHtml = imgSrc
         ? `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(nombre)}" loading="lazy"/>`
         : `<div style="color:#aaa;font-size:12px;display:flex;align-items:center;justify-content:center;height:100%;">Sin imagen</div>`;
-      return `<a class="am-quad-item" href="${escapeAttr(href)}">
+      return `<a class="am-quad-item" data-cat="${escapeAttr(String(cat||'').toLowerCase())}" href="${escapeAttr(href)}">
         <div class="am-quad-imgwrap">${imgHtml}</div>
         <div class="am-quad-name">${escapeHtml(nombre)}</div>
       </a>`;
@@ -414,7 +449,7 @@ function buildHomeTile(cat) {
   } else {
     const preview = catProds.slice(0, 4);
     let items = preview.map(p => `
-      <a class="am-quad-item" href="?cat=${encodeURIComponent(cat)}">
+      <a class="am-quad-item" data-cat="${escapeAttr(String(cat||'').toLowerCase())}" href="?cat=${encodeURIComponent(cat)}">
         <div class="am-quad-imgwrap"><img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/></div>
         <div class="am-quad-name">${escapeHtml(p.nombre || '')}</div>
       </a>
@@ -429,8 +464,8 @@ function buildHomeTile(cat) {
     <div class="am-tile-head">
       <div class="am-tile-title" style="color:${s.title_color};font-size:${s.title_size}px;">
         ${escapeHtml(cap(cat))}
-        <span class="am-tile-count">· ${catProds.length} producto(s)</span>
       </div>
+
       <a class="am-tile-more" href="?cat=${encodeURIComponent(cat)}" style="color:${s.more_fg || s.more_bg};">Ver más →</a>
     </div>
     ${grid}
@@ -470,7 +505,7 @@ function viewCategory(main, cat, subName) {
     return;
   }
   renderProductGrid(main, prods);
-  main.insertAdjacentHTML('beforeend', `<p style="color:var(--muted);font-size:13px;">Mostrando ${prods.length} producto(s).</p>`);
+
 }
 
 function viewSearch(main, q) {
@@ -487,13 +522,14 @@ function viewSearch(main, q) {
     String(p.categoria||'').toLowerCase().includes(ql)
   );
   if (!results.length) { main.insertAdjacentHTML('beforeend',`<div class="am-empty">No se encontraron productos que coincidan.</div>`); return; }
-  main.insertAdjacentHTML('beforeend', `<p style="color:var(--muted);font-size:13px;">${results.length} resultado(s) en toda la tienda.</p>`);
+  // (contador de resultados removido a pedido del usuario)
+
   renderProductGrid(main, results);
 }
 
 function renderProductGrid(main, prods) {
   const html = `<div class="am-grid">` + prods.map(p => `
-    <div class="am-card">
+    <div class="am-card" data-cat="${escapeAttr(String(p.categoria||'').toLowerCase())}">
       <img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/>
       <div class="am-name">${escapeHtml(p.nombre||'')}</div>
       <div class="am-price-row">
