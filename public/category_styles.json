@@ -64,19 +64,6 @@
     "use_image": true,
     "image_path": "cat_ESCOLAR_690e810f.png"
   },
-  "LACTEOS": {
-    "icon": "🏷️",
-    "circle_color": "#0000ff",
-    "circle_size": 70,
-    "label_color": "#0F172A",
-    "label_size": 14,
-    "title_color": "#000000",
-    "title_size": 22,
-    "more_bg": "#000000",
-    "more_fg": "#000000",
-    "use_image": true,
-    "image_path": "cat_LACTEOS_d65ddd91.webp"
-  },
   "ROPA": {
     "icon": "🏷️",
     "circle_color": "#0000ff",
@@ -271,5 +258,18 @@
     "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_BOLSOS_Y_CARTERAS_36cff4cd.png"
+  },
+  "QUINCALLERIA": {
+    "icon": "🏷️",
+    "circle_color": "#0000ff",
+    "circle_size": 70,
+    "label_color": "#0F172A",
+    "label_size": 14,
+    "title_color": "#000000",
+    "title_size": 22,
+    "more_bg": "#000000",
+    "more_fg": "#000000",
+    "use_image": true,
+    "image_path": "cat_LACTEOS_d65ddd91.webp"
   }
 }

@@ -5514,5 +5514,1762 @@
     "precio": 2.99,
     "imagen": "product_images/cdbb15325799406b9a54cd49e9a77311.jpeg",
     "categoria": "BOLSOS Y CARTERAS"
+  },
+  {
+    "id": "2926ca65ebbd47d48ba383f20b0482f3",
+    "nombre": "VASO DESECHABLE 17",
+    "precio": 2.0,
+    "imagen": "product_images/651d348f705343d79a8bc4763c1bfd68.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "c1c2f3bf5a26478cada3cc160cec444d",
+    "nombre": "VASO DESECHABLE 227",
+    "precio": 3.6,
+    "imagen": "product_images/560edada59ed4c1486e03c9292d63286.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "e5c0bb212a644b03b65dc99ac1e4d769",
+    "nombre": "VASO DESECHABLE 57",
+    "precio": 3.0,
+    "imagen": "product_images/8e784d78e10a41bf8876d56a3b20832a.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "94e9dde884a9408d9636c1a7155a55ee",
+    "nombre": "VASO DESECHABLE 67",
+    "precio": 3.0,
+    "imagen": "product_images/a5c00c1500594476b842e5ea6b57e852.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "dc10c98830214764bfe56658cf0dfd57",
+    "nombre": "VASO DESECHABLE 167",
+    "precio": 3.0,
+    "imagen": "product_images/a5ee5a50158d4182b20a181b3a85c1f2.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "614d7e9e6421407582aaad72c63f4abf",
+    "nombre": "VASO DESECHABLE 77",
+    "precio": 3.02,
+    "imagen": "product_images/848f418b24924f60a565096260342c22.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "72d2bd51d8e84aa7b746ccdd4d6ddd06",
+    "nombre": "YESQUERO",
+    "precio": 0.4,
+    "imagen": "product_images/61071c2832f342b4a1e520fcf6bd78c4.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "fa0e74fc682a43d18bc2566878664544",
+    "nombre": "CARACOL PLAGATOX",
+    "precio": 0.7,
+    "imagen": "product_images/b51d292ccb0b46388ccd644e6988dfd6.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "3484a6a991934676a1b7c7f740c6e7fe",
+    "nombre": "BOMBILLO 100W AMARILLO",
+    "precio": 1.3,
+    "imagen": "product_images/500c92eea5ae4c3399a29c8cdf310f74.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "2f0e8323abd8493fae617afee92672bf",
+    "nombre": "BOMBILLO BLANCO 9W",
+    "precio": 1.6,
+    "imagen": "product_images/8efad4fccefd4d77bf3d28547ddf4444.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "dbecbed834af48a3b251e7be4c911e3a",
+    "nombre": "FOSFORO EL SOL",
+    "precio": 0.2,
+    "imagen": "product_images/57bd36bbd766408482ae82ac5973af98.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "1fbc057412fd44e2a8c9c6e31df4c1aa",
+    "nombre": "VELA GRANDE",
+    "precio": 0.5,
+    "imagen": "product_images/1c9f84e9b47f4b2694382a1610004a38.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "00599d47c3a3478a970621990f0c8f29",
+    "nombre": "WIKI-WIKI",
+    "precio": 1.0,
+    "imagen": "product_images/1cfdad5c63db4a4cbc2211afafcea113.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "39a4c89d45ba461080237266019bdf1c",
+    "nombre": "ALISADO PROGRESIVO LISSO 15G SOBRE",
+    "precio": 0.6,
+    "imagen": "product_images/94b6da02e8024633979212c3eeb3b8a4.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "6a81f0ba5b0f4219a2b33a7bdb061cbe",
+    "nombre": "PILA DURACELL ULTRA AA",
+    "precio": 2.0,
+    "imagen": "product_images/4873c545173b4a29b93d76354a2ecaa1.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "95802b262d8841ffb9b64f6a93a0b707",
+    "nombre": "BAIGON 235CM",
+    "precio": 5.95,
+    "imagen": "product_images/b3c5b29411ae473fbdc398ad7e240ca0.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "8315a803b0004ab7a553e7904d35d08f",
+    "nombre": "PARCHO PARA TRIPA X48",
+    "precio": 3.0,
+    "imagen": "product_images/e7f81d48f7d94699b3a33bbcf1ce2ded.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "d66ee079449448108c62725ecb0143e0",
+    "nombre": "VELAS DE CUMPLEAÑO PQ COLORES MAGIC",
+    "precio": 2.0,
+    "imagen": "product_images/146b493d4500415785c19bfdf5905baa.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "e013821975f8451fa87b21492478f68b",
+    "nombre": "ISOPO COTTON BUKS X100",
+    "precio": 1.5,
+    "imagen": "product_images/536387cfb7694639888644d443f794e9.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "e5cc6510905f4432a60a602d1dab0e7f",
+    "nombre": "ACEITE 3 EN 1 30ML",
+    "precio": 3.2,
+    "imagen": "product_images/e23dc42e109a42aaae2d1d13a88b6941.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "17c948777db542cdb374c7c8076e4b40",
+    "nombre": "ACEITE 3 EN 1 GD 90 ML",
+    "precio": 5.0,
+    "imagen": "product_images/8a3dda37816045c8af04f1b7bef455bb.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "c6befd17fecd46c6b6bc099a7e0580eb",
+    "nombre": "PEGA TANQUE PFT 60G",
+    "precio": 3.88,
+    "imagen": "product_images/f62ea467322c42f882b09747cf4e0d86.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "b532b99e6ec94542ab5f6262ec890b8a",
+    "nombre": "HILOS",
+    "precio": 0.4,
+    "imagen": "product_images/bb3369f96abe43589680eec4635d4294.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "44d91f911ec14944bb2a73df81ed041a",
+    "nombre": "DESODORANTE SPEED STICK CLINICA 30G",
+    "precio": 2.0,
+    "imagen": "product_images/b69639a02ac947159d5a23e7a2eae1f2.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "39f0b94d6efa42ea86266f33d66b61e7",
+    "nombre": "PINTURA AL FRIO BLACKCOLOR 60CM",
+    "precio": 2.3,
+    "imagen": "product_images/f68acd3137994d2ba389a91008e3349d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "6e12c465f38f4e69ae15adca7999bbd2",
+    "nombre": "PINTURA AL FRIO CAPPELLI 60CM",
+    "precio": 2.3,
+    "imagen": "product_images/90d0df01d3d74c0d8ce387f70b0cf5f0.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "8ca0bc8b3f9d425b8484171130082f28",
+    "nombre": "COLA CON LENTES PARA NIÑA",
+    "precio": 3.0,
+    "imagen": "product_images/7a8f3f6ec9214af882eb415889a597f3.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ceb8d4c784874a4295e1c0a4d298694a",
+    "nombre": "MAQUILLAJE NIÑA PEQUEÑO",
+    "precio": 5.0,
+    "imagen": "product_images/be058a0eba144f9ea3033c3bc5dd543d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "b5b9e094be21478e9d7d54b2807f84ea",
+    "nombre": "LIBRETA CUTE",
+    "precio": 2.5,
+    "imagen": "product_images/fa5d11e766834b5b9e20725517837dd1.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "a7047e52a710475190e1d449c59cdd97",
+    "nombre": "PEINE GD",
+    "precio": 1.0,
+    "imagen": "product_images/3f828d0c45354db09dec0b646fd9c7d6.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "feb73f8eb00f45db9b6428294002c5a5",
+    "nombre": "JUEGO DE PEINES",
+    "precio": 4.0,
+    "imagen": "product_images/9a09a9264ef1424f8a7ad87c578d9411.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "7d8cb991a07d48de922913e15cf291e9",
+    "nombre": "GANCHO ROPA DE CLOSET X10",
+    "precio": 3.5,
+    "imagen": "product_images/bb3e8498f86f4b71985d092f2228997a.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "9117f9531aa34b029a4ffa6eb991ed92",
+    "nombre": "GANCHO ROPA DE METAL X10",
+    "precio": 2.0,
+    "imagen": "product_images/4c2042552576446f8b86761af9b9f27d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "a31115b3177d4937a218f879c74c0e3e",
+    "nombre": "PEGA LOCA",
+    "precio": 0.6,
+    "imagen": "product_images/2275c43e555c447fbe426fcc29c40b68.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "292ec90f4f074d7f822627f64a2ba4d4",
+    "nombre": "VASELINA LABIAL",
+    "precio": 3.0,
+    "imagen": "product_images/ec3c1bc66d024c428ce477f373d91058.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "733ab31f917948bca61e18db8faa03b2",
+    "nombre": "AFEITADORA DORCO",
+    "precio": 0.5,
+    "imagen": "product_images/71efa543ed6c4070945961b61ef127cc.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "25b9944d01d74049b770f25d88c5bd96",
+    "nombre": "CUCHILLA 6 ASPAS OSTER",
+    "precio": 4.0,
+    "imagen": "product_images/f5f3d95aab1f48f892b52c2f704d72e7.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "4becae0328af4e0ca5625d12f8547503",
+    "nombre": "HOJILLAS",
+    "precio": 0.3,
+    "imagen": "product_images/07fd4934c5bc4a05aaf3b3760812ea93.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "83810a8c52b74ffca90485f71fe1bb8f",
+    "nombre": "SACA PIOJO METAL",
+    "precio": 3.0,
+    "imagen": "product_images/eec43668c83b4a8fb1eb421715739451.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "120dbd7482d34ff58df21cddc19ddfd2",
+    "nombre": "JUEGO CORTA UÑAS PQ",
+    "precio": 1.8,
+    "imagen": "product_images/484d36f5ff5f47ce9ed2790754b0b58d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "5cbfb46f4943490e949ec21573a1b63f",
+    "nombre": "TRIPODE TELEFONO PEQ",
+    "precio": 5.0,
+    "imagen": "product_images/2ffe5a735fe448b5af30ceff5da1b016.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "710f54712f98450fbf3b6a0b96bc9192",
+    "nombre": "VASO TERMICO PQ 250ML",
+    "precio": 7.0,
+    "imagen": "product_images/be02ca3a49e5404995f859a4f6459db5.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "c7559eddf8924203b73a341e50b29708",
+    "nombre": "VASO TERMICO PQ CALIENTE FRIO",
+    "precio": 7.0,
+    "imagen": "product_images/db71e27c62f74703a807429688cfe987.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "3fa329cb4491427381354c0532be3a5b",
+    "nombre": "VASO TERMICO KUROM",
+    "precio": 10.0,
+    "imagen": "product_images/b75943dd6778457bbb53e8cae2dad3c8.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "57b2633639ce4175b92c7dda0fd8db7e",
+    "nombre": "VASO TERMICO SONGSIM",
+    "precio": 10.0,
+    "imagen": "product_images/29d05fad26df40398ee6f54474a27936.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "dd5063e0297e491caa00dec7da713709",
+    "nombre": "VASO TERMICO PRINCESA",
+    "precio": 8.0,
+    "imagen": "product_images/310cd7e83daf4592baf4f7f2ffb8a5d6.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "82da749b568340ce8be8fb17459994f9",
+    "nombre": "VASO TERMICO MY MELODY",
+    "precio": 8.0,
+    "imagen": "product_images/8154a7048fdb4bbb934d19ac9d6f495b.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "4286b3167b654fec9822f4ad1f3b7134",
+    "nombre": "VASO TERMICO KUROMI STWES 1L",
+    "precio": 16.0,
+    "imagen": "product_images/e581d0a6124a4fd6a9cd511d2a5bcea4.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "607f47f73e914116aac2bb6ba154534a",
+    "nombre": "VASO TERMICO GD SONGSIM 1L",
+    "precio": 17.0,
+    "imagen": "product_images/6b5fa463345f4723a419e99a12639799.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "185665bb25334ba4897d59eda1db2bb3",
+    "nombre": "VASO TERMICO BPA FREE",
+    "precio": 8.0,
+    "imagen": "product_images/2b785a0ee13544bc948d3d1628e0730a.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "4186179cd63d41aabaf8c65bb061a987",
+    "nombre": "ROSA ARTIFICIAL DE LUCES",
+    "precio": 5.0,
+    "imagen": "product_images/0109697ab21e4b5d9f7294089649e1b7.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "fee27b43b8dd4ec9bc693d4d4d486266",
+    "nombre": "CORNETA MODEL 5009",
+    "precio": 8.0,
+    "imagen": "product_images/f112ebfbecb04953a2b2e69ac1344a6a.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "29030d3fa6ee48818d84de773b928c9f",
+    "nombre": "LAMPARA PARA UÑAS GRAND BLANCA",
+    "precio": 45.0,
+    "imagen": "product_images/f7a09796b92d4bd79f6e0c539057518c.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "a72001f193174a1592f364d7db08b779",
+    "nombre": "CARTAS JAPAN 100%",
+    "precio": 6.0,
+    "imagen": "product_images/7c6fa68d01ed4d18b0acc719fb039cae.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "d78805e1433946708ac5b32265d66f5b",
+    "nombre": "LUZ LED SOLAR PANAL",
+    "precio": 14.0,
+    "imagen": "product_images/0655688a4f174f9babe7abc0d48e9d5d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "2ea9a759017f42ddbfce8a00a6adac48",
+    "nombre": "ALCANCIA PQ",
+    "precio": 2.0,
+    "imagen": "product_images/e1fbf760af674e3080cfa92811aa0f57.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "3f2c400caf6540b2a929e2acf05ed9e2",
+    "nombre": "TENSORES ELASTICOS ZASC X4",
+    "precio": 2.5,
+    "imagen": "product_images/1f3f8af7f3b943e69478f2d958ae0c67.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ab26d974fc974bc9a85687a0a5f0d1f7",
+    "nombre": "CORTINA DE LLUVIA DE FIESTA",
+    "precio": 4.0,
+    "imagen": "product_images/7171bad6d7634e53b616d1896da82ffe.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "caf081b06ec647ecb2d847ead140276f",
+    "nombre": "VASOS 1 OZ DARNEL PAQUETE",
+    "precio": 2.0,
+    "imagen": "product_images/9989dd962b54425c9084db41675e8c6d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "f878fa2cd74744a98daa7e145f5f6830",
+    "nombre": "GLOBO CON EMOTIVO",
+    "precio": 2.0,
+    "imagen": "product_images/ec533dee32ea4504bd513c90da4f1cfe.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "79621c1c0dae421d9c93d78fc173263e",
+    "nombre": "PEGA DE CONTACTO",
+    "precio": 1.5,
+    "imagen": "product_images/51d6eb05733b49d0924b37de13d8216c.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "1c5933b73cf949b3b414c8904ea97536",
+    "nombre": "LETRA DE GLOBO FELIZ CUMPLEAÑO",
+    "precio": 4.0,
+    "imagen": "product_images/59226ef000b34db4acb6a9f2d50199ca.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "1ffe5fee21ea46e1ad4e190233d17cdb",
+    "nombre": "LETRA DE GLOBO",
+    "precio": 2.0,
+    "imagen": "product_images/873ce227b3e84088a3f5965f040ae49e.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "83d9305af7da4957a7d31ff734114b43",
+    "nombre": "BOLSA REGALO MOTIVOS GD",
+    "precio": 3.5,
+    "imagen": "product_images/723482b5a23041f59bb765606fc0481b.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "b26b6aa286e34102a617d625922733d6",
+    "nombre": "GLOBO DE NUMERO",
+    "precio": 2.0,
+    "imagen": "product_images/b1bb86c305ad411190fe94b1b852897b.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "861d442c82fc44f9b7748973ac5c202f",
+    "nombre": "BOLSA REGALO DECORADA PEQUEÑA",
+    "precio": 2.5,
+    "imagen": "product_images/ba17b83320194b8d90721d3fca5125f6.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "16f9cb75162a47cf8ec0f380d3a9424f",
+    "nombre": "GLOBOS X35",
+    "precio": 3.0,
+    "imagen": "product_images/5aaea694d4314c47847449b1c8165e78.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "0bef9f40c4bf487d9a7b3bc0aeb96eb1",
+    "nombre": "CORTINA DE FIESTA",
+    "precio": 4.0,
+    "imagen": "product_images/fefd21db39ee468887ddd8a76b16875b.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "1881325346ee48ef9ffcf3e9fee2e0c3",
+    "nombre": "ZARCILLO OFERTA",
+    "precio": 1.0,
+    "imagen": "product_images/007d870927274b5a859a914e466a3839.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "bda0ee803c404b408b6299c93b615dee",
+    "nombre": "CADENA DE LETRAS SHEIN",
+    "precio": 2.0,
+    "imagen": "product_images/e11eeaa3831c472f941e6e8a94b0b975.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "819ee5f9f76b436284c8d57998712f53",
+    "nombre": "CARTERA TIPO BANDOLERO",
+    "precio": 14.0,
+    "imagen": "product_images/96b85441102f471fba1b5fe404f64597.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "76a77988567a406289ed23f35598a65c",
+    "nombre": "BOLSO VIAJERO",
+    "precio": 18.0,
+    "imagen": "product_images/6af1da1f05a3443aa74e6f80589ecf84.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "d5667f301ffc472aadde64f746230e78",
+    "nombre": "PAÑO MICROFIBRA",
+    "precio": 2.0,
+    "imagen": "product_images/253037aee325407bb20b6248561007a9.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "0b0961a2f834470b85abfa3dd2ea6d2e",
+    "nombre": "SET DE BOLSO DE 3 GRENOBIL",
+    "precio": 22.0,
+    "imagen": "product_images/d276bf25f6d94aa58e62d95f54d1996c.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "0811aea7be7b43ac808137c943c370bb",
+    "nombre": "BOLSO MORRAL CUERO DAMA",
+    "precio": 20.0,
+    "imagen": "product_images/716d1fb5de2d4e52b636a232a72c3dae.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "1fcf350c1eda486da5b4632d830036c9",
+    "nombre": "GLOBOS METALIZADOS X35",
+    "precio": 4.0,
+    "imagen": "product_images/fb1a483e7e9e46e485ed8b1a50739162.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "0fd9856e5f844df58c0b8150fa11d4fc",
+    "nombre": "CADENAS DE DAMA SHEIN",
+    "precio": 3.0,
+    "imagen": "product_images/7339592dc2084bf598da245b8ea0e6f9.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "f7c038e631294c7fb7077cbf292b14ac",
+    "nombre": "CORREA DE DAMAS",
+    "precio": 7.0,
+    "imagen": "product_images/b83139e89bc0448e9d793b5ac24feaa7.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "8c1b4bd87c1e40beaf2ff575d5339262",
+    "nombre": "CORREA CABALLERO",
+    "precio": 8.0,
+    "imagen": "product_images/ff404a71388147bcb0a799b26b52c097.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "e52cdc1711bb49eab858fde5c71be624",
+    "nombre": "CARTERA DE NIÑA",
+    "precio": 9.0,
+    "imagen": "product_images/11d01eb47e354bfdbecc95d0b922f7ff.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "946dc8c136864042b2ef6fbed6ab80d4",
+    "nombre": "LLAVERO PELUCHE",
+    "precio": 2.0,
+    "imagen": "product_images/8dd9f3840093450198fafa82dbff7362.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "c625c82ae3a848a0af6572cdd495364a",
+    "nombre": "LLAVERO MUÑECO",
+    "precio": 2.0,
+    "imagen": "product_images/d5b7617967534b18a949507e9f580213.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "c681e7ee61774f85ae6108c08815023f",
+    "nombre": "CARTERA DE HOMBRE",
+    "precio": 7.0,
+    "imagen": "product_images/7f320e24038741699bbd9a26e35032d5.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "1edb0590ad2245be853513a0b80d5ce1",
+    "nombre": "LLAVERO DE TIRA",
+    "precio": 2.0,
+    "imagen": "product_images/a0cf6cd664b6451e98b5ad7b634e9adf.png",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "0994b545c2c04943aa8fd775a526d1ee",
+    "nombre": "CINTILLO DE TELA",
+    "precio": 4.0,
+    "imagen": "product_images/71190a5525144e4099436736af378bed.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "625b5d83a63c4f0fb75e362690c8df8c",
+    "nombre": "CINTILLOS BRILLANTE",
+    "precio": 5.0,
+    "imagen": "product_images/e737e7d0a3ce4ef3ab78db644e3509fb.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "842d1e6ba77f4871b4f961e878db8f9c",
+    "nombre": "PONCHERA PEQ",
+    "precio": 3.0,
+    "imagen": "product_images/271c4cbc90754040aedefc22d15a36dd.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "4e53862c553c4d2597192077109ced0d",
+    "nombre": "TOBO PEQ",
+    "precio": 3.0,
+    "imagen": "product_images/fa57ddcf449e489382d75b70d16e6fcd.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "aa32a889304d4bd9b46db7c78fcf1b2f",
+    "nombre": "CALDERO PEQ",
+    "precio": 10.0,
+    "imagen": "product_images/a9f2b7c560864bc89bed66616bdd4da0.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "6373f7a3f7aa43e88e4198de7ebb3ec9",
+    "nombre": "CALDERO MEDIANO",
+    "precio": 12.0,
+    "imagen": "product_images/b00269066f674d6dadbcac26157390c1.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "f76569832f734a6792864247a36e80c8",
+    "nombre": "CALDERO GRANDE",
+    "precio": 15.0,
+    "imagen": "product_images/8381a79801fb4b9b959797e36b021c74.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "670fb67d976c4f5483f0f2cc964d2ee4",
+    "nombre": "TORTERA A",
+    "precio": 8.0,
+    "imagen": "product_images/187308c688534a1ea9c355fa3e4d9ffb.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "0c5d42fc60d44ef6872626de127fe51b",
+    "nombre": "TORTERA B",
+    "precio": 12.0,
+    "imagen": "product_images/249a22a817c3460ba7cfbfb7b46a347f.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "9f16e6b99ddc481c806a4903b7f1e405",
+    "nombre": "TORTERA C",
+    "precio": 14.0,
+    "imagen": "product_images/409690f4f097441d97f52c860503c9bb.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "1db4aa20f6294dc4851c54481e4c55ad",
+    "nombre": "BAÑERA GRANDE",
+    "precio": 10.0,
+    "imagen": "product_images/833cef0473fe487c97a86b47ab953502.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "f3137981706548fb91096baa42cb66ec",
+    "nombre": "TORTERA NORMALES PEQUEÑA",
+    "precio": 6.0,
+    "imagen": "product_images/829ef49deb6844e7be02ec371ca4ad78.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "4082e6c87e9b4fae8825b8a64184a826",
+    "nombre": "TORTERA NORMALES MEDIANA",
+    "precio": 8.0,
+    "imagen": "product_images/8aaa2f25a444448f951a87652c235d16.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "8cc6daa1370b48f397683a9a57a9161d",
+    "nombre": "TORTERA NORMALES GRANDE",
+    "precio": 12.0,
+    "imagen": "product_images/e5427a24b20e4f4fa8c49bfd83983df0.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "4091299d3c6141f0b9da829a99054157",
+    "nombre": "FILTRO MILTON GRANDE",
+    "precio": 15.0,
+    "imagen": "product_images/ab2a64aac573464986a23f608bd7f43a.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "3c3b1905eb0440708f64c07772c7a534",
+    "nombre": "FILTRO MILTON MEDIANO",
+    "precio": 10.0,
+    "imagen": "product_images/4503707a44c548f4a44f4f911dea9105.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "7589344c131e4919a71a1c8c9c71f0e4",
+    "nombre": "FILTRO MILTON PEQUEÑO",
+    "precio": 8.0,
+    "imagen": "product_images/abcb671c00194e1498b951de3d24a536.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "6df0104956604670affc68eb0536b066",
+    "nombre": "QUISILLERA PEQ",
+    "precio": 10.0,
+    "imagen": "product_images/9acddbf1d7f9415d873f0d216c4b47e4.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "6495bb55c80340059b5b2ebc9e3d5ae5",
+    "nombre": "QUESILLERA GRANDE",
+    "precio": 12.0,
+    "imagen": "product_images/60694dd7dc95433dbf4a4f60ad4cf37d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "87cc726e709f43fe83bd0e98a2d323df",
+    "nombre": "CONSERVADOR REDONDO 350ML",
+    "precio": 0.8,
+    "imagen": "product_images/ce1e5a0348184b118b3e5eaeb2b71884.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "5ef09df4b7c8450ca5217f5deeb7bce7",
+    "nombre": "CONSERVADOR REDONDO 330ML",
+    "precio": 1.0,
+    "imagen": "product_images/a902bd4a138a40ad90aa1105f61854d4.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "260a996a28e841f5bd57f15f060e597f",
+    "nombre": "CONSERVADOR REDONDO 600ML",
+    "precio": 1.2,
+    "imagen": "product_images/094b90f56d6340d4b9b835fc0bcb854d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "4f8861e04190448fbbfe616cf41174ea",
+    "nombre": "CONSERVADOR CUADRADO 800ML",
+    "precio": 1.6,
+    "imagen": "product_images/11ef0261d5ec4c07b4b1a3e8b7c98e69.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ac9a384ae963430aa2277806eaceaca1",
+    "nombre": "CONSERVADOR REDONDO TAPA AZUL 16X8CM",
+    "precio": 1.5,
+    "imagen": "product_images/26cc89942a5c40f3998d5f7b52b0599c.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ed00f3c43d904b53895c55053db35452",
+    "nombre": "CONSERVADOR ROSADO",
+    "precio": 1.8,
+    "imagen": "product_images/784028c477754dc6b22df5ac6f0fd2ae.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "21aaedf47a0d4e70b415c259d4cce160",
+    "nombre": "CONSERVADOR CALIPLAST",
+    "precio": 1.5,
+    "imagen": "product_images/636c0464451840049441bf25347d97f9.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ad9df96792bd4144b5c374dd213b9a34",
+    "nombre": "CONSERVADOR CUADRADO COLIPLAST",
+    "precio": 1.6,
+    "imagen": "product_images/7510625d22144796acd6fbe4f2fb6a3e.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "539084494550464ba997eb2772086366",
+    "nombre": "CONSERVADOR GRANDE",
+    "precio": 3.0,
+    "imagen": "product_images/658b21038b6b4f589192ef2fd55de97c.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "2418d95473ba4627819b421e8d76c84e",
+    "nombre": "PLATO PLASTICO",
+    "precio": 1.0,
+    "imagen": "product_images/9f43bcd8f36443d7a49c5ed582083992.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "2c79ac2d5b4a407abc4e4bad44ceacbe",
+    "nombre": "SOPERA COLIPLAST",
+    "precio": 1.0,
+    "imagen": "product_images/d1c44afa2b69461092b88087b1d49d14.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "a85ca94c4b334c6c8018ab694573bd50",
+    "nombre": "VASO PLASTICO",
+    "precio": 0.5,
+    "imagen": "product_images/4c4d1f0dbf6c4a8296b165bcd9b41930.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "6a8d9f84a24a4269b1873adc1103106b",
+    "nombre": "LICUADORA OSTER",
+    "precio": 23.0,
+    "imagen": "product_images/1f9e4b5bf77742189e6f7e6f1cbbe52f.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "33b4ce63e1c5451f98c83831cadfefe3",
+    "nombre": "JUEGO DE CILICON REPOSTERIA",
+    "precio": 6.0,
+    "imagen": "product_images/1fae275f056b43ada23dd24e2bc86b54.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "15626974c93c41c0bbba9d913c880986",
+    "nombre": "TAZA MEDIDORA",
+    "precio": 6.0,
+    "imagen": "product_images/e84ade3ec960464e9abafcd7da083db4.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "71fbabedc0d046498add693c2f765219",
+    "nombre": "TAZA LONCHERA",
+    "precio": 3.0,
+    "imagen": "product_images/799df463648b4f84b4ef592040fb1868.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "f263214aa2564a1faa8a2ea0971f9c87",
+    "nombre": "BUDARE PEQUEÑO",
+    "precio": 12.0,
+    "imagen": "product_images/e96ae011c08e487c80cc3a252a24a9a1.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "66ca354db5a64ef7a475a49c05e8babe",
+    "nombre": "BUDARE GRANDE",
+    "precio": 17.0,
+    "imagen": "product_images/93085ac297f34b9cab4e9f222c9739fa.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "73d953216be949ebbbd5448de0cd3359",
+    "nombre": "JARRA DE AGUA DE 2LTS",
+    "precio": 3.0,
+    "imagen": "product_images/5428e7488fdf4c60b7572382cef9181e.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "af60722546754d80aa04508419184b43",
+    "nombre": "TABACO",
+    "precio": 0.12,
+    "imagen": "product_images/1fd6b2f0ef9840739446b07b7b4a485d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "e8def6ea0e3143f6b3e8c05189584162",
+    "nombre": "RALLADOR DE COCINA",
+    "precio": 3.5,
+    "imagen": "product_images/e9beed0d5fae4f969bd3f3d050cc9511.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "aa1797369e64407ba06365edee8a7adf",
+    "nombre": "COLADOR DE PASTA",
+    "precio": 2.5,
+    "imagen": "product_images/c56633361407458d80e57578023c13de.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "1b57241f391a4170b39e1aea6fc2f59b",
+    "nombre": "PORTA COSMETICO DE PLASTICO",
+    "precio": 3.0,
+    "imagen": "product_images/fbbdb3b493264a21a6905117648fa29d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "b27150cc01074fd08cc314f824a3b19e",
+    "nombre": "EMBUDO DE PLASTICO",
+    "precio": 1.0,
+    "imagen": "product_images/e731d4e4c16b489fae1d123b4353c6cf.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "a3ce49dd2bf14cae88ce531b820320a7",
+    "nombre": "TORTERA A1",
+    "precio": 6.0,
+    "imagen": "product_images/fa2861f2b0e34d20b51957d6f10b9fc6.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "407c62e48b394c058beaae0db2b77d2b",
+    "nombre": "MATA MOSCA PLASTICO",
+    "precio": 1.0,
+    "imagen": "product_images/1fd28757586a4129bd764ef46145888d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "c84567c4c83f46f5af0ce3c830f13ef3",
+    "nombre": "PARAGUA DE NIÑA",
+    "precio": 5.0,
+    "imagen": "product_images/96389abfb9ef4c569abf51a88616dceb.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "2243e3c16aef4b0cb5c4a7bff808e869",
+    "nombre": "CARACOL RESISTENCIA",
+    "precio": 4.0,
+    "imagen": "product_images/730191fb175c4c0f8d0ff81af68caadb.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "1e3cd5541f1d4036a2ce8eb464097c89",
+    "nombre": "COLADOR DE TELA",
+    "precio": 1.2,
+    "imagen": "product_images/ae2b375d7bee4518b3020d7bf0123bcc.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "fe1877e4c55c4d90b62d102f38989e51",
+    "nombre": "COLADOR DE JUGO",
+    "precio": 1.2,
+    "imagen": "product_images/9ece2d5412df4203a100c9d0d55d7c90.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "a3b4757f69484af6a500e6953eaf92a3",
+    "nombre": "COLADOR DE HIERRO",
+    "precio": 1.0,
+    "imagen": "product_images/e685ccc8245043f99c9056cad4ee3948.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "2124c60379154fc2b597c672a320ada3",
+    "nombre": "HIELERA DE PLASTICO",
+    "precio": 1.16,
+    "imagen": "product_images/ace1095fe4314bbebd80a869e1861bdb.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "41526d3924af477f91c85424c3836dba",
+    "nombre": "BATIDOR DE COCINA",
+    "precio": 1.6,
+    "imagen": "product_images/233b4fc8257f41cd89cf392546e415c2.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "09776f3baba84b60a96f3a18ec23c072",
+    "nombre": "CEPILLO DE LAVAR",
+    "precio": 3.0,
+    "imagen": "product_images/a0cda32f46124024a053c8044b2e03c2.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "cc8ea1cb55cb4e2a84e01b86969ab5be",
+    "nombre": "PILAS AAA DURACELL PLUS",
+    "precio": 2.0,
+    "imagen": "product_images/1371e459993c41139e418cdde179d5a7.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "7a29c79f869c4aca9217d439de7fc118",
+    "nombre": "METRAS",
+    "precio": 1.0,
+    "imagen": "product_images/45a022d124414423b17e5cd994cff2e5.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "bb41f2423ea04da8a8877e2e5865a540",
+    "nombre": "METRAS NATE",
+    "precio": 1.2,
+    "imagen": "product_images/47ee7f5e5b8d45b898152b17bebd5864.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "b1c443b1edba417c87d8dd9ec2bd2459",
+    "nombre": "ROMPECABEZAS PEQ",
+    "precio": 3.0,
+    "imagen": "product_images/4000003b68a9403397f3d3ec40587e95.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "3a96f3dd165e4bcba0f1b5c943abc191",
+    "nombre": "CHIMO EL TIGRITO AMARILLO 18G",
+    "precio": 0.7,
+    "imagen": "product_images/8857ac4a3e644e35a0f39c5a256e2698.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "db0d8b4527194e3b940ddbc88cb91a5c",
+    "nombre": "CHIMO EL APUREÑITO AZUL",
+    "precio": 0.8,
+    "imagen": "product_images/e619f515122b42acac9eb3cff0dc0db0.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "090f4e0cccb44117bcac05b73eb87084",
+    "nombre": "QUESILLERA MEDIANA",
+    "precio": 10.0,
+    "imagen": "product_images/37ce86a058394485af4cf24952ec7fe2.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "e47c488518414354819d5b2bd92a3e8f",
+    "nombre": "QUESILLERA PEQUEÑA",
+    "precio": 8.0,
+    "imagen": "product_images/b892677aeabb4197990bc49e75187bf7.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "a79c51ec247d4692b860e5c93f42915e",
+    "nombre": "RELOJ DE NIÑOS",
+    "precio": 5.0,
+    "imagen": "product_images/c24cbcdfae674e27bdd6273faa708ff0.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "11150f015e83411b81abc2cd1b73c9c5",
+    "nombre": "RELOJ DE ADULTO",
+    "precio": 7.0,
+    "imagen": "product_images/a3769514b481436db58fd26b1bef95d7.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "b5c460b389b946ebbeb672a337b7a82a",
+    "nombre": "TIRA LED GRANDE",
+    "precio": 6.0,
+    "imagen": "product_images/035feaa87466482ca3a21bf2d2711c28.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "97b2e4c6760a4c519b38d3a678309b5b",
+    "nombre": "PITOS",
+    "precio": 0.5,
+    "imagen": "product_images/5ac55f82d1cc424aa70f75ba3788b3d4.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "8c6d2f9ed2d342579634292c77c1424f",
+    "nombre": "GLOBO INDIBIDUAL",
+    "precio": 0.11,
+    "imagen": "product_images/c3bf3e9bdd5a4ba3a77c8b6f84e3f90b.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "5f3b591e41ea476f944182c73c1a5471",
+    "nombre": "CONSERVADOR REDONDO 54OML",
+    "precio": 1.0,
+    "imagen": "product_images/c948dfb56cfd4330b3bc4428c17624f2.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ae6aac23520349b3b5d33d3d3f03626f",
+    "nombre": "CABLE TIPO C TIPO C 2MT",
+    "precio": 5.0,
+    "imagen": "product_images/8b0f0467ffae42199017108c89952fbe.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "92e3ff1b116a485cbc3b7bc6c0b6a78f",
+    "nombre": "GANCHETA DE PELO",
+    "precio": 0.5,
+    "imagen": "product_images/6e618efe73354cb88d0549ad36799eae.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "b9acc0ce88194dbba68e371c30ca90b7",
+    "nombre": "CANDADO GRANDE",
+    "precio": 3.0,
+    "imagen": "product_images/639bbfe069b5432fa14d2a7b149f8e94.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "c263b98d773041e4a182684bd7e96d41",
+    "nombre": "CANDADO MEDIANO",
+    "precio": 2.5,
+    "imagen": "product_images/036e420ae42744148d9584ff900cbc55.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ebd2e3a3535a45838f911cdaef8d7070",
+    "nombre": "CANDADO PEQUEÑO",
+    "precio": 2.0,
+    "imagen": "product_images/ce9bbbe5111647b2b111d519c6ab106a.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "e2b7dbf87f1446b1b1e04bb425300479",
+    "nombre": "PERFUME DE TUBO 33ML",
+    "precio": 2.0,
+    "imagen": "product_images/5a8a177bcd7549f6a19b47c48fb41b88.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "a878503b23b54e1c84af922a15481f61",
+    "nombre": "ALCOHOL 120CM",
+    "precio": 2.3,
+    "imagen": "product_images/61a4dd33e55f4c01ace0963055497a7d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ec8e968707db44b6958094c7be1ccef6",
+    "nombre": "BOLIGRAFO",
+    "precio": 0.35,
+    "imagen": "product_images/15e461dd9eda4758ac946d549d540114.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "3df9a44e85ec48259a17f4c1643fa01c",
+    "nombre": "BOLSO PEQ NIÑA",
+    "precio": 15.0,
+    "imagen": "product_images/e6c44268df674632b1603e3b83bf4d70.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "e0c8ef6af68446249c9f6bd5fcd7d411",
+    "nombre": "CAÑON REVELADOR DE SEXO",
+    "precio": 6.96,
+    "imagen": "product_images/bf7c29bec4e140b1bfca746532eec0b3.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "2f6420906cf747a781c23c98fa158e24",
+    "nombre": "SOLDADORA DE ESTAÑO",
+    "precio": 5.0,
+    "imagen": "product_images/8b4c19b94c184139bb3fb9d1686be21b.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "1d0c41fe328d46fdbcadab95e4f1b230",
+    "nombre": "AGUJA DE CARTON",
+    "precio": 1.16,
+    "imagen": "product_images/0b882cce73a94de8a0a34769adcffd59.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "59168a3ebe9a4d98ba8259c4660d70b6",
+    "nombre": "RECOLECTOR DE ORINA",
+    "precio": 0.7,
+    "imagen": "product_images/8bb3d841c4f84dc1ac20f930a1f2ce94.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "7c14ec0e1d364941bb848c6942787413",
+    "nombre": "RECOLECTOR DE HECES",
+    "precio": 0.7,
+    "imagen": "product_images/8ee1bc4ae42a4f2d877921ca34463930.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "271efc8b7493402f9a21b06eb6a699dd",
+    "nombre": "VASO CON OREJA",
+    "precio": 0.7,
+    "imagen": "product_images/81693909250e4b30abdb1efd098e5507.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "d3467193306441699048a77e130f0866",
+    "nombre": "VASO DE CAFE PEQUEÑO",
+    "precio": 0.5,
+    "imagen": "product_images/79c3281f208f4994a402b03b3d0cd2b3.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "eb45358c6ade4e09ba6e1c546162d751",
+    "nombre": "PELOTA ANTI ESTRES PEQUEÑA",
+    "precio": 1.0,
+    "imagen": "product_images/4495b1a1ef8749b49718f52c2960adc0.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "067bb62d56424e05b332e9146c43274c",
+    "nombre": "PELOTA GRANDE ANTI ESTRES",
+    "precio": 1.5,
+    "imagen": "product_images/1d45b89d63a84201a5873ff23d716753.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "5bdffbdad8e741ffae9c510ce89a4976",
+    "nombre": "CALCULADORA CIENTIFICA JOINUS",
+    "precio": 10.0,
+    "imagen": "product_images/d946a04e02a048f5af643624bffebb74.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "4796591c605e4baaac31b9ddbb29bc31",
+    "nombre": "BOLSA DE HIELO",
+    "precio": 2.6,
+    "imagen": "product_images/20d33d181ff24deb85324b5bb039b8c3.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "f856712fe1234b5b909381a0a8cb32f6",
+    "nombre": "BOLSA DE TETA",
+    "precio": 1.0,
+    "imagen": "product_images/973c3d7f7b064db99f9ddc59b92663a7.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "92914013a315422088faaa46ed89b697",
+    "nombre": "BOLSA DE 3K ASA",
+    "precio": 1.99,
+    "imagen": "product_images/8f79ea168f1340f880b582fd2775be75.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "d9f17875faf34feda9e017ba623c544d",
+    "nombre": "BANDEJA DE ALUMINIO GRANDE",
+    "precio": 0.22,
+    "imagen": "product_images/c8b6ff4e8e0343df85898c423814a031.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "7b791f1f8c6149c389b78591a9f09b0e",
+    "nombre": "BOLSA PAPEL GRANDE",
+    "precio": 0.12,
+    "imagen": "product_images/3d5e8c1399fb4172b6da1a7496ecbd3e.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ca9e05c2e66c4c968c30c5f0121c7a51",
+    "nombre": "BANDEJA ALUMINIO PEQUEÑA",
+    "precio": 0.18,
+    "imagen": "product_images/35acee09a6564ce79d993656c8ab71fd.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "aec0e9389f564713b462e9f2699ac8e2",
+    "nombre": "BANDEJA ALUMINO MEDIANA",
+    "precio": 0.2,
+    "imagen": "product_images/ec63380b340e40d49d89ef2375100afa.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "05cfaf73f48b40d4a65fac8dc7e1798b",
+    "nombre": "AFEITADORA MAX 3",
+    "precio": 0.65,
+    "imagen": "product_images/c22d0483581949f7a5b2b4c47d917560.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "24d756436a6c4d738568a400acb8f609",
+    "nombre": "CEPILLO DENTAL CHINO",
+    "precio": 0.5,
+    "imagen": "product_images/5d7a76bb304545b4b6763833c4fac7a4.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "f168418d56a64c05b70abaf27f4f68e5",
+    "nombre": "MASCARA CON LUCES",
+    "precio": 6.0,
+    "imagen": "product_images/5d8de7da71704b06a0db392880660d80.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "5836f161741c4b3aad8ae7191200b743",
+    "nombre": "TIJERA NIÑO",
+    "precio": 2.5,
+    "imagen": "product_images/88f3a3ec74b54846a21b70f6e026afc4.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "28b4951640fa442ea25b1b45ab54ee51",
+    "nombre": "PIEDRA POME",
+    "precio": 1.5,
+    "imagen": "product_images/a7ed355b1cda4628a226c2ab548b3404.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "d8011e64c50e43aa9d95b335f34cf9db",
+    "nombre": "PALETA PARA PIE",
+    "precio": 2.0,
+    "imagen": "product_images/c040ca2d69d5419ebb0cbbdbe69d99c7.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "821b55b8ec7d4a45a38d63e891d9604a",
+    "nombre": "JUEGO GEOMETRICO",
+    "precio": 2.0,
+    "imagen": "product_images/f157b1b3ed8e4ffaa7f260853f012bbf.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "3843b81fdbc44af987d59da2859cdd53",
+    "nombre": "GORRO PARA MECHA PLASTICO",
+    "precio": 3.0,
+    "imagen": "product_images/f924c1dd855f4cceb449846a994bd687.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ec44d4a09208489792f22a4c28525f10",
+    "nombre": "GORRO PARA MECHA SILICONE",
+    "precio": 5.0,
+    "imagen": "product_images/9f00b218c8734b2a94e8016a1ee5d611.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "2a2ffb0f3e8a4193bef852701ed38cbb",
+    "nombre": "CINTILLO CON GANCHO NIÑA",
+    "precio": 3.0,
+    "imagen": "product_images/f529ca7b6f774e78b3cf44f2c517b277.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "57e5d29658d0498393464439711d3ae5",
+    "nombre": "CORONA PLASTICO",
+    "precio": 3.0,
+    "imagen": "product_images/6acae274af464cb09a8181da00196e60.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "471e33ae6a714927864b247fc627b364",
+    "nombre": "JUEGO DE NIÑA UÑAS GANCHO",
+    "precio": 8.0,
+    "imagen": "product_images/07a6a42b5bb94a2185752da439a191e3.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "6c0f600a64a348a49d4fdc37e1cad73f",
+    "nombre": "BOLSA REGALO 2",
+    "precio": 1.0,
+    "imagen": "product_images/53cbec0aba424ff483ddc5802374e7ec.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "4e29df78a77e4bba8cf709c3e11ac0bb",
+    "nombre": "BOLSA REGALO 3",
+    "precio": 1.3,
+    "imagen": "product_images/08ee480f0d15443786fda9f40ce1828d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "c2cac8db9a2348f782638724ec7635c5",
+    "nombre": "BOLSA REGALO 4",
+    "precio": 1.5,
+    "imagen": "product_images/0b592d46f57d4cd1b9bd6d48718a8a89.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ff7115ab8e4d402fb54f733ef57ea72d",
+    "nombre": "BOLSA REGALO 5",
+    "precio": 1.8,
+    "imagen": "product_images/90011b9696e74821a1e08e369063270f.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "50918ce1c684427381a0043d73d8037d",
+    "nombre": "BOLSA REGALO 6",
+    "precio": 2.0,
+    "imagen": "product_images/ebfba1a865534d6cb29e19f3313247d7.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "36df245ff369423eb7190f24f205d373",
+    "nombre": "ZARCILLOS VARIADOS",
+    "precio": 3.6,
+    "imagen": "product_images/f558a0f2dde1466aab092413c38d60b4.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "1ec8a07812a141c0bd1c407a77da5469",
+    "nombre": "CUCHARA Y TENEDORES DESECHABLE",
+    "precio": 0.7,
+    "imagen": "product_images/682c6fb94caa46439c730494e476c920.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "7cdeb1688a5349ed87d16341cf59b15e",
+    "nombre": "VALDE PLASTICO",
+    "precio": 3.0,
+    "imagen": "product_images/ea2436c09be849cbb1dcba3e21fff268.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ec82af4b7cf1410ea01f836b221a32c3",
+    "nombre": "CUCHILLO MEDIANO",
+    "precio": 1.3,
+    "imagen": "product_images/89fe4ee830534f93b265700049ae7ef1.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "0b6bbaa923384137ab3e471a30b78cad",
+    "nombre": "CUCHILLO PEQUEÑO",
+    "precio": 1.0,
+    "imagen": "product_images/8587a631e7834432aea7e1028dcd7681.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "9d865b1caa3448d185626410c76b853e",
+    "nombre": "CUCHILLO GRANDE 10 CACHA BLANCA",
+    "precio": 3.5,
+    "imagen": "product_images/fd6faa148a754e8286f55e2d7c9d84c6.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "6fa091839e94415bb50b9e4425489ae3",
+    "nombre": "CUCHILLO CERRUCHO GRANDE MARRON",
+    "precio": 3.0,
+    "imagen": "product_images/9743bad023d34e0585799b9c3c8c96d5.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "c847cb1baed845f58489f2da4e17856b",
+    "nombre": "PALA PLASTICA",
+    "precio": 3.2,
+    "imagen": "product_images/53a77e4dbcba4c09bfdc09fc6e45910e.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "f33894f6fd344da3a011eac59c4d7d3d",
+    "nombre": "PITILLO PAQUETE",
+    "precio": 2.7,
+    "imagen": "product_images/fe7319d47bcb4c6489f9e40ba9d8a5b3.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "a0f4c99ee49c40519961e7fa73d692c2",
+    "nombre": "CEPILLO GRANDE DE BARRER",
+    "precio": 5.35,
+    "imagen": "product_images/a748fd8afc0c4503b80f900b314d90ea.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "fdfd8db368d54addbe01e2d255619071",
+    "nombre": "BANDEJA ANIME HAMBURGUESA",
+    "precio": 0.1,
+    "imagen": "product_images/d50feef6c4e343f3b16e326c19dd4da9.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "a6d3d22e91624d77945b60dc95990b74",
+    "nombre": "KIT COLITAS Y GANCHOS",
+    "precio": 2.5,
+    "imagen": "product_images/0e683d61982f47fdacd091bb2a68ce81.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "8f54ca8e8b39413fadaa471c186145b8",
+    "nombre": "CUCHARA DE METAL",
+    "precio": 0.8,
+    "imagen": "product_images/0c74b85683374be3b0d7dafccec3dfdd.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "68971add94bf4474ad9dcb8739410888",
+    "nombre": "GANCHO NIÑA DE KUROMI PAQUETE",
+    "precio": 3.0,
+    "imagen": "product_images/31341448fe0a4e4ab1cf6e0a4ec0dc08.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "79636510cc904a5883fba39b21106329",
+    "nombre": "CUBIERTO METAL",
+    "precio": 0.8,
+    "imagen": "product_images/0f128cb580fa4f50aaf170a5185799ef.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "1ea3938b3a3548c097556d25a2bb30da",
+    "nombre": "GANCHO DE CABELLO DE FIGURA",
+    "precio": 2.0,
+    "imagen": "product_images/64e6146f03fd404090ce89100c4ea325.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "d824aa874e92458498d60dce0ac695c6",
+    "nombre": "GANCHO DE CABELLO X UNIDAD",
+    "precio": 1.16,
+    "imagen": "product_images/5c8d9631d4b14c9d9f0627ef15e82dd1.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "828812fd585f421faf86637a419edcc6",
+    "nombre": "UÑAS DECORADAS",
+    "precio": 4.0,
+    "imagen": "product_images/5d55c1583f224a1187023c9ac366ef69.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "8518b9bb9b6946938687500817bc7bbb",
+    "nombre": "GANCHO DE CABELLO METAL GARNDE",
+    "precio": 1.0,
+    "imagen": "product_images/c2ec5854822c4257bdd34871e184f80a.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "c94f7dc782204f809f55f3560c5b4ab6",
+    "nombre": "GORRO PARA EL CABELLO",
+    "precio": 1.6,
+    "imagen": "product_images/91cde6c989ff4411b3fb372315897cc8.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "17019fc8843e444087bb8af0af75c735",
+    "nombre": "STIKER AUTOADHESIVOS",
+    "precio": 1.5,
+    "imagen": "product_images/ead3523f97d14e3ea62368ce97f26734.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "938b2d24b84c44e6960623d812e6ac18",
+    "nombre": "BEAUTY BLENDER",
+    "precio": 1.5,
+    "imagen": "product_images/47a763e269f148c79ed41103fbfea991.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "78151565ca45491c853edc39509846bf",
+    "nombre": "PINZA DE PESTAÑA",
+    "precio": 2.5,
+    "imagen": "product_images/021c9cd5fe6443a7959e74e11ac99173.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "9384d9a15e06481fb7a78dea4cdc5b90",
+    "nombre": "PERFILADORES",
+    "precio": 2.0,
+    "imagen": "product_images/33411ced11854d00acdc8b217670e02a.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "afe6350b5e804ec4bf6c498615de6d1a",
+    "nombre": "PAQUETE DE UÑA",
+    "precio": 2.0,
+    "imagen": "product_images/43a08d87e4224506a5cc37b6b9a1bb36.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "0d1f31ac0d1249798f7754277c2cc454",
+    "nombre": "PINCEL PARA UÑA",
+    "precio": 3.0,
+    "imagen": "product_images/5b86a30b47094abc896b6dfe1930a438.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "41a8e7be86924ea0a834bb7358921a41",
+    "nombre": "PALITO DE NARANJO",
+    "precio": 3.0,
+    "imagen": "product_images/fdb7d5dce903441d846486f827cb0998.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "c242b5e11fe641f09d2afdf4d102e8a0",
+    "nombre": "PAQUETE DE COLAS",
+    "precio": 1.5,
+    "imagen": "product_images/493281b836e3497194bd1ee0ef2d469b.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "0e36f86ec919401ca99bced76b2f9b20",
+    "nombre": "PINTURA DE UÑA",
+    "precio": 3.0,
+    "imagen": "product_images/a4011dd5a6e64233a94c7605dbf89d0e.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "daa33c51bc744e44a4bd85d09fd1f132",
+    "nombre": "GANCHO CABELLO METAL PEQUEÑO",
+    "precio": 0.5,
+    "imagen": "product_images/913df35467da4ef69eefb63325648a88.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "48a4ee46133d4735a6ec99cd9cf5b5c1",
+    "nombre": "GANCHO DE CABELLO DE PLASTICO",
+    "precio": 0.4,
+    "imagen": "product_images/69d18323177b4da897d53df1ee7b1a98.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "661831fe06ba4df7a27868923a06f0c0",
+    "nombre": "GANCHO NIÑA VARIADO",
+    "precio": 1.5,
+    "imagen": "product_images/5b816d1d8fc7407496c88b4a68bb0a5d.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "0457c1de2bdc4a80b1f7c6873b482d99",
+    "nombre": "CADENA DE LETRA DE DAMA",
+    "precio": 3.0,
+    "imagen": "product_images/860cc6344e8448ef88c426d967fcf630.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "9ed07aa454ce4024a6980cd6c6521aef",
+    "nombre": "CADENA CON ZARCILLO DAMA",
+    "precio": 7.0,
+    "imagen": "product_images/4067cd16811a4ef79db0779b9c4f9e09.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "bf39378d12134351a455001271f8492f",
+    "nombre": "PULSERA DAMA VARIADOS",
+    "precio": 3.48,
+    "imagen": "product_images/b53859e14b714766be4bf0dca8778671.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "0f39553652384a03806a64a24d82de7d",
+    "nombre": "COLA CON DETALLES DORADOS",
+    "precio": 2.5,
+    "imagen": "product_images/95fff8ecd2e04f3cade71ad15032ce8f.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "250af1ab759d484e9d0f08b0805ea2ec",
+    "nombre": "VELAS EXPLOSIVAS PEQUEÑAS",
+    "precio": 1.0,
+    "imagen": "product_images/2c270534546c4fb3b1dfc33fd7c2dff2.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "c85b2a4254144368827b819e46bc32a1",
+    "nombre": "VELAS EXPLOSIVAS GRANDES",
+    "precio": 1.5,
+    "imagen": "product_images/36fe3fdf548e4a3c97fa7f613944d1c4.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "a091b3f534454251b3c79be71e280484",
+    "nombre": "EXTENCIONES DE COLA PARA NIÑA",
+    "precio": 2.0,
+    "imagen": "product_images/7b3460995de74c8795b97d7e34406b8c.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "3a9b4dd4341c4ccdb028d1baea002f0e",
+    "nombre": "PIOJITOS CON EXTENSIONES",
+    "precio": 3.0,
+    "imagen": "product_images/85ae652cb73c4a78ab20cad54d49154c.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "03885a78036a4732881e6551fa284ff9",
+    "nombre": "JUEGO PARA PINTAR CABELLO",
+    "precio": 3.5,
+    "imagen": "product_images/e74ec900aa5943e2bca62011d26c95d0.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "4623eaf31062418998ceae54033a5a41",
+    "nombre": "GANCHETA MINI",
+    "precio": 1.0,
+    "imagen": "product_images/ba5ab6a83fd84eebb2a5b72f9ee86ddb.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "e5d169585e0f4cadb7fcec75738eded0",
+    "nombre": "PIOJITOS",
+    "precio": 1.0,
+    "imagen": "product_images/48e15c48ebaf46fd87b01e5bb8a3a115.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "9f4108ba17ca465b81aa0fec33db1e57",
+    "nombre": "ARTICULOS TODO 1$",
+    "precio": 1.0,
+    "imagen": "product_images/636b5f8c7b0e4e96b8e89d4c3766cba6.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "db696d8496f2457c90d2909180d6dc49",
+    "nombre": "VELA DE LETRA FELIZ CUMPLEAÑO",
+    "precio": 2.0,
+    "imagen": "product_images/06ef6430b12447f8a6bdc2334fdac599.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "30d9d421bb984e779999125d61a0b6ae",
+    "nombre": "VELA DE NUMERO",
+    "precio": 1.8,
+    "imagen": "product_images/2b0686b9e7d94db185b7e542598cd742.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "20220468afcb402283f4f0cc6c4a5820",
+    "nombre": "FLOR DE CINTA PARA REGALO",
+    "precio": 1.0,
+    "imagen": "product_images/d246fbcae2514630a875a778a82c3d5c.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "1e0d500f5b2f484985e39ab59995fda8",
+    "nombre": "LENTE PARA FIESTAS",
+    "precio": 1.0,
+    "imagen": "product_images/d2f42e6c01c540bc97e5cc738db4c207.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "02841d0e3c9a45b58a47822931226d17",
+    "nombre": "BANNER FELIZ CUMPLEAÑO",
+    "precio": 4.0,
+    "imagen": "product_images/496c07e419e64487b3857809b868ac1b.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ac5b73612d7f4fd68af27aa9bfc7392e",
+    "nombre": "CINTILLO DE FELIZ CUMPLEAÑO",
+    "precio": 2.0,
+    "imagen": "product_images/246f231a96914a49a0c326efb55e4140.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "bc6be73cb66d4625b2a3ed2714a8fa2a",
+    "nombre": "SET DEGLOBOS DE CARICATURA",
+    "precio": 4.0,
+    "imagen": "product_images/ae53d167dd8a4e44b822fe8908949797.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "dfd0cb9c40b94234b65de7bdc36873ef",
+    "nombre": "CUCHARITA PARA SHOT",
+    "precio": 1.0,
+    "imagen": "product_images/e7d05a4a789748abae19db3ffa7dcf9b.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "d4efff23eac34c2a9494fb838e2e4bf9",
+    "nombre": "PAÑITO DE COCINA",
+    "precio": 2.0,
+    "imagen": "product_images/7ed98a5cd2e54aeb91024cc26ef071b6.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "ca456c9643be4203930e0558fb8720f2",
+    "nombre": "PLATO PARA TORTA 3",
+    "precio": 0.75,
+    "imagen": "product_images/a6d9f814583141378efe96b86ea624fb.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "d1af3e41a420463e8467ff6af62b2783",
+    "nombre": "PLATO PARA TORTA 4",
+    "precio": 0.9,
+    "imagen": "product_images/5a01b0e885204f5cbf0fef8aee137af5.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "b6cb9f3fac5c442e8d644f9fd2f20df6",
+    "nombre": "PLATO PARA TORTA 5",
+    "precio": 1.0,
+    "imagen": "product_images/e6e4130fb30d4dbc9cca0294152d1c71.jpg",
+    "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "31a766edaeeb4c6fa0c016cebf95a56c",
+    "nombre": "ENVASE DESECHABLE TRIANGULAR PEQUEÑO",
+    "precio": 0.15,
+    "imagen": "product_images/4815f76bde014bf2b95ebfc11f07b2d5.jpg",
+    "categoria": "QUINCALLERIA"
   }
 ]
