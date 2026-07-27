@@ -453,7 +453,7 @@ function renderAnunciosBanner(container) {
       items[idx].classList.remove('active');
       idx = (idx + 1) % items.length;
       items[idx].classList.add('active');
-    }, 4000);
+    }, 1800);
   }
 }
 

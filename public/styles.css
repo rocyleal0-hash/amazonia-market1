@@ -108,7 +108,7 @@ img { max-width: 100%; }
   border: 1px solid rgba(255,255,255,.18);
   color: var(--tb-menu-fg);
   border-radius: 12px;
-  min-width: 54px; height: 46px;
+  min-width: 54px; height: 72px;
   font-size: 22px; font-weight: 900;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0,0,0,.18);
@@ -145,7 +145,7 @@ img { max-width: 100%; }
   min-width: 260px;
 }
 .am-search input {
-  flex: 1; height: 46px;
+  flex: 1; height: 72px;
   border: none; border-radius: 8px 0 0 8px;
   background: #fff; color: #000;
   padding: 0 14px; font-size: 15px;
@@ -153,7 +153,7 @@ img { max-width: 100%; }
 }
 .am-search input::placeholder { color: #6B7280; }
 .am-search-btn {
-  height: 46px; min-width: 54px;
+  height: 72px; min-width: 54px;
   background: var(--tb-search-bg); color: var(--tb-search-fg);
   border: none; border-radius: 0 8px 8px 0;
   font-size: 20px; font-weight: 800;
@@ -384,8 +384,8 @@ img { max-width: 100%; }
   .am-brand-name { font-size: 22px; }
   .am-brand-market { font-size: 10px; letter-spacing: 2px; }
   .am-search { flex: 1 1 100%; order: 5; }
-  .am-cart-btn { width: 46px; height: 46px; font-size: 22px; }
-  .am-tb-menu { min-width: 46px; height: 46px; }
+  .am-cart-btn { width: 46px; height: 72px; font-size: 22px; }
+  .am-tb-menu { min-width: 46px; height: 72px; }
   /* Productos: 4 columnas como en PC, más compactas */
   .am-grid { grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; margin: 12px 0; }
   .am-card { padding: 8px 6px 8px; border-radius: 10px; box-shadow: 0 3px 8px rgba(15,23,42,.10); }
@@ -492,8 +492,8 @@ img { max-width: 100%; }
   position: absolute;
   top: 12px;
   right: 14px;
-  height: 46px;
-  width: 46px;              /* forzamos cuadrado para bordes 100% circulares */
+  height: 72px;
+  width: 72px;              /* forzamos cuadrado para bordes 100% circulares */
   object-fit: contain;
   padding: 6px;
   z-index: 4;
@@ -515,10 +515,10 @@ img { max-width: 100%; }
     0 0 0 5px rgba(255,255,255,.45);
 }
 @media (max-width: 780px) {
-  .am-ads-cashea { height: 38px; width: 38px; top: 8px; right: 10px; padding: 5px; }
+  .am-ads-cashea { height: 58px; width: 58px; top: 8px; right: 10px; padding: 6px; }
 }
 @media (max-width: 520px) {
-  .am-ads-cashea { height: 32px; width: 32px; top: 6px; right: 8px; padding: 4px; }
+  .am-ads-cashea { height: 48px; width: 48px; top: 6px; right: 8px; padding: 5px; }
 }
 
 /* Mejora #3: en el apartado "BOLSOS Y CARTERAS" los productos van con fondo blanco */
