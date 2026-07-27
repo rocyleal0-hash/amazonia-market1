@@ -755,5 +755,19 @@ async function boot() {
   route();
 }
 
+
+/* ---- Fallback automático: si una imagen de product_images/ no existe,
+        se intenta cargar desde product_images2/ ---- */
+document.addEventListener('error', function (ev) {
+  const el = ev.target;
+  if (!el || el.tagName !== 'IMG') return;
+  if (el.dataset.pi2Tried === '1') return;
+  const src = el.getAttribute('src') || '';
+  if (src.includes('/product_images/')) {
+    el.dataset.pi2Tried = '1';
+    el.src = src.replace('/product_images/', '/product_images2/');
+  }
+}, true);
+
 document.addEventListener('DOMContentLoaded', boot);
 })();
