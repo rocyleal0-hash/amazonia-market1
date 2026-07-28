@@ -282,10 +282,10 @@ img { max-width: 100%; }
 .am-ads-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: -70px; position: relative; z-index: 3; padding: 0 22px; }
 .am-ads-card { background: #fff; border-radius: 10px; padding: 16px 16px 14px; box-shadow: 0 6px 18px rgba(0,0,0,.10); display: flex; flex-direction: column; text-decoration: none; color: #111; transition: transform .18s, box-shadow .18s; }
 .am-ads-card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(0,0,0,.16); }
-.am-ads-card .t { font-weight: 800; font-size: 18px; color: #0F1111; margin-bottom: 10px; line-height: 1.15; }
-.am-ads-card .imgbox { width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #f2f2f2; display: flex; align-items: center; justify-content: center; }
-.am-ads-card .imgbox img { width: 100%; height: 100%; object-fit: contain; }
-.am-ads-card .lnk { margin-top: 10px; font-size: 13px; color: #007185; font-weight: 700; }
+.am-ads-card .t { font-weight: 800; font-size: 18px; color: #1D4ED8; margin-bottom: 10px; line-height: 1.15; }
+.am-ads-card .imgbox { width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #ffffff; display: flex; align-items: center; justify-content: center; }
+.am-ads-card .imgbox img { width: 100%; height: 100%; object-fit: contain; background: #ffffff; }
+.am-ads-card .lnk { margin-top: 10px; font-size: 13px; color: #1D4ED8; font-weight: 700; }
 
 /* =============== HOME =============== */
 /* --- Home: cada apartado es una fila completa con 4 mosaicos en línea (estilo Madison) --- */
@@ -313,7 +313,7 @@ img { max-width: 100%; }
 /* =============== PRODUCTOS =============== */
 .am-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 18px 0; }
 .am-card { background: #fff; border-radius: 16px; padding: 14px 12px 12px; border: 1px solid #E2E8F0; box-shadow: 0 8px 18px rgba(15,23,42,.10); text-align: center; display: flex; flex-direction: column; }
-.am-card img { width: 100%; aspect-ratio: 1/1; object-fit: contain; border-radius: 12px; background: #F8FAFC; max-height: 170px; border: var(--img-border-width) solid var(--img-border-color); }
+.am-card img { width: 100%; aspect-ratio: 1/1; object-fit: contain; border-radius: 12px; background: #ffffff; max-height: 170px; border: var(--img-border-width) solid var(--img-border-color); cursor: zoom-in; }
 .am-name { font-weight: 600; color: var(--text); margin: 10px 4px 6px; font-size: 14px; line-height: 1.25; min-height: 36px; }
 .am-price { display: inline-block; background: var(--price); color: #fff; font-weight: 800; font-size: 16px; padding: 5px 14px; border-radius: 10px; margin: 2px 0 6px; box-shadow: 0 2px 6px rgba(22,163,74,.25); }
 .am-add-btn { margin-top: auto; background: linear-gradient(135deg, var(--primary) 0%, var(--primary3) 100%); color: #fff; border: none; border-radius: 12px; padding: 10px 16px; font-size: 14px; font-weight: 700; min-height: 42px; cursor: pointer; box-shadow: 0 4px 12px rgba(42,42,156,.28); transition: transform .15s, box-shadow .15s; }
@@ -599,10 +599,13 @@ img { max-width: 100%; }
 .am-secondary-banner {
   position: relative;
   width: 100%;
-  aspect-ratio: 1920 / 130;
+  /* Antes: 1920/130 (muy fino). Ahora mas alto para que se vea grande. */
+  aspect-ratio: 1920 / 480;
+  min-height: 280px;
   overflow: hidden;
   background: #fff;
   box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  color: #1D4ED8; /* texto azul dentro del banner */
 }
 .am-secondary-banner .am-slide {
   position: absolute;
@@ -612,6 +615,7 @@ img { max-width: 100%; }
   pointer-events: none;
   text-decoration: none;
   transition: opacity .4s ease;
+  color: #1D4ED8;
 }
 .am-secondary-banner .am-slide.active {
   opacity: 1;
@@ -626,7 +630,29 @@ img { max-width: 100%; }
 }
 @media (max-width: 900px) {
   .am-secondary-banner-wrap { margin: 12px 0 16px; }
+  .am-secondary-banner { min-height: 200px; aspect-ratio: 1920 / 520; }
 }
 @media (max-width: 560px) {
   .am-secondary-banner-wrap { margin: 10px 0 12px; }
+  .am-secondary-banner { min-height: 150px; aspect-ratio: 1920 / 620; }
+}
+
+/* ============ Lightbox de imagen de producto ============ */
+.am-lightbox {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,.85);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px; cursor: zoom-out;
+}
+.am-lightbox img {
+  max-width: 92vw; max-height: 92vh;
+  background: #fff; border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  object-fit: contain;
+}
+.am-lightbox .close {
+  position: absolute; top: 18px; right: 22px;
+  background: #fff; color: #111; border: 0; border-radius: 50%;
+  width: 42px; height: 42px; font-size: 22px; font-weight: 900;
+  cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.3);
 }

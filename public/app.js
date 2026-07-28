@@ -639,7 +639,7 @@ function viewSearch(main, q) {
 function renderProductGrid(main, prods) {
   const html = `<div class="am-grid">` + prods.map(p => `
     <div class="am-card" data-cat="${escapeAttr(String(p.categoria||'').toLowerCase())}">
-      <img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/>
+      <img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy" data-zoom="1"/>
       <div class="am-name">${escapeHtml(p.nombre||'')}</div>
       <div class="am-price-row">
         <span class="am-price">${escapeHtml(formatPrice(p.precio))}</span>
@@ -657,6 +657,35 @@ function renderProductGrid(main, prods) {
       if (prod) openQtyModal(prod);
     });
   });
+
+  // Click en la imagen del producto -> abrir lightbox con la imagen grande
+  $$('.am-card img[data-zoom="1"]', main).forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openImageLightbox(img.getAttribute('src'), img.getAttribute('alt') || '');
+    });
+  });
+}
+
+function openImageLightbox(src, alt) {
+  // Cerrar cualquier lightbox previo
+  document.querySelectorAll('.am-lightbox').forEach(el => el.remove());
+  const box = document.createElement('div');
+  box.className = 'am-lightbox';
+  box.innerHTML = `
+    <button class="close" aria-label="Cerrar">×</button>
+    <img src="${escapeAttr(src)}" alt="${escapeAttr(alt)}"/>
+  `;
+  const close = () => box.remove();
+  box.addEventListener('click', (e) => {
+    // Cerrar si clican fuera de la imagen o en la X
+    if (e.target === box || e.target.classList.contains('close')) close();
+  });
+  document.addEventListener('keydown', function esc(ev) {
+    if (ev.key === 'Escape') { close(); document.removeEventListener('keydown', esc); }
+  });
+  document.body.appendChild(box);
 }
 
 /* ---------------- CARRITO ---------------- */
