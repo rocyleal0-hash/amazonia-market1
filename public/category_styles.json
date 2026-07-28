@@ -271,5 +271,18 @@
     "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_LACTEOS_d65ddd91.webp"
+  },
+  "JUGUETERIA": {
+    "icon": "🏷️",
+    "circle_color": "#2A2A9C",
+    "circle_size": 96,
+    "label_color": "#0F172A",
+    "label_size": 14,
+    "title_color": "#000000",
+    "title_size": 22,
+    "more_bg": "#000000",
+    "more_fg": "#000000",
+    "use_image": false,
+    "image_path": ""
   }
 }
