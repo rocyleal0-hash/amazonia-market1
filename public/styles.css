@@ -675,3 +675,40 @@ img { max-width: 100%; }
   width: 42px; height: 42px; font-size: 22px; font-weight: 900;
   cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.3);
 }
+
+/* ===== Ajustes móvil: botones "Por gramos" y flotantes ===== */
+@media (max-width: 560px){
+  .am-btns-row .am-add-btn{
+    padding: 8px 4px;
+    font-size: 12px;
+    min-height: 38px;
+    white-space: nowrap;
+    line-height: 1.1;
+    letter-spacing: -0.2px;
+  }
+  .am-btns-row .am-grams-btn{
+    font-size: 11.5px;
+  }
+  /* WhatsApp flotante -> esquina inferior DERECHA en móvil */
+  .am-wa-float{
+    left: auto !important;
+    right: 12px !important;
+  }
+  /* Pagar ahora -> esquina inferior IZQUIERDA en móvil */
+  .am-pay-float{
+    right: auto !important;
+    left: 12px !important;
+  }
+}
+
+/* En escritorio también intercambiar posiciones según pedido */
+@media (min-width: 561px){
+  .am-wa-float{
+    left: auto !important;
+    right: 18px !important;
+  }
+  .am-pay-float{
+    right: auto !important;
+    left: 18px !important;
+  }
+}
