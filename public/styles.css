@@ -589,3 +589,46 @@ img { max-width: 100%; }
   .am-wa-float  { width: 54px; height: 54px; left: 12px; bottom: 12px; }
   .am-wa-float svg { width: 32px; height: 32px; }
 }
+
+/* ============ Banner secundario (fino, full-width) ============ */
+.am-secondary-banner-wrap {
+  width: 100%;
+  margin: 18px 0 22px;
+  padding: 0;
+}
+.am-secondary-banner {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+.am-secondary-banner .am-slide {
+  position: absolute;
+  inset: 0;
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  text-decoration: none;
+  transition: opacity .4s ease;
+}
+.am-secondary-banner .am-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.am-secondary-banner .am-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+@media (max-width: 900px) {
+  .am-secondary-banner { height: 90px; }
+  .am-secondary-banner-wrap { margin: 12px 0 16px; }
+}
+@media (max-width: 560px) {
+  .am-secondary-banner { height: 70px; }
+  .am-secondary-banner-wrap { margin: 10px 0 12px; }
+}

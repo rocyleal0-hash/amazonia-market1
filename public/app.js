@@ -446,15 +446,52 @@ function renderAnunciosBanner(container) {
   `);
 
   if (slides.length > 1) {
-    let idx = 0;
-    setInterval(() => {
-      const el = $('#adsHero'); if (!el) return;
-      const items = $$('.am-slide', el); if (!items.length) return;
-      items[idx].classList.remove('active');
-      idx = (idx + 1) % items.length;
-      items[idx].classList.add('active');
-    }, 1800);
+    startAnunciosTick();
   }
+}
+
+// Tick global compartido para sincronizar banner principal y secundario
+let __ANUNCIOS_TICK_STARTED = false;
+let __ANUNCIOS_TICK_IDX = 0;
+function startAnunciosTick() {
+  if (__ANUNCIOS_TICK_STARTED) return;
+  __ANUNCIOS_TICK_STARTED = true;
+  setInterval(() => {
+    __ANUNCIOS_TICK_IDX = (__ANUNCIOS_TICK_IDX + 1) % 4;
+    ['#adsHero', '#adsSecondary'].forEach(sel => {
+      const el = document.querySelector(sel); if (!el) return;
+      const items = el.querySelectorAll('.am-slide');
+      if (!items.length) return;
+      items.forEach(it => it.classList.remove('active'));
+      items[__ANUNCIOS_TICK_IDX % items.length].classList.add('active');
+    });
+  }, 1800);
+}
+
+function renderSecondaryBanner(container) {
+  if (!container) return;
+  const slides = (ANUNCIOS.banner_secundario || [])
+    .map(s => ({ b64: (s.img_b64||'').trim(), url: (s.url||'').trim() }))
+    .filter(s => s.b64);
+  if (!slides.length) return;
+
+  const slidesHtml = slides.map((s, i) => {
+    const href = s.url || '#';
+    const target = s.url ? 'target="_blank" rel="noopener"' : '';
+    return `<a class="am-slide ${i===0?'active':''}" data-idx="${i}" href="${escapeAttr(href)}" ${target}>
+      <img src="data:image/png;base64,${s.b64}"/>
+    </a>`;
+  }).join('');
+
+  container.insertAdjacentHTML('beforeend', `
+    <div class="am-secondary-banner-wrap">
+      <div class="am-secondary-banner" id="adsSecondary">
+        ${slidesHtml}
+      </div>
+    </div>
+  `);
+
+  if (slides.length > 1) startAnunciosTick();
 }
 
 function cap(s){ s=String(s||''); return s.charAt(0).toUpperCase()+s.slice(1).toLowerCase(); }
@@ -464,10 +501,12 @@ function viewHome(main) {
   renderAnunciosBanner(main);
   if (!CATEGORIES.length) {
     main.insertAdjacentHTML('beforeend', `<div class="am-empty">Aún no hay apartados.<br>Crea apartados desde la app de escritorio.</div>`);
+    renderSecondaryBanner(main);
     return;
   }
   const out = CATEGORIES.map(cat => `<div class="am-tiles-row">${buildHomeTile(cat)}</div>`).join('');
   main.insertAdjacentHTML('beforeend', out);
+  renderSecondaryBanner(main);
 }
 
 function buildHomeTile(cat) {
