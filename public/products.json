@@ -7635,5 +7635,131 @@
     "precio": 5.0,
     "imagen": "product_images/8634646c41a0494c827547469ae7511a.jpg",
     "categoria": "QUINCALLERIA"
+  },
+  {
+    "id": "7c9357dc014a41e48bf2bd8176518dde",
+    "nombre": "CARRUAJE",
+    "precio": 3.99,
+    "imagen": "product_images/0740f3b658cf491f81b5da0bae54097c.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "6f92d48e7bd84047af1b72886547ead3",
+    "nombre": "KIT DOCTORA",
+    "precio": 5.99,
+    "imagen": "product_images/9fbc663c24cd49fdb0e42285ad399187.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "ef1d0cbe0d88402ab565f469ccce8695",
+    "nombre": "KIT DOCTORA",
+    "precio": 5.99,
+    "imagen": "product_images/dd24ee1240c545ada2605cb52aa24e12.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "d10cad30c5c04cf8b881c750d8c24983",
+    "nombre": "JUEGO DE CASA",
+    "precio": 6.99,
+    "imagen": "product_images/60b942631d584af5a7bfd3576b995ff0.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "3db2f32a038d4edea98a176743a22e68",
+    "nombre": "JUEGO DE BELLEZA",
+    "precio": 5.99,
+    "imagen": "product_images/b766e3a330f44448b543a8f8ac622103.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "1f3e7503c284498f981bab271a0325ec",
+    "nombre": "KIT DOCTORA",
+    "precio": 5.99,
+    "imagen": "product_images/290a656c77bf4524926e4bc9c2b4358a.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "ec115b7880b14375923d9e9aed12e4aa",
+    "nombre": "NINTENDO DE AGUA",
+    "precio": 3.99,
+    "imagen": "product_images/39b1da943a38481abe3879ee7cd3d29c.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "68154f16a7b2434789f1308134e0e626",
+    "nombre": "LEGO",
+    "precio": 5.99,
+    "imagen": "product_images/4808af4c627743a9a6cf5cb6512a008f.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "890e163092d64ac38dfd08af3d493bb6",
+    "nombre": "SIRENA PEQUEÑA",
+    "precio": 4.99,
+    "imagen": "product_images/c585fb8822294c1587ee3de9329e8fdd.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "cb3f898d3b2344b5b549ab004c0dafca",
+    "nombre": "SIRENA PEQUEÑA",
+    "precio": 4.99,
+    "imagen": "product_images/eee15564f46644409aae89a7508b5b9a.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "5e4a7486a65a4d85a664220adb36689e",
+    "nombre": "SIRENA GRANDE",
+    "precio": 5.99,
+    "imagen": "product_images/fbc797f2a95f40a4928fce922fef42fa.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "6315c782c5824ba9a3698f5d937c5d27",
+    "nombre": "NINTENDO DE AGUA",
+    "precio": 3.99,
+    "imagen": "product_images/305525cec59049fe98a651fe7fcc4c82.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "8bf9541be9a44f5b91c12a6c93e1787d",
+    "nombre": "MAQUILLAJE NIÑA NUEVO",
+    "precio": 4.99,
+    "imagen": "product_images/77e64ffd637847b9b5df9f9824af58c2.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "b4f82d949ce34285a31fa85d71363766",
+    "nombre": "MUÑECA HADA",
+    "precio": 5.99,
+    "imagen": "product_images/2b52dbf06f6e4311a33a012aca84ec9e.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "4e0eb63c59134d5fbcdd74d6a887d40e",
+    "nombre": "INSTRUMENTOS MUSICALES",
+    "precio": 4.99,
+    "imagen": "product_images/c5961f2379194fab92bdcf1406cf48c2.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "eeac2d0b89104ca2b5e887c8576214d8",
+    "nombre": "NINTENDO DE AGUA",
+    "precio": 3.99,
+    "imagen": "product_images/48d51868d8ff47418607b14d6f1fc786.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "957a09f58d7c4994871de9d844ecacba",
+    "nombre": "YOYO",
+    "precio": 3.99,
+    "imagen": "product_images/1c7e2ba689bc4ea38f96d7a3384b1e08.jpeg",
+    "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "9f2db7591fc54a1885a0aa26abc896e6",
+    "nombre": "MAQUILLAJE NIÑA NUEVO",
+    "precio": 4.99,
+    "imagen": "product_images/3e8660cc7974437c9cb7ef85a52b07b8.jpeg",
+    "categoria": "JUGUETERIA"
   }
 ]
