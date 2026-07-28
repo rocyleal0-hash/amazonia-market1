@@ -458,7 +458,7 @@ function startAnunciosTick() {
   __ANUNCIOS_TICK_STARTED = true;
   setInterval(() => {
     __ANUNCIOS_TICK_IDX = (__ANUNCIOS_TICK_IDX + 1) % 4;
-    ['#adsHero', '#adsSecondary'].forEach(sel => {
+    ['#adsHero', '#adsSecondary', '#adsTertiary'].forEach(sel => {
       const el = document.querySelector(sel); if (!el) return;
       const items = el.querySelectorAll('.am-slide');
       if (!items.length) return;
@@ -468,13 +468,7 @@ function startAnunciosTick() {
   }, 1800);
 }
 
-function renderSecondaryBanner(container) {
-  if (!container) return;
-  const slides = (ANUNCIOS.banner_secundario || [])
-    .map(s => ({ b64: (s.img_b64||'').trim(), url: (s.url||'').trim() }))
-    .filter(s => s.b64);
-  if (!slides.length) return;
-
+function thinBannerHtml(slides, domId) {
   const slidesHtml = slides.map((s, i) => {
     const href = s.url || '#';
     const target = s.url ? 'target="_blank" rel="noopener"' : '';
@@ -482,16 +476,37 @@ function renderSecondaryBanner(container) {
       <img src="data:image/png;base64,${s.b64}"/>
     </a>`;
   }).join('');
-
-  container.insertAdjacentHTML('beforeend', `
+  return `
     <div class="am-secondary-banner-wrap">
-      <div class="am-secondary-banner" id="adsSecondary">
+      <div class="am-secondary-banner" id="${domId}">
         ${slidesHtml}
       </div>
     </div>
-  `);
+  `;
+}
 
+function thinBannerSlides(key) {
+  return (ANUNCIOS[key] || [])
+    .map(s => ({ b64: (s.img_b64||'').trim(), url: (s.url||'').trim() }))
+    .filter(s => s.b64);
+}
+
+function renderSecondaryBanner(container) {
+  if (!container) return;
+  const slides = thinBannerSlides('banner_secundario');
+  if (!slides.length) return;
+  container.insertAdjacentHTML('beforeend', thinBannerHtml(slides, 'adsSecondary'));
   if (slides.length > 1) startAnunciosTick();
+}
+
+// Tercer banner (fino, 1920x130) que va justo debajo del apartado Charcuteria.
+// Si no se ha configurado banner_tercero, reutiliza las imagenes del secundario.
+function tertiaryBannerHtml() {
+  let slides = thinBannerSlides('banner_tercero');
+  if (!slides.length) slides = thinBannerSlides('banner_secundario');
+  if (!slides.length) return '';
+  if (slides.length > 1) setTimeout(startAnunciosTick, 0);
+  return thinBannerHtml(slides, 'adsTertiary');
 }
 
 function cap(s){ s=String(s||''); return s.charAt(0).toUpperCase()+s.slice(1).toLowerCase(); }
@@ -504,7 +519,13 @@ function viewHome(main) {
     renderSecondaryBanner(main);
     return;
   }
-  const out = CATEGORIES.map(cat => `<div class="am-tiles-row">${buildHomeTile(cat)}</div>`).join('');
+  const terHtml = tertiaryBannerHtml();
+  const out = CATEGORIES.map(cat => {
+    const tile = `<div class="am-tiles-row">${buildHomeTile(cat)}</div>`;
+    // Insertar el tercer banner justo debajo del apartado "Charcuteria"
+    const norm = String(cat||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+    return (norm === 'charcuteria') ? tile + terHtml : tile;
+  }).join('');
   main.insertAdjacentHTML('beforeend', out);
   renderSecondaryBanner(main);
 }
