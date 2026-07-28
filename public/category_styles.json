@@ -282,7 +282,7 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#000000",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_JUGUETERIA_280a09e1.jpg"
   }
 }
