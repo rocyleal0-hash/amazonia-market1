@@ -599,22 +599,24 @@ img { max-width: 100%; }
   .am-wa-float svg { width: 32px; height: 32px; }
 }
 
-/* ============ Banner secundario (fino, full-width) ============ */
+/* ============ Banner secundario y tercer banner (GRANDES) ============
+   Relacion FIJA 16:9 en todas las pantallas (PC, tablet y telefono).
+   Imagen recomendada: 1600 x 900 px (o 1920 x 1080 px).
+   Al mantener la misma relacion en todos los tamanos, la imagen encaja
+   exacta: sin margenes blancos, sin recortes y mucho mas alta que antes. */
 .am-secondary-banner-wrap {
   width: 100%;
-  margin: 18px 0 22px;
+  margin: 22px 0 26px;
   padding: 0;
 }
 .am-secondary-banner {
   position: relative;
   width: 100%;
-  /* Antes: 1920/130 (muy fino). Ahora mas alto para que se vea grande. */
-  aspect-ratio: 1920 / 480;
-  min-height: 280px;
+  aspect-ratio: 16 / 9;   /* 1600 x 900 */
   overflow: hidden;
-  background: #fff;
-  box-shadow: 0 6px 18px rgba(0,0,0,.12);
-  color: #1D4ED8; /* texto azul dentro del banner */
+  background: #E9B85C;    /* color base por si la imagen no es 16:9 */
+  box-shadow: 0 10px 26px rgba(0,0,0,.16);
+  color: #1D4ED8;
 }
 .am-secondary-banner .am-slide {
   position: absolute;
@@ -633,27 +635,17 @@ img { max-width: 100%; }
 .am-secondary-banner .am-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;    /* imagen completa, nada se corta */
   object-position: center;
   display: block;
 }
 @media (max-width: 900px) {
-  .am-secondary-banner-wrap { margin: 12px 0 16px; }
-  .am-secondary-banner {
-    min-height: 0;
-    aspect-ratio: 1920 / 520;
-    background: #E9B85C; /* color base del banner para evitar bandas al usar contain */
-  }
-  .am-secondary-banner .am-slide img { object-fit: contain; }
+  .am-secondary-banner-wrap { margin: 16px 0 20px; }
+  .am-secondary-banner { aspect-ratio: 16 / 9; }
 }
 @media (max-width: 560px) {
-  .am-secondary-banner-wrap { margin: 10px 0 12px; }
-  .am-secondary-banner {
-    min-height: 0;
-    aspect-ratio: 1920 / 520;
-    background: #E9B85C;
-  }
-  .am-secondary-banner .am-slide img { object-fit: contain; }
+  .am-secondary-banner-wrap { margin: 14px 0 18px; }
+  .am-secondary-banner { aspect-ratio: 16 / 9; border-radius: 0; }
 }
 
 /* ============ Lightbox de imagen de producto ============ */
@@ -674,41 +666,4 @@ img { max-width: 100%; }
   background: #fff; color: #111; border: 0; border-radius: 50%;
   width: 42px; height: 42px; font-size: 22px; font-weight: 900;
   cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.3);
-}
-
-/* ===== Ajustes móvil: botones "Por gramos" y flotantes ===== */
-@media (max-width: 560px){
-  .am-btns-row .am-add-btn{
-    padding: 8px 4px;
-    font-size: 12px;
-    min-height: 38px;
-    white-space: nowrap;
-    line-height: 1.1;
-    letter-spacing: -0.2px;
-  }
-  .am-btns-row .am-grams-btn{
-    font-size: 11.5px;
-  }
-  /* WhatsApp flotante -> esquina inferior DERECHA en móvil */
-  .am-wa-float{
-    left: auto !important;
-    right: 12px !important;
-  }
-  /* Pagar ahora -> esquina inferior IZQUIERDA en móvil */
-  .am-pay-float{
-    right: auto !important;
-    left: 12px !important;
-  }
-}
-
-/* En escritorio también intercambiar posiciones según pedido */
-@media (min-width: 561px){
-  .am-wa-float{
-    left: auto !important;
-    right: 18px !important;
-  }
-  .am-pay-float{
-    right: auto !important;
-    left: 18px !important;
-  }
 }
