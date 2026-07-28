@@ -639,11 +639,21 @@ img { max-width: 100%; }
 }
 @media (max-width: 900px) {
   .am-secondary-banner-wrap { margin: 12px 0 16px; }
-  .am-secondary-banner { min-height: 200px; aspect-ratio: 1920 / 520; }
+  .am-secondary-banner {
+    min-height: 0;
+    aspect-ratio: 1920 / 520;
+    background: #E9B85C; /* color base del banner para evitar bandas al usar contain */
+  }
+  .am-secondary-banner .am-slide img { object-fit: contain; }
 }
 @media (max-width: 560px) {
   .am-secondary-banner-wrap { margin: 10px 0 12px; }
-  .am-secondary-banner { min-height: 150px; aspect-ratio: 1920 / 620; }
+  .am-secondary-banner {
+    min-height: 0;
+    aspect-ratio: 1920 / 520;
+    background: #E9B85C;
+  }
+  .am-secondary-banner .am-slide img { object-fit: contain; }
 }
 
 /* ============ Lightbox de imagen de producto ============ */
