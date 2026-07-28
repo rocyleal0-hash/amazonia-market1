@@ -78,6 +78,26 @@
   </div>
 </div>
 
+<!-- =============== MODAL POR GRAMOS (solo CHARCUTERIA) =============== -->
+<div id="gramsModal" class="am-modal-overlay" hidden>
+  <div class="am-modal">
+    <img id="gramsImg" class="am-modal-img" alt=""/>
+    <div id="gramsName" class="am-modal-name"></div>
+    <div id="gramsPrice" class="am-modal-price"></div>
+    <div class="am-modal-hint">Ingresa la cantidad en gramos (1 kilo = 1000 g)</div>
+    <div class="am-qty-row">
+      <button id="gramsMinus" class="am-qty-btn" type="button">−</button>
+      <input id="gramsInput" type="number" min="1" step="1" value="100"/>
+      <span class="am-grams-unit">g</span>
+      <button id="gramsPlus" class="am-qty-btn" type="button">+</button>
+    </div>
+    <div class="am-modal-actions">
+      <button id="gramsCancel" class="am-btn am-btn-ghost">Cancelar</button>
+      <button id="gramsConfirm" class="am-btn am-btn-primary">Añadir al carrito</button>
+    </div>
+  </div>
+</div>
+
 <div id="toast" class="am-toast" hidden></div>
 
 <!-- Botón flotante WhatsApp (inferior izquierda) -->
