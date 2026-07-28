@@ -647,7 +647,7 @@ function renderProductGrid(main, prods) {
     const buttons = charc
       ? `<div class="am-btns-row">
            <button class="am-add-btn am-btn-half" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>
-           <button class="am-add-btn am-btn-half am-grams-btn" data-grams="${escapeAttr(p.nombre||'')}">⚖️ Por gramos</button>
+           <button class="am-add-btn am-btn-half am-grams-btn" data-grams="${escapeAttr(p.nombre||'')}">⚖️ Gramos</button>
          </div>`
       : `<button class="am-add-btn" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>`;
     return `
