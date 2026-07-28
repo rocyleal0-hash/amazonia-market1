@@ -318,6 +318,15 @@ img { max-width: 100%; }
 .am-price { display: inline-block; background: var(--price); color: #fff; font-weight: 800; font-size: 16px; padding: 5px 14px; border-radius: 10px; margin: 2px 0 6px; box-shadow: 0 2px 6px rgba(22,163,74,.25); }
 .am-add-btn { margin-top: auto; background: linear-gradient(135deg, var(--primary) 0%, var(--primary3) 100%); color: #fff; border: none; border-radius: 12px; padding: 10px 16px; font-size: 14px; font-weight: 700; min-height: 42px; cursor: pointer; box-shadow: 0 4px 12px rgba(42,42,156,.28); transition: transform .15s, box-shadow .15s; }
 .am-add-btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.am-btns-row { margin-top: auto; display: flex; gap: 8px; }
+.am-btns-row .am-add-btn { margin-top: 0; flex: 1 1 0; min-width: 0; padding: 10px 8px; }
+.am-grams-btn { background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%) !important; color: #0F172A !important; box-shadow: 0 4px 12px rgba(245,179,1,.35) !important; }
+.am-grams-unit { font-weight: 800; color: var(--primary); font-size: 16px; margin-left: -4px; }
+.am-modal-hint { text-align: center; font-size: 12px; color: var(--muted); margin: -6px 0 6px; }
+@media (max-width: 520px){
+  .am-btns-row { flex-direction: column; gap: 6px; }
+  .am-btns-row .am-add-btn { width: 100%; }
+}
 
 .am-empty { text-align: center; padding: 50px 20px; color: var(--muted); background: #fff; border-radius: 16px; border: 1px dashed #e5e7eb; margin: 20px 0; }
 
@@ -632,22 +641,9 @@ img { max-width: 100%; }
   .am-secondary-banner-wrap { margin: 12px 0 16px; }
   .am-secondary-banner { min-height: 200px; aspect-ratio: 1920 / 520; }
 }
-/* MOVIL: mostrar el banner COMPLETO (sin recortes), igual que en PC.
-   Se respeta la proporcion real de la imagen (1600x430) y se usa
-   object-fit: contain para que se vea todo el contenido del banner. */
-@media (max-width: 700px) {
-  .am-secondary-banner-wrap { margin: 10px 0 14px; padding: 0 8px; }
-  .am-secondary-banner {
-    aspect-ratio: 1600 / 430;
-    min-height: 0;
-    height: auto;
-    border-radius: 12px;
-    background: #f6e6bf;
-  }
-  .am-secondary-banner .am-slide img {
-    object-fit: contain;
-    object-position: center;
-  }
+@media (max-width: 560px) {
+  .am-secondary-banner-wrap { margin: 10px 0 12px; }
+  .am-secondary-banner { min-height: 150px; aspect-ratio: 1920 / 620; }
 }
 
 /* ============ Lightbox de imagen de producto ============ */

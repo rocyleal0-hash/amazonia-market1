@@ -636,8 +636,21 @@ function viewSearch(main, q) {
   renderProductGrid(main, results);
 }
 
+function normalizeCat(s){
+  return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+}
+function isCharcuteria(cat){ return normalizeCat(cat) === 'charcuteria'; }
+
 function renderProductGrid(main, prods) {
-  const html = `<div class="am-grid">` + prods.map(p => `
+  const html = `<div class="am-grid">` + prods.map(p => {
+    const charc = isCharcuteria(p.categoria);
+    const buttons = charc
+      ? `<div class="am-btns-row">
+           <button class="am-add-btn am-btn-half" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>
+           <button class="am-add-btn am-btn-half am-grams-btn" data-grams="${escapeAttr(p.nombre||'')}">⚖️ Por gramos</button>
+         </div>`
+      : `<button class="am-add-btn" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>`;
+    return `
     <div class="am-card" data-cat="${escapeAttr(String(p.categoria||'').toLowerCase())}">
       <img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy" data-zoom="1"/>
       <div class="am-name">${escapeHtml(p.nombre||'')}</div>
@@ -645,16 +658,25 @@ function renderProductGrid(main, prods) {
         <span class="am-price">${escapeHtml(formatPrice(p.precio))}</span>
         <img class="am-cashea-inline" src="./public/cashea.png" alt="Cashea" loading="lazy"/>
       </div>
-      <button class="am-add-btn" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>
+      ${buttons}
     </div>
-  `).join('') + `</div>`;
+  `;
+  }).join('') + `</div>`;
   main.insertAdjacentHTML('beforeend', html);
 
-  $$('.am-add-btn', main).forEach(btn => {
+  $$('.am-add-btn[data-add]', main).forEach(btn => {
     btn.addEventListener('click', () => {
       const name = btn.getAttribute('data-add');
       const prod = PRODUCTS.find(p => p.nombre === name);
       if (prod) openQtyModal(prod);
+    });
+  });
+
+  $$('.am-grams-btn', main).forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = btn.getAttribute('data-grams');
+      const prod = PRODUCTS.find(p => p.nombre === name);
+      if (prod) openGramsModal(prod);
     });
   });
 
@@ -795,6 +817,61 @@ function wireQtyModal() {
   modal.addEventListener('click', (e) => { if (e.target === modal) closeQtyModal(); });
 }
 
+/* ---------------- MODAL por gramos (solo CHARCUTERIA) ---------------- */
+let _gramsProd = null;
+function computeGramsPrice(pricePerKilo, grams){
+  const g = Math.max(0, Number(grams)||0);
+  return (Number(pricePerKilo)||0) * (g/1000);
+}
+function refreshGramsPrice(){
+  if (!_gramsProd) return;
+  const g = Math.max(1, Number($('#gramsInput').value)||1);
+  $('#gramsPrice').textContent = formatPrice(computeGramsPrice(_gramsProd.precio, g));
+}
+function openGramsModal(prod){
+  _gramsProd = prod;
+  $('#gramsImg').src = fixImgSrc(prod.imagen);
+  $('#gramsName').textContent = prod.nombre;
+  $('#gramsInput').value = 100;
+  refreshGramsPrice();
+  $('#gramsModal').hidden = false;
+}
+function closeGramsModal(){ $('#gramsModal').hidden = true; _gramsProd = null; }
+function wireGramsModal(){
+  const modal = $('#gramsModal'); if (!modal) return;
+  const inp = $('#gramsInput');
+  $('#gramsMinus').addEventListener('click', () => {
+    inp.value = Math.max(1, (Number(inp.value)||1) - 50);
+    refreshGramsPrice();
+  });
+  $('#gramsPlus').addEventListener('click', () => {
+    inp.value = Math.max(1, (Number(inp.value)||1) + 50);
+    refreshGramsPrice();
+  });
+  inp.addEventListener('input', refreshGramsPrice);
+  inp.addEventListener('change', () => {
+    inp.value = Math.max(1, Number(inp.value)||1);
+    refreshGramsPrice();
+  });
+  $('#gramsCancel').addEventListener('click', closeGramsModal);
+  $('#gramsConfirm').addEventListener('click', () => {
+    if (!_gramsProd) return closeGramsModal();
+    const g = Math.max(1, Number(inp.value)||1);
+    const unitPrice = computeGramsPrice(_gramsProd.precio, g);
+    const label = `${_gramsProd.nombre} (${g}g)`;
+    cartAdd({
+      id: (_gramsProd.id || '') + '_g' + g,
+      nombre: label,
+      precio: unitPrice,
+      imagen: _gramsProd.imagen,
+      categoria: _gramsProd.categoria,
+    }, 1);
+    toast(`✔ ${g}g de ${_gramsProd.nombre} añadido al carrito`);
+    closeGramsModal();
+  });
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeGramsModal(); });
+}
+
 /* ---------------- ROUTER ---------------- */
 function route() {
   const main = $('#mainContent'); if (!main) return;
@@ -840,6 +917,7 @@ async function boot() {
   renderCategoryCircles();
   wireSearch();
   wireQtyModal();
+  wireGramsModal();
   updateCartBadge();
   route();
 }
