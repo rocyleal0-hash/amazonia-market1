@@ -170,7 +170,7 @@
   },
   "PAPELERIA": {
     "icon": "🏷️",
-    "circle_color": "#0000ff",
+    "circle_color": "#c0c0c0",
     "circle_size": 70,
     "label_color": "#0F172A",
     "label_size": 14,
