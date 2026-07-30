@@ -7761,5 +7761,2210 @@
     "precio": 4.99,
     "imagen": "product_images/3e8660cc7974437c9cb7ef85a52b07b8.jpeg",
     "categoria": "JUGUETERIA"
+  },
+  {
+    "id": "f9fb717db77747e2b7964c848a3f8a01",
+    "nombre": "CARPETA ORGANIZADORA PLASTICA",
+    "precio": 1.16,
+    "imagen": "product_images/71489bb7fe2542a48a11fcc4c48b706c.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "f95831f2db224b1aa04d40869c03f8e9",
+    "nombre": "SOBRE PLASTICO",
+    "precio": 2.0,
+    "imagen": "product_images/8fda02e62ece4eebae614c996d5c334d.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "37164c355c494527b18e027760410f7b",
+    "nombre": "CARTULINA DE CONSTRUCCION",
+    "precio": 2.1,
+    "imagen": "product_images/00879299577e4adf9256fc8a57c7152b.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "da78cea9987c4661a25bda1255a8e25d",
+    "nombre": "BLOCK DE DIBUJO ABC",
+    "precio": 2.7,
+    "imagen": "product_images/02ac092501f44d82826dc94e828c7b7a.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "52d6565252ad4638b2102d1aadd5a10e",
+    "nombre": "CARPETA MANILA DE COLORES CARTA",
+    "precio": 0.75,
+    "imagen": "product_images/99ddb325895046eca75edb5dd1234ab6.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "b61808aa37244c26bfda4d4f52c92388",
+    "nombre": "HOJA BLANCA CARTA",
+    "precio": 0.04,
+    "imagen": "product_images/1753be498f99461ca2f373a8b1d06118.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "e0232fb1dbdf440b8b63dc4bf4ef14a8",
+    "nombre": "HOJA BLANCA OFICIO",
+    "precio": 0.06,
+    "imagen": "product_images/cf0f89ec190644f1b637adae516328d7.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "93619389812c4cc791c63540dc62f136",
+    "nombre": "CARPETA MANILA CARTA",
+    "precio": 0.7,
+    "imagen": "product_images/a372ec02744d442b9c4108b8129e9e2b.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "adb88238406840bfb79e78c52a4b59ab",
+    "nombre": "CARPETA MANILA OFICIO",
+    "precio": 0.9,
+    "imagen": "product_images/8c6124029ef94c0cb332e9945af59432.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "5c9f0e5e8ed24d57b390e663367953c9",
+    "nombre": "CARPETA MARRON CARTA",
+    "precio": 1.2,
+    "imagen": "product_images/d4974325b7b241c198643c447dd8db2f.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "9c069d39647a448c8046f8ebf6acfc7e",
+    "nombre": "CARPETA MARRON OFICIO",
+    "precio": 1.5,
+    "imagen": "product_images/da31dc3ea3074121a94e919ab3c00738.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "abe1c66a9c0a4684be22b496c0eb3867",
+    "nombre": "ALCANFOR DEER",
+    "precio": 2.2,
+    "imagen": "product_images/06a9e0e4fcdd497cbb437dab15d1369e.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "44e5f12b87ee414e800ccab184a81a67",
+    "nombre": "TACHUELAS POINTER",
+    "precio": 0.04,
+    "imagen": "product_images/4553345bd42b4fbf97700650fb38068e.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "e34df27ba2d24e2381bf6b940ffb7199",
+    "nombre": "CLIPS POINTER X100",
+    "precio": 0.04,
+    "imagen": "product_images/d177726177ec4f5e91ea0d62e2c2841f.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "19edb292e5ea48df84742a2222bb8391",
+    "nombre": "CLIPS COLORES POINTER X100",
+    "precio": 0.06,
+    "imagen": "product_images/5915ed637bdb48e19ca5aabc1e402678.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "a2cfced00a794734a65cc5f755766b03",
+    "nombre": "SILICON LIQUIDO GIRAFA 30ML",
+    "precio": 1.2,
+    "imagen": "product_images/52612d081baf425593dbf90e36228936.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "2df008882aff4e82b17f27d26e159a8d",
+    "nombre": "TIJERA PEQ SCISSORS",
+    "precio": 1.6,
+    "imagen": "product_images/092829fe607946a69064ab2725afea18.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "000399d5e73f4c5789ac905b429a3fcf",
+    "nombre": "EXACTO PAPELERIA",
+    "precio": 1.5,
+    "imagen": "product_images/6fd1d6bd63a54af9bd5af7db7cdc38d9.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "d4bf138a23fb440e933203859cfa4476",
+    "nombre": "PLASTILINA COLORES",
+    "precio": 1.6,
+    "imagen": "product_images/95803335969748fea31042ae64177adb.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "5dba943bbdad4d9e905633192fcd7ef2",
+    "nombre": "SILICON FINO",
+    "precio": 0.5,
+    "imagen": "product_images/08b41e58428e4421beb476aa015ed340.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "e650e09c7ea84f9fb10fc1da4f8e71a0",
+    "nombre": "CARTULINA COLORES GRANDE",
+    "precio": 1.0,
+    "imagen": "product_images/aed020a03a854a7aa48382fddf8196c3.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "d1df84afe52a463d95b7b5579392c1e5",
+    "nombre": "CARTULINA METALIZADA",
+    "precio": 1.8,
+    "imagen": "product_images/08091354d4454dfcbba9a8a0b603b794.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "630ad33812f3460492f5c5d6d9a383ff",
+    "nombre": "CARTULINA CORRUGADA",
+    "precio": 1.8,
+    "imagen": "product_images/192bbe0dffac4be7a191e79ea371d581.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "14d89f77800e4ea3aaa2f01e2a1f7774",
+    "nombre": "CARTULINA DOBLE FAX",
+    "precio": 1.6,
+    "imagen": "product_images/66dd54aa2a3b46b29da1312c1e07ddd6.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "b067a3c0957a453fb0be38be5e3aaffa",
+    "nombre": "FOAMI",
+    "precio": 0.6,
+    "imagen": "product_images/cda70069152847d29d7d5afda1f41c04.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "a008800f609c4e7db0c29338d66e9f44",
+    "nombre": "FOAMI ESCARCHADO",
+    "precio": 1.0,
+    "imagen": "product_images/9e41fb1a844a44c1a6452755c0073b5e.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "09c36a627b034c8b883eac2a681914ef",
+    "nombre": "PALETA MADERA",
+    "precio": 1.2,
+    "imagen": "product_images/ec0c5acfe7844d5d9df4b42c050b5a7d.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "0d7c1374cce040c0bbfe4dec97727f0c",
+    "nombre": "SOBRE MANILA OFICIO",
+    "precio": 1.5,
+    "imagen": "product_images/b7bf022632974591ac21595cc9fb25b1.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "e82ac091eddc493f814976c5607a3f9b",
+    "nombre": "CELOVEN",
+    "precio": 1.0,
+    "imagen": "product_images/54e87a95941b4bf1a1380f982f2e619f.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "9fd1f1aeb6c44e8db0e506f9857f16e6",
+    "nombre": "TIRRO ENVALAR TRANSPARENTE",
+    "precio": 2.0,
+    "imagen": "product_images/100c11ed4edf497c9184924b10814420.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "35d63cf3a8ab4844801be6492251684b",
+    "nombre": "TIRRO ENVALAR AMARILLO",
+    "precio": 4.0,
+    "imagen": "product_images/6168c83b9a624faa909c339ebd387a65.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "93e74874277244efaecd92a9411269fe",
+    "nombre": "CREYONES",
+    "precio": 2.0,
+    "imagen": "product_images/7bd86cce54d5441f8aebdcb90467a3c7.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "fc52eeed50e04a608bc6f0f1ecfce17a",
+    "nombre": "SILICON GRUESO",
+    "precio": 0.75,
+    "imagen": "product_images/a411e206e20a4e02b43f94f55b063a9a.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "99956b2de28a4d7488c4b86c0300ab4f",
+    "nombre": "RESALTADOR HIGHHGHTER",
+    "precio": 0.55,
+    "imagen": "product_images/e0a7da1c26e945c3ab8480a0e4430a60.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "8c7bd11c693546d1b92cd0f856c11fe8",
+    "nombre": "LIGA DE LIBRERIA",
+    "precio": 0.04,
+    "imagen": "product_images/83de4bd0f9b5449f9ebe66a982d9eb41.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "fd625943bcf04157955475127b5ddacb",
+    "nombre": "PAPEL DE CEDA",
+    "precio": 1.0,
+    "imagen": "product_images/391715ca65164fff863380787217af1b.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "296ac28d0e7649de9d69e54214e24dfd",
+    "nombre": "PAPEL DE REGALO",
+    "precio": 1.0,
+    "imagen": "product_images/8fd034a899394fe0ae8639c4bf93da36.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "07238c3b7df74aafacf5afc134f01f48",
+    "nombre": "PAPEL CREPE GRANDE",
+    "precio": 0.8,
+    "imagen": "product_images/ca259d86356c4cf499d85b485aca7354.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "b1ee0f7506654350b7222a3e26621956",
+    "nombre": "TIRRO BLANCO FINO",
+    "precio": 2.0,
+    "imagen": "product_images/27a842900f6443e9ba356ef875f351fc.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "2408668a19b944f5933c9b53887485d4",
+    "nombre": "TIRRO BLANCO GRUESO",
+    "precio": 2.5,
+    "imagen": "product_images/71fe5025c47b47f2a38e5720f71cc179.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "855586f523fd4c9f9be0092870eaa91d",
+    "nombre": "SACA PUNTA CON DEPISITO",
+    "precio": 1.2,
+    "imagen": "product_images/1f182e1b321845c5abf1826c511c44a6.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "e7774bfb35874891ad74f4a30a6a1071",
+    "nombre": "SILICON LIQUIDO 50ML",
+    "precio": 1.6,
+    "imagen": "product_images/9cc3c204ec6f4245a6b7483223d012c0.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "8bf420aa35ba43ea9bc9ee79cd1275a7",
+    "nombre": "ESTANBRE",
+    "precio": 1.3,
+    "imagen": "product_images/92d803a734a848c59199945838369181.webp",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "4d37864e507b4bac8b06374ef86a2641",
+    "nombre": "ALFILER",
+    "precio": 0.8,
+    "imagen": "product_images/56ec026187124fd08dbf65d57843bc4f.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "08728fcc838d4d699dfcf0a7bb7b9c73",
+    "nombre": "GRAPAS",
+    "precio": 3.0,
+    "imagen": "product_images/24e0b080ed2b49bb8226f03756fc3100.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "a939b5aae21e4f60b8b02c7c51e85bfb",
+    "nombre": "MINAS",
+    "precio": 0.65,
+    "imagen": "product_images/04570b059aa845d6b9c6d6b59519bc1c.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "62fc241e39ea4c6a90d7a52379bc9830",
+    "nombre": "TIJERA ESCOLAR",
+    "precio": 1.5,
+    "imagen": "product_images/c96ac5f6b0be461bbb00653bbe4ce70b.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "97a809ff8a5942bc8da1e5018c93ef38",
+    "nombre": "PAPEL DE REGALO 1M",
+    "precio": 2.1,
+    "imagen": "product_images/3bf761c474f7460190e9125801957637.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "d3e261e4221543ff88da61086cc49690",
+    "nombre": "CARTULINA ESCARCHADA",
+    "precio": 2.3,
+    "imagen": "product_images/91c66bba9ee44b98b24b0d5ee805098a.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "d1d0293d24b94defbe4f242ab73e4c70",
+    "nombre": "CARTULINA CORRUGADA METALICA",
+    "precio": 3.3,
+    "imagen": "product_images/c53a494d73f34217ba65fa48eeae5e70.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "453ec5e8c9d24815b02f1d09027d2aac",
+    "nombre": "PAPEL CELOFAN",
+    "precio": 0.6,
+    "imagen": "product_images/7c7a2f5d3dc44d0ea113112d8d2b4f40.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "cd26f9c913104b39b48d6b9ed05e1203",
+    "nombre": "PEGA BLANCA 120ML",
+    "precio": 2.0,
+    "imagen": "product_images/3a9e0790d132434d996113c4c8262f0d.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "b55a6c1d75804dee9336194d240f9ffc",
+    "nombre": "CARTULINA METALIZADA MAY",
+    "precio": 1.5,
+    "imagen": "product_images/fa314517e78a40e4bcea03349a56bfa7.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "9fa4ee9d95c0474fada72b02ac6fdf22",
+    "nombre": "CARTUINA CARTA",
+    "precio": 0.35,
+    "imagen": "product_images/8cdf40ca328246b18b237ad217463728.jpg",
+    "categoria": "PAPELERIA"
+  },
+  {
+    "id": "6ee1a172581142ca9af409f10609a573",
+    "nombre": "POLLO PICADO",
+    "precio": 5.4,
+    "imagen": "product_images/78abbc04bf284488b69793b1b594246f.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "33df45aa59ee4fd6a8ac1aa6bf8cd843",
+    "nombre": "CHORIZO AHUMADO PICANTE",
+    "precio": 10.0,
+    "imagen": "product_images/29aa9eff78434cd584eaba4c4f539918.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "b48c51fec7434733894c466ae7059c02",
+    "nombre": "CHORIZO AHUMADO",
+    "precio": 13.0,
+    "imagen": "product_images/b39d5a7d57c74f3d9906536e6f9214be.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "d864a184b36e4eec800ffe309f3e5bbc",
+    "nombre": "CHULETA AHUMADA",
+    "precio": 13.0,
+    "imagen": "product_images/b2420ba0a18442c28ff650241a21cb88.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "63d1c33226f349aca62f39f8b9019ddb",
+    "nombre": "MILANESA DE POLLO",
+    "precio": 8.9,
+    "imagen": "product_images/e34c4532b9d649f38971f3137d6f9928.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "d486c180207e487da8c5ba327f39a40c",
+    "nombre": "TOCINETA",
+    "precio": 20.0,
+    "imagen": "product_images/2be55012eec34c37998a6a1c8154a1a1.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "ea169b3bbcc14880bc030185aff12ab7",
+    "nombre": "MUSLO DE POLLO",
+    "precio": 4.15,
+    "imagen": "product_images/91c02bc82efb484c9688e0b4cf2888c2.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "7aa39fcfe48247f8942e0be43d31eff7",
+    "nombre": "CARNE BISTEC",
+    "precio": 15.0,
+    "imagen": "product_images/0066a07f792c4446ad245af9931fa5c5.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "f117ebdec3f846898ceaf80426579626",
+    "nombre": "CARNE MOLIDA",
+    "precio": 15.0,
+    "imagen": "product_images/028cf4c387dc45cabd4de2e7af7aa0dc.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "6d80068fa85641548b3cbfdf00b70db2",
+    "nombre": "CHULETA MARRANO",
+    "precio": 13.0,
+    "imagen": "product_images/aeac748c1bc64990b004bcc12769f197.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "dd68a53c214a4eb295f98ae6a2f94b69",
+    "nombre": "POLLO ENTERO",
+    "precio": 3.9,
+    "imagen": "product_images/6fdf9117df21407ea87bb07d4ed93ce9.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "164164c78d364542ab09461eba6f4595",
+    "nombre": "LAGARTO",
+    "precio": 10.5,
+    "imagen": "product_images/aa1258318962495a8f63af59fd87f530.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "85cd0749b9194926a2152ecf1ee4c384",
+    "nombre": "COSTILLA",
+    "precio": 10.5,
+    "imagen": "product_images/118840483da64e1098e5b3a31454a7a5.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "5ac7e1dc23334db49c3911b8e8d6c9b6",
+    "nombre": "CARNE MECHAR",
+    "precio": 11.0,
+    "imagen": "product_images/af89929755e04d88b058bd5da101d025.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "22dd6d890e884c5295da50f186588359",
+    "nombre": "PECHUGA DE POLLO",
+    "precio": 6.9,
+    "imagen": "product_images/ae3e983a2d094f4abbec42d52297373c.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "8917e773780a4208877eee6a290619be",
+    "nombre": "CARNE GUISAR",
+    "precio": 13.5,
+    "imagen": "product_images/ab5789f700204e2eb3cf13729d7271c8.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "c4e29f39f5f946ad82557ce92914f761",
+    "nombre": "NUGGETS POLLO",
+    "precio": 12.15,
+    "imagen": "product_images/1f385a559bdd465fb352ae4d15278e63.jpg",
+    "categoria": "CARNICERIA"
+  },
+  {
+    "id": "4743b7ac0bf74559b983c05925bc9d8e",
+    "nombre": "TEIPE BERNICE GOLD",
+    "precio": 2.0,
+    "imagen": "product_images/21379a6fcb814e79bb9ff4be73010b6a.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "36aafbe1336e439fa74955595af26582",
+    "nombre": "EXTENCION 10M",
+    "precio": 7.0,
+    "imagen": "product_images/35fa4ad4d6d249a0857c980e65a7a715.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "875082ea11c34fbe9905219200e714b1",
+    "nombre": "REGLETA X6",
+    "precio": 5.0,
+    "imagen": "product_images/aa6a80fa324940b3a6887a16438663f3.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "634121ccac844682a785b873a23c2e1f",
+    "nombre": "TIRRO DOBLE CARA",
+    "precio": 2.5,
+    "imagen": "product_images/03c900ae30e142b6a363d8032138b241.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "f71bd6c875cb43a58f6544854c65d757",
+    "nombre": "ESTAÑO SOLDER 40G",
+    "precio": 3.0,
+    "imagen": "product_images/077f0e469ca24dd6bf00ad97458a4c1b.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "6aa097eb1a57441e81b012c7da39b116",
+    "nombre": "RASTRILLO",
+    "precio": 1.0,
+    "imagen": "product_images/76bc760335074d8984f1f18a7dec5238.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "cd7279f209a4431b80d766f546fec6bf",
+    "nombre": "CERRADURA DOOR LOCK",
+    "precio": 10.0,
+    "imagen": "product_images/498b489c105e440e858c8cd431399922.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "6f6486736f654e899d2a688d16c6b853",
+    "nombre": "LINTERNA 10W",
+    "precio": 4.0,
+    "imagen": "product_images/d95e921e64894d34abed6234a157ce59.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "397d22fb6b3042b99e6b84b8c4addbd0",
+    "nombre": "INTERRUCTOR DE LUZ",
+    "precio": 3.0,
+    "imagen": "product_images/f2b77c299f844b26a9208c3c6cb8cdff.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "94cc14a6b7a44d64bcda11e5bbf070e6",
+    "nombre": "TOMA CORRIENTE DOBLE",
+    "precio": 3.0,
+    "imagen": "product_images/4a9a257779c64a1a9397dbaec9acd57b.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "6303c2e4ec1a4c3baee5d45b7b8ccd69",
+    "nombre": "INTERRUCTOR DOBLE",
+    "precio": 5.0,
+    "imagen": "product_images/90cc15e91eb04583915a74cb37aa1ad4.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "26b21752704245048ab28e1f56b7097c",
+    "nombre": "TOMA AEREO DOBLE",
+    "precio": 1.8,
+    "imagen": "product_images/452a454820a4437fa33165a52750d15a.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "ddc4320e1001426d9210ce9074d27bec",
+    "nombre": "SOCATE LAMPARA EMPOTRAR",
+    "precio": 2.0,
+    "imagen": "product_images/e0cb283fee5d4ed7a3fe6e015a55550e.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "28d620b08d0347c7b6cee8a51092084c",
+    "nombre": "SOCATE DE GOMA",
+    "precio": 0.7,
+    "imagen": "product_images/cb8ca0a3abca42378a3882ecf213833c.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "0189224bc2b04e2b99a0135a09ae7587",
+    "nombre": "CAJETIN EMPOTRAR 2X1",
+    "precio": 0.7,
+    "imagen": "product_images/e432a8108b0d4492b7c2920b1c8c1d0a.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "bae154767ff64c969378b1a2968cf719",
+    "nombre": "ENCHUFE MACHO DOS CLAVIJAS",
+    "precio": 1.6,
+    "imagen": "product_images/41c99a20a3a644f6b0fbfce065b89871.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "ac16111d3d03470baa7a45876434c42d",
+    "nombre": "CONECTOR ELECTRICO HEMBRA",
+    "precio": 1.6,
+    "imagen": "product_images/a7c2d8a740b54a12a48e2bf3db7c8552.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "5067814f06b74cfcafd260393e56a4bc",
+    "nombre": "TIRRAJE PEQUEÑO",
+    "precio": 0.21,
+    "imagen": "product_images/c1e51764503f46c78f4957ebd8bc67aa.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "c1251e407d66443eabd206990f3fae14",
+    "nombre": "LLAVE DE CHORRO PVC 1/2",
+    "precio": 2.0,
+    "imagen": "product_images/1322f1a46a7f4a189ed3beeb9d356f34.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "dd076b1c092e4a4991079e4603145a67",
+    "nombre": "TIRRAJE GRANDE",
+    "precio": 0.3,
+    "imagen": "product_images/fe9e3787e1c74c4bbf397421ebaeec8d.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "f812048ea151450e991b4767b05236b1",
+    "nombre": "LLAVE CHORRO COBRE 1/2",
+    "precio": 3.0,
+    "imagen": "product_images/00738fb339f347cbb14a0373a0eee626.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "b90514ed38954f4ebd6495a8eb9daa16",
+    "nombre": "REGULADOR DE GAS COCINA",
+    "precio": 10.0,
+    "imagen": "product_images/ea707bedae08460b94554d6b2035ac1f.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "55d6456a27854745b5b162c687ad8888",
+    "nombre": "BOMBILLO LED 15W",
+    "precio": 1.8,
+    "imagen": "product_images/a4a759499dbe469e84538166391cee3f.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "a210d6abe3fd43b88a1c170ec87b7987",
+    "nombre": "BOMBILLO LED 20W",
+    "precio": 2.37,
+    "imagen": "product_images/cef5b043f8064aecbf6e6276b301ba20.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "f4c5b8afca8046bbab0857b0f2289412",
+    "nombre": "EXTENCION BLANCA 3 MTS",
+    "precio": 5.0,
+    "imagen": "product_images/fa65fc481b2840029aeff9d6462cc41a.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "e57726909f484557bda87fb3f33f6a96",
+    "nombre": "APAGADOR DOBLE",
+    "precio": 2.5,
+    "imagen": "product_images/03c78aa0e92a409ea11fb3b8617d04f7.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "f1ea388b030745b1bfe318fa84f3e9eb",
+    "nombre": "JUEGO DE DESTORNILLADORES 6 PZ",
+    "precio": 10.0,
+    "imagen": "product_images/fee26974e34b4fe283a905e7440ac7f8.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "98196a8697a443dda01c786e9504178d",
+    "nombre": "KIT DE BROCHAS Y ESPATULA",
+    "precio": 7.0,
+    "imagen": "product_images/d4876c3f9ac04aa3bddd3cf1eef0a993.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "9d69cf4b02ed40cf98814c60e4cddac1",
+    "nombre": "KIT DE ALICATE Y DESTORNILLADORES",
+    "precio": 10.0,
+    "imagen": "product_images/ff1a9a2a823b46bba6d659ea41c3d7a5.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "0531c9973ad2491f89a0d58e2857d5f5",
+    "nombre": "PESO ELECTRONICO",
+    "precio": 13.0,
+    "imagen": "product_images/f91f18e58fc3407aa0f9634830a6ca11.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "77d9a00239ce47ceb33379b4606d2dd8",
+    "nombre": "BOMBILLO LED",
+    "precio": 8.0,
+    "imagen": "product_images/e7e4ee3dd23b4caab659f927bd007f7c.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "43fd95b39097483db4a0b6b2d9ba1314",
+    "nombre": "LAMPARA SOLAR PEQ",
+    "precio": 10.0,
+    "imagen": "product_images/6755a05233ac4344bd952e793f9c24f8.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "fa2021fa8a0e4709a146d810677104f7",
+    "nombre": "PESO DIGITAL",
+    "precio": 13.0,
+    "imagen": "product_images/2bea309b5ff9413a82baba45b6f38a46.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "d07495ddbd424b4ca63ff7e5252954c1",
+    "nombre": "TEFLON",
+    "precio": 1.0,
+    "imagen": "product_images/db484783953a481999734ced0f72adb8.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "aa353014d92c4756b3d5a8c6b7261dd1",
+    "nombre": "LLAVE CHORO",
+    "precio": 7.4,
+    "imagen": "product_images/3aa4e496cce942edac23b20857398a6e.jpg",
+    "categoria": "FERRETERIA"
+  },
+  {
+    "id": "5134ba2922f24b6484a03c3f305e7c26",
+    "nombre": "CREMA CHANTI PROFECIONAL TIGO 1L",
+    "precio": 8.4,
+    "imagen": "product_images/a4e9894f4c724c678f7d826b011086c3.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "58bbae0438fa4b619c5f20914ae97ca4",
+    "nombre": "CREMA CHANTI TRADICIONAL TIGO 1L",
+    "precio": 8.2,
+    "imagen": "product_images/2d3f2971e5894040b3b1679aeb44e97c.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "9ff17f20cfcd445bbe2fe66cf1942ad1",
+    "nombre": "LECHE CP PURISIMA 1L",
+    "precio": 3.6,
+    "imagen": "product_images/27e802843b2d448394eeba1024428c7d.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "2d6f4e5295c54469ae8591010db4fb2f",
+    "nombre": "YOGURT MIGURT 125G",
+    "precio": 1.61,
+    "imagen": "product_images/c6835624b1474ee6a376832fc93b4237.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "b703234a624c4151a0cd4ad92e74b1e4",
+    "nombre": "LECHE EN CARABOBO 1L",
+    "precio": 3.5,
+    "imagen": "product_images/4560aa777c2c45b69faaad87c12c54cb.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "6ffa50ffd97d4c64ac55365bd49a0485",
+    "nombre": "LECHE DESLACTOSADA PURISIMA 1L",
+    "precio": 3.35,
+    "imagen": "product_images/74eadafdd69d4a8abdf8d02aba10bdf8.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "0ac2de25e48341be93b652b33fb2f0ea",
+    "nombre": "LECHE EN NATULAC 946CM",
+    "precio": 3.7,
+    "imagen": "product_images/ecd275b0825b49e8bcd8fd8226d3e09c.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "4b6458e4a41b46d284a5e601d4fa54fc",
+    "nombre": "LECHE EN NATULAC 473CM",
+    "precio": 2.3,
+    "imagen": "product_images/54dc2e48aeeb48b08b5b72e0c6174064.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "73aec3a79ae2466e942a8162c3be20b5",
+    "nombre": "CREMA CULINARIA TIGO 200G",
+    "precio": 1.9,
+    "imagen": "product_images/1355392a72d74ca1a9fa9c952da5cb50.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "9d27c5e50c39419db17e20ea5ad0790c",
+    "nombre": "LECHE PARMALAT COMP 1L",
+    "precio": 3.9,
+    "imagen": "product_images/baa4eed164954fceb44cbc26166273d4.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "81382972697540d898697085dcaff460",
+    "nombre": "QUESO PAISA",
+    "precio": 19.0,
+    "imagen": "product_images/1c8aae163c364ea88ebe3d26a7eb5286.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "023ea39d7e24489a8276d4b730b6b53b",
+    "nombre": "QUESO AMARILLO DOÑA FLORA",
+    "precio": 12.0,
+    "imagen": "product_images/f844036b454b4c72bb8f71eccd651e39.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "fa3056361dd14366a61c9cc451c0f03e",
+    "nombre": "YOGURT CASERO",
+    "precio": 2.2,
+    "imagen": "product_images/0d2ab066574146f69b40951ecc7c61e7.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "b86c9166aab54320840861597b6ed1b4",
+    "nombre": "NATILLA(CREMA)",
+    "precio": 3.77,
+    "imagen": "product_images/9ff7135214b64f209a0de0cc899d8c86.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "26bd5842b107478fb68d4565432b21ff",
+    "nombre": "SUERO 1LT",
+    "precio": 1.94,
+    "imagen": "product_images/0f2a994aa88a4339ab40fa9940cc0bf9.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "79930da5337545cab62b786c368578e9",
+    "nombre": "QUESO CREMA 200G",
+    "precio": 7.7,
+    "imagen": "product_images/50b1acc741734712afafa074d3c6b75a.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "2f493da4ca0a49e683bf38d0ac5d05ff",
+    "nombre": "CREMA DE LECHE LOS ANDES 250G",
+    "precio": 3.9,
+    "imagen": "product_images/ba9bd062d1a54431980b4ff648c483e8.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "7aa9444dd9714b79bbe19f45914e44bc",
+    "nombre": "QUESO SIN SAL BLANDO",
+    "precio": 9.0,
+    "imagen": "product_images/a43464dc65a74684bbd1984ae607f2ae.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "6c928b2b88934f7eb83fb199ad49b9a8",
+    "nombre": "LECHE LA CAMPIÑA 200G",
+    "precio": 4.23,
+    "imagen": "product_images/a5e0ecd2ef224c1ab1287e96031d92ff.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "6c001c65318e470bbcccaace925d15c2",
+    "nombre": "LECHE CAMPESINA 200G",
+    "precio": 4.72,
+    "imagen": "product_images/7db16f90674e41d4995d5daed0bde9bc.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "8a7c6e0144a74098a8a4a24d96d4c8c4",
+    "nombre": "LECHE LOS ANDES 900ML",
+    "precio": 2.9,
+    "imagen": "product_images/f050c5f962504b68abe57a1d6672ea4a.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "082724e54bad47b281de923166391cf9",
+    "nombre": "LECHE LA CAMPIÑA 400G",
+    "precio": 9.92,
+    "imagen": "product_images/afcf6e76604943008ee05503e99cb20e.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "862604a0cb37440daa0418817ad33e91",
+    "nombre": "LECHE LOS ANDES 200ML",
+    "precio": 0.65,
+    "imagen": "product_images/2b8060f2123d4c3385d19c0334df9247.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "093161e745db42f281f85623869fe9a0",
+    "nombre": "MANTEQUILLA ELLA 100G",
+    "precio": 2.64,
+    "imagen": "product_images/81897b6e1683400b942d88c870378e30.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "f579febf1b53421e915984f34a0e97aa",
+    "nombre": "LECHE CONDENSADA 395G",
+    "precio": 4.4,
+    "imagen": "product_images/79ae066efaca4c15bb6e319ff1f8a5fa.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "16f248eea53e4fceba795f45bf993809",
+    "nombre": "LECHE EN POLVO CARABOBO 400G",
+    "precio": 6.6,
+    "imagen": "product_images/d15c2b699393478a8b1c0a70c52dcdea.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "47a88350260c47ce83df79ace331f08f",
+    "nombre": "LECHE ENTERA 200ML",
+    "precio": 1.09,
+    "imagen": "product_images/52e4035f6eec4c27877ba5a0894e0f7b.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "49d6212ae7234018b89d84ca047a8935",
+    "nombre": "CREMA DE LECHE PARISIENNE 200ML",
+    "precio": 3.68,
+    "imagen": "product_images/b90b0b592af7417a9abdf8e3965f02a0.jpg",
+    "categoria": "LACTEO"
+  },
+  {
+    "id": "744a4c22f73a4134b0c79374f434d615",
+    "nombre": "BOLSA PAPEL PEQ",
+    "precio": 0.05,
+    "imagen": "product_images/fa0b6b0777eb4650a725f2d9b2e6c2fb.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "099cd5c44da848d6a18f3a4d7667102f",
+    "nombre": "BOLSA PAPEL MEDIANA",
+    "precio": 0.07,
+    "imagen": "product_images/6e21add57597436c9372e3fcfa964bc1.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "26317c9a19d640cf9115cc141ce84d0f",
+    "nombre": "PAN ARABE",
+    "precio": 2.5,
+    "imagen": "product_images/0c215106e94f4fabb725c97b9f678827.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "ba9a421fb0094e929321265fd296114d",
+    "nombre": "BANDEJA ANIME ALMUERZO CUADRADA",
+    "precio": 0.25,
+    "imagen": "product_images/a167e282d74b4795a901d11efdb0556a.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "ba4d62f0cdc242eb9e97606694ca905e",
+    "nombre": "BANDEJA ANIME DE PERRO LARGA",
+    "precio": 0.2,
+    "imagen": "product_images/8ce65ba135924871b29f9482e495fd27.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "e1b761d4eebc48a8af2e7e1d0cbc72ea",
+    "nombre": "PLATO DESECHABLE P/6",
+    "precio": 1.8,
+    "imagen": "product_images/716d695e8c3c455da9735b3c2cf3122f.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "eb634180efbc4c4ba03a61ea6f8701d7",
+    "nombre": "PAN ANDINO GRANDE",
+    "precio": 1.75,
+    "imagen": "product_images/67f2fc285fcf4ed2ab6c62281c085a7f.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "bc07683fbfaa4c7d991062b99eea05f1",
+    "nombre": "BOBOLONGO",
+    "precio": 0.18,
+    "imagen": "product_images/17d7b156ae2b4268b45271c5f2430eeb.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "23b08e93890e4d3dbf8b73853a97b7ff",
+    "nombre": "OREJONES",
+    "precio": 0.17,
+    "imagen": "product_images/afa046d99b624c4cac8a169dd05fd39c.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "a759fc599a7b4464bb10c7229fc63f26",
+    "nombre": "PAN CANILLA",
+    "precio": 0.27,
+    "imagen": "product_images/f28c5f3935854bd388f673bd33e51db3.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "aca33922a85b4096985bc96755f4e0af",
+    "nombre": "GALLETA AMARILLA",
+    "precio": 0.16,
+    "imagen": "product_images/ada1e79b34be4b0b92dd958c100a1aaf.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "4aa2cf25f0bf433fb6ff24cb2ce77199",
+    "nombre": "PAN DE SADWICH",
+    "precio": 2.5,
+    "imagen": "product_images/59e2e678f46249c291576f29f6bba87e.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "e5ec8a4c4ddb4f54bc4d93120be0e505",
+    "nombre": "TEQUEÑOS PREMIUN 20 UND",
+    "precio": 4.0,
+    "imagen": "product_images/5aca7fd7f76843939c0c0320c7ae0394.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "2c023eb4b9064e31ad50f31c398f033e",
+    "nombre": "TEQUEÑO FIESTERO 30 UND",
+    "precio": 4.0,
+    "imagen": "product_images/1164c1ff6d5844759ff88cce4ab1e76a.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "b0bfefc53005472ba53e00ff6f7720cb",
+    "nombre": "PAN FRANCES",
+    "precio": 0.14,
+    "imagen": "product_images/da58fb9263494eeab1e9243750344c5d.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "892b42ff38244770959bdd38b5f16a46",
+    "nombre": "PUNTO ROJO",
+    "precio": 0.14,
+    "imagen": "product_images/f7db16972645449b9bc025867e7f3909.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "2a1a4389ec184c529dd29c0b4ffe3a0c",
+    "nombre": "CATALINA AZUCARADA",
+    "precio": 0.21,
+    "imagen": "product_images/59e8b568b49942e79375883aaade5722.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "e7bb8043c6334f7fbd3c24e5c345447f",
+    "nombre": "GALLETA NEWTON",
+    "precio": 0.18,
+    "imagen": "product_images/0c3ed490740a4d0f9322bad7037fbd09.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "8d8473c1e32549ce82b280fa7e3b58e5",
+    "nombre": "CATALINA",
+    "precio": 0.24,
+    "imagen": "product_images/681bb9b0174245a1bb239e3204232590.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "6e1525736ef04d2b8e2b9e4e47ea3c7f",
+    "nombre": "PAN DE LECHE",
+    "precio": 0.36,
+    "imagen": "product_images/04cab8b89fc2442092f74f945d3b4ba5.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "14a17ba084ca445db908683e4807dcc7",
+    "nombre": "PAN CANILLA GRANDE",
+    "precio": 0.39,
+    "imagen": "product_images/f1fb27a5faf347de8c10ee0916098ead.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "5582093dbd7444a3a2a261f4cc8a5411",
+    "nombre": "PAN PAÑOTA",
+    "precio": 0.15,
+    "imagen": "product_images/bf23c13bc66d467dbba8292cae8d239c.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "ee24d132f9304a9b8e8d65fd7bdda64f",
+    "nombre": "PAN HAMBURGUESA",
+    "precio": 3.0,
+    "imagen": "product_images/b2f8b8e929d1413c9fb77e34c2142676.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "61f171a8e6f7499b9db7789dfd50c346",
+    "nombre": "PAN DULCE",
+    "precio": 0.12,
+    "imagen": "product_images/6dbe6ddb8b534277a138054f77e14754.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "04a201327cc74e80890842ca069a423e",
+    "nombre": "LEVADURA 50G",
+    "precio": 0.65,
+    "imagen": "product_images/73314eb1dd6946cd875fe58118c8e180.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "7666d666185f4dd1a997c834414c5f39",
+    "nombre": "PALMERITA",
+    "precio": 0.21,
+    "imagen": "product_images/21b03573adb843b4be6ec797916f3945.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "40c0ac6c066d41bea46259e5bc23803e",
+    "nombre": "TORTA REDONDA",
+    "precio": 0.7,
+    "imagen": "product_images/b4fd01474e574ddf936bc0565cf3419d.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "06a172cd97ec41b49316344d994c8fa2",
+    "nombre": "PAN CAMPESINO",
+    "precio": 0.46,
+    "imagen": "product_images/0f15436b364c458c91f89e3856cd5cb9.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "2abad6ff953e4f8f9fb5ea61daad7e5c",
+    "nombre": "CASABE",
+    "precio": 2.09,
+    "imagen": "product_images/4a77665d2f7544c5aff11dddb5b333b5.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "06c4f631f833461f9afe606fee5aa078",
+    "nombre": "PAN ARABE MEDIANO",
+    "precio": 2.05,
+    "imagen": "product_images/65d55d10491241c6bf55924173c8849e.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "1648e48fa2674edd8321e8eb57323e11",
+    "nombre": "PAN ARABE PEQUEÑO",
+    "precio": 1.85,
+    "imagen": "product_images/d2a57201245d4f9c92bc71a4654b89fc.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "6f084836beb040b4bd921d42a4ae5eed",
+    "nombre": "PAN DE PERRO CALIENTE",
+    "precio": 2.4,
+    "imagen": "product_images/8c2326e4023a4cde85e55a2bc98a0156.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "cb00b5051b8f495d88466a9b64084916",
+    "nombre": "TORTA ROJA",
+    "precio": 0.2,
+    "imagen": "product_images/8e6762e3eddc4cebb3b7a81ef41043c9.jpg",
+    "categoria": "PANADERIA"
+  },
+  {
+    "id": "6e74415b918142f4b3e822922cd444d6",
+    "nombre": "HELADO PALETA FRESS",
+    "precio": 0.5,
+    "imagen": "product_images/5caed846a3d04083874bc9b65298a0c1.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "cc6d87bd0d2c4a3380826565a1f9ba6d",
+    "nombre": "HELADO PALETA PAW PATROL",
+    "precio": 0.6,
+    "imagen": "product_images/d008625406784b93be47f092e39247fb.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "f87943db46854ffda5f51ede74219e27",
+    "nombre": "HELADO PALETA EXOTICO",
+    "precio": 0.75,
+    "imagen": "product_images/66d8d08f75114466a36c355f8d5fae5c.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "322ae3894d104586a9627957c32278be",
+    "nombre": "HELADO PALETA PASION YOGURT",
+    "precio": 0.75,
+    "imagen": "product_images/8d710772f2f64bc19ea6610ac612616b.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "c4498d57e8bf4340aadb276004c3b2f8",
+    "nombre": "HELADO PALETA CASERO GUANABANA",
+    "precio": 0.65,
+    "imagen": "product_images/543dc0e91105416bb44945d297783fd6.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "e2c8bdd501e64cb489e029dc88c46f75",
+    "nombre": "HELADO PALETA WONDER",
+    "precio": 1.25,
+    "imagen": "product_images/4b452a9f31564f918cd4a96c0d633a68.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "2f8054876acf4458b6ec175a84f3fbcd",
+    "nombre": "HELADO PALETA CHOCOMANTECADO",
+    "precio": 1.25,
+    "imagen": "product_images/13edf90210224df1a00517ae126d984d.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "c639f964c9ac431fa83421380409c3a5",
+    "nombre": "HELADO PALETA CHOCOAREQUIPE",
+    "precio": 1.25,
+    "imagen": "product_images/e172f85e4b7e48eaa72353cb1a520a0c.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "4f84ec3af5c54f88b2ebe40344452736",
+    "nombre": "HELADO MAX POLET",
+    "precio": 2.3,
+    "imagen": "product_images/8221f3cc786d4907a754708f31842ffd.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "dc64e088b5c04febb9c61d07ed20937c",
+    "nombre": "HELADO POLET CRUNCH WHITE",
+    "precio": 2.0,
+    "imagen": "product_images/d2ee2d996b7f4df08cd28636337865c6.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "ebf9fa12357c44f2944d8dc45a26a95c",
+    "nombre": "HELADO POLET AVELLANA",
+    "precio": 3.0,
+    "imagen": "product_images/3efe4e6fad4d4406a50e0224627dec30.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "b9a175f47b8c45ec9087f7b0615d950e",
+    "nombre": "HELADO POLET AVELLANA WHITE",
+    "precio": 2.36,
+    "imagen": "product_images/63a69aedcab24c1a9c420ee2cab26922.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "ef98c5d3cd7f4dcc8dffc999d2850b32",
+    "nombre": "HELADO POLET TRIPLE CAPITA FRAMBUEZA",
+    "precio": 2.35,
+    "imagen": "product_images/e71fea91a63a445fa2c2013813b652d0.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "9150655863d14b238e9a1f2969955569",
+    "nombre": "HELADO POLET TRIPLE COCO AREQUIPE",
+    "precio": 3.0,
+    "imagen": "product_images/59c8bac437204fee894a22660b6a2eca.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "3a955b1965b347448a9ec87ba2edcefc",
+    "nombre": "HELADO TINITA SENSACION",
+    "precio": 0.95,
+    "imagen": "product_images/354fb1dee1f943f09da911b3c4a2ac13.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "f56c7e5ded9144b3b368158e71a0b78b",
+    "nombre": "HELADO TINITA CHOCO MANTECADO",
+    "precio": 0.95,
+    "imagen": "product_images/e6de95637ea54d6fae11195fa05547a8.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "847580808cc24c48aa60ada27eece4ae",
+    "nombre": "HELADO CONO CHICLE MORADO",
+    "precio": 1.2,
+    "imagen": "product_images/450294bfa94149f28fb5b1d34fa8c68e.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "6ecab4adb0d24305957c3d5d66c0a36b",
+    "nombre": "HELADO MAX SANDWICH MANTECADO",
+    "precio": 1.2,
+    "imagen": "product_images/2be1d3e255aa4be4b49f36dca47b519c.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "dcb531250c414c16bc93990adaba79fe",
+    "nombre": "HELADO BARQUILLA SUPER CONO",
+    "precio": 1.75,
+    "imagen": "product_images/4909cd0ecca94cba8ed213719d0c7ad0.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "51e5ece372b84b3cbf165991dce356b8",
+    "nombre": "HELADO POTE TRIPLE SABOR",
+    "precio": 8.5,
+    "imagen": "product_images/d6f9bbaac76248639c8e9e4ee8501ccd.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "21fd26355f964b52b6302e324fc8525e",
+    "nombre": "HELADO POTE SABORES",
+    "precio": 9.3,
+    "imagen": "product_images/60f1e5904e6849fa83c9c087a857d45f.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "f315dd9c2215444c967f4fe0dabb1e43",
+    "nombre": "HELADOS TETAS ARTESANALES",
+    "precio": 0.68,
+    "imagen": "product_images/2a5410e6bd3f40f5bddf8b23f8f4a7d0.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "095f0ec750d9408ba53e791d9b373777",
+    "nombre": "BARQUILLONES ARTESANALES",
+    "precio": 2.0,
+    "imagen": "product_images/df738d999f404a538d9943cf2bb29ec9.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "6575f2e29c6b445896e6269bc8ab2e85",
+    "nombre": "HELADOS POTE MEDIO KILO ARTESANAL",
+    "precio": 3.0,
+    "imagen": "product_images/c3a1d4f3c7544d2abfca6e6e02a08c7a.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "00c7af8a8e894da2a96966f279f107cd",
+    "nombre": "GELATINA COMESTIBLE DE VASO",
+    "precio": 0.65,
+    "imagen": "product_images/0888f75b3193405fbbd57aa42036c034.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "ef1964f1165348239b94f40ce3794025",
+    "nombre": "HELADO DONUT SORPRESA",
+    "precio": 1.0,
+    "imagen": "product_images/51816423adc14ae9854d4267874b7231.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "7425792ecb8848ee8ed311319474cbfb",
+    "nombre": "HELADO TINITA COOKIES AND CREAM",
+    "precio": 1.0,
+    "imagen": "product_images/e6528060c2a64f1faf875b38e474e7af.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "8ebaa3839f8742f68954ba30b9243084",
+    "nombre": "HELADO CREMA PONCH",
+    "precio": 1.0,
+    "imagen": "product_images/2e1dc090aabb49eda9740d0bea6220c7.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "9620b0f169614286a91ea31f5cf6f39e",
+    "nombre": "HELADO POTE TRIPLE SABOR 2L",
+    "precio": 17.0,
+    "imagen": "product_images/9202e83e8a9e4318837cf4779aedf6b1.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "a4eab9be158b41719d1b78b62d60df8d",
+    "nombre": "HELADO MOUSE",
+    "precio": 1.15,
+    "imagen": "product_images/f527adcf6dfa42bf85a4509b346ca8f2.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "d4ae2108ccf24b75a19738916c7e1cfa",
+    "nombre": "HELADO POTE 1/2",
+    "precio": 4.2,
+    "imagen": "product_images/d0e2d52f19974b46984045c7d107244f.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "b55029e001a14443a2b3b124a5b365e8",
+    "nombre": "BARQUILLA SOFI",
+    "precio": 1.0,
+    "imagen": "product_images/0c0e9e0d950c4cef80bda6e78bae2d7a.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "fa508efef4e746d1aec721a0e0be30f4",
+    "nombre": "HELADO MEGA GOLAZO",
+    "precio": 1.15,
+    "imagen": "product_images/4702c3175c774873b841e07b94da89ca.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "50f693d0235443dcbc37b79e5862e0af",
+    "nombre": "HELADO MEGA TWISTTER",
+    "precio": 1.15,
+    "imagen": "product_images/9b41c2d3b92840bb980ff9c3bd73ea4b.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "0c201e47ffad4f72b876d8d2eea90a91",
+    "nombre": "HELADO MEGA BOOM",
+    "precio": 0.85,
+    "imagen": "product_images/390274c7fbc44e41a20371e72e0e0e8e.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "b960889bb4dd4a65bf6a021b663bc98c",
+    "nombre": "HELADO MEGA SUNDAE",
+    "precio": 0.9,
+    "imagen": "product_images/1321af1cccce4994b748f7f8d1fd7d08.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "fd7838ae765d422c9b785e11334f11b2",
+    "nombre": "HELADO MEGA TINA",
+    "precio": 0.85,
+    "imagen": "product_images/b1044ba182a840b29d0c38ed85ec30d0.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "9cbc3f5749cf4a81904996e7b4065c74",
+    "nombre": "HELADO MEGA CONO",
+    "precio": 1.26,
+    "imagen": "product_images/42d0abac66764707a9a56a251005535b.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "49581e4a57bb4ff9873a100ee3470d5f",
+    "nombre": "CHUPI CREMOSO",
+    "precio": 0.24,
+    "imagen": "product_images/daa22791fb7b441ba3ca3177ec2d2b22.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "9579b1b165cd4b9eaf548a1df7f3e593",
+    "nombre": "PALETA BABY CITRICA",
+    "precio": 0.36,
+    "imagen": "product_images/073c5020fc73471bb27146ebf838817f.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "430e3de60da14c3b9059754148fbc34a",
+    "nombre": "TINITA BABY DUO",
+    "precio": 0.65,
+    "imagen": "product_images/f2883e4ba8c44361bfeeeb26177ebacf.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "a2a951200d60405bb9756f450fff1216",
+    "nombre": "HELADO TENTACION PREMIUN",
+    "precio": 1.75,
+    "imagen": "product_images/9312752b261e4822883a0c90822ab508.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "72b1507287bc47379807368273ba6894",
+    "nombre": "HELADO TENTACION",
+    "precio": 1.4,
+    "imagen": "product_images/ef19fa875ac84660825043fbda15103a.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "957e1cf8fbf248c2ae837fc7ac191a32",
+    "nombre": "HELADO MIKI KIDS",
+    "precio": 1.0,
+    "imagen": "product_images/6a4f09824a064b8facaa956c473f7184.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "e08366c1b07447bcbc34b195e83ff61c",
+    "nombre": "HELADO CHOCO BOOM",
+    "precio": 1.0,
+    "imagen": "product_images/ca01c7fdaebd4b47ae7825db551f7cfa.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "45e35dce0d6a41b693008b7360260801",
+    "nombre": "HELADO POTE 1K CREMA HELADO",
+    "precio": 7.79,
+    "imagen": "product_images/c05b901bb7c94076b31da126a4b2bcbd.jpg",
+    "categoria": "HELADO"
+  },
+  {
+    "id": "d458788d334d4396a46c72d6b7a8b86c",
+    "nombre": "MASCARILLA KARSEELL 24ML SOBRE",
+    "precio": 0.97,
+    "imagen": "product_images/4a936a7f41714c7f9d18e5eee34a67a7.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "6b27d34e1d4b4ba5bf2685aa4f1e8b86",
+    "nombre": "TINTE CABELLO ROOTANA 80ML",
+    "precio": 5.0,
+    "imagen": "product_images/76dddff1fdf84d7d9a06ce89ce755fe3.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "16cd6562b5ab41f69f491c004fae244d",
+    "nombre": "TIENTE CABELLO HUGME",
+    "precio": 1.28,
+    "imagen": "product_images/6f14d8a01d904037af704a7d77007e5e.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "5502e08ab2cc4f38b5db7a8ed1c63a4a",
+    "nombre": "BROCHAS MAQUILLAJE",
+    "precio": 4.0,
+    "imagen": "product_images/792b4ddea2904336adb46a6cada79b53.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "0b05cd5200674eec810625a8c6dd5ed5",
+    "nombre": "LIP GLOSS FIT NNC",
+    "precio": 2.0,
+    "imagen": "product_images/c368f67379d447d095ee3c69f47e5cfe.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "e6e2b2bc3c7240eebaaff2a1bd7c4d66",
+    "nombre": "PALETA DE SOMBRA",
+    "precio": 12.0,
+    "imagen": "product_images/fbc1e25c91c9437592a84d2e590055d4.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "ddfbd6f813584245b811d945405c8503",
+    "nombre": "LAPIZ OJO MAYBELLINE",
+    "precio": 3.0,
+    "imagen": "product_images/f0056025684345f1bc4f922f33c06f2d.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "d3bfbe2d15974a679a08941e3fc434d9",
+    "nombre": "CEPILLO SECADOR ONE STEP",
+    "precio": 22.0,
+    "imagen": "product_images/a4fad53cd9034c8da5c4e731e7e872f8.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "94fd30c5173d48e48e87a188119bfc5f",
+    "nombre": "KIT DE LOCION PINK 150ML",
+    "precio": 7.0,
+    "imagen": "product_images/a443c275e747428f8d173b239a626e40.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "5fd111cf9fed4268a8475109e3d1be4e",
+    "nombre": "BOMBA PARA INFLAR GLOBO",
+    "precio": 6.0,
+    "imagen": "product_images/b90189bad16243d984106b2c214889a8.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "b7d79f9a203c4b12b377bd77c7074f9f",
+    "nombre": "TIRAS LED PEQUEÑA",
+    "precio": 5.0,
+    "imagen": "product_images/4b309d881bb44dcaa4df81c1e1ecebd6.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "f923efad589146a8b4a586b6fbe3b081",
+    "nombre": "CORTADOR DE UÑA ACRILICA",
+    "precio": 4.0,
+    "imagen": "product_images/fd408261a96d4b45bffcab9ecdf831c0.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "1ee430df2a6e400ba942271cd66ed27c",
+    "nombre": "CABLE DE IPHONE",
+    "precio": 4.0,
+    "imagen": "product_images/27a0ce95875b446792a8549d65262bc5.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "3a55d5dde09b4b3ca22e100c88c00376",
+    "nombre": "SPLASH VICTORIA SECRET 70ML",
+    "precio": 3.5,
+    "imagen": "product_images/221324b7ee1d4856ad16212595392e8c.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "7738fed5310a4fb5a67d9fd396c9b52f",
+    "nombre": "POLVO SUELTO FIT NNE",
+    "precio": 4.0,
+    "imagen": "product_images/2a3b0b6322b74a4fa637255b26250910.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "8b51d185224340cfa662e4faece13362",
+    "nombre": "SPLASH HOMBRE Y DAMA 250ML",
+    "precio": 8.0,
+    "imagen": "product_images/0d933b0deef64cea9c5165659e8072e0.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "c4e7e8bcece7401e86952197969f5640",
+    "nombre": "SPLASH VICTORIA SECRET 250ML",
+    "precio": 8.0,
+    "imagen": "product_images/feec5529c09d48b9b9c93501aa04f844.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "9e016a602a9a4d9f903251439a32da93",
+    "nombre": "PERFUME HOMBRE Y DAMA 100ML",
+    "precio": 10.0,
+    "imagen": "product_images/3924eccb64c04f0abbb81c75a871c001.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "45e3a16550af483086e4974b4491ae04",
+    "nombre": "COMPACTO MON REVE",
+    "precio": 3.0,
+    "imagen": "product_images/b2a50a9e4c394f438e913ad5eb8c8b2d.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "c7059e8fee924724b856970a07d15319",
+    "nombre": "CERA DEPILATORIA",
+    "precio": 8.0,
+    "imagen": "product_images/2f01ccdcc5c244f5843f7360ff626953.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "c684ce226a5049f08befdc0bbb2efa8c",
+    "nombre": "PESTAÑA NASURA",
+    "precio": 4.0,
+    "imagen": "product_images/85e3ac15c4a04dd7b5362bf347268fec.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "f9284fb927a14198a90216ddf204ca52",
+    "nombre": "EXFOLIANTE 500ML",
+    "precio": 5.0,
+    "imagen": "product_images/1bf95ad7a3784626bfca63e0914ecb18.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "df40f31dd88843519b7af394f594abc2",
+    "nombre": "QUITAESMALTES DE UÑAS",
+    "precio": 6.0,
+    "imagen": "product_images/311dc487fb8b4cde8aa31c6112b10e1e.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "efceeeeaac47418e912a943b08ac2c52",
+    "nombre": "PEGA DE PESTAÑA",
+    "precio": 4.0,
+    "imagen": "product_images/efbd92880cd941869c6668268e0274fb.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "fba1a6cbcb5244fca9fdf93b332edc04",
+    "nombre": "PROTECTOR SOLAR",
+    "precio": 4.0,
+    "imagen": "product_images/504cb5ab4c7045cc90f12ee89253b918.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "3efa2b7059a94378921fa40b8dbf175c",
+    "nombre": "ACEITE CAPILAR CARE STYLE",
+    "precio": 3.0,
+    "imagen": "product_images/8a5f51e7928b46d682024a8a125ffef4.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "514244d85a19403b8f228c855f4e4529",
+    "nombre": "FIJADOR MAQUILLAJE FIT 100ML",
+    "precio": 4.0,
+    "imagen": "product_images/ab2afe053d3b4191919659143c856cb2.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "1e9baf2067b44356830d4cda72a08935",
+    "nombre": "COMPACTO CLINIQUE 10G",
+    "precio": 2.0,
+    "imagen": "product_images/f4494490cfa3452caee8dc163dc020d3.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "5337a0d7eca144b692a84c6eb31ff4b8",
+    "nombre": "BOLSA DE PANADERIA MEDIO KILO",
+    "precio": 0.05,
+    "imagen": "product_images/9ba21dfef7b04908abac93d19a9de553.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "8b55ceb778a5482f905ae080fb84ad2b",
+    "nombre": "PIGMENTO PARA CEJAS",
+    "precio": 5.0,
+    "imagen": "product_images/5155c2fa1cf84316a4884f9b75936ff1.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "3d1f6e745b7f4126af269d926b4fd37d",
+    "nombre": "POLY GEL 30ML",
+    "precio": 2.5,
+    "imagen": "product_images/d30c9d945eaa415ca4abd15cc8946b87.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "0fdd78ba58554eb0b057a9055b35e5ab",
+    "nombre": "UV GEL",
+    "precio": 1.5,
+    "imagen": "product_images/771768a42a5940ae87de8ef15823400e.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "319f9a790c384c62b27534e26372c724",
+    "nombre": "A POLYMER",
+    "precio": 3.0,
+    "imagen": "product_images/624e25af280f44f8904f718738566304.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "298e3ed56ce442369e7d9e59e39a0c72",
+    "nombre": "RISYAL UV GEL POLISH",
+    "precio": 2.0,
+    "imagen": "product_images/f1dfbafa546f482c94334e2f828c1cef.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "351703809f34496fa6d05a78cec51bc3",
+    "nombre": "MAGIC REMOVER",
+    "precio": 2.5,
+    "imagen": "product_images/252dde276a8946b7b737621742b65618.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "e02ea48a2bf54cc09aad35e9b27a23a7",
+    "nombre": "Q MONOMER 60ML",
+    "precio": 2.5,
+    "imagen": "product_images/fb2434c88f56443792883c2063133736.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "122cd7ea98d94448aa83465b5c676d09",
+    "nombre": "GEL POLISH SOLA-OFF",
+    "precio": 2.5,
+    "imagen": "product_images/7af0c97726fb4d199ebb462d9c1ab8fc.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "69db0d8f3d1448c1a4d4a5c0fcda8eee",
+    "nombre": "PEGA DE UÑA BROCHITA",
+    "precio": 1.7,
+    "imagen": "product_images/15928d1b396a4991b05c15f3e0757a43.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "930721eb1614454ead946e0bd1f3ec1a",
+    "nombre": "BROCHA DE UÑAS COLORES",
+    "precio": 3.0,
+    "imagen": "product_images/e9fd19fff7ed41e19be3667e5c1bec88.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "49d336fbd1f643e6b832a0a71c9e3510",
+    "nombre": "ENVASE PARA PIGMENTO",
+    "precio": 1.2,
+    "imagen": "product_images/7dfd9c4e7d19498795cdcdf34194beac.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "e4c34f2a00fe4152958b574a2088c8cb",
+    "nombre": "SOMBRA EFECTO ESPEJO PARA UÑAS",
+    "precio": 2.5,
+    "imagen": "product_images/b40e678b808f42518b5d6583a64bcf0d.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "00cc66a5d78b4449aa8bd489ddfb9aaa",
+    "nombre": "PASTILLERO DE PAPEL PARA UÑAS",
+    "precio": 6.0,
+    "imagen": "product_images/1b7b8991281c424a82be9a90e9d5f6bc.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "912daaf6cb454aba9756411d231bb79d",
+    "nombre": "KIR DE FLORES ACRILICAS PARA UÑAS",
+    "precio": 3.5,
+    "imagen": "product_images/ce02ab76f6c84977afc0b11027bd8490.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "c57cd6ab6e164f8f816e636f3f238e0d",
+    "nombre": "UÑAS GEL TIPS 240PCS",
+    "precio": 6.23,
+    "imagen": "product_images/dea1c1512f2645bea01dc572867b6ca6.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "16a7b0593b12466e89d957e5ccee9022",
+    "nombre": "PIEDRITAS PARA UÑAS",
+    "precio": 2.0,
+    "imagen": "product_images/f56dc7faf39345d3b31e0c22c8cbca1d.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "9a115e24be8149f5a6663dc370791ac7",
+    "nombre": "RESINA PARA UÑA",
+    "precio": 2.5,
+    "imagen": "product_images/e4d8f293c0514474a1b211a51a471031.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "4ac8605779bd404c9eee5a732be93f33",
+    "nombre": "TINTE PARA CEJAS BIGEN",
+    "precio": 12.0,
+    "imagen": "product_images/f48fc75e72fc4409ab056aff325cc99a.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "a9f55316a0824ca4b62064f74f367f18",
+    "nombre": "LIMA PARA UÑAS",
+    "precio": 1.0,
+    "imagen": "product_images/f5218511dc2542429a06011aeed7facc.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "316f15a18884481dbf740994fdef0060",
+    "nombre": "NACAR PARA UÑAS",
+    "precio": 3.5,
+    "imagen": "product_images/a78179a436d7448faf4bdbbede73ced5.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "47a890d829f848f1a655820d82c1b0c8",
+    "nombre": "PLANTILLA DE DISEÑO",
+    "precio": 0.5,
+    "imagen": "product_images/87ecc148fb5a45bab26bd0c54cbc6f09.png",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "5dbf920204124acba21235250eb23e05",
+    "nombre": "BASE FIT ME",
+    "precio": 2.5,
+    "imagen": "product_images/1eabde4239754614908eb66ad6ad1bfd.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "7d0158fa25504b17a25121a125ca647e",
+    "nombre": "BASE FIT NNC",
+    "precio": 2.5,
+    "imagen": "product_images/44d6dccf71ba4aa59d7b4722b1f962b1.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "9e330e6fbdc144b995ac886966365522",
+    "nombre": "MAYBELLINE LABIAL MATTE",
+    "precio": 2.5,
+    "imagen": "product_images/47f25dda3aa34701aacbf70a1589d287.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "6fa5a039e37d42d09c19f1f5d41edfbb",
+    "nombre": "LABIAL MATTE MAC",
+    "precio": 1.5,
+    "imagen": "product_images/3c3fe2f434b44554bc3c4d50d8094452.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "38b15f5c96b64eeda60720e229037ea0",
+    "nombre": "CORRECTOR OJERA FIT SKIN",
+    "precio": 2.0,
+    "imagen": "product_images/6208055e517847ce93d0dba02e7e276c.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "fd6cbe6051d542da8fc92493a3fa1369",
+    "nombre": "POLVO MAGICO",
+    "precio": 2.0,
+    "imagen": "product_images/7ed2a12f938846aaa2afb3e7b58f2bc6.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "b83f096873db44d5ab4b70e792f8448a",
+    "nombre": "MASCARA DE PESTAÑA",
+    "precio": 3.0,
+    "imagen": "product_images/a196182f9ab94428891b12958f0ed95d.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "f014e327fd984e76ab3cbc70308a7355",
+    "nombre": "LIP GLOSS FIT ME",
+    "precio": 2.0,
+    "imagen": "product_images/54bbe8eb41834e0d93245280a5b01e0e.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "26ed7dfdc33b4bb0b9fc15f12cbdfffe",
+    "nombre": "SET DE BROCHA",
+    "precio": 4.0,
+    "imagen": "product_images/90b9cb0e1836492c9ce71e783be6baf4.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "a345c64ac75845d69909709ec705e22f",
+    "nombre": "LAPIZ CEJA MAC",
+    "precio": 1.0,
+    "imagen": "product_images/5cb87fddf6cc4602b740e12be1c8a84b.png",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "dad2407d65af48f5b647ddec19e7c66d",
+    "nombre": "VASELINA LABIAR PEQUEÑO",
+    "precio": 1.0,
+    "imagen": "product_images/2047a86f7aee4a99b507576206e5c510.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "bacf1b7bb5df4bd6a7865059c03c8344",
+    "nombre": "TINTA DE LABIOS",
+    "precio": 1.0,
+    "imagen": "product_images/b70c9e30dfe540219e6d690a4c5cd72b.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "93212000a707465db177d41aa0f6a515",
+    "nombre": "MOPA PARA POLVO",
+    "precio": 1.0,
+    "imagen": "product_images/18daf4839af34704bb9cd3420c6bf097.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "f68bcbfc50d141689e52535d7cfbab65",
+    "nombre": "PINCEL DE GOMA SILICONE PARA UÑA",
+    "precio": 4.0,
+    "imagen": "product_images/cbfa3682da37489488f085fa43e871c7.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "8fb300f4f35c4bf4b5db53d4976a07e6",
+    "nombre": "SET DE PEDICURA",
+    "precio": 6.0,
+    "imagen": "product_images/261a074d11e246c98ce99a465e19fe07.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "4adb040cc6994ee79eaef3de10772714",
+    "nombre": "EXTENSIONES COLA PARA NIÑA",
+    "precio": 2.0,
+    "imagen": "product_images/d92d4853b5004972b4a5f562ceba8619.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "d8065b8f033e48e696d4fa6d7a3349b5",
+    "nombre": "CORONA DE REINA",
+    "precio": 5.0,
+    "imagen": "product_images/d870718183ee4cb381f157b784bf718e.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "b55fbb7a9c9c4eb7926dffe5dd4b2e2e",
+    "nombre": "PORTA COSMETICO NORMAL",
+    "precio": 5.0,
+    "imagen": "product_images/2f01b19865d2402c86964922dff64cfc.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "6bec291c0a094331aca1f500a762713e",
+    "nombre": "LAMPARA DE UÑA PEQUEÑA",
+    "precio": 12.0,
+    "imagen": "product_images/9757255dc4d14f28a8411763de10699f.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "1e4b28e126824b16a74a12e8bc476e36",
+    "nombre": "GEL FIJADOR DE SOBRE 10ML",
+    "precio": 0.5,
+    "imagen": "product_images/ddb7d76d78124e74b68d49b81b7339c0.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "24e82b1c534a4d478c3426007b34d618",
+    "nombre": "SOPORTE PARA GLOBO UND",
+    "precio": 1.0,
+    "imagen": "product_images/2bca2bcebc644f46b6e50bd63ee04063.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "027fbcde9d4e48fa99f3a839dbded3f1",
+    "nombre": "UÑAS NAIL TIPS BLISTER 24UND",
+    "precio": 1.0,
+    "imagen": "product_images/955d8be3815b49e4a83a6dac558ab66e.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "1803384e3dda4427b864a8480d5590fb",
+    "nombre": "COMPACTO NAILEN 15G",
+    "precio": 3.0,
+    "imagen": "product_images/078e2e86ef3d4e16ba8ec90a0a8cfe60.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "62dfc94402a143b78a1066a61a369387",
+    "nombre": "REPUJADOR DE CUTICULA DE HIERRO",
+    "precio": 1.21,
+    "imagen": "product_images/15de89dcdaaf430c84c552d3c3902763.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "ac9120463f044d60908da104c4080992",
+    "nombre": "ACEITE PARA CUTICULA 15 ML",
+    "precio": 2.4,
+    "imagen": "product_images/38625330843b4a7ab7a7109b55ae573f.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "953471330737467caa8be903aa982a3a",
+    "nombre": "LIMAS OPI 100/180",
+    "precio": 0.6,
+    "imagen": "product_images/a103d23d2b604ce090d202f2ea369162.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "5eeba249cc58453a90c5dbd04e9d671b",
+    "nombre": "TACO DE UÑA UND",
+    "precio": 1.5,
+    "imagen": "product_images/ac43d527563046779fd50fb2a96e6cad.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "bf60c349b64c4831a6fef26c44ae636b",
+    "nombre": "DRIL DE UÑAS",
+    "precio": 33.0,
+    "imagen": "product_images/1db756eae9094a7a8b3b477cce45614d.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "e45e6ca4faa44f7fa95975c9e0047c0c",
+    "nombre": "PESTAÑAS MAC",
+    "precio": 3.0,
+    "imagen": "product_images/273cd8a0d9374d0183684f47a6fbff98.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "fe7def0b116f4d7f878a75a5288e4fc0",
+    "nombre": "BASE COAT MY 8ML",
+    "precio": 3.4,
+    "imagen": "product_images/70717257e1af4fd8ae6153de497f5d03.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "e2a3983928044ab180e402388d0a4c40",
+    "nombre": "IMAN DE UÑAS 5EN1",
+    "precio": 6.0,
+    "imagen": "product_images/d73eff8855f24a8bab3dcd2edcccdc29.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "18e0701890dd4ba686e6b285375680f2",
+    "nombre": "ESMALTES DE UÑAS OJOS DE GATO",
+    "precio": 3.8,
+    "imagen": "product_images/5067c784338e4b3d826b1b67a82854e8.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "75a220d29b624da68d1ebab0d01aceb7",
+    "nombre": "KIT DE SPLAHS Y LOCION 88ML",
+    "precio": 10.0,
+    "imagen": "product_images/c1130e8b2a5a4c0386e140fbcbdbf368.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "044d180d7f2348678c25d4f5eddeb5ba",
+    "nombre": "PENDULO",
+    "precio": 15.0,
+    "imagen": "product_images/2bfacde13cc2439fb3181c83b4ccb0d4.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "71626b79c79c44a28a69e8951474b168",
+    "nombre": "BOLSA DE CORAZON GRANDE",
+    "precio": 2.5,
+    "imagen": "product_images/6be52942cd154209b7c1cd54d275bb03.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "ddea703c5d8a4e44a8a4a0941624ea85",
+    "nombre": "BOLSO LONCHERA TERMICO",
+    "precio": 5.8,
+    "imagen": "product_images/6ef31ce142e14b53ad51ca2f0489f14e.jpg",
+    "categoria": "COSMETICOS"
+  },
+  {
+    "id": "610f47d7eeaa486f95d4f69a4606908e",
+    "nombre": "PAPA",
+    "precio": 2.0,
+    "imagen": "product_images/6a7ae7e152834fb78d97a1e47d611573.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "b29a6461f80f48f28ff0ad43a2f6fecf",
+    "nombre": "TOMATE",
+    "precio": 4.5,
+    "imagen": "product_images/4d5946b298c44c55a6e868219afb8ff1.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "22b0abd2fff746b8989e2fd01ff0a957",
+    "nombre": "PIMENTON",
+    "precio": 1.55,
+    "imagen": "product_images/c512cc5ca8d641aa84dc407f53f93d3a.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "142eabe9d4c14064adffa5c650b2632b",
+    "nombre": "CILANTRO",
+    "precio": 3.42,
+    "imagen": "product_images/aca146eff65945729e535e4c212fe99e.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "630e0425fa544cbebdfabe117f62590f",
+    "nombre": "CEBOLLA",
+    "precio": 2.0,
+    "imagen": "product_images/4870918c84c441f49f0e30a43d13bdf6.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "2a6bdcb472aa44958434a90e6ff8bb81",
+    "nombre": "CEBOLLIN",
+    "precio": 1.28,
+    "imagen": "product_images/041f6faa92f14033a3e6d9730cd37c8e.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "d3f0df5132324798becdd84c81686068",
+    "nombre": "ZANAORIA",
+    "precio": 1.3,
+    "imagen": "product_images/e1aa0b2156e34d36b3003f44950917f1.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "95fb3aab01f5425f8e7caa9e653598a4",
+    "nombre": "APIO",
+    "precio": 1.3,
+    "imagen": "product_images/af19bad738c0473fa191c266f48e02e7.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "7241e127cae645eca6fc1166f38b377f",
+    "nombre": "AUYAMA",
+    "precio": 1.07,
+    "imagen": "product_images/23a32d86e688498d9e796b01a5a0652f.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "97b05de542464f56b03cc7efb5d95594",
+    "nombre": "REPOLLO",
+    "precio": 0.43,
+    "imagen": "product_images/2c05afb51be64735a2ab00ae97b10f54.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "7ca6e6440b014a88bd738a2bc836fcdd",
+    "nombre": "LECHUGA",
+    "precio": 1.11,
+    "imagen": "product_images/9c03ef9d42d04f2b94bf00a66756c92f.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "bdd8a4be78d840adb66912f7ac7fb820",
+    "nombre": "CALABAZIN",
+    "precio": 1.3,
+    "imagen": "product_images/a2d07c64e11a4a6cb1ffa3afa6a239cb.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "2e50115165114fe78064a4f669409feb",
+    "nombre": "BROCOLI",
+    "precio": 2.25,
+    "imagen": "product_images/d33cce3538bb43b995e52b9a3ea29d35.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "f6de3bc115d14afc82cbcd90d1784f48",
+    "nombre": "PARCHITA",
+    "precio": 2.8,
+    "imagen": "product_images/24e7c82095b1434aa48c0316029fdb8f.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "aedd2bdafa544338b43aaf115b0ba453",
+    "nombre": "MELON",
+    "precio": 1.7,
+    "imagen": "product_images/3eab941844a545099ab31ba1a14b7cd2.jpg",
+    "categoria": "VEGETALES"
+  },
+  {
+    "id": "acadf0ed8f49486db153d0e3dc2268be",
+    "nombre": "LECHOSA",
+    "precio": 1.7,
+    "imagen": "product_images/acdb97529be24df99224c93ce4fec78d.jpg",
+    "categoria": "VEGETALES"
   }
 ]

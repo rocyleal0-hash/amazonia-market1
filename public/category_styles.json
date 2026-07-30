@@ -144,7 +144,7 @@
   },
   "FERRETERIA": {
     "icon": "🏷️",
-    "circle_color": "#0000ff",
+    "circle_color": "#c0c0c0",
     "circle_size": 70,
     "label_color": "#0F172A",
     "label_size": 14,
@@ -157,7 +157,7 @@
   },
   "PANADERIA": {
     "icon": "🏷️",
-    "circle_color": "#0000ff",
+    "circle_color": "#c0c0c0",
     "circle_size": 70,
     "label_color": "#0F172A",
     "label_size": 14,
@@ -284,5 +284,57 @@
     "more_fg": "#000000",
     "use_image": true,
     "image_path": "cat_images/JUGUETERIA.jpg"
+  },
+  "HELADO": {
+    "icon": "🏷️",
+    "circle_color": "#c0c0c0",
+    "circle_size": 70,
+    "label_color": "#0F172A",
+    "label_size": 14,
+    "title_color": "#000000",
+    "title_size": 22,
+    "more_bg": "#000000",
+    "more_fg": "#000000",
+    "use_image": false,
+    "image_path": ""
+  },
+  "COSMETICOS": {
+    "icon": "🏷️",
+    "circle_color": "#c0c0c0",
+    "circle_size": 70,
+    "label_color": "#0F172A",
+    "label_size": 14,
+    "title_color": "#000000",
+    "title_size": 22,
+    "more_bg": "#000000",
+    "more_fg": "#000000",
+    "use_image": false,
+    "image_path": ""
+  },
+  "LACTEO": {
+    "icon": "🏷️",
+    "circle_color": "#c0c0c0",
+    "circle_size": 70,
+    "label_color": "#0F172A",
+    "label_size": 14,
+    "title_color": "#000000",
+    "title_size": 22,
+    "more_bg": "#000000",
+    "more_fg": "#000000",
+    "use_image": false,
+    "image_path": ""
+  },
+  "VEGETALES": {
+    "icon": "🏷️",
+    "circle_color": "#c0c0c0",
+    "circle_size": 70,
+    "label_color": "#0F172A",
+    "label_size": 14,
+    "title_color": "#000000",
+    "title_size": 22,
+    "more_bg": "#000000",
+    "more_fg": "#000000",
+    "use_image": false,
+    "image_path": ""
   }
 }
