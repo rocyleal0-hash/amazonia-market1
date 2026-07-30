@@ -295,8 +295,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#000000",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_HELADO_daf4cdc3.webp"
   },
   "COSMETICOS": {
     "icon": "🏷️",
@@ -308,8 +308,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#000000",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_COSMETICOS_3951531f.webp"
   },
   "LACTEO": {
     "icon": "🏷️",
@@ -321,8 +321,8 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#000000",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_LACTEO_7cafb946.webp"
   },
   "VEGETALES": {
     "icon": "🏷️",
@@ -334,7 +334,7 @@
     "title_size": 22,
     "more_bg": "#000000",
     "more_fg": "#000000",
-    "use_image": false,
-    "image_path": ""
+    "use_image": true,
+    "image_path": "cat_VEGETALES_370c3876.webp"
   }
 }
