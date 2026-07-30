@@ -664,7 +664,9 @@ function viewSearch(main, q) {
 function normalizeCat(s){
   return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
 }
-function isCharcuteria(cat){ return normalizeCat(cat) === 'charcuteria'; }
+// Categorias que se venden por peso (muestran el boton amarillo de Gramos)
+const CATS_POR_GRAMOS = ['charcuteria', 'carniceria', 'vegetales'];
+function isCharcuteria(cat){ return CATS_POR_GRAMOS.includes(normalizeCat(cat)); }
 
 function renderProductGrid(main, prods) {
   const html = `<div class="am-grid">` + prods.map(p => {
