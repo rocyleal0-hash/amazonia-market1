@@ -21,23 +21,48 @@ const truthy = v => /^(1|true|yes|si|sí)$/i.test(String(v ?? '').trim());
 const intOr  = (v, d) => { const n = parseInt(v, 10); return Number.isFinite(n) ? n : d; };
 const numOr  = (v, d) => { const n = parseFloat(v);   return Number.isFinite(n) ? n : d; };
 
-function fixImgSrc(path) {
-  if (!path) return '';
+/* Carpetas donde pueden estar las imágenes en el repo de GitHub.
+   Se prueban en orden hasta que una cargue (ver fallback más abajo). */
+const IMG_FOLDERS = [
+  'cat_images', 'subcat_images', 'product_images', 'product_images2',
+  'banner_images', 'ads_images'
+];
+
+function imgCandidates(path) {
+  if (!path) return [];
   let p = String(path).trim();
-  if (p.startsWith('data:') || p.startsWith('http://') || p.startsWith('https://')) return p;
-  p = p.replace(/^\/+/, '');
-  // Rutas ya-relativas a carpetas conocidas (subcat_images/, cat_images/, etc.)
-  if (/^(public\/)?(subcat_images|cat_images|banner_images|ads_images)\//.test(p)) {
-    if (!p.startsWith('public/')) p = 'public/' + p;
-    return './' + p;
+  if (p.startsWith('data:') || p.startsWith('http://') || p.startsWith('https://')) return [p];
+  p = p.replace(/^\/+/, '').replace(/^\.\//, '');
+  p = p.replace(/^public\//, '');
+
+  const known = IMG_FOLDERS.find(f => p.startsWith(f + '/'));
+  const file = known ? p.slice(known.length + 1) : p;
+
+  // Si el nombre trae carpeta desconocida, usamos solo el nombre del archivo
+  const base = file.includes('/') ? file.split('/').pop() : file;
+
+  // Orden de búsqueda: primero la carpeta indicada (si la hay), luego
+  // una pista por el prefijo del nombre (cat_ / subcat_), luego el resto.
+  const order = [];
+  if (known) order.push(known);
+  if (/^cat_/i.test(base)) order.push('cat_images');
+  if (/^subcat_/i.test(base)) order.push('subcat_images');
+  for (const f of IMG_FOLDERS) if (!order.includes(f)) order.push(f);
+
+  const list = [];
+  for (const f of order) {
+    list.push('./public/' + f + '/' + base);
+    list.push('./' + f + '/' + base);
   }
-  if (!p.includes('product_images/')) {
-    p = p.replace(/^public\//, '');
-    p = 'public/product_images/' + p;
-  } else if (!p.startsWith('public/')) {
-    p = 'public/' + p;
-  }
-  return './' + p;
+  // Por último, la ruta tal cual venía
+  list.push('./public/' + p);
+  list.push('./' + p);
+  return list.filter((v, i, a) => a.indexOf(v) === i);
+}
+
+function fixImgSrc(path) {
+  const c = imgCandidates(path);
+  return c.length ? c[0] : '';
 }
 
 function fetchJSON(path, fallback) {
@@ -639,13 +664,11 @@ function viewSearch(main, q) {
 function normalizeCat(s){
   return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
 }
-// Categorias que se venden por peso (muestran el boton de Gramos)
-const CATS_POR_GRAMOS = ['charcuteria', 'carniceria', 'vegetales'];
-function isCharcuteria(cat){ return CATS_POR_GRAMOS.includes(normalizeCat(cat)); }
+function isCharcuteria(cat){ return normalizeCat(cat) === 'charcuteria'; }
 
 function renderProductGrid(main, prods) {
   const html = `<div class="am-grid">` + prods.map(p => {
-    const charc = isCharcuteria(p.categoria); // por peso: charcuteria, carniceria, vegetales
+    const charc = isCharcuteria(p.categoria);
     const buttons = charc
       ? `<div class="am-btns-row">
            <button class="am-add-btn am-btn-half" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>
@@ -819,7 +842,7 @@ function wireQtyModal() {
   modal.addEventListener('click', (e) => { if (e.target === modal) closeQtyModal(); });
 }
 
-/* ---------------- MODAL por gramos (charcuteria, carniceria, vegetales) ---------------- */
+/* ---------------- MODAL por gramos (solo CHARCUTERIA) ---------------- */
 let _gramsProd = null;
 function computeGramsPrice(pricePerKilo, grams){
   const g = Math.max(0, Number(grams)||0);
@@ -925,16 +948,24 @@ async function boot() {
 }
 
 
-/* ---- Fallback automático: si una imagen de product_images/ no existe,
-        se intenta cargar desde product_images2/ ---- */
+/* ---- Fallback automático: si una imagen no existe en una carpeta,
+        se prueban las demás carpetas del repo (cat_images, subcat_images,
+        product_images, product_images2, banner_images, ads_images) ---- */
 document.addEventListener('error', function (ev) {
   const el = ev.target;
   if (!el || el.tagName !== 'IMG') return;
-  if (el.dataset.pi2Tried === '1') return;
   const src = el.getAttribute('src') || '';
-  if (src.includes('/product_images/')) {
-    el.dataset.pi2Tried = '1';
-    el.src = src.replace('/product_images/', '/product_images2/');
+  if (!src || src.startsWith('data:')) return;
+
+  let list = el._imgTry;
+  if (!list) {
+    list = imgCandidates(src);
+    el._imgTry = list;
+    el._imgIdx = Math.max(0, list.indexOf(src));
+  }
+  el._imgIdx = (el._imgIdx == null ? 0 : el._imgIdx) + 1;
+  if (el._imgIdx < list.length) {
+    el.src = list[el._imgIdx];
   }
 }, true);
 
