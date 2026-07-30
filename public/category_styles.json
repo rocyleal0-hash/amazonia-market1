@@ -10,7 +10,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_CONFITERIA_8643fe63.png"
+    "image_path": "cat_images/cat_CONFITERIA_78e220fe.webp"
   },
   "VIVERES": {
     "icon": "🌽",
@@ -23,7 +23,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_VIVERES_6e756e29.png"
+    "image_path": "cat_images/cat_VIVERES_900fc95a.jpg"
   },
   "BEBIDAS": {
     "icon": "🍹",
@@ -36,7 +36,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_BEBIDAS_47196932.png"
+    "image_path": "cat_images/cat_BEBIDAS_2fc33666.jpg"
   },
   "HIGIENE PERSONAL": {
     "icon": "🏷️",
@@ -49,7 +49,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_HIGIENE_PERSONAL_2d92f812.png"
+    "image_path": "cat_images/cat_HIGIENE_PERSONAL_1bade344.jpg"
   },
   "ESCOLAR": {
     "icon": "🏷️",
@@ -62,7 +62,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_ESCOLAR_690e810f.png"
+    "image_path": "cat_images/cat_ESCOLAR_d8c42de6.jpg"
   },
   "ROPA": {
     "icon": "🏷️",
@@ -101,7 +101,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_CARNICERIA_edc6af43.webp"
+    "image_path": "cat_images/cat_CARNICERIA_fb435de6.jpg"
   },
   "VEGETALES Y VERDURAS": {
     "icon": "🥦",
@@ -153,7 +153,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_FERRETERIA_9546d9a0.webp"
+    "image_path": "cat_images/cat_FERRETERIA_6fa58f6d.jpg"
   },
   "PANADERIA": {
     "icon": "🏷️",
@@ -166,7 +166,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_PANADERIA_da37c6e8.webp"
+    "image_path": "cat_images/cat_PANADERIA_a6658f18.webp"
   },
   "PAPELERIA": {
     "icon": "🏷️",
@@ -179,7 +179,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_PAPELERIA_5b81049e.webp"
+    "image_path": "cat_images/cat_PAPELERIA_790ec3a4.jpg"
   },
   "TELEFONIA": {
     "icon": "🏷️",
@@ -218,7 +218,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_CHARCUTERIA_6a305b5e.png"
+    "image_path": "cat_images/cat_CHARCUTERIA_63243315.jpg"
   },
   "LIMPIEZA": {
     "icon": "🏷️",
@@ -231,7 +231,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_LIMPIEZA_41375ba6.png"
+    "image_path": "cat_images/cat_LIMPIEZA_4279aea2.jpg"
   },
   "vbvb": {
     "icon": "🏷️",
@@ -257,7 +257,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_BOLSOS_Y_CARTERAS_36cff4cd.png"
+    "image_path": "cat_images/cat_BOLSOS_Y_CARTERAS_b4430cd4.jpeg"
   },
   "QUINCALLERIA": {
     "icon": "🏷️",
@@ -270,7 +270,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_LACTEOS_d65ddd91.webp"
+    "image_path": "cat_images/cat_QUINCALLERIA_357d5f1c.jpg"
   },
   "JUGUETERIA": {
     "icon": "🏷️",
