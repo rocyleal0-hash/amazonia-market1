@@ -639,11 +639,13 @@ function viewSearch(main, q) {
 function normalizeCat(s){
   return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
 }
-function isCharcuteria(cat){ return normalizeCat(cat) === 'charcuteria'; }
+// Categorias que se venden por peso (muestran el boton de Gramos)
+const CATS_POR_GRAMOS = ['charcuteria', 'carniceria', 'vegetales'];
+function isCharcuteria(cat){ return CATS_POR_GRAMOS.includes(normalizeCat(cat)); }
 
 function renderProductGrid(main, prods) {
   const html = `<div class="am-grid">` + prods.map(p => {
-    const charc = isCharcuteria(p.categoria);
+    const charc = isCharcuteria(p.categoria); // por peso: charcuteria, carniceria, vegetales
     const buttons = charc
       ? `<div class="am-btns-row">
            <button class="am-add-btn am-btn-half" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>
@@ -817,7 +819,7 @@ function wireQtyModal() {
   modal.addEventListener('click', (e) => { if (e.target === modal) closeQtyModal(); });
 }
 
-/* ---------------- MODAL por gramos (solo CHARCUTERIA) ---------------- */
+/* ---------------- MODAL por gramos (charcuteria, carniceria, vegetales) ---------------- */
 let _gramsProd = null;
 function computeGramsPrice(pricePerKilo, grams){
   const g = Math.max(0, Number(grams)||0);
