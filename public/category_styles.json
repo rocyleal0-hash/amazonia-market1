@@ -10,7 +10,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/cat_CONFITERIA_78e220fe.webp"
+    "image_path": "cat_CONFITERIA_7891eb16.webp"
   },
   "VIVERES": {
     "icon": "🌽",
@@ -36,7 +36,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/cat_BEBIDAS_2fc33666.jpg"
+    "image_path": "cat_BEBIDAS_dd1d1c8a.jpg"
   },
   "HIGIENE PERSONAL": {
     "icon": "🏷️",
@@ -309,7 +309,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_COSMETICOS_1f629c46.jpg"
+    "image_path": "cat_COSMETICOS_b404bc97.jpeg"
   },
   "LACTEO": {
     "icon": "🏷️",
@@ -335,6 +335,6 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_VEGETALES_e881a423.jpg"
+    "image_path": "cat_VEGETALES_80cecd87.jpg"
   }
 }
