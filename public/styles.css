@@ -467,12 +467,16 @@ img { max-width: 100%; }
 /* Logo Cashea al lado del precio (sin bordes ni fondo) */
 .am-card { position: relative; }
 .am-price-row {
-  display: inline-flex;
+  position: relative;
+  display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
   gap: 8px;
   margin: 2px 0 6px;
   flex-wrap: wrap;
+  padding-right: 34px;
+  padding-left: 34px;
 }
 .am-cashea-inline {
   height: 26px;
@@ -666,4 +670,52 @@ img { max-width: 100%; }
   background: #fff; color: #111; border: 0; border-radius: 50%;
   width: 42px; height: 42px; font-size: 22px; font-weight: 900;
   cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.3);
+}
+
+/* ====== Boton compartir al lado del precio ====== */
+.am-share-btn {
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: var(--price, #16a34a);
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 0 2px 6px rgba(22,163,74,.25);
+  transition: transform .12s ease, filter .12s ease;
+}
+.am-share-btn:hover { transform: translateY(-50%) scale(1.08); filter: brightness(1.08); }
+.am-share-btn svg { display: block; }
+@media (max-width: 780px) { .am-price-row { padding-right: 28px; padding-left: 28px; } .am-share-btn { width: 24px; height: 24px; } .am-share-btn svg { width: 14px; height: 14px; } }
+@media (max-width: 520px) { .am-price-row { padding-right: 24px; padding-left: 24px; } .am-share-btn { width: 21px; height: 21px; } .am-share-btn svg { width: 12px; height: 12px; } }
+
+.am-share-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,.55);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+}
+.am-share-modal {
+  background: #fff; border-radius: 14px; padding: 18px;
+  width: 100%; max-width: 340px; text-align: center;
+  box-shadow: 0 12px 32px rgba(0,0,0,.3);
+}
+.am-share-title { font-weight: 800; font-size: 15px; margin-bottom: 12px; }
+.am-share-links { display: grid; gap: 8px; }
+.am-share-link {
+  display: block; padding: 10px 12px; border-radius: 10px;
+  background: var(--price, #16a34a); color: #fff; font-weight: 700;
+  text-decoration: none; border: none; cursor: pointer; font-size: 14px;
+}
+.am-share-close {
+  margin-top: 12px; background: #eee; border: none; border-radius: 10px;
+  padding: 8px 14px; cursor: pointer; font-weight: 700;
 }

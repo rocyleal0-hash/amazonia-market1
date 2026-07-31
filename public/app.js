@@ -683,6 +683,9 @@ function renderProductGrid(main, prods) {
       <div class="am-name">${escapeHtml(p.nombre||'')}</div>
       <div class="am-price-row">
         <span class="am-price">${escapeHtml(formatPrice(p.precio))}</span>
+        <button class="am-share-btn" type="button" data-share="${escapeAttr(p.id||p.nombre||'')}" aria-label="Compartir producto" title="Compartir">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M3 12.5 21 4l-3.2 17-5.4-5.1 6.2-8.1-8.1 6.6z"/></svg>
+        </button>
         <img class="am-cashea-inline" src="./public/cashea.png" alt="Cashea" loading="lazy"/>
       </div>
       ${buttons}
@@ -696,6 +699,16 @@ function renderProductGrid(main, prods) {
       const name = btn.getAttribute('data-add');
       const prod = PRODUCTS.find(p => p.nombre === name);
       if (prod) openQtyModal(prod);
+    });
+  });
+
+  $$('.am-share-btn[data-share]', main).forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const key = btn.getAttribute('data-share');
+      const prod = PRODUCTS.find(p => String(p.id) === key) || PRODUCTS.find(p => p.nombre === key);
+      if (prod) shareProduct(prod);
     });
   });
 
@@ -972,4 +985,66 @@ document.addEventListener('error', function (ev) {
 }, true);
 
 document.addEventListener('DOMContentLoaded', boot);
+
+/* ====== Compartir producto ====== */
+function productShareUrl(prod) {
+  try {
+    const u = new URL(window.location.href);
+    u.hash = '';
+    u.searchParams.set('producto', String(prod.id || prod.nombre || ''));
+    return u.toString();
+  } catch (_) { return window.location.href; }
+}
+
+function shareProduct(prod) {
+  const url = productShareUrl(prod);
+  const text = `${String(prod.nombre || '').toUpperCase()} - ${formatPrice(prod.precio)}`;
+  if (navigator.share) {
+    navigator.share({ title: prod.nombre || 'Producto', text, url }).catch(() => openShareModal(prod, url, text));
+    return;
+  }
+  openShareModal(prod, url, text);
+}
+
+function openShareModal(prod, url, text) {
+  const enc = encodeURIComponent;
+  const links = [
+    ['WhatsApp', `https://api.whatsapp.com/send?text=${enc(text + ' ' + url)}`],
+    ['Facebook', `https://www.facebook.com/sharer/sharer.php?u=${enc(url)}`],
+    ['Telegram', `https://t.me/share/url?url=${enc(url)}&text=${enc(text)}`],
+    ['X (Twitter)', `https://twitter.com/intent/tweet?url=${enc(url)}&text=${enc(text)}`],
+    ['Correo', `mailto:?subject=${enc(text)}&body=${enc(url)}`],
+  ];
+  const prev = document.getElementById('amShareOverlay');
+  if (prev) prev.remove();
+  const ov = document.createElement('div');
+  ov.id = 'amShareOverlay';
+  ov.className = 'am-share-overlay';
+  ov.innerHTML = `
+    <div class="am-share-modal" role="dialog" aria-modal="true">
+      <div class="am-share-title">Compartir ${escapeHtml(prod.nombre || '')}</div>
+      <div class="am-share-links">
+        ${links.map(([n, h]) => `<a class="am-share-link" href="${escapeAttr(h)}" target="_blank" rel="noopener">${escapeHtml(n)}</a>`).join('')}
+        <button type="button" class="am-share-link am-share-copy">Copiar enlace</button>
+      </div>
+      <button type="button" class="am-share-close">Cerrar</button>
+    </div>`;
+  document.body.appendChild(ov);
+  const close = () => ov.remove();
+  ov.addEventListener('click', (e) => { if (e.target === ov) close(); });
+  ov.querySelector('.am-share-close').addEventListener('click', close);
+  ov.querySelector('.am-share-copy').addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    const done = () => { btn.textContent = 'Enlace copiado'; setTimeout(close, 800); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done).catch(done);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = url; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (_) {}
+      ta.remove(); done();
+    }
+  });
+}
+
 })();
