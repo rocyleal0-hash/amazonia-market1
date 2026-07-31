@@ -166,7 +166,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/cat_PANADERIA_a6658f18.webp"
+    "image_path": "cat_PANADERIA_f61c0da3.jpg"
   },
   "PAPELERIA": {
     "icon": "🏷️",
@@ -296,7 +296,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_HELADO_daf4cdc3.webp"
+    "image_path": "cat_HELADO_9c7966f7.jpg"
   },
   "COSMETICOS": {
     "icon": "🏷️",
@@ -309,7 +309,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_COSMETICOS_3951531f.webp"
+    "image_path": "cat_COSMETICOS_1f629c46.jpg"
   },
   "LACTEO": {
     "icon": "🏷️",
@@ -322,7 +322,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_LACTEO_7cafb946.webp"
+    "image_path": "cat_LACTEO_c2b212b0.jpg"
   },
   "VEGETALES": {
     "icon": "🏷️",
@@ -335,6 +335,6 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_VEGETALES_370c3876.webp"
+    "image_path": "cat_VEGETALES_e881a423.jpg"
   }
 }
