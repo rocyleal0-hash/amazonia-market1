@@ -506,12 +506,12 @@ img { max-width: 100%; }
   position: absolute;
   top: 12px;
   right: 14px;
-  height: 72px;
-  width: 72px;              /* forzamos cuadrado para bordes 100% circulares */
-  object-fit: contain;
-  padding: 6px;
+  height: 104px;
+  width: 104px;             /* forzamos cuadrado para bordes 100% circulares */
+  object-fit: cover;
+  padding: 0;
   z-index: 4;
-  background: #ffffff;
+  background: #f5f500;
   border: 1px solid rgba(0,0,0,.08);
   border-radius: 9999px;    /* totalmente circular */
   box-shadow:
@@ -529,10 +529,10 @@ img { max-width: 100%; }
     0 0 0 5px rgba(255,255,255,.45);
 }
 @media (max-width: 780px) {
-  .am-ads-cashea { height: 58px; width: 58px; top: 8px; right: 10px; padding: 6px; }
+  .am-ads-cashea { height: 84px; width: 84px; top: 8px; right: 10px; padding: 0; }
 }
 @media (max-width: 520px) {
-  .am-ads-cashea { height: 48px; width: 48px; top: 6px; right: 8px; padding: 5px; }
+  .am-ads-cashea { height: 70px; width: 70px; top: 6px; right: 8px; padding: 0; }
 }
 
 /* Mejora #3: en el apartado "BOLSOS Y CARTERAS" los productos van con fondo blanco */

@@ -464,7 +464,7 @@ function renderAnunciosBanner(container) {
     <div class="am-ads-wrap">
       <div class="am-ads-hero" id="adsHero" style="${heroStyle}">
         ${slidesHtml}${ovrHtml}
-        <img class="am-ads-cashea" src="./public/cashea.png" alt="Cashea"/>
+        <img class="am-ads-cashea" src="./public/cashea-amarillo.png" alt="Cashea"/>
       </div>
       ${cardsHtml}
     </div>
