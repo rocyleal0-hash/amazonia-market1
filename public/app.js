@@ -464,7 +464,7 @@ function renderAnunciosBanner(container) {
     <div class="am-ads-wrap">
       <div class="am-ads-hero" id="adsHero" style="${heroStyle}">
         ${slidesHtml}${ovrHtml}
-        <img class="am-ads-cashea" src="./public/cashea-amarillo.png" alt="Cashea"/>
+        <img class="am-ads-cashea" src="./public/cashea.png" alt="Cashea"/>
       </div>
       ${cardsHtml}
     </div>
@@ -912,7 +912,65 @@ function wireGramsModal(){
   modal.addEventListener('click', (e) => { if (e.target === modal) closeGramsModal(); });
 }
 
+/* ---------------- ORDEN ALFABÉTICO CON AGRUPACIÓN POR PRODUCTO ----------------
+   Ordena todos los productos alfabéticamente, pero manteniendo juntos (uno al
+   lado del otro) todos los que comparten el mismo nombre base, ignorando el
+   tamaño/presentación (400G, 1KG, 900ML, X12, etc.).
+   Ej: MAIZINA AMERICANA 400G / 200G / 90G  ->  luego CREMA DE ARROZ PRIMOR ...
+   Al agregar un producto nuevo desde la app de escritorio, la web lo coloca
+   automáticamente en su lugar: no hace falta tocar el archivo de Python.      */
+function normText(s) {
+  return String(s || '')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toUpperCase()
+    .replace(/[^A-Z0-9.,%\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Quita del nombre las medidas/presentaciones para obtener el "nombre base".
+const _SIZE_RE = /\b\d+(?:[.,]\d+)?\s*(?:G|GR|GRS|GRAMOS|KG|KGS|K|ML|L|LT|LTS|LITRO|LITROS|CC|OZ|LB|LBS|UND|UNDS|UNID|UNIDADES|U|PZA|PZAS|CM|MM|MTS|M|PACK|ROLLOS|HOJAS)?\b/g;
+function productBaseName(nombre) {
+  let t = normText(nombre);
+  t = t.replace(/\bX\s*\d+(?:[.,]\d+)?\b/g, ' ');   // X12, X 6
+  t = t.replace(_SIZE_RE, ' ');                     // 400G, 1.5LT, 90, ...
+  t = t.replace(/\s+/g, ' ').trim();
+  return t || normText(nombre);
+}
+
+// Valor numérico de la presentación (para desempatar dentro de un mismo grupo).
+function productSizeValue(nombre) {
+  const t = normText(nombre);
+  const m = t.match(/\b(\d+(?:[.,]\d+)?)\s*(KG|K|G|GR|GRS|L|LT|LTS|ML|CC|OZ|LB)\b/);
+  if (!m) return null;
+  const n = parseFloat(m[1].replace(',', '.'));
+  const u = m[2];
+  if (u === 'KG' || u === 'K' || u === 'L' || u === 'LT' || u === 'LTS') return n * 1000;
+  if (u === 'LB') return n * 453.6;
+  if (u === 'OZ') return n * 28.35;
+  return n; // G, GR, GRS, ML, CC
+}
+
+function sortProductsAlpha(list) {
+  const coll = new Intl.Collator('es', { sensitivity: 'base', numeric: true });
+  return (Array.isArray(list) ? list.slice() : []).map((p, i) => ({ p, i }))
+    .sort((a, b) => {
+      const ba = productBaseName(a.p.nombre), bb = productBaseName(b.p.nombre);
+      const c = coll.compare(ba, bb);              // 1) grupo alfabético
+      if (c !== 0) return c;
+      const sa = productSizeValue(a.p.nombre), sb = productSizeValue(b.p.nombre);
+      if (sa != null && sb != null && sa !== sb) return sb - sa;  // 2) mayor a menor
+      if (sa != null && sb == null) return -1;
+      if (sa == null && sb != null) return 1;
+      const n = coll.compare(normText(a.p.nombre), normText(b.p.nombre));
+      if (n !== 0) return n;
+      return a.i - b.i;
+    })
+    .map(x => x.p);
+}
+
 /* ---------------- ROUTER ---------------- */
+
 function route() {
   const main = $('#mainContent'); if (!main) return;
   main.innerHTML = '';
@@ -948,6 +1006,9 @@ async function boot() {
     fetchJSON(base + 'anuncios.json', {}),
   ]);
   SUBCATS = await fetchJSON(base + 'subcategorias.json', {});
+
+  // Orden alfabético agrupado (se aplica a inicio, apartados y búsqueda).
+  PRODUCTS = sortProductsAlpha(PRODUCTS);
 
   applyTheme();          // <- primero el tema, para que la barra se vea correcta
   renderDeliveryBanner();
