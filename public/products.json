@@ -185,7 +185,7 @@
     "id": "869cb7438735434686da47054459c9f2",
     "nombre": "GOMAS DINOS 30G",
     "precio": 0.35,
-    "imagen": "product_images/e44326551ddc49d48cab2c37c7b99363.jpg",
+    "imagen": "product_images/448d0760b2df41a5ab577d26ad54eb73.jpeg",
     "categoria": "CONFITERIA"
   },
   {
@@ -353,7 +353,7 @@
     "id": "0f90bba1571d4db5be6290695e6efd30",
     "nombre": "CRUNCHILATE TIGO 20G",
     "precio": 0.7,
-    "imagen": "product_images/722360c84ec242279d8380bcb28cf5ab.jpg",
+    "imagen": "product_images/e2a944805c20467ca0c4df27d710c2e8.webp",
     "categoria": "CONFITERIA"
   },
   {
@@ -3591,13 +3591,6 @@
     "categoria": "CHARCUTERIA"
   },
   {
-    "id": "3de8e56bfec245798513732c26d99064",
-    "nombre": "MORTADELA POLLO DEL CORRAL 500G",
-    "precio": 2.98,
-    "imagen": "product_images/4a81bf4f0bc546c0b3459eb07d4d523f.jpg",
-    "categoria": "CHARCUTERIA"
-  },
-  {
     "id": "4aaba2deac9a4bbfad7d32cdfb8dd445",
     "nombre": "JAMON AHUMADO",
     "precio": 15.91,
@@ -3678,7 +3671,7 @@
     "id": "32e69f9388934ca6ada0124de6c71d86",
     "nombre": "PAPEL TOALET ALISOF X1",
     "precio": 0.5,
-    "imagen": "product_images/034856e277d945b9a2ca0c1a4987c6fa.jpg",
+    "imagen": "product_images/a0f682612f4243e08a07ac17fa63aa31.webp",
     "categoria": "HIGIENE PERSONAL"
   },
   {
@@ -4560,7 +4553,7 @@
     "id": "66436152024d4a029e443122f5367db4",
     "nombre": "PAÑAL HUGME G X40",
     "precio": 16.9,
-    "imagen": "product_images/d1a0ce999f674d539b313964f7a47847.jpg",
+    "imagen": "product_images/02cfbcf8197f4caca5843d618ff51a2e.jpg",
     "categoria": "HIGIENE PERSONAL"
   },
   {
@@ -5568,7 +5561,7 @@
     "id": "fa0e74fc682a43d18bc2566878664544",
     "nombre": "CARACOL PLAGATOX",
     "precio": 0.7,
-    "imagen": "product_images/b51d292ccb0b46388ccd644e6988dfd6.jpg",
+    "imagen": "product_images/fa8f5398664044d8b20cf77dd9532f69.webp",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -5708,7 +5701,7 @@
     "id": "ceb8d4c784874a4295e1c0a4d298694a",
     "nombre": "MAQUILLAJE NIÑA PEQUEÑO",
     "precio": 4.99,
-    "imagen": "product_images/be058a0eba144f9ea3033c3bc5dd543d.jpg",
+    "imagen": "product_images/10acd50e26d545ccae56513ad79a09b2.webp",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -6009,7 +6002,7 @@
     "id": "819ee5f9f76b436284c8d57998712f53",
     "nombre": "CARTERA TIPO BANDOLERO",
     "precio": 13.99,
-    "imagen": "product_images/96b85441102f471fba1b5fe404f64597.jpg",
+    "imagen": "product_images/fad82ef0b86043f49e4dbdb8dbe7ef6a.webp",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -6072,7 +6065,7 @@
     "id": "e52cdc1711bb49eab858fde5c71be624",
     "nombre": "CARTERA DE NIÑA",
     "precio": 8.99,
-    "imagen": "product_images/11d01eb47e354bfdbecc95d0b922f7ff.jpg",
+    "imagen": "product_images/f982e4fdb001460e830bf3aa9e4fd022.webp",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -6107,7 +6100,7 @@
     "id": "0994b545c2c04943aa8fd775a526d1ee",
     "nombre": "CINTILLO DE TELA",
     "precio": 3.99,
-    "imagen": "product_images/71190a5525144e4099436736af378bed.jpg",
+    "imagen": "product_images/60cc0f6121ca42058f45b9c89bed0167.webp",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -6492,7 +6485,7 @@
     "id": "bb41f2423ea04da8a8877e2e5865a540",
     "nombre": "METRAS NATE",
     "precio": 1.2,
-    "imagen": "product_images/47ee7f5e5b8d45b898152b17bebd5864.jpg",
+    "imagen": "product_images/b12aa754f3694c889be634d018213600.webp",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -6562,7 +6555,7 @@
     "id": "8c6d2f9ed2d342579634292c77c1424f",
     "nombre": "GLOBO INDIBIDUAL",
     "precio": 0.11,
-    "imagen": "product_images/c3bf3e9bdd5a4ba3a77c8b6f84e3f90b.jpg",
+    "imagen": "product_images/8e83b82790a5426686028f9985f49179.webp",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -6674,7 +6667,7 @@
     "id": "271efc8b7493402f9a21b06eb6a699dd",
     "nombre": "VASO CON OREJA",
     "precio": 0.7,
-    "imagen": "product_images/81693909250e4b30abdb1efd098e5507.jpg",
+    "imagen": "product_images/f5e80f1aa7864465bf08145906504b57.webp",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -6730,7 +6723,7 @@
     "id": "d9f17875faf34feda9e017ba623c544d",
     "nombre": "BANDEJA DE ALUMINIO GRANDE",
     "precio": 0.22,
-    "imagen": "product_images/c8b6ff4e8e0343df85898c423814a031.jpg",
+    "imagen": "product_images/00d0818ecef34201b312d768889e7ad3.webp",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -6744,7 +6737,7 @@
     "id": "ca9e05c2e66c4c968c30c5f0121c7a51",
     "nombre": "BANDEJA ALUMINIO PEQUEÑA",
     "precio": 0.18,
-    "imagen": "product_images/35acee09a6564ce79d993656c8ab71fd.jpg",
+    "imagen": "product_images/1538f7c84742494eb895aa83e51c8fb8.jpg",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -6786,7 +6779,7 @@
     "id": "28b4951640fa442ea25b1b45ab54ee51",
     "nombre": "PIEDRA POME",
     "precio": 1.5,
-    "imagen": "product_images/a7ed355b1cda4628a226c2ab548b3404.jpg",
+    "imagen": "product_images/307d7838b340467c8972193b00c6cd0e.jpg",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -6826,9 +6819,9 @@
   },
   {
     "id": "57e5d29658d0498393464439711d3ae5",
-    "nombre": "CORONA PLASTICO",
+    "nombre": "CORONA NIÑA",
     "precio": 2.99,
-    "imagen": "product_images/6acae274af464cb09a8181da00196e60.jpg",
+    "imagen": "product_images/54078b67056c4d699eed4d1e68f1842e.webp",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -7108,7 +7101,7 @@
     "id": "9ed07aa454ce4024a6980cd6c6521aef",
     "nombre": "CADENA CON ZARCILLO DAMA",
     "precio": 6.99,
-    "imagen": "product_images/4067cd16811a4ef79db0779b9c4f9e09.jpg",
+    "imagen": "product_images/e5dcdb79a0d84b678adb0a2267af2fba.jpeg",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -7143,14 +7136,14 @@
     "id": "a091b3f534454251b3c79be71e280484",
     "nombre": "EXTENCIONES DE COLA PARA NIÑA",
     "precio": 1.99,
-    "imagen": "product_images/7b3460995de74c8795b97d7e34406b8c.jpg",
+    "imagen": "product_images/1aa862af3fef4cf985ae7d7ce4527111.webp",
     "categoria": "QUINCALLERIA"
   },
   {
     "id": "3a9b4dd4341c4ccdb028d1baea002f0e",
     "nombre": "PIOJITOS CON EXTENSIONES",
     "precio": 2.99,
-    "imagen": "product_images/85ae652cb73c4a78ab20cad54d49154c.jpg",
+    "imagen": "product_images/5487c94af2504a6eb4e2e6c500d3458b.webp",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -7172,13 +7165,6 @@
     "nombre": "PIOJITOS",
     "precio": 0.99,
     "imagen": "product_images/48e15c48ebaf46fd87b01e5bb8a3a115.jpg",
-    "categoria": "QUINCALLERIA"
-  },
-  {
-    "id": "9f4108ba17ca465b81aa0fec33db1e57",
-    "nombre": "ARTICULOS TODO 1$",
-    "precio": 0.99,
-    "imagen": "product_images/636b5f8c7b0e4e96b8e89d4c3766cba6.jpg",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -7444,7 +7430,7 @@
     "id": "772ddb82ceee4436a5fc6176ce29ef3e",
     "nombre": "MASCARAS",
     "precio": 3.99,
-    "imagen": "product_images/ae5230e6d244482e86ee09cba8fb4560.jpg",
+    "imagen": "product_images/1d4e6d65af4a4be3975a70a7a528a759.webp",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -7592,13 +7578,6 @@
     "nombre": "ANILLO ORO CHINO",
     "precio": 3.99,
     "imagen": "product_images/305e228cd7e343179f415583ff5d47ad.jpg",
-    "categoria": "QUINCALLERIA"
-  },
-  {
-    "id": "df7a388d4261410aaaa68b466d7e84fb",
-    "nombre": "01",
-    "precio": 2.99,
-    "imagen": "product_images/eb702f100f7042b08525f66918a8071b.jpg",
     "categoria": "QUINCALLERIA"
   },
   {
@@ -8256,7 +8235,7 @@
     "id": "c4e29f39f5f946ad82557ce92914f761",
     "nombre": "NUGGETS POLLO",
     "precio": 12.15,
-    "imagen": "product_images/1f385a559bdd465fb352ae4d15278e63.jpg",
+    "imagen": "product_images/a01638315e6045618b2acc6cc6f93d71.jpg",
     "categoria": "CARNICERIA"
   },
   {
