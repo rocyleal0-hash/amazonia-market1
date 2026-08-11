@@ -506,12 +506,12 @@ img { max-width: 100%; }
   position: absolute;
   top: 12px;
   right: 14px;
-  height: 104px;
-  width: 104px;             /* forzamos cuadrado para bordes 100% circulares */
-  object-fit: cover;
-  padding: 0;
+  height: 72px;
+  width: 72px;              /* forzamos cuadrado para bordes 100% circulares */
+  object-fit: contain;
+  padding: 6px;
   z-index: 4;
-  background: #f5f500;
+  background: #ffffff;
   border: 1px solid rgba(0,0,0,.08);
   border-radius: 9999px;    /* totalmente circular */
   box-shadow:
@@ -529,10 +529,10 @@ img { max-width: 100%; }
     0 0 0 5px rgba(255,255,255,.45);
 }
 @media (max-width: 780px) {
-  .am-ads-cashea { height: 84px; width: 84px; top: 8px; right: 10px; padding: 0; }
+  .am-ads-cashea { height: 58px; width: 58px; top: 8px; right: 10px; padding: 6px; }
 }
 @media (max-width: 520px) {
-  .am-ads-cashea { height: 70px; width: 70px; top: 6px; right: 8px; padding: 0; }
+  .am-ads-cashea { height: 48px; width: 48px; top: 6px; right: 8px; padding: 5px; }
 }
 
 /* Mejora #3: en el apartado "BOLSOS Y CARTERAS" los productos van con fondo blanco */
@@ -718,4 +718,52 @@ img { max-width: 100%; }
 .am-share-close {
   margin-top: 12px; background: #eee; border: none; border-radius: 10px;
   padding: 8px 14px; cursor: pointer; font-weight: 700;
+}
+
+/* ================= MEJORAS BANNER PRINCIPAL (1600x460) =================
+   1) El banner respeta la proporción real de las imágenes (1600x460)
+      para que se vean completas, sin franjas blancas.
+   2) Las 4 tarjetas bajan un poco para no tapar el banner.
+   3) Logo Cashea nuevo (formato horizontal).
+========================================================================= */
+.am-ads-wrap { max-width: 1620px; }
+.am-ads-hero {
+  height: auto !important;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  aspect-ratio: 1600 / 460;
+}
+.am-ads-hero .am-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* Tarjetas: menos solapamiento con el banner */
+.am-ads-cards { margin-top: -22px !important; }
+@media (max-width: 780px) {
+  .am-ads-cards { margin-top: -14px !important; }
+}
+@media (max-width: 520px) {
+  .am-ads-cards { margin-top: -10px !important; }
+}
+@media (max-width: 380px) {
+  .am-ads-cards { margin-top: -8px !important; }
+}
+
+/* Nuevo logo Cashea (horizontal) en la esquina del banner */
+.am-ads-cashea {
+  height: 56px;
+  width: auto;
+  padding: 6px 10px;
+  border-radius: 14px;
+  background: #FBFF00;
+  object-fit: contain;
+}
+@media (max-width: 780px) {
+  .am-ads-cashea { height: 42px; width: auto; padding: 5px 8px; border-radius: 12px; top: 8px; right: 10px; }
+}
+@media (max-width: 520px) {
+  .am-ads-cashea { height: 34px; width: auto; padding: 4px 7px; border-radius: 10px; top: 6px; right: 8px; }
 }
