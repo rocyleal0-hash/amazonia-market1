@@ -413,17 +413,38 @@ function renderCategoryCircles() {
   cs.innerHTML = html;
 }
 
+/* ---------- BANNERS: imagen o video (max 15s) ---------- */
+const AM_MAX_VIDEO_SECONDS = 15;
+
+function anunciosSlideList(key) {
+  return (ANUNCIOS[key] || [])
+    .map(s => ({
+      b64: (s.img_b64 || '').trim(),
+      vid: (s.video_b64 || '').trim(),
+      dur: Number(s.video_dur || 0) || 0,
+      url: (s.url || '').trim()
+    }))
+    .filter(s => s.b64 || s.vid);
+}
+
+function slideMediaHtml(s, extraStyle) {
+  const st = extraStyle ? ` style="${extraStyle}"` : '';
+  if (s.vid) {
+    return `<video class="am-slide-video" data-dur="${s.dur || AM_MAX_VIDEO_SECONDS}"
+      src="data:video/mp4;base64,${s.vid}" muted playsinline preload="auto"${st}></video>`;
+  }
+  return `<img src="data:image/png;base64,${s.b64}"${st}/>`;
+}
+
 function renderAnunciosBanner(container) {
   if (!container) return;
   const _cards = ANUNCIOS.cards || [];
   const hasCards = _cards.some(c => (c.img_b64 || c.title));
 
-  let slides = (ANUNCIOS.banner_slides || [])
-    .map(s => ({ b64: (s.img_b64||'').trim(), url: (s.url||'').trim() }))
-    .filter(s => s.b64);
+  let slides = anunciosSlideList('banner_slides');
   if (!slides.length) {
     const legacy = (ANUNCIOS.banner_img_b64 || '').trim();
-    if (legacy) slides.push({ b64: legacy, url:'' });
+    if (legacy) slides.push({ b64: legacy, vid:'', dur:0, url:'' });
   }
   if (!slides.length && !hasCards) return;
 
@@ -436,7 +457,7 @@ function renderAnunciosBanner(container) {
     const href = s.url || '#';
     const target = s.url ? 'target="_blank" rel="noopener"' : '';
     return `<a class="am-slide ${i===0?'active':''}" data-idx="${i}" href="${escapeAttr(href)}" ${target}>
-      <img src="data:image/png;base64,${s.b64}" style="filter: brightness(${brt}%) blur(${blur}px);"/>
+      ${slideMediaHtml(s, `filter: brightness(${brt}%) blur(${blur}px);`)}
     </a>`;
   }).join('');
   const heroStyle = `height:${bh}px;`;
@@ -472,25 +493,90 @@ function renderAnunciosBanner(container) {
 
   if (slides.length > 1) {
     startAnunciosTick();
+  } else {
+    // Un solo slide: si es video, se reproduce en bucle.
+    const v = document.querySelector('#adsHero .am-slide.active video');
+    if (v) { v.muted = true; v.loop = true; v.play().catch(() => {}); }
   }
 }
 
-// Tick global compartido para sincronizar banner principal y secundario
+// Tick global compartido para sincronizar banner principal y secundario.
+// Las imagenes pasan cada 1.8s; si el slide activo es un VIDEO, se espera a
+// que el video termine (maximo 15s) y luego sigue pasando normal.
+const AM_SLIDE_MS = 1800;
 let __ANUNCIOS_TICK_STARTED = false;
 let __ANUNCIOS_TICK_IDX = 0;
+let __ANUNCIOS_TIMER = null;
+const AM_BANNER_SELECTORS = ['#adsHero', '#adsSecondary', '#adsTertiary'];
+
+function anunciosApplyActive() {
+  const activeVideos = [];
+  AM_BANNER_SELECTORS.forEach(sel => {
+    const el = document.querySelector(sel); if (!el) return;
+    const items = el.querySelectorAll('.am-slide');
+    if (!items.length) return;
+    const active = items[__ANUNCIOS_TICK_IDX % items.length];
+    items.forEach(it => {
+      it.classList.remove('active');
+      const v = it.querySelector('video');
+      if (v && it !== active) { try { v.pause(); v.currentTime = 0; } catch (e) {} }
+    });
+    active.classList.add('active');
+    const av = active.querySelector('video');
+    if (av) {
+      av.muted = true;
+      try { av.currentTime = 0; av.play().catch(() => {}); } catch (e) {}
+      activeVideos.push(av);
+    }
+  });
+  return activeVideos;
+}
+
+function anunciosVideoWaitMs(videos) {
+  let ms = 0;
+  videos.forEach(v => {
+    let d = Number(v.dataset.dur || 0) || 0;
+    if (!d && isFinite(v.duration) && v.duration > 0) d = v.duration;
+    if (!d) d = AM_MAX_VIDEO_SECONDS;
+    d = Math.min(d, AM_MAX_VIDEO_SECONDS);
+    ms = Math.max(ms, d * 1000 + 250);
+  });
+  return ms;
+}
+
+function anunciosScheduleNext() {
+  if (__ANUNCIOS_TIMER) { clearTimeout(__ANUNCIOS_TIMER); __ANUNCIOS_TIMER = null; }
+  const videos = anunciosApplyActive();
+  let wait = AM_SLIDE_MS;
+  if (videos.length) {
+    wait = anunciosVideoWaitMs(videos);
+    // Si el video termina antes (o ya venia cargado), avanzamos al terminar.
+    videos.forEach(v => {
+      v.addEventListener('ended', () => {
+        if (v.closest('.am-slide')?.classList.contains('active')) anunciosAdvance();
+      }, { once: true });
+      v.addEventListener('loadedmetadata', () => {
+        if (!v.closest('.am-slide')?.classList.contains('active')) return;
+        const newWait = anunciosVideoWaitMs(videos);
+        if (newWait > wait) {
+          clearTimeout(__ANUNCIOS_TIMER);
+          __ANUNCIOS_TIMER = setTimeout(anunciosAdvance, newWait);
+        }
+      }, { once: true });
+    });
+  }
+  __ANUNCIOS_TIMER = setTimeout(anunciosAdvance, wait);
+}
+
+function anunciosAdvance() {
+  __ANUNCIOS_TICK_IDX = (__ANUNCIOS_TICK_IDX + 1) % 4;
+  anunciosScheduleNext();
+}
+
 function startAnunciosTick() {
   if (__ANUNCIOS_TICK_STARTED) return;
   __ANUNCIOS_TICK_STARTED = true;
-  setInterval(() => {
-    __ANUNCIOS_TICK_IDX = (__ANUNCIOS_TICK_IDX + 1) % 4;
-    ['#adsHero', '#adsSecondary', '#adsTertiary'].forEach(sel => {
-      const el = document.querySelector(sel); if (!el) return;
-      const items = el.querySelectorAll('.am-slide');
-      if (!items.length) return;
-      items.forEach(it => it.classList.remove('active'));
-      items[__ANUNCIOS_TICK_IDX % items.length].classList.add('active');
-    });
-  }, 1800);
+  anunciosScheduleNext();
 }
 
 function thinBannerHtml(slides, domId) {
@@ -498,7 +584,7 @@ function thinBannerHtml(slides, domId) {
     const href = s.url || '#';
     const target = s.url ? 'target="_blank" rel="noopener"' : '';
     return `<a class="am-slide ${i===0?'active':''}" data-idx="${i}" href="${escapeAttr(href)}" ${target}>
-      <img src="data:image/png;base64,${s.b64}"/>
+      ${slideMediaHtml(s, '')}
     </a>`;
   }).join('');
   return `
@@ -511,9 +597,7 @@ function thinBannerHtml(slides, domId) {
 }
 
 function thinBannerSlides(key) {
-  return (ANUNCIOS[key] || [])
-    .map(s => ({ b64: (s.img_b64||'').trim(), url: (s.url||'').trim() }))
-    .filter(s => s.b64);
+  return anunciosSlideList(key);
 }
 
 function renderSecondaryBanner(container) {

@@ -277,7 +277,8 @@ img { max-width: 100%; }
 .am-ads-hero { position: relative; width: 100%; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,.18); }
 .am-ads-hero .am-slide { position: absolute; inset: 0; display: block; opacity: 0; pointer-events: none; text-decoration: none; transition: opacity .4s ease; }
 .am-ads-hero .am-slide.active { opacity: 1; pointer-events: auto; }
-.am-ads-hero .am-slide img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; }
+.am-ads-hero .am-slide img,
+.am-ads-hero .am-slide video { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; }
 .am-ads-hero .ovr { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
 .am-ads-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: -70px; position: relative; z-index: 3; padding: 0 22px; }
 .am-ads-card { background: #fff; border-radius: 10px; padding: 16px 16px 14px; box-shadow: 0 6px 18px rgba(0,0,0,.10); display: flex; flex-direction: column; text-decoration: none; color: #111; transition: transform .18s, box-shadow .18s; }
@@ -767,3 +768,8 @@ img { max-width: 100%; }
 @media (max-width: 520px) {
   .am-ads-cashea { height: 34px; width: auto; padding: 4px 7px; border-radius: 10px; top: 6px; right: 8px; }
 }
+
+
+/* ---- Videos dentro de los banners (imagen o video, max 15s) ---- */
+.am-slide video { width: 100%; height: 100%; display: block; object-fit: contain; background: #000; }
+.am-secondary-banner .am-slide video { object-fit: cover; }
