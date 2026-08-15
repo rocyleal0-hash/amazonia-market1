@@ -9945,5 +9945,285 @@
     "precio": 1.7,
     "imagen": "product_images/acdb97529be24df99224c93ce4fec78d.jpg",
     "categoria": "VEGETALES"
+  },
+  {
+    "id": "0241fabbdc924259baddeb3d6e83bd32",
+    "nombre": "MONO BAGGY",
+    "precio": 11.99,
+    "imagen": "product_images/86b183b18bac4ea096546443dd4a6712.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "35e20186e410450a9d3b795024d525f1",
+    "nombre": "PANTALON CARGO DAMA NEGRO",
+    "precio": 27.99,
+    "imagen": "product_images/d92d76b121824c0893149ae852de916e.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "8a1c379154d64fa49cea52d33f56a66d",
+    "nombre": "SUDADERA MANGA LARGA",
+    "precio": 5.99,
+    "imagen": "product_images/e36f7009df2940e386a68e23ddcfadbc.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "aea4b0d6ff5248b4a5fed3229008f342",
+    "nombre": "PANTALON DE JEANS CLÁSICO DAMA",
+    "precio": 21.99,
+    "imagen": "product_images/801f126b6f3d4daa906a09c44fd06b46.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "ba083eb307f8424385ce9c892d70c005",
+    "nombre": "SHORT TIPO CARGA DAMA",
+    "precio": 11.99,
+    "imagen": "product_images/58ebf0ea641f441686a2f3999853e75e.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "31f97dd2a0c74316ba5e41c8c6235bf3",
+    "nombre": "BLUSAS DAMA",
+    "precio": 11.99,
+    "imagen": "product_images/dade923843024f379b12b25fe9dc4b19.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "b47116ff1c3d4ce79141dbc740ea2177",
+    "nombre": "BLUSAS DAMA",
+    "precio": 11.99,
+    "imagen": "product_images/38de915da78d491f81be0d87fdf919b4.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "b4b94cc32a874035a93025bf2896bf31",
+    "nombre": "BLUSAS DAMA",
+    "precio": 11.99,
+    "imagen": "product_images/0f5ba639d1644f45a4ee9434e011fae3.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "08d9779756ab41e08d7396de3b49654a",
+    "nombre": "BLUSAS DAMA",
+    "precio": 11.99,
+    "imagen": "product_images/db779e8bcdc44738ba4e4dacae3d61e8.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "2cab7e1d9792453fa5074fbfcd775bcc",
+    "nombre": "BLUSAS DAMA",
+    "precio": 11.99,
+    "imagen": "product_images/f7622efaa5a248ad89f32488184c5871.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "3850574d49eb461397425539a6290fea",
+    "nombre": "SHORT DEPORTIVO DAMA",
+    "precio": 5.99,
+    "imagen": "product_images/372cd4883082426ebfea06de69760b3b.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "88a74b88b6764f438507d7429d85e500",
+    "nombre": "BLUSAS DAMA",
+    "precio": 11.99,
+    "imagen": "product_images/47e70c1c4cf349a59c57baa9a4bdb284.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "6a65cdaaf5754ff8b708be8fc4bcc40b",
+    "nombre": "SET DEPORTIVO DAMA",
+    "precio": 14.99,
+    "imagen": "product_images/c574763a5377476e962e99b3fa9e74dd.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "b20de314f7fa4f318f510b6fbb7942ff",
+    "nombre": "SET DEPORTIVO DAMA",
+    "precio": 14.99,
+    "imagen": "product_images/81412afb2b0749be981522f2b678ffa6.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "fcdea124473b4cf3be575cc688bf9961",
+    "nombre": "LICRA DEPORTIVA DAMA",
+    "precio": 9.99,
+    "imagen": "product_images/2a7a17322a90481d8007750701814e93.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "225c80f5998648149bc6b6d0bf139d35",
+    "nombre": "ENTERIZO DAMA DEPORTIVO",
+    "precio": 15.99,
+    "imagen": "product_images/b78daed43ae64126a0417c96d5bffc42.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "435e02e038544aac802b5378af36def2",
+    "nombre": "ENTERIZO DAMA DEPORTIVO",
+    "precio": 15.99,
+    "imagen": "product_images/305d3ead37b24eada9d6ec0e495b03ab.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "4c2f4b27482f4d8fb54d5e8832f49ddf",
+    "nombre": "CONJUNTO DEPORTIVO FUTBOL NIÑO",
+    "precio": 5.99,
+    "imagen": "product_images/3b4d0b22119547bf828247be39f79edf.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "1e536dd04ed34a6890e3794fb8d1d295",
+    "nombre": "CONJUNTO DEPORTIVO FUTBOL NIÑO",
+    "precio": 5.99,
+    "imagen": "product_images/f64974fb1f4649f0b639c9ecc75b60c5.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "d65393a5afea4f2ea8f7a0cfd0991ce4",
+    "nombre": "CONJUNTO DEPORTIVO BASQUET DE NIÑO",
+    "precio": 5.99,
+    "imagen": "product_images/2e80759e83da445c8cc338702920b10e.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "c9182a468c4641f2af8ae28ae72a4da2",
+    "nombre": "CONJUNTO DEPORTIVO BASQUET DE NIÑO",
+    "precio": 5.99,
+    "imagen": "product_images/2c0502df89be4885b17d3e185d7cf365.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "477a9d91896c4b8aa37635930b7a616e",
+    "nombre": "CONJUNTO DEPORTIVO BASQUET DE NIÑO",
+    "precio": 5.99,
+    "imagen": "product_images/8fbb5be00df245828215df20266f1bee.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "90b70c9ada4041c18fa16bf21a24475a",
+    "nombre": "CONJUNTO DEPORTIVO BASQUET DE NIÑO",
+    "precio": 5.99,
+    "imagen": "product_images/0757c276915d47c1b77f3b7f6705e273.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "893fea6134b0497f8226391a77311e52",
+    "nombre": "CONJUNTO DEPORTIVO BASQUET DE NIÑO",
+    "precio": 5.99,
+    "imagen": "product_images/646e2103b5aa4877b3f5cab5a73e7cd1.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "954d8c45c553478c80930755f08f0398",
+    "nombre": "CONJUNTO DEPORTIVO BASQUET DE NIÑO",
+    "precio": 5.99,
+    "imagen": "product_images/dafc0054f85c4e2cb7e954b2e3b6e044.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "bbab4a15a35c45f0b097fa92fa2837f1",
+    "nombre": "SHORT PLAYERO DE NIÑO",
+    "precio": 5.99,
+    "imagen": "product_images/8de93f14724d4b88a42c55c2b61df0d2.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "6b3cfcf8a6b84c11a5525244c1e647c8",
+    "nombre": "CONJUNTO NIÑA PANTALÓN CARICATURA",
+    "precio": 5.99,
+    "imagen": "product_images/70416c08542e4fb3868c26e8a9ecdb14.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "73b7478edb614cafafeaab234d4e29f0",
+    "nombre": "CONJUNTO NIÑA PANTALÓN CARICATURA",
+    "precio": 5.99,
+    "imagen": "product_images/64e5cb3d1757413285efc5b95b7b080f.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "4b27b3381a6c428996c9482a9a25c9ab",
+    "nombre": "CONJUNTO DE SHORT Y FRANELA NIÑA",
+    "precio": 5.99,
+    "imagen": "product_images/959a2aae14994898bb3e4f67997b15ba.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "0e225ef0049c4989bfa210e8f95289b3",
+    "nombre": "CONJUNTO DE SHORT Y FRANELA NIÑA",
+    "precio": 5.99,
+    "imagen": "product_images/2b5b4df7e17e4bbd9184e82d6a333881.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "17093db36bfc4c7383e7349f316cf31d",
+    "nombre": "CONJUNTO DEPORTIVO NIÑA",
+    "precio": 5.99,
+    "imagen": "product_images/e209cc8bc9bf490ea619307a60e72350.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "27597af9ca6b44219da52945a66f5761",
+    "nombre": "CONJUNTO DE NIÑA ALO",
+    "precio": 5.99,
+    "imagen": "product_images/4233c64741574d8180d3e69f1a161a99.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "0f90a2183e6f4b249cab3eedf174a9b5",
+    "nombre": "SHORT PELUCHE",
+    "precio": 3.99,
+    "imagen": "product_images/17110c25a7b046d796dd71f5deface03.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "9b8c0a5f77fe4cbb9dc012ce38e5e26c",
+    "nombre": "PIJAMA  DAMA SHORT",
+    "precio": 4.99,
+    "imagen": "product_images/4a9ba9fc8f1349da9325575a5dfbaf84.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "09c3cdc54ac041ec99542ad53a77bd3d",
+    "nombre": "BATA DAMA",
+    "precio": 5.99,
+    "imagen": "product_images/e611e6c6cd4f4f78b8c8b7ee18af8c84.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "0fefe10095ad433f9c22e953fe4d11bf",
+    "nombre": "CONJUNTO FALDA SHORT",
+    "precio": 17.99,
+    "imagen": "product_images/8caa4f49931041f28f4b9bcc605d681d.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "106b1f0f0c0f44edb4c18f27d9379156",
+    "nombre": "CONJUNTO FALDA SHORT",
+    "precio": 17.99,
+    "imagen": "product_images/0bdbcc4f889a4c7d86c7f1c07186dcd6.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "0010171f83344ff4b3d12a53f4fea4a9",
+    "nombre": "CHAQUETA DAMA DEPORTIVA",
+    "precio": 9.99,
+    "imagen": "product_images/6c703c870acb43d8861b999a699fab5c.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "bc773febb9ba485d949a67a3cbac814e",
+    "nombre": "CHAQUETA DAMA DEPORTIVA",
+    "precio": 9.99,
+    "imagen": "product_images/39ed69c7f94a41c795f55fb384a287d1.jpg",
+    "categoria": "ROPA"
+  },
+  {
+    "id": "e6180bb13645432e98604e0ded00df05",
+    "nombre": "CHAQUETA DAMA DEPORTIVA",
+    "precio": 9.99,
+    "imagen": "product_images/815caf233fd74efab51ba1f5b325868c.jpg",
+    "categoria": "ROPA"
   }
 ]
