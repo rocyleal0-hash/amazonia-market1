@@ -690,6 +690,12 @@ button,input{font-family:inherit}
   .am-ads-hero .am-slide video{object-fit:contain;background:transparent}
 }
 
+/* En PC/tablet el banner también se muestra completo (sin recortes) */
+@media (min-width:721px){
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{object-fit:contain;background:transparent}
+}
+
 /* =========================================================
    11. REDISEÑO CABECERA + BANNER FULL WIDTH (2026)
    Mantiene los colores y el logo de la marca.
@@ -1323,37 +1329,6 @@ body{padding-bottom:96px}
   /* Solo la slide activa define la altura; las demás se superponen ocultas */
   .am-ads-hero .am-slide{position:absolute;inset:0;opacity:0}
   .am-ads-hero .am-slide.active{position:relative;inset:auto;opacity:1}
-  .am-ads-hero .am-slide img,
-  .am-ads-hero .am-slide video{
-    width:100% !important;
-    height:auto !important;
-    object-fit:contain !important;
-    object-position:center center !important;
-    background:transparent !important;
-    display:block;
-  }
-}
-
-
-/* =========================================================
-   17. AJUSTE 2026-G (SOLO PC / TABLET HORIZONTAL)
-   Banner principal COMPLETO en la vista de computadora:
-   se ve toda la imagen (igual que en el telefono), sin recortes.
-   La vista de telefono NO se modifica.
-   ========================================================= */
-@media (min-width:721px){
-  .am-ads-hero{
-    height:auto !important;
-    min-height:0 !important;
-    max-height:none !important;
-    aspect-ratio:auto !important;
-    background:transparent !important;
-    display:block;
-    overflow:hidden;
-  }
-  /* Solo la slide activa define la altura; las demas quedan superpuestas */
-  .am-ads-hero .am-slide{position:absolute;inset:0;opacity:0}
-  .am-ads-hero .am-slide.active{position:relative;inset:auto;opacity:1;transform:none}
   .am-ads-hero .am-slide img,
   .am-ads-hero .am-slide video{
     width:100% !important;

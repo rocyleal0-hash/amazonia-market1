@@ -563,22 +563,21 @@ function renderAnunciosBanner(container) {
 /* ---------- PRODUCTOS DESTACADOS (uno por apartado) ---------- */
 function featuredProductsHtml() {
   const cats = (CATEGORIES && CATEGORIES.length) ? CATEGORIES : [];
-  // Productos que NO se quieren mostrar en "Productos destacados"
-  const FEAT_EXCLUDE = ['BOLSITO PEQUENO DE CUERO CIERRE FLOR'];
-  const _norm = s => String(s||'')
-    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
-    .toUpperCase().trim();
-  const isExcluded = p => FEAT_EXCLUDE.some(n => _norm(n) === _norm(p && p.nombre));
   const picks = [];
   cats.forEach(cat => {
-    const prod = PRODUCTS.find(p => p.categoria === cat && p.imagen && !isExcluded(p))
-      || PRODUCTS.find(p => p.categoria === cat && !isExcluded(p));
+    let pool = PRODUCTS.filter(p => p.categoria === cat);
+    // En "Bolsos y Carteras" mostrar una cartera/billetera, no un bolso/morral.
+    if (/^BOLSOS\s+Y\s+CARTERAS$/i.test(String(cat || '').trim())) {
+      const carteras = pool.filter(p => /CARTERA|BILLETERA/i.test(p.nombre || ''));
+      if (carteras.length) pool = carteras;
+    }
+    const prod = pool.find(p => p.imagen) || pool[0];
     if (prod) picks.push(prod);
   });
   // Rellenar la fila con mas productos para cubrir todo el ancho de la pagina
   const MAX_FEAT = Math.max(4, intOr(SETTINGS.featured_count, 18));
   if (picks.length < MAX_FEAT) {
-    const extras = PRODUCTS.filter(p => p.imagen && !picks.includes(p) && !isExcluded(p));
+    const extras = PRODUCTS.filter(p => p.imagen && !picks.includes(p));
     for (const p of extras) {
       if (picks.length >= MAX_FEAT) break;
       picks.push(p);
