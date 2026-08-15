@@ -566,10 +566,11 @@ function featuredProductsHtml() {
   const picks = [];
   cats.forEach(cat => {
     let pool = PRODUCTS.filter(p => p.categoria === cat);
-    // En "Bolsos y Carteras" mostrar una cartera/billetera, no un bolso/morral.
+    // En "Bolsos y Carteras" mostrar un producto de otra categoría (víveres, carnicería, etc.).
     if (/^BOLSOS\s+Y\s+CARTERAS$/i.test(String(cat || '').trim())) {
-      const carteras = pool.filter(p => /CARTERA|BILLETERA/i.test(p.nombre || ''));
-      if (carteras.length) pool = carteras;
+      const altCats = ['VIVERES','CARNICERIA','CHARCUTERIA','CONFITERIA','BEBIDAS','LIMPIEZA','HIGIENE PERSONAL','LACTEO','PANADERIA','HELADO','VEGETALES'];
+      const altPool = PRODUCTS.filter(p => altCats.includes(String(p.categoria || '').trim().toUpperCase()));
+      if (altPool.length) pool = altPool;
     }
     const prod = pool.find(p => p.imagen) || pool[0];
     if (prod) picks.push(prod);
