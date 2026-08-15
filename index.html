@@ -27,30 +27,35 @@
   </div>
 
   <div class="am-topbar-row am-wrap-wide">
-    <button id="btnMenu" class="am-tb-menu" title="Menú" aria-label="Menú">☰</button>
-
     <a href="./" class="am-brand" id="brandLink">
       <img id="brandLogo" class="am-brand-logo" alt="logo" style="display:none"/>
       <div id="brandTitles"></div>
     </a>
 
+    <button id="btnMenu" class="am-tb-menu" title="Categorías" aria-label="Categorías">
+      <span class="am-tb-menu-ico">☰</span>
+      <span class="am-tb-menu-txt">Categorías</span>
+    </button>
+
     <form id="searchForm" class="am-search">
-      <input id="searchInput" type="text" placeholder="¿Qué desearías buscar hoy?" autocomplete="off"/>
+      <input id="searchInput" type="text" placeholder="Buscar productos..." autocomplete="off"/>
       <button type="submit" class="am-search-btn" aria-label="Buscar">🔍</button>
     </form>
 
-    <div class="am-tb-item am-tb-account" title="Cuenta">
-      <span class="am-tb-icon">👤</span>
-      <span>
-        <span class="am-tb-sub">Iniciar sesión / Registrar</span>
-        <span class="am-tb-strong">Mi cuenta</span>
-      </span>
+    <div class="am-tb-item am-tb-loc" title="Ubicación">
+      <span class="am-tb-icon">📍</span>
+      <span class="am-tb-strong">Coro, Falcón</span>
+      <span class="am-tb-caret">▾</span>
     </div>
 
     <div class="am-socials" id="amSocials"></div>
 
     <a class="am-cart-btn" href="?view=cart" title="Ver carrito" aria-label="Ver carrito">
-      🛒<span class="am-cart-badge" id="cartBadge" hidden></span>
+      <span class="am-cart-ico">🛒<span class="am-cart-badge" id="cartBadge" hidden></span></span>
+      <span class="am-cart-meta">
+        <span class="am-cart-word">Carrito</span>
+        <span class="am-cart-amount" id="cartTotalTop">$0.00</span>
+      </span>
     </a>
   </div>
 
@@ -58,10 +63,11 @@
   <div id="menuPanel" class="am-menu-panel" hidden></div>
 </header>
 
-<!-- =============== CIRCULOS DE CATEGORIAS =============== -->
+<!-- =============== CIRCULOS DE CATEGORIAS (se reubica bajo el banner) =============== -->
 <section class="am-cats-wrap" id="catsWrap">
   <div class="am-cats-scroll" id="catsScroll"></div>
 </section>
+
 
 <!-- =============== CONTENIDO PRINCIPAL =============== -->
 <main class="am-wrap" id="mainContent"></main>
