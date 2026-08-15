@@ -494,6 +494,15 @@ function featuredProductsHtml() {
     const prod = PRODUCTS.find(p => p.categoria === cat && p.imagen) || PRODUCTS.find(p => p.categoria === cat);
     if (prod) picks.push(prod);
   });
+  // Rellenar la fila con mas productos para cubrir todo el ancho de la pagina
+  const MAX_FEAT = 18;
+  if (picks.length < MAX_FEAT) {
+    const extras = PRODUCTS.filter(p => p.imagen && !picks.includes(p));
+    for (const p of extras) {
+      if (picks.length >= MAX_FEAT) break;
+      picks.push(p);
+    }
+  }
   if (!picks.length) return '';
   const cards = picks.map(p => `
     <div class="am-feat-card">
@@ -529,7 +538,7 @@ function bindFeaturedProducts(root) {
 /* ---------- CICLO DEL BANNER PRINCIPAL ----------
    Las imagenes duran IMG_MS. Cuando el slide es un video, se reproduce
    completo (maximo 15s) y recien despues pasa al siguiente. Ciclo infinito. */
-const HERO_IMG_MS = 6000;
+const HERO_IMG_MS = 3000;
 const HERO_VIDEO_MAX_MS = 15000;
 let __heroTimer = null;
 function startHeroCycle() {
@@ -585,7 +594,7 @@ function startAnunciosTick() {
   __ANUNCIOS_TICK_STARTED = true;
   setInterval(() => {
     __ANUNCIOS_TICK_IDX = (__ANUNCIOS_TICK_IDX + 1) % 4;
-    ['#adsHero', '#adsSecondary', '#adsTertiary'].forEach(sel => {
+    ['#adsSecondary', '#adsTertiary'].forEach(sel => {
       const el = document.querySelector(sel); if (!el) return;
       const items = el.querySelectorAll('.am-slide');
       if (!items.length) return;

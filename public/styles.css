@@ -1189,3 +1189,54 @@ body{padding-bottom:96px}
   .am-wa-float{bottom:126px !important}
   .am-pay-float{bottom:126px !important}
 }
+
+
+/* =========================================================
+   16. AJUSTES 2026-F
+   - Cinta de delivery mas rapida
+   - Productos destacados a todo el ancho y mas pegados al banner
+   - Logo mas a la izquierda
+   - Boton de WhatsApp mas abajo
+   ========================================================= */
+
+/* 16.1 Cinta superior mas rapida */
+.am-delivery-track{animation:am-marquee 14s linear infinite !important}
+@media (max-width:720px){
+  .am-delivery-track{animation:am-marquee 10s linear infinite !important}
+}
+
+/* 16.2 Productos destacados: full width, mas arriba y en cuadricula */
+.am-cats-wrap{margin-bottom:0}
+.am-featured{
+  max-width:none !important;
+  width:100vw;
+  margin:2px 0 6px calc(50% - 50vw) !important;
+  padding:6px 18px 4px !important;
+}
+.am-featured-head{margin-bottom:8px !important}
+/* Una sola fila que rellena todo el ancho; el resto se desliza */
+.am-featured-row{
+  grid-auto-flow:column !important;
+  grid-auto-columns:minmax(180px,1fr) !important;
+  gap:12px;
+  padding-bottom:4px !important;
+}
+@media (max-width:720px){
+  .am-featured{padding:6px 12px 4px !important}
+  .am-featured-row{grid-auto-columns:minmax(150px,1fr) !important;gap:10px}
+}
+
+/* 16.3 Logo mas hacia la izquierda (menos pegado a Categorias) */
+@media (min-width:721px){
+  .am-topbar-row{padding-left:4px !important}
+  .am-topbar .am-brand{
+    margin-left:-10px !important;
+    margin-right:26px !important;
+  }
+}
+
+/* 16.4 Boton de WhatsApp un poco mas abajo */
+.am-wa-float{bottom:74px !important}
+@media (max-width:900px){
+  .am-wa-float{bottom:96px !important}
+}
