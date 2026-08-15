@@ -3,10 +3,16 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Amazonia MARKET</title>
-<meta name="description" content="Tienda virtual Amazonia MARKET — Delivery GRATIS en toda la zona de Coro."/>
+<title>Amazonia MARKET — Supermercado online con delivery gratis en Coro</title>
+<meta name="description" content="Compra víveres, charcutería, bebidas y más en Amazonia MARKET. Delivery GRATIS en toda la zona de Coro y pago fácil por WhatsApp."/>
+<meta property="og:title" content="Amazonia MARKET — Supermercado online"/>
+<meta property="og:description" content="Delivery GRATIS en toda la zona de Coro. Miles de productos con los mejores precios."/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E🛒%3C/text%3E%3C/svg%3E"/>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700;800;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 
 <!-- Carga del archivo CSS dentro de public -->
 <link rel="stylesheet" href="public/styles.css"/>
@@ -14,7 +20,7 @@
 </head>
 <body>
 
-<!-- =============== TOPBAR AZUL =============== -->
+<!-- =============== TOPBAR =============== -->
 <header id="topbar" class="am-topbar">
   <div class="am-delivery-banner">
     <div class="am-delivery-track" id="deliveryTrack"></div>
@@ -59,6 +65,72 @@
 
 <!-- =============== CONTENIDO PRINCIPAL =============== -->
 <main class="am-wrap" id="mainContent"></main>
+
+<!-- =============== FRANJA DE CONFIANZA =============== -->
+<section class="am-trust">
+  <div class="am-trust-grid">
+    <div class="am-trust-item">
+      <div class="am-trust-ico">🚚</div>
+      <div><b>Delivery GRATIS</b><span>En toda la zona de Coro</span></div>
+    </div>
+    <div class="am-trust-item">
+      <div class="am-trust-ico">💳</div>
+      <div><b>Pagos seguros</b><span>Pago móvil, efectivo y Cashea</span></div>
+    </div>
+    <div class="am-trust-item">
+      <div class="am-trust-ico">🕘</div>
+      <div><b>Atención rápida</b><span>Lun a Dom · 8:00 am - 8:00 pm</span></div>
+    </div>
+    <div class="am-trust-item">
+      <div class="am-trust-ico">💬</div>
+      <div><b>Pedidos por WhatsApp</b><span>Te acompañamos en tu compra</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FOOTER =============== -->
+<footer class="am-footer">
+  <div class="am-footer-grid">
+    <div>
+      <div class="am-footer-brand">
+        <img id="footerLogo" alt="" style="display:none"/>
+        <div>
+          <div class="n" id="footerName">Amazonia</div>
+          <div class="m" id="footerMarket">MARKET</div>
+        </div>
+      </div>
+      <p>Tu supermercado online en Coro. Productos frescos, precios justos y entrega gratis en la ciudad.</p>
+      <div class="am-footer-socials" id="footerSocials"></div>
+    </div>
+
+    <div>
+      <h4>Apartados</h4>
+      <ul id="footerCats"></ul>
+    </div>
+
+    <div>
+      <h4>Ayuda</h4>
+      <ul>
+        <li><a href="?view=cart">Mi carrito</a></li>
+        <li><a href="./">Cómo comprar</a></li>
+        <li><a href="./">Formas de pago</a></li>
+        <li><a href="./">Zonas de entrega</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Contacto</h4>
+      <ul>
+        <li><a id="footerWa" href="https://wa.me/584246687700" target="_blank" rel="noopener">WhatsApp: +58 424-6687700</a></li>
+        <li>Santa Ana de Coro, Falcón</li>
+        <li>Lun a Dom · 8:00 am - 8:00 pm</li>
+      </ul>
+    </div>
+  </div>
+  <div class="am-footer-bottom">
+    © <span id="footerYear"></span> <span id="footerName2">Amazonia MARKET</span> · Todos los derechos reservados.
+  </div>
+</footer>
 
 <!-- =============== MODAL AGREGAR CANTIDAD =============== -->
 <div id="qtyModal" class="am-modal-overlay" hidden>
@@ -116,5 +188,43 @@
 
 <!-- Carga de Javascript desde la carpeta public -->
 <script src="public/app.js"></script>
+
+<!-- Footer dinámico: usa los MISMOS archivos que el resto de la web -->
+<script>
+(function(){
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+  var get = function(p){ return fetch(p,{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return null;}); };
+
+  get('./public/site_settings.json').then(function(s){
+    if(!s) return;
+    var name = s.site_name || 'Amazonia';
+    var market = s.site_market || 'MARKET';
+    document.getElementById('footerName').textContent = name;
+    document.getElementById('footerMarket').textContent = market;
+    document.getElementById('footerName2').textContent = name + ' ' + market;
+    if (s.site_logo_b64) {
+      var l = document.getElementById('footerLogo');
+      l.src = 'data:image/png;base64,' + String(s.site_logo_b64).trim();
+      l.style.display = 'block';
+    }
+    var soc = [
+      [s.social_facebook_url, 'f', 'Facebook'],
+      [s.social_instagram_url, '◎', 'Instagram'],
+      [s.social_tiktok_url, '♪', 'TikTok']
+    ].filter(function(x){ return x[0]; }).map(function(x){
+      return '<a href="'+x[0]+'" target="_blank" rel="noopener" title="'+x[2]+'" aria-label="'+x[2]+'">'+x[1]+'</a>';
+    }).join('');
+    document.getElementById('footerSocials').innerHTML = soc;
+  });
+
+  get('./public/categories.json').then(function(cats){
+    if(!Array.isArray(cats)) return;
+    var cap = function(s){ s=String(s||''); return s.charAt(0)+s.slice(1).toLowerCase(); };
+    document.getElementById('footerCats').innerHTML = cats.slice(0,8).map(function(c){
+      return '<li><a href="?cat='+encodeURIComponent(c)+'">'+cap(c)+'</a></li>';
+    }).join('');
+  });
+})();
+</script>
 </body>
 </html>
