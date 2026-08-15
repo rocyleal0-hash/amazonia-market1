@@ -131,7 +131,7 @@ function toast(msg) {
   const t = $('#toast'); if (!t) return;
   t.textContent = msg; t.hidden = false;
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => { t.hidden = true; }, 1800);
+  toastTimer = setTimeout(() => { t.hidden = true; }, 5200);
 }
 
 /* ---------------- ESTADO ---------------- */
@@ -470,23 +470,7 @@ function renderAnunciosBanner(container) {
   const heroStyle = `height:${bh}px;`;
   const ovrHtml = ovr>0 ? `<div class="ovr" style="background:rgba(0,0,0,${(ovr/100).toFixed(2)});"></div>` : '';
 
-  let cardsHtml = '';
-  if (hasCards) {
-    cardsHtml = `<div class="am-ads-cards">` + _cards.map(c => {
-      const title = (c.title||'').trim();
-      const url = (c.url||'').trim() || '#';
-      const b64 = (c.img_b64||'').trim();
-      const target = url !== '#' ? 'target="_blank" rel="noopener"' : '';
-      const img = b64
-        ? `<img src="data:image/png;base64,${b64}"/>`
-        : `<div style="color:#aaa;font-size:12px;">Sin imagen</div>`;
-      return `<a class="am-ads-card" href="${escapeAttr(url)}" ${target}>
-        <div class="t">${escapeHtml(title) || '&nbsp;'}</div>
-        <div class="imgbox">${img}</div>
-        <div class="lnk">Ver más ›</div>
-      </a>`;
-    }).join('') + `</div>`;
-  }
+  const cardsHtml = featuredProductsHtml();
 
   container.insertAdjacentHTML('beforeend', `
     <div class="am-ads-wrap">
@@ -498,9 +482,99 @@ function renderAnunciosBanner(container) {
     </div>
   `);
 
-  if (slides.length > 1) {
-    startAnunciosTick();
+  startHeroCycle(slides);
+  bindFeaturedProducts(container);
+}
+
+/* ---------- PRODUCTOS DESTACADOS (uno por apartado) ---------- */
+function featuredProductsHtml() {
+  const cats = (CATEGORIES && CATEGORIES.length) ? CATEGORIES : [];
+  const picks = [];
+  cats.forEach(cat => {
+    const prod = PRODUCTS.find(p => p.categoria === cat && p.imagen) || PRODUCTS.find(p => p.categoria === cat);
+    if (prod) picks.push(prod);
+  });
+  if (!picks.length) return '';
+  const cards = picks.map(p => `
+    <div class="am-feat-card">
+      <a class="am-feat-imgwrap" href="?cat=${encodeURIComponent(p.categoria||'')}">
+        <img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy"/>
+      </a>
+      <div class="am-feat-name">${escapeHtml(p.nombre||'')}</div>
+      <div class="am-feat-cat">${escapeHtml(cap(p.categoria||''))}</div>
+      <div class="am-feat-price">${escapeHtml(formatPrice(p.precio))}</div>
+      <button class="am-feat-add" type="button" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>
+    </div>
+  `).join('');
+  return `
+    <section class="am-featured">
+      <div class="am-featured-head">
+        <h2>Productos destacados</h2>
+      </div>
+      <div class="am-featured-row">${cards}</div>
+    </section>
+  `;
+}
+
+function bindFeaturedProducts(root) {
+  (root || document).querySelectorAll('.am-feat-add[data-add]').forEach(btn => {
+    if (btn.__bound) return; btn.__bound = true;
+    btn.addEventListener('click', () => {
+      const prod = PRODUCTS.find(x => x.nombre === btn.getAttribute('data-add'));
+      if (prod) openQtyModal(prod);
+    });
+  });
+}
+
+/* ---------- CICLO DEL BANNER PRINCIPAL ----------
+   Las imagenes duran IMG_MS. Cuando el slide es un video, se reproduce
+   completo (maximo 15s) y recien despues pasa al siguiente. Ciclo infinito. */
+const HERO_IMG_MS = 6000;
+const HERO_VIDEO_MAX_MS = 15000;
+let __heroTimer = null;
+function startHeroCycle() {
+  const hero = document.getElementById('adsHero');
+  if (!hero) return;
+  const items = Array.from(hero.querySelectorAll('.am-slide'));
+  if (!items.length) return;
+  items.forEach(it => { const v = it.querySelector('video'); if (v) { v.loop = false; v.muted = true; v.playsInline = true; v.pause(); } });
+  if (items.length < 2) {
+    const v0 = items[0].querySelector('video');
+    if (v0) { v0.loop = true; v0.play().catch(()=>{}); }
+    return;
   }
+  let idx = 0;
+  const show = (i) => {
+    if (__heroTimer) { clearTimeout(__heroTimer); __heroTimer = null; }
+    items.forEach((it, k) => {
+      it.classList.toggle('active', k === i);
+      const v = it.querySelector('video');
+      if (v && k !== i) { try { v.pause(); v.currentTime = 0; } catch(e){} }
+    });
+    const cur = items[i];
+    const vid = cur.querySelector('video');
+    const next = () => { idx = (i + 1) % items.length; show(idx); };
+    if (vid) {
+      let done = false;
+      const go = () => { if (done) return; done = true; vid.onended = null; next(); };
+      vid.onended = go;
+      try { vid.currentTime = 0; } catch(e){}
+      const play = vid.play();
+      if (play && play.catch) play.catch(() => {});
+      const dur = (isFinite(vid.duration) && vid.duration > 0) ? vid.duration * 1000 : HERO_VIDEO_MAX_MS;
+      const wait = Math.min(Math.max(dur, 1500), HERO_VIDEO_MAX_MS) + 400;
+      __heroTimer = setTimeout(go, wait);
+      vid.onloadedmetadata = () => {
+        if (done) return;
+        const d = Math.min(Math.max(vid.duration * 1000, 1500), HERO_VIDEO_MAX_MS) + 400;
+        if (__heroTimer) clearTimeout(__heroTimer);
+        __heroTimer = setTimeout(go, d);
+      };
+    } else {
+      __heroTimer = setTimeout(next, HERO_IMG_MS);
+    }
+  };
+  show(0);
 }
 
 // Tick global compartido para sincronizar banner principal y secundario
@@ -518,7 +592,7 @@ function startAnunciosTick() {
       items.forEach(it => it.classList.remove('active'));
       items[__ANUNCIOS_TICK_IDX % items.length].classList.add('active');
     });
-  }, 1800);
+  }, 5200);
 }
 
 function thinBannerHtml(slides, domId) {
@@ -571,7 +645,7 @@ function cap(s){ s=String(s||''); return s.charAt(0).toUpperCase()+s.slice(1).to
 function moveCatsBelowBanner(main) {
   const cw = document.getElementById('catsWrap');
   if (!cw || !main) return;
-  const cards = main.querySelector('.am-ads-cards');
+  const cards = main.querySelector('.am-featured');
   const ads = main.querySelector('.am-ads-wrap');
   if (cards) cards.insertAdjacentElement('beforebegin', cw);
   else if (ads) ads.insertAdjacentElement('afterend', cw);
