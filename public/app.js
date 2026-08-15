@@ -207,7 +207,7 @@ function applyTheme() {
       ? Math.max(0, Math.min(1, intOr(opRaw, 100) / 100))
       : Math.max(0, Math.min(1, numOr(s.hero_opacity, 1)));
     st.textContent = `
-      .am-topbar { position: relative; isolation: isolate; overflow: hidden; }
+      .am-topbar { position: relative; isolation: isolate; overflow: visible; }
       .am-topbar::before {
         content:''; position:absolute; inset:0; z-index:-1;
         background: url('data:image/png;base64,${imgB64}') center/cover no-repeat;
@@ -375,7 +375,24 @@ function renderMenuPanel() {
   const btn = $('#btnMenu');
   if (btn && mp && !btn._wired) {
     btn._wired = true;
-    btn.addEventListener('click', () => { mp.hidden = !mp.hidden; });
+    let bd = document.getElementById('menuBackdrop');
+    if (!bd) {
+      bd = document.createElement('div');
+      bd.id = 'menuBackdrop';
+      bd.className = 'am-menu-backdrop';
+      bd.hidden = true;
+      document.body.appendChild(bd);
+    }
+    const setOpen = (open) => {
+      mp.hidden = !open;
+      bd.hidden = !open;
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    setOpen(false);
+    btn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); setOpen(mp.hidden); });
+    bd.addEventListener('click', () => setOpen(false));
+    mp.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
   }
 }
 

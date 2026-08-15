@@ -936,3 +936,48 @@ button,input{font-family:inherit}
   .am-tile{padding:16px 14px 20px}
   .am-secondary-banner{height:clamp(150px,42vw,240px)}
 }
+
+/* =========================================================
+   13. AJUSTES 2026-C
+   - Menú de Categorías desplegable (ya no se recorta)
+   - Separación de ubicación / redes / carrito en la cabecera
+   - Apartados con imágenes más pequeñas (ancho tipo tarjetas)
+   - Textos y "Ver más" de las 4 tarjetas en negro
+   ========================================================= */
+
+/* ---------- 13.1 MENÚ DE CATEGORÍAS ---------- */
+.am-topbar{overflow:visible}
+.am-menu-panel{
+  position:absolute;top:calc(100% + 6px);left:18px;
+  width:min(360px,92vw);max-height:min(78vh,640px);overflow-y:auto;
+  z-index:9999;
+  box-shadow:0 26px 60px rgba(9,20,45,.35);
+  border:1px solid rgba(255,255,255,.14);
+}
+.am-menu-panel[hidden]{display:none}
+.am-menu-backdrop{
+  position:fixed;inset:0;background:rgba(9,20,45,.28);
+  z-index:55;border:0;
+}
+.am-menu-backdrop[hidden]{display:none}
+.am-tb-menu[aria-expanded="true"]{background:rgba(255,255,255,.28)}
+
+/* ---------- 13.2 ESPACIADO DE LA CABECERA ---------- */
+.am-topbar-row{gap:10px}
+.am-tb-loc{margin-left:2px;margin-right:16px}
+.am-topbar .am-socials{margin:0 4px}
+.am-topbar .am-cart-btn{margin-left:20px}
+
+/* ---------- 13.3 APARTADOS: IMÁGENES MÁS PEQUEÑAS ---------- */
+.am-quad-grid{justify-items:center}
+.am-quad-item{width:100%;max-width:300px}
+.am-quad-imgwrap{aspect-ratio:auto;height:190px}
+.am-quad-name{font-size:12.5px;padding:9px 10px}
+@media (max-width:900px){
+  .am-quad-imgwrap{height:150px}
+}
+
+/* ---------- 13.4 TARJETAS DE ANUNCIOS EN NEGRO ---------- */
+.am-ads-card .t{color:#000}
+.am-ads-card .lnk{color:#000}
+.am-ads-card:hover .lnk{color:#000}
