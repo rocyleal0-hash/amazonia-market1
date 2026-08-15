@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <!-- Vista de escritorio tambien en el telefono: el ancho fijo hace que el movil
      muestre exactamente el mismo diseno de PC, escalado para que quepa completo. -->
-<meta name="viewport" content="width=1280, shrink-to-fit=yes"/>
+<meta name="viewport" content="width=1024, shrink-to-fit=yes"/>
 <title>Amazonia MARKET — Supermercado online con delivery gratis en Coro</title>
 <meta name="description" content="Compra víveres, charcutería, bebidas y más en Amazonia MARKET. Delivery GRATIS en toda la zona de Coro y pago fácil por WhatsApp."/>
 <meta property="og:title" content="Amazonia MARKET — Supermercado online"/>
@@ -19,6 +19,19 @@
 <!-- Carga del archivo CSS dentro de public -->
 <link rel="stylesheet" href="public/styles.css"/>
 
+<script>
+/* Marca el documento como telefono para aplicar la vista movil de la
+   seccion 18 de styles.css (cuadricula 5x2 en productos destacados). */
+(function(){
+  try{
+    var ua = navigator.userAgent || '';
+    var coarse = window.matchMedia && window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+    var phoneUA = /iPhone|iPod|Android.*Mobile|Windows Phone/i.test(ua);
+    var smallScreen = Math.min(screen.width, screen.height) <= 500;
+    if (phoneUA || (coarse && smallScreen)) document.documentElement.classList.add('is-phone');
+  }catch(e){}
+})();
+</script>
 </head>
 <body>
 
@@ -248,5 +261,34 @@
   });
 })();
 </script>
+<script>
+/* Telefono: la primera pantalla termina en "Productos destacados" + la
+   franja de confianza. Las tarjetas mantienen su tamano compacto (como la
+   referencia) y solo se agrega un espacio abajo si sobra pantalla, para que
+   los apartados (Viveres, Charcuteria...) queden debajo del primer scroll. */
+(function(){
+  function fit(){
+    var root = document.documentElement;
+    if(!root.classList.contains('is-phone')) return;
+    var feat = document.querySelector('.am-featured');
+    if(!feat) return;
+    var trust = document.getElementById('amTrustBar');
+    var trustH = trust ? trust.getBoundingClientRect().height : 0;
+    var target = window.innerHeight - trustH - 8;
+    root.style.setProperty('--phone-fill', '6px');
+    var bottom = feat.getBoundingClientRect().bottom + window.scrollY;
+    var rest = target - bottom;
+    root.style.setProperty('--phone-fill', (rest > 0 ? Math.round(rest) : 6) + 'px');
+  }
+  window.addEventListener('load', function(){ setTimeout(fit, 300); setTimeout(fit, 1200); });
+  window.addEventListener('resize', function(){ setTimeout(fit, 200); });
+  var mo = new MutationObserver(function(){ setTimeout(fit, 200); });
+  document.addEventListener('DOMContentLoaded', function(){
+    var m = document.getElementById('mainContent');
+    if(m) mo.observe(m, {childList:true});
+  });
+})();
+</script>
+
 </body>
 </html>
