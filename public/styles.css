@@ -687,7 +687,7 @@ button,input{font-family:inherit}
 /* En móvil el banner se muestra completo (sin recortes) */
 @media (max-width:720px){
   .am-ads-hero .am-slide img,
-  .am-ads-hero .am-slide video{object-fit:contain;background:#0B1220}
+  .am-ads-hero .am-slide video{object-fit:contain;background:transparent}
 }
 
 /* =========================================================
@@ -1040,17 +1040,19 @@ button,input{font-family:inherit}
 @media (max-width:720px){
   .am-ads-hero{
     aspect-ratio:auto !important;
-    height:clamp(200px,56vw,320px) !important;
+    height:auto !important;
     border-radius:0;
     overflow:hidden;
+    background:transparent !important;
   }
-  .am-ads-hero .am-slide{inset:0}
+  .am-ads-hero .am-slide{position:absolute;inset:0;opacity:0}
+  .am-ads-hero .am-slide.active{position:relative;inset:auto;opacity:1}
   .am-ads-hero .am-slide img,
   .am-ads-hero .am-slide video{
-    width:100% !important;height:100% !important;
-    object-fit:cover !important;
-    object-position:center;
-    background:transparent;
+    width:100% !important;height:auto !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
   }
 }
 
@@ -1302,3 +1304,32 @@ body{padding-bottom:96px}
 
 /* Titulos personalizados de la cabecera (ventana "Titulos y logo") */
 .am-brand-titles .am-brand-title-block{margin:0}
+
+/* =========================================================
+   16. AJUSTE 2026-F (SOLO TELÉFONO)
+   Banner principal COMPLETO: se ve toda la imagen, sin recortes.
+   ========================================================= */
+@media (max-width:720px){
+  .am-ads-hero{
+    aspect-ratio:auto !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    border-radius:0;
+    overflow:hidden;
+    background:transparent !important;
+    display:block;
+  }
+  /* Solo la slide activa define la altura; las demás se superponen ocultas */
+  .am-ads-hero .am-slide{position:absolute;inset:0;opacity:0}
+  .am-ads-hero .am-slide.active{position:relative;inset:auto;opacity:1}
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{
+    width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block;
+  }
+}
