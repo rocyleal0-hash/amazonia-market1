@@ -348,8 +348,8 @@ button,input{font-family:inherit}
   aspect-ratio:1/1;background:var(--bg-gray);
   display:flex;align-items:center;justify-content:center;overflow:hidden;
 }
-.am-quad-imgwrap img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
-.am-quad-item:hover .am-quad-imgwrap img{transform:scale(1.05)}
+.am-quad-imgwrap img{width:100%;height:100%;object-fit:contain;transition:transform .35s ease}
+.am-quad-item:hover .am-quad-imgwrap img{transform:none}
 .am-quad-name{
   padding:11px 12px;font-size:13px;font-weight:600;text-align:center;
   color:var(--text);text-transform:capitalize;
@@ -968,13 +968,18 @@ button,input{font-family:inherit}
 .am-topbar .am-socials{margin:0 4px}
 .am-topbar .am-cart-btn{margin-left:20px}
 
-/* ---------- 13.3 APARTADOS: IMÁGENES MÁS PEQUEÑAS ---------- */
+/* ---------- 13.3 APARTADOS: IMÁGENES MÁS PEQUEÑAS Y COMPLETAS ---------- */
 .am-quad-grid{justify-items:center}
 .am-quad-item{width:100%;max-width:300px}
-.am-quad-imgwrap{aspect-ratio:auto;height:190px}
+/* La imagen se muestra COMPLETA (nunca recortada): contain + un poco de aire */
+.am-quad-imgwrap{aspect-ratio:auto;height:190px;padding:10px;box-sizing:border-box;background:#fff}
+.am-quad-imgwrap img{width:100%;height:100%;object-fit:contain;object-position:center}
 .am-quad-name{font-size:12.5px;padding:9px 10px}
 @media (max-width:900px){
-  .am-quad-imgwrap{height:150px}
+  .am-quad-imgwrap{height:160px;padding:8px}
+}
+@media (max-width:520px){
+  .am-quad-imgwrap{height:130px;padding:6px}
 }
 
 /* ---------- 13.4 TARJETAS DE ANUNCIOS EN NEGRO ---------- */
