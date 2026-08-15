@@ -60,6 +60,15 @@ function imgCandidates(path) {
   return list.filter((v, i, a) => a.indexOf(v) === i);
 }
 
+/* Convierte una imagen incrustada (base64) en un src usable.
+   Acepta tanto "data:image/png;base64,AAA..." como el base64 pelado. */
+function b64Src(b64) {
+  const v = String(b64 || '').trim();
+  if (!v) return '';
+  if (v.startsWith('data:')) return v;
+  return 'data:image/png;base64,' + v.replace(/\s+/g, '');
+}
+
 function fixImgSrc(path) {
   const c = imgCandidates(path);
   return c.length ? c[0] : '';
@@ -378,7 +387,7 @@ function catStyle(name) {
     title_color:'#2A2A9C', title_size:22,
     more_bg: SETTINGS.section_more_bg || '#2A2A9C',
     more_fg: SETTINGS.section_more_fg || '#FFFFFF',
-    use_image:false, image_path:''
+    use_image:false, image_path:'', image_b64:''
   };
   const s = Object.assign({}, defaults, CAT_STYLES[name] || {});
   s.circle_size = intOr(s.circle_size, 96);
@@ -396,8 +405,8 @@ function renderCategoryCircles() {
     const icon = s.icon || iconForCategory(cat);
     const sz = s.circle_size;
     let inner, bg;
-    if (s.use_image && s.image_path) {
-      const imgSrc = fixImgSrc(s.image_path);
+    if (s.use_image && (s.image_b64 || s.image_path)) {
+      const imgSrc = b64Src(s.image_b64) || fixImgSrc(s.image_path);
       inner = `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(cat)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"/>
                <span style="display:none;font-size:${Math.round(sz*0.46)}px;">${escapeHtml(icon)}</span>`;
       bg = `background:${s.circle_color};`;
@@ -413,38 +422,17 @@ function renderCategoryCircles() {
   cs.innerHTML = html;
 }
 
-/* ---------- BANNERS: imagen o video (max 15s) ---------- */
-const AM_MAX_VIDEO_SECONDS = 15;
-
-function anunciosSlideList(key) {
-  return (ANUNCIOS[key] || [])
-    .map(s => ({
-      b64: (s.img_b64 || '').trim(),
-      vid: (s.video_b64 || '').trim(),
-      dur: Number(s.video_dur || 0) || 0,
-      url: (s.url || '').trim()
-    }))
-    .filter(s => s.b64 || s.vid);
-}
-
-function slideMediaHtml(s, extraStyle) {
-  const st = extraStyle ? ` style="${extraStyle}"` : '';
-  if (s.vid) {
-    return `<video class="am-slide-video" data-dur="${s.dur || AM_MAX_VIDEO_SECONDS}"
-      src="data:video/mp4;base64,${s.vid}" muted playsinline preload="auto"${st}></video>`;
-  }
-  return `<img src="data:image/png;base64,${s.b64}"${st}/>`;
-}
-
 function renderAnunciosBanner(container) {
   if (!container) return;
   const _cards = ANUNCIOS.cards || [];
   const hasCards = _cards.some(c => (c.img_b64 || c.title));
 
-  let slides = anunciosSlideList('banner_slides');
+  let slides = (ANUNCIOS.banner_slides || [])
+    .map(s => ({ b64: (s.img_b64||'').trim(), url: (s.url||'').trim() }))
+    .filter(s => s.b64);
   if (!slides.length) {
     const legacy = (ANUNCIOS.banner_img_b64 || '').trim();
-    if (legacy) slides.push({ b64: legacy, vid:'', dur:0, url:'' });
+    if (legacy) slides.push({ b64: legacy, url:'' });
   }
   if (!slides.length && !hasCards) return;
 
@@ -457,7 +445,7 @@ function renderAnunciosBanner(container) {
     const href = s.url || '#';
     const target = s.url ? 'target="_blank" rel="noopener"' : '';
     return `<a class="am-slide ${i===0?'active':''}" data-idx="${i}" href="${escapeAttr(href)}" ${target}>
-      ${slideMediaHtml(s, `filter: brightness(${brt}%) blur(${blur}px);`)}
+      <img src="data:image/png;base64,${s.b64}" style="filter: brightness(${brt}%) blur(${blur}px);"/>
     </a>`;
   }).join('');
   const heroStyle = `height:${bh}px;`;
@@ -493,90 +481,25 @@ function renderAnunciosBanner(container) {
 
   if (slides.length > 1) {
     startAnunciosTick();
-  } else {
-    // Un solo slide: si es video, se reproduce en bucle.
-    const v = document.querySelector('#adsHero .am-slide.active video');
-    if (v) { v.muted = true; v.loop = true; v.play().catch(() => {}); }
   }
 }
 
-// Tick global compartido para sincronizar banner principal y secundario.
-// Las imagenes pasan cada 1.8s; si el slide activo es un VIDEO, se espera a
-// que el video termine (maximo 15s) y luego sigue pasando normal.
-const AM_SLIDE_MS = 1800;
+// Tick global compartido para sincronizar banner principal y secundario
 let __ANUNCIOS_TICK_STARTED = false;
 let __ANUNCIOS_TICK_IDX = 0;
-let __ANUNCIOS_TIMER = null;
-const AM_BANNER_SELECTORS = ['#adsHero', '#adsSecondary', '#adsTertiary'];
-
-function anunciosApplyActive() {
-  const activeVideos = [];
-  AM_BANNER_SELECTORS.forEach(sel => {
-    const el = document.querySelector(sel); if (!el) return;
-    const items = el.querySelectorAll('.am-slide');
-    if (!items.length) return;
-    const active = items[__ANUNCIOS_TICK_IDX % items.length];
-    items.forEach(it => {
-      it.classList.remove('active');
-      const v = it.querySelector('video');
-      if (v && it !== active) { try { v.pause(); v.currentTime = 0; } catch (e) {} }
-    });
-    active.classList.add('active');
-    const av = active.querySelector('video');
-    if (av) {
-      av.muted = true;
-      try { av.currentTime = 0; av.play().catch(() => {}); } catch (e) {}
-      activeVideos.push(av);
-    }
-  });
-  return activeVideos;
-}
-
-function anunciosVideoWaitMs(videos) {
-  let ms = 0;
-  videos.forEach(v => {
-    let d = Number(v.dataset.dur || 0) || 0;
-    if (!d && isFinite(v.duration) && v.duration > 0) d = v.duration;
-    if (!d) d = AM_MAX_VIDEO_SECONDS;
-    d = Math.min(d, AM_MAX_VIDEO_SECONDS);
-    ms = Math.max(ms, d * 1000 + 250);
-  });
-  return ms;
-}
-
-function anunciosScheduleNext() {
-  if (__ANUNCIOS_TIMER) { clearTimeout(__ANUNCIOS_TIMER); __ANUNCIOS_TIMER = null; }
-  const videos = anunciosApplyActive();
-  let wait = AM_SLIDE_MS;
-  if (videos.length) {
-    wait = anunciosVideoWaitMs(videos);
-    // Si el video termina antes (o ya venia cargado), avanzamos al terminar.
-    videos.forEach(v => {
-      v.addEventListener('ended', () => {
-        if (v.closest('.am-slide')?.classList.contains('active')) anunciosAdvance();
-      }, { once: true });
-      v.addEventListener('loadedmetadata', () => {
-        if (!v.closest('.am-slide')?.classList.contains('active')) return;
-        const newWait = anunciosVideoWaitMs(videos);
-        if (newWait > wait) {
-          clearTimeout(__ANUNCIOS_TIMER);
-          __ANUNCIOS_TIMER = setTimeout(anunciosAdvance, newWait);
-        }
-      }, { once: true });
-    });
-  }
-  __ANUNCIOS_TIMER = setTimeout(anunciosAdvance, wait);
-}
-
-function anunciosAdvance() {
-  __ANUNCIOS_TICK_IDX = (__ANUNCIOS_TICK_IDX + 1) % 4;
-  anunciosScheduleNext();
-}
-
 function startAnunciosTick() {
   if (__ANUNCIOS_TICK_STARTED) return;
   __ANUNCIOS_TICK_STARTED = true;
-  anunciosScheduleNext();
+  setInterval(() => {
+    __ANUNCIOS_TICK_IDX = (__ANUNCIOS_TICK_IDX + 1) % 4;
+    ['#adsHero', '#adsSecondary', '#adsTertiary'].forEach(sel => {
+      const el = document.querySelector(sel); if (!el) return;
+      const items = el.querySelectorAll('.am-slide');
+      if (!items.length) return;
+      items.forEach(it => it.classList.remove('active'));
+      items[__ANUNCIOS_TICK_IDX % items.length].classList.add('active');
+    });
+  }, 1800);
 }
 
 function thinBannerHtml(slides, domId) {
@@ -584,7 +507,7 @@ function thinBannerHtml(slides, domId) {
     const href = s.url || '#';
     const target = s.url ? 'target="_blank" rel="noopener"' : '';
     return `<a class="am-slide ${i===0?'active':''}" data-idx="${i}" href="${escapeAttr(href)}" ${target}>
-      ${slideMediaHtml(s, '')}
+      <img src="data:image/png;base64,${s.b64}"/>
     </a>`;
   }).join('');
   return `
@@ -597,7 +520,9 @@ function thinBannerHtml(slides, domId) {
 }
 
 function thinBannerSlides(key) {
-  return anunciosSlideList(key);
+  return (ANUNCIOS[key] || [])
+    .map(s => ({ b64: (s.img_b64||'').trim(), url: (s.url||'').trim() }))
+    .filter(s => s.b64);
 }
 
 function renderSecondaryBanner(container) {
@@ -650,9 +575,7 @@ function buildHomeTile(cat) {
   if (subs.length) {
     let items = subs.map(sub => {
       const nombre = sub.nombre || '';
-      const imgSrc = sub.image_b64
-        ? ('data:image/png;base64,' + String(sub.image_b64).trim())
-        : fixImgSrc(sub.image_path || '');
+      const imgSrc = b64Src(sub.image_b64) || fixImgSrc(sub.image_path || '');
       const href = `?cat=${encodeURIComponent(cat)}&sub=${encodeURIComponent(nombre)}`;
       const imgHtml = imgSrc
         ? `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(nombre)}" loading="lazy"/>`
