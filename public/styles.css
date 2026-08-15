@@ -1240,3 +1240,60 @@ body{padding-bottom:96px}
 @media (max-width:900px){
   .am-wa-float{bottom:96px !important}
 }
+
+/* =========================================================
+   17. AJUSTES CONECTADOS AL PANEL DE ADMINISTRACION (Python)
+   Todas estas variables las escribe app.js leyendo
+   site_settings.json (lo que guardas en el panel).
+   ========================================================= */
+:root{
+  --marquee-dur:14s;
+  --marquee-dur-mobile:10s;
+  --wa-bottom:74px;
+  --wa-bottom-mobile:96px;
+  --featured-min:180px;
+  --cart-page-bg:transparent;
+  --cart-page-pad:0px;
+  --cart-qty-fg:var(--text);
+  --cart-line-bg:var(--cart-price-bg);
+  --cart-line-fg:var(--cart-price-fg);
+  --cart-total-fg:var(--price);
+  --cart-pay-bg:var(--price);
+  --cart-pay-fg:#ffffff;
+  --cart-add-bg:var(--primary);
+  --cart-add-fg:#ffffff;
+  --cart-del-bg:#FEE2E2;
+  --cart-del-fg:#B91C1C;
+}
+
+/* Cinta de delivery: velocidad editable */
+.am-delivery-track{animation:am-marquee var(--marquee-dur) linear infinite !important}
+@media (max-width:720px){
+  .am-delivery-track{animation:am-marquee var(--marquee-dur-mobile) linear infinite !important}
+}
+
+/* Boton flotante de WhatsApp: posicion editable */
+.am-wa-float{bottom:var(--wa-bottom) !important}
+@media (max-width:900px){
+  .am-wa-float{bottom:var(--wa-bottom-mobile) !important}
+}
+
+/* Productos destacados: ancho minimo de cada tarjeta editable */
+.am-featured-row{grid-auto-columns:minmax(var(--featured-min),1fr) !important}
+
+/* Carrito: colores editables desde el panel */
+.am-cart-page{
+  background:var(--cart-page-bg);
+  padding:var(--cart-page-pad);
+  border-radius:var(--radius);
+}
+.am-cart-price{color:var(--cart-unit-fg)}
+.am-cart-qty input,.am-cart-qty button{color:var(--cart-qty-fg)}
+.am-cart-line{background:var(--cart-line-bg);color:var(--cart-line-fg)}
+.am-cart-total{color:var(--cart-total-fg)}
+.am-cart-actions .am-btn-success{background:var(--cart-pay-bg);color:var(--cart-pay-fg)}
+.am-cart-actions .am-btn-primary{background:var(--cart-add-bg);color:var(--cart-add-fg)}
+.am-cart-del{background:var(--cart-del-bg);color:var(--cart-del-fg)}
+
+/* Titulos personalizados de la cabecera (ventana "Titulos y logo") */
+.am-brand-titles .am-brand-title-block{margin:0}

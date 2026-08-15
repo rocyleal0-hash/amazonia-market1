@@ -140,6 +140,7 @@ let PRODUCTS = [];
 let CATEGORIES = [];
 let CAT_STYLES = {};
 let ANUNCIOS = {};
+let TITLES    = [];   // titles_settings.json (bloques de titulo de la cabecera)
 let SUBCATS   = {};   // { "VIVERES": [ {nombre, image_path, image_b64, keywords:[...] }, ... ] }
 
 /* ---------------- TEMA (aplica TODOS los ajustes del editor) ---------------- */
@@ -184,6 +185,45 @@ function applyTheme() {
   setVar('--cart-unit-fg',  s.cart_unit_color);
   setVar('--cart-price-bg', s.cart_price_bg);
   setVar('--cart-price-fg', s.cart_price_fg);
+
+  // Carrito (ventana "Colores del carrito" del panel)
+  setVar('--cart-unit-fg',   s.cart_price_color);
+  setVar('--cart-qty-fg',    s.cart_qty_color);
+  setVar('--cart-line-bg',   s.cart_line_bg);
+  setVar('--cart-line-fg',   s.cart_line_fg);
+  setVar('--cart-total-fg',  s.cart_total_color);
+  setVar('--cart-pay-bg',    s.cart_pay_bg);
+  setVar('--cart-pay-fg',    s.cart_pay_fg);
+  setVar('--cart-add-bg',    s.cart_add_bg);
+  setVar('--cart-add-fg',    s.cart_add_fg);
+  setVar('--cart-del-bg',    s.cart_del_bg);
+  setVar('--cart-del-fg',    s.cart_del_fg);
+  const cpb = String(s.cart_page_bg || '').trim();
+  if (cpb) { root.setProperty('--cart-page-bg', cpb); root.setProperty('--cart-page-pad', '14px'); }
+
+  // Movimiento y medidas (ventana "Movimiento y medidas" del panel)
+  const mq = numOr(s.delivery_speed_s, null);
+  if (mq !== null && mq > 0) {
+    root.setProperty('--marquee-dur', mq + 's');
+    root.setProperty('--marquee-dur-mobile', Math.max(2, mq * 0.72).toFixed(1) + 's');
+  }
+  const wab = intOr(s.wa_bottom, null);
+  if (wab !== null) {
+    root.setProperty('--wa-bottom', wab + 'px');
+    root.setProperty('--wa-bottom-mobile', (wab + 22) + 'px');
+  }
+  const fmin = intOr(s.featured_min_width, null);
+  if (fmin !== null && fmin > 60) root.setProperty('--featured-min', fmin + 'px');
+
+  // Teléfono de WhatsApp (botón flotante y pie de página)
+  const phone = String(s.whatsapp_phone || '').replace(/[^0-9]/g, '');
+  if (phone) {
+    const waFloat = document.getElementById('amWaFloat');
+    if (waFloat) waFloat.href = 'https://wa.me/' + phone +
+      '?text=' + encodeURIComponent('¡Hola! 👋 Quisiera realizar un pedido, ¿me podría ayudar por favor? 🛒');
+    const waFooter = document.getElementById('footerWa');
+    if (waFooter) { waFooter.href = 'https://wa.me/' + phone; waFooter.textContent = 'WhatsApp: +' + phone; }
+  }
 
   // Alineación / desplazamiento del logo
   const align = String(s.logo_align || 'left').toLowerCase();
@@ -316,6 +356,21 @@ function renderDeliveryBanner() {
   if (el) el.innerHTML = group + group;
 }
 
+/* Carga en caliente las fuentes de Google usadas por los títulos del panel */
+const __LOADED_FONTS = new Set(['Poppins','Pacifico','Arial','Georgia','Times New Roman','Courier New','Verdana']);
+function ensureTitleFonts(list) {
+  (list || []).forEach(f => {
+    const name = String(f || '').trim();
+    if (!name || __LOADED_FONTS.has(name)) return;
+    __LOADED_FONTS.add(name);
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=' +
+      encodeURIComponent(name).replace(/%20/g, '+') + ':wght@400;500;600;700;800;900&display=swap';
+    document.head.appendChild(link);
+  });
+}
+
 function renderBrand() {
   const siteName   = SETTINGS.site_name   || 'Amazonia';
   const siteMarket = SETTINGS.site_market || 'MARKET';
@@ -337,10 +392,27 @@ function renderBrand() {
   const hideTitles = truthy(SETTINGS.hide_titles);
   const bt = $('#brandTitles');
   if (bt) {
-    bt.innerHTML = hideTitles ? '' : `
+    if (hideTitles) { bt.innerHTML = ''; }
+    else {
+      const blocks = (TITLES || []).filter(b => b && String(b.text || '').trim() !== '');
+      if (blocks.length) {
+        ensureTitleFonts(blocks.map(b => b.font));
+        bt.innerHTML = blocks.map(b => {
+          const size = intOr(b.size, 28);
+          const font = String(b.font || 'Poppins');
+          const color = String(b.color || '#FFFFFF');
+          const weight = String(b.weight || '700');
+          return `<div class="am-brand-title-block" style="font-family:'${escapeAttr(font)}',sans-serif;` +
+                 `font-size:${size}px;color:${escapeAttr(color)};font-weight:${escapeAttr(weight)};` +
+                 `line-height:1.05;white-space:nowrap;">${escapeHtml(b.text)}</div>`;
+        }).join('');
+      } else {
+        bt.innerHTML = `
       <div class="am-brand-name">${escapeHtml(siteName)}</div>
       <div class="am-brand-market">${escapeHtml(siteMarket)}</div>
     `;
+      }
+    }
   }
 }
 
@@ -403,7 +475,7 @@ function catStyle(name) {
     title_color:'#2A2A9C', title_size:22,
     more_bg: SETTINGS.section_more_bg || '#2A2A9C',
     more_fg: SETTINGS.section_more_fg || '#FFFFFF',
-    use_image:false, image_path:''
+    use_image:false, image_path:'', image_b64:''
   };
   const s = Object.assign({}, defaults, CAT_STYLES[name] || {});
   s.circle_size = intOr(s.circle_size, 96);
@@ -421,8 +493,10 @@ function renderCategoryCircles() {
     const icon = s.icon || iconForCategory(cat);
     const sz = s.circle_size;
     let inner, bg;
-    if (s.use_image && s.image_path) {
-      const imgSrc = fixImgSrc(s.image_path);
+    if (s.use_image && (s.image_b64 || s.image_path)) {
+      const imgSrc = s.image_b64
+        ? ('data:image/png;base64,' + String(s.image_b64).trim())
+        : fixImgSrc(s.image_path);
       inner = `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(cat)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"/>
                <span style="display:none;font-size:${Math.round(sz*0.46)}px;">${escapeHtml(icon)}</span>`;
       bg = `background:${s.circle_color};`;
@@ -495,7 +569,7 @@ function featuredProductsHtml() {
     if (prod) picks.push(prod);
   });
   // Rellenar la fila con mas productos para cubrir todo el ancho de la pagina
-  const MAX_FEAT = 18;
+  const MAX_FEAT = Math.max(4, intOr(SETTINGS.featured_count, 18));
   if (picks.length < MAX_FEAT) {
     const extras = PRODUCTS.filter(p => p.imagen && !picks.includes(p));
     for (const p of extras) {
@@ -538,8 +612,8 @@ function bindFeaturedProducts(root) {
 /* ---------- CICLO DEL BANNER PRINCIPAL ----------
    Las imagenes duran IMG_MS. Cuando el slide es un video, se reproduce
    completo (maximo 15s) y recien despues pasa al siguiente. Ciclo infinito. */
-const HERO_IMG_MS = 3000;
-const HERO_VIDEO_MAX_MS = 15000;
+const heroImgMs   = () => Math.max(800, Math.round(numOr(SETTINGS.hero_image_seconds, 3) * 1000));
+const heroVidMaxMs = () => Math.max(2000, Math.round(numOr(SETTINGS.hero_video_max_seconds, 15) * 1000));
 let __heroTimer = null;
 function startHeroCycle() {
   const hero = document.getElementById('adsHero');
@@ -570,17 +644,17 @@ function startHeroCycle() {
       try { vid.currentTime = 0; } catch(e){}
       const play = vid.play();
       if (play && play.catch) play.catch(() => {});
-      const dur = (isFinite(vid.duration) && vid.duration > 0) ? vid.duration * 1000 : HERO_VIDEO_MAX_MS;
-      const wait = Math.min(Math.max(dur, 1500), HERO_VIDEO_MAX_MS) + 400;
+      const dur = (isFinite(vid.duration) && vid.duration > 0) ? vid.duration * 1000 : heroVidMaxMs();
+      const wait = Math.min(Math.max(dur, 1500), heroVidMaxMs()) + 400;
       __heroTimer = setTimeout(go, wait);
       vid.onloadedmetadata = () => {
         if (done) return;
-        const d = Math.min(Math.max(vid.duration * 1000, 1500), HERO_VIDEO_MAX_MS) + 400;
+        const d = Math.min(Math.max(vid.duration * 1000, 1500), heroVidMaxMs()) + 400;
         if (__heroTimer) clearTimeout(__heroTimer);
         __heroTimer = setTimeout(go, d);
       };
     } else {
-      __heroTimer = setTimeout(next, HERO_IMG_MS);
+      __heroTimer = setTimeout(next, heroImgMs());
     }
   };
   show(0);
@@ -939,7 +1013,7 @@ function viewCart(main) {
   const wa = $('#btnCartWhatsapp');
   if (wa) wa.addEventListener('click', (e) => {
     e.preventDefault();
-    const phone = '584246687700';
+    const phone = String(SETTINGS.whatsapp_phone || '').replace(/[^0-9]/g,'') || '584246687700';
     const items = Object.values(loadCart());
     const lines = items.map(it => `* ${it.qty}x ${String(it.nombre||'').toUpperCase()} - ${formatPrice(it.precio*it.qty)}`);
     const msg =
@@ -1133,6 +1207,8 @@ async function boot() {
     fetchJSON(base + 'anuncios.json', {}),
   ]);
   SUBCATS = await fetchJSON(base + 'subcategorias.json', {});
+  TITLES  = await fetchJSON(base + 'titles_settings.json', []);
+  if (!Array.isArray(TITLES)) TITLES = [];
 
   // Orden alfabético agrupado (se aplica a inicio, apartados y búsqueda).
   PRODUCTS = sortProductsAlpha(PRODUCTS);
