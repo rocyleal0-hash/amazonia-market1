@@ -60,15 +60,6 @@ function imgCandidates(path) {
   return list.filter((v, i, a) => a.indexOf(v) === i);
 }
 
-/* Convierte una imagen incrustada (base64) en un src usable.
-   Acepta tanto "data:image/png;base64,AAA..." como el base64 pelado. */
-function b64Src(b64) {
-  const v = String(b64 || '').trim();
-  if (!v) return '';
-  if (v.startsWith('data:')) return v;
-  return 'data:image/png;base64,' + v.replace(/\s+/g, '');
-}
-
 function fixImgSrc(path) {
   const c = imgCandidates(path);
   return c.length ? c[0] : '';
@@ -387,7 +378,7 @@ function catStyle(name) {
     title_color:'#2A2A9C', title_size:22,
     more_bg: SETTINGS.section_more_bg || '#2A2A9C',
     more_fg: SETTINGS.section_more_fg || '#FFFFFF',
-    use_image:false, image_path:'', image_b64:''
+    use_image:false, image_path:''
   };
   const s = Object.assign({}, defaults, CAT_STYLES[name] || {});
   s.circle_size = intOr(s.circle_size, 96);
@@ -405,8 +396,8 @@ function renderCategoryCircles() {
     const icon = s.icon || iconForCategory(cat);
     const sz = s.circle_size;
     let inner, bg;
-    if (s.use_image && (s.image_b64 || s.image_path)) {
-      const imgSrc = b64Src(s.image_b64) || fixImgSrc(s.image_path);
+    if (s.use_image && s.image_path) {
+      const imgSrc = fixImgSrc(s.image_path);
       inner = `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(cat)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"/>
                <span style="display:none;font-size:${Math.round(sz*0.46)}px;">${escapeHtml(icon)}</span>`;
       bg = `background:${s.circle_color};`;
@@ -575,7 +566,9 @@ function buildHomeTile(cat) {
   if (subs.length) {
     let items = subs.map(sub => {
       const nombre = sub.nombre || '';
-      const imgSrc = b64Src(sub.image_b64) || fixImgSrc(sub.image_path || '');
+      const imgSrc = sub.image_b64
+        ? ('data:image/png;base64,' + String(sub.image_b64).trim())
+        : fixImgSrc(sub.image_path || '');
       const href = `?cat=${encodeURIComponent(cat)}&sub=${encodeURIComponent(nombre)}`;
       const imgHtml = imgSrc
         ? `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(nombre)}" loading="lazy"/>`
