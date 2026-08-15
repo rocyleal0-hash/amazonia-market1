@@ -73,7 +73,7 @@
 <main class="am-wrap" id="mainContent"></main>
 
 <!-- =============== FRANJA DE CONFIANZA =============== -->
-<section class="am-trust">
+<section class="am-trust am-trust-float" id="amTrustBar">
   <div class="am-trust-grid">
     <div class="am-trust-item">
       <div class="am-trust-ico">🚚</div>
@@ -191,6 +191,20 @@
 <a id="amPayNow" class="am-pay-float" href="?view=cart" style="display:none" aria-label="Pagar ahora">
   Pagar ahora
 </a>
+
+<script>
+(function(){
+  var bar = document.getElementById('amTrustBar');
+  if(!bar) return;
+  var t = null;
+  function onScroll(){
+    bar.classList.add('is-hidden');
+    if (t) clearTimeout(t);
+    t = setTimeout(function(){ bar.classList.remove('is-hidden'); }, 550);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+})();
+</script>
 
 <!-- Carga de Javascript desde la carpeta public -->
 <script src="public/app.js"></script>
