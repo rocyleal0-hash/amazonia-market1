@@ -690,12 +690,6 @@ button,input{font-family:inherit}
   .am-ads-hero .am-slide video{object-fit:contain;background:transparent}
 }
 
-/* En PC/tablet el banner también se muestra completo (sin recortes) */
-@media (min-width:721px){
-  .am-ads-hero .am-slide img,
-  .am-ads-hero .am-slide video{object-fit:contain;background:transparent}
-}
-
 /* =========================================================
    11. REDISEÑO CABECERA + BANNER FULL WIDTH (2026)
    Mantiene los colores y el logo de la marca.
