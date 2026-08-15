@@ -1333,3 +1333,84 @@ body{padding-bottom:96px}
     display:block;
   }
 }
+
+/* =========================================================
+   18. VISTA DEL TELEFONO (solo moviles)
+   Objetivo: que el telefono muestre los productos destacados
+   en cuadricula de 5 columnas x 2 filas, tal como en la
+   referencia, y que todo quepa en una sola pantalla.
+   Se activa con la clase .is-phone que agrega index.html.
+   ========================================================= */
+html.is-phone .am-featured{
+  padding:8px 12px 4px !important;
+  margin:0 0 4px calc(50% - 50vw) !important;
+}
+html.is-phone .am-featured-head h2{font-size:26px !important;margin:2px 0 6px}
+
+html.is-phone .am-featured-row{
+  grid-auto-flow:row !important;
+  grid-auto-columns:auto !important;
+  grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  gap:12px !important;
+  overflow:visible !important;
+  padding-bottom:0 !important;
+}
+/* Solo 10 productos: 5 por fila, 2 filas */
+html.is-phone .am-feat-card:nth-child(n+11){display:none !important}
+
+html.is-phone .am-feat-card{
+  padding:10px 10px 0 !important;
+  gap:4px !important;
+  border-radius:10px !important;
+  overflow:hidden;
+}
+html.is-phone .am-feat-imgwrap{height:150px !important}
+html.is-phone .am-feat-name{
+  font-size:15px !important;font-weight:800 !important;
+  text-transform:uppercase;min-height:2.4em !important;
+}
+html.is-phone .am-feat-cat{font-size:14px !important}
+html.is-phone .am-feat-price{font-size:24px !important;margin-top:2px !important}
+/* Boton compacto: se ve como la franja azul de la referencia
+   pero sigue funcionando para agregar al carrito */
+html.is-phone .am-feat-add{
+  margin:6px -10px 0 !important;
+  width:calc(100% + 20px) !important;
+  padding:3px 0 !important;
+  border-radius:0 !important;
+  font-size:11px !important;
+  line-height:1.2 !important;
+}
+
+/* 18.1 Telefono: tarjetas un poco mas grandes (como la referencia) */
+html.is-phone .am-featured-head h2{font-size:24px !important}
+html.is-phone .am-featured-row{gap:14px !important}
+html.is-phone .am-feat-card{padding:12px 12px 0 !important}
+html.is-phone .am-feat-imgwrap{height:180px !important}
+html.is-phone .am-feat-name{font-size:16px !important;min-height:2.4em !important}
+html.is-phone .am-feat-cat{font-size:15px !important}
+html.is-phone .am-feat-price{font-size:26px !important}
+html.is-phone .am-feat-add{font-size:12px !important;padding:4px 0 !important;margin:8px -12px 0 !important;width:calc(100% + 24px) !important}
+
+/* 18.2 Telefono: la primera pantalla llega justo hasta destacados */
+html.is-phone .am-featured{
+  width:100% !important;
+  margin:0 auto 0 !important;
+  padding:8px 10px var(--phone-fill,6px) !important;
+  box-sizing:border-box;
+}
+html.is-phone .am-featured-row{gap:10px !important}
+html.is-phone .am-trust-grid{grid-template-columns:repeat(4,1fr) !important;padding:14px 16px !important}
+
+/* 18.3 Telefono: tarjetas compactas identicas a la referencia */
+html.is-phone .am-feat-imgwrap{
+  height:auto !important;
+  aspect-ratio:1 / 1 !important;
+  max-height:150px !important;
+}
+html.is-phone .am-feat-card{padding:10px 10px 0 !important;gap:2px !important}
+html.is-phone .am-feat-name{font-size:15px !important;min-height:2.4em !important;line-height:1.2 !important}
+html.is-phone .am-feat-cat{font-size:14px !important}
+html.is-phone .am-feat-price{font-size:24px !important;margin-top:2px !important}
+html.is-phone .am-feat-add{font-size:11px !important;padding:3px 0 !important;margin:6px -10px 0 !important;width:calc(100% + 20px) !important}
+
