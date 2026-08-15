@@ -981,3 +981,76 @@ button,input{font-family:inherit}
 .am-ads-card .t{color:#000}
 .am-ads-card .lnk{color:#000}
 .am-ads-card:hover .lnk{color:#000}
+
+/* =========================================================
+   14. AJUSTES 2026-D
+   - Logo mucho más grande (PC y teléfono)
+   - Logo centrado en móvil
+   - Banner principal a pantalla completa en móvil
+   - Botón de menú y carrito siempre clicables
+   ========================================================= */
+
+/* ---------- 14.1 LOGO GRANDE EN COMPUTADORA ---------- */
+.am-topbar-row{min-height:86px}
+.am-topbar .am-brand{flex:0 0 auto}
+.am-topbar .am-brand-logo{
+  height:74px !important;max-height:74px;width:auto;
+  filter:drop-shadow(0 3px 10px rgba(0,0,0,.30));
+}
+@media (min-width:1400px){
+  .am-topbar .am-brand-logo{height:82px !important;max-height:82px}
+}
+
+/* ---------- 14.2 CABECERA MÓVIL: LOGO GRANDE Y CENTRADO ---------- */
+@media (max-width:720px){
+  .am-topbar-row{
+    display:grid;
+    grid-template-columns:46px minmax(0,1fr) 46px;
+    grid-template-areas:
+      'menu brand cart'
+      'search search search';
+    align-items:center;
+    gap:10px;
+    padding:10px 12px 12px;
+    min-height:0;
+  }
+  .am-tb-menu{grid-area:menu;height:44px;width:46px;padding:0;justify-content:center;position:relative;z-index:5}
+  .am-cart-btn{grid-area:cart;height:44px;width:46px;padding:0;justify-content:center;margin-left:0 !important;position:relative;z-index:5}
+  .am-brand{
+    grid-area:brand;
+    justify-content:center !important;
+    transform:none !important;
+    min-width:0;
+  }
+  .am-topbar .am-brand-logo{
+    height:clamp(86px,26vw,132px) !important;
+    max-height:none;
+    max-width:100%;
+    width:auto;
+  }
+  .am-search{grid-area:search;max-width:none}
+}
+
+/* ---------- 14.3 BANNER PRINCIPAL COMPLETO EN MÓVIL ---------- */
+@media (max-width:720px){
+  .am-ads-hero{
+    aspect-ratio:auto !important;
+    height:clamp(200px,56vw,320px) !important;
+    border-radius:0;
+    overflow:hidden;
+  }
+  .am-ads-hero .am-slide{inset:0}
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{
+    width:100% !important;height:100% !important;
+    object-fit:cover !important;
+    object-position:center;
+    background:transparent;
+  }
+}
+
+/* ---------- 14.4 CLICS SIEMPRE ACTIVOS EN LA CABECERA ---------- */
+.am-topbar{position:relative;z-index:60}
+.am-tb-menu,.am-cart-btn{pointer-events:auto;cursor:pointer;-webkit-tap-highlight-color:rgba(255,255,255,.2)}
+.am-tb-menu *,.am-cart-btn *{pointer-events:none}
+.am-topbar::before{pointer-events:none !important}

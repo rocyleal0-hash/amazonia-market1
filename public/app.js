@@ -1153,3 +1153,53 @@ function openShareModal(prod, url, text) {
 }
 
 })();
+
+/* =========================================================
+   FALLBACK 2026-D: el botón ☰ y el carrito SIEMPRE responden
+   (delegación global; funciona aunque el panel se dibuje tarde)
+   ========================================================= */
+(function () {
+  function ensureBackdrop() {
+    var bd = document.getElementById('menuBackdrop');
+    if (!bd) {
+      bd = document.createElement('div');
+      bd.id = 'menuBackdrop';
+      bd.className = 'am-menu-backdrop';
+      bd.hidden = true;
+      document.body.appendChild(bd);
+      bd.addEventListener('click', function () { toggleMenu(false); });
+    }
+    return bd;
+  }
+  function toggleMenu(open) {
+    var mp = document.getElementById('menuPanel');
+    var btn = document.getElementById('btnMenu');
+    if (!mp) return;
+    var bd = ensureBackdrop();
+    if (open === undefined) open = mp.hidden;
+    mp.hidden = !open;
+    bd.hidden = !open;
+    if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  document.addEventListener('click', function (e) {
+    var menuBtn = e.target.closest ? e.target.closest('#btnMenu') : null;
+    if (menuBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleMenu();
+      return;
+    }
+    var cart = e.target.closest ? e.target.closest('.am-cart-btn') : null;
+    if (cart) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = '?view=cart';
+      return;
+    }
+    var panel = document.getElementById('menuPanel');
+    if (panel && !panel.hidden && !(e.target.closest && e.target.closest('#menuPanel'))) {
+      toggleMenu(false);
+    }
+  }, true);
+})();
