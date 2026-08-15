@@ -1054,3 +1054,36 @@ button,input{font-family:inherit}
 .am-tb-menu,.am-cart-btn{pointer-events:auto;cursor:pointer;-webkit-tap-highlight-color:rgba(255,255,255,.2)}
 .am-tb-menu *,.am-cart-btn *{pointer-events:none}
 .am-topbar::before{pointer-events:none !important}
+
+/* =========================================================
+   15. AJUSTES 2026-E (SOLO ESCRITORIO)
+   - Barra superior fina otra vez (como antes)
+   - Logo grande, sobresaliendo sin engrosar la barra
+   - Logo más a la izquierda
+   ========================================================= */
+@media (min-width:721px){
+  .am-topbar{overflow:visible}
+  .am-topbar-row{
+    min-height:58px !important;
+    padding:5px 22px 5px 12px !important;
+    align-items:center;
+  }
+  .am-topbar .am-brand{
+    flex:0 0 auto;
+    margin-left:-2px;
+    margin-right:6px;
+    position:relative;
+    z-index:3;
+  }
+  .am-topbar .am-brand-logo{
+    height:78px !important;
+    max-height:none !important;
+    width:auto;
+    margin-top:-11px;
+    margin-bottom:-11px;
+    filter:drop-shadow(0 3px 10px rgba(0,0,0,.30));
+  }
+  @media (min-width:1400px){
+    .am-topbar .am-brand-logo{height:84px !important;margin-top:-14px;margin-bottom:-14px}
+  }
+}
