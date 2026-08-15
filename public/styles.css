@@ -689,3 +689,250 @@ button,input{font-family:inherit}
   .am-ads-hero .am-slide img,
   .am-ads-hero .am-slide video{object-fit:contain;background:#0B1220}
 }
+
+/* =========================================================
+   11. REDISEÑO CABECERA + BANNER FULL WIDTH (2026)
+   Mantiene los colores y el logo de la marca.
+   ========================================================= */
+
+.am-topbar-row{
+  display:flex;align-items:center;gap:16px;
+  padding:10px 22px;
+}
+
+/* Botón "Categorías" tipo pastilla */
+.am-tb-menu{
+  width:auto;height:46px;
+  padding:0 18px;gap:10px;
+  border-radius:12px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.22);
+  font-size:14.5px;font-weight:700;
+  letter-spacing:.01em;
+}
+.am-tb-menu-ico{font-size:17px;line-height:1}
+.am-tb-menu-txt{white-space:nowrap}
+
+/* Buscador más ancho y centrado */
+.am-search{
+  max-width:640px;margin:0 auto;
+  border-radius:12px;
+  padding:3px 3px 3px 16px;
+  box-shadow:0 2px 8px rgba(9,20,45,.14);
+}
+.am-search-btn{border-radius:10px;width:42px;height:40px}
+
+/* Ubicación / Mi cuenta */
+.am-tb-loc,.am-tb-account{
+  gap:8px;font-size:13.5px;font-weight:600;
+  padding:8px 6px;border-radius:10px;cursor:pointer;
+  transition:background .16s ease;
+  white-space:nowrap;
+}
+.am-tb-loc:hover,.am-tb-account:hover{background:rgba(255,255,255,.12)}
+.am-tb-loc .am-tb-strong,.am-tb-account .am-tb-strong{font-size:13.5px;font-weight:600}
+.am-tb-caret{font-size:11px;opacity:.8}
+
+/* Socials fuera de la cabecera (siguen en el footer) */
+.am-topbar .am-socials{display:none !important}
+
+/* Carrito con texto y monto */
+.am-cart-btn{
+  width:auto;height:48px;
+  padding:0 16px;gap:10px;
+  border-radius:12px;
+  font-size:16px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:none;
+}
+.am-cart-btn:hover{background:rgba(255,255,255,.24);transform:translateY(-1px)}
+.am-cart-ico{position:relative;display:flex;align-items:center;font-size:20px}
+.am-cart-meta{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.am-cart-word{font-size:13px;font-weight:600;opacity:.9}
+.am-cart-amount{font-size:13.5px;font-weight:800}
+.am-cart-badge{top:-8px;right:-10px}
+
+/* =============== BANNER A TODO EL ANCHO =============== */
+.am-ads-wrap{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-top:0;margin-bottom:0;
+}
+.am-ads-hero{
+  border-radius:0;
+  box-shadow:0 10px 26px rgba(15,23,42,.12);
+}
+.am-ads-cards{
+  width:100%;max-width:var(--wrap);
+  margin:22px auto 4px;padding:0 18px;
+}
+
+/* Franja blanca de apartados: siempre a todo el ancho, debajo del banner */
+.am-cats-wrap{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  border-top:1px solid var(--line);
+}
+
+@media (max-width:1180px){
+  .am-tb-loc{display:none}
+}
+@media (max-width:980px){
+  .am-tb-menu-txt{display:none}
+  .am-tb-menu{padding:0 14px}
+  .am-cart-meta{display:none}
+}
+@media (max-width:720px){
+  .am-topbar-row{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    grid-template-areas:'menu brand cart' 'search search search';
+    gap:10px;padding:10px 14px;
+  }
+  .am-tb-menu{grid-area:menu;height:42px;width:42px;padding:0;justify-content:center}
+  .am-cart-btn{grid-area:cart;height:42px;width:42px;padding:0;justify-content:center}
+  .am-search{grid-area:search;max-width:none}
+  .am-tb-account{display:none}
+  .am-ads-hero{border-radius:0}
+  .am-ads-cards{padding:0 14px}
+}
+
+/* Si la franja de apartados queda dentro del contenedor del banner, ya es full width */
+.am-ads-wrap > .am-cats-wrap{width:100%;margin-left:0}
+
+/* =========================================================
+   12. AJUSTES 2026-B
+   - Cabecera más fina, con redes sociales (sin "Mi cuenta")
+   - Banners y apartados a todo el ancho
+   - Banners finos con el doble de altura
+   - Botón "Agregar" en azul de marca
+   - Carrito reacomodado
+   ========================================================= */
+
+/* ---------- 12.1 CABECERA MÁS FINA ---------- */
+.am-topbar-row{
+  gap:12px;
+  padding:6px 22px;
+  min-height:58px;
+}
+.am-delivery-track{padding:3px 0;font-size:11.5px}
+.am-topbar .am-brand-logo{
+  height:46px !important;max-height:46px;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.25));
+}
+.am-tb-menu{height:38px;padding:0 14px;font-size:13.5px;border-radius:10px}
+.am-tb-menu-ico{font-size:15px}
+.am-search{max-width:560px;padding:2px 2px 2px 14px;border-radius:10px}
+.am-search input{font-size:13.5px;padding:6px 0}
+.am-search-btn{width:36px;height:34px;border-radius:8px;font-size:14px}
+.am-tb-loc{padding:5px 6px;font-size:12.5px}
+.am-tb-loc .am-tb-icon{font-size:17px}
+.am-tb-loc .am-tb-strong{font-size:12.5px}
+.am-cart-btn{height:40px;padding:0 13px;gap:8px;border-radius:10px}
+.am-cart-ico{font-size:17px}
+.am-cart-word{font-size:11.5px}
+.am-cart-amount{font-size:12.5px}
+
+/* Redes sociales de vuelta en la cabecera (donde estaba "Mi cuenta") */
+.am-topbar .am-socials{display:flex !important;gap:7px}
+.am-topbar .am-socials a{width:30px;height:30px}
+.am-topbar .am-socials svg{width:17px;height:17px}
+.am-tb-account{display:none !important}
+
+/* Panel de categorías: que quepan TODOS los apartados */
+.am-menu-panel{max-height:80vh;width:min(340px,90vw);padding:8px 8px 12px}
+.am-menu-panel a{padding:9px 12px;font-size:13.5px}
+
+/* ---------- 12.2 FULL WIDTH (banners y apartados) ---------- */
+.am-full-bleed,
+.am-tiles-row,
+.am-secondary-banner-wrap{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+}
+.am-tiles-row{margin-top:0;margin-bottom:0}
+.am-tile{
+  border-radius:0;
+  border-left:0;border-right:0;
+  padding:22px clamp(14px,3vw,42px) 28px;
+}
+.am-tile:hover{box-shadow:var(--shadow-xs)}
+.am-quad-grid{gap:clamp(12px,1.6vw,22px)}
+
+/* Banners finos: el doble de altura y a todo el ancho */
+.am-secondary-banner-wrap{margin-top:0;margin-bottom:0}
+.am-secondary-banner{
+  height:clamp(190px,20vw,300px);
+  border-radius:0;
+}
+.am-secondary-banner .am-slide img,
+.am-secondary-banner .am-slide video{width:100%;height:100%;object-fit:cover}
+
+/* Hero: que ocupe todo el ancho sin bordes redondeados */
+.am-ads-hero{border-radius:0}
+
+/* La franja de confianza y las 4 tarjetas de anuncios NO son full width */
+.am-ads-cards{max-width:var(--wrap);margin-left:auto;margin-right:auto}
+
+/* ---------- 12.3 BOTONES EN AZUL DE MARCA ---------- */
+.am-add-btn,
+.am-btn-primary{
+  background:var(--brand-blue,var(--primary));
+  color:#fff;
+}
+.am-add-btn:hover,.am-btn-primary:hover{filter:brightness(1.12)}
+.am-tile-title::before{background:var(--brand-blue,var(--primary))}
+
+/* ---------- 12.4 CARRITO ORDENADO ---------- */
+.am-cart-row{
+  grid-template-columns:88px minmax(0,1fr) auto auto 44px;
+  align-items:center;gap:16px;
+}
+.am-cart-info{display:flex;flex-direction:column;gap:4px;min-width:0}
+.am-cart-name{
+  font-weight:700;font-size:14.5px;color:var(--cart-name-fg);
+  line-height:1.3;word-break:break-word;
+}
+.am-cart-price{
+  background:transparent;color:var(--muted);
+  padding:0;border-radius:0;font-weight:600;font-size:12.5px;
+}
+.am-cart-qty{
+  display:flex;align-items:center;gap:6px;
+  background:var(--bg-gray);border:1px solid var(--line);
+  border-radius:999px;padding:4px;
+}
+.am-cart-qty button{
+  width:32px;height:32px;border:0;border-radius:50%;cursor:pointer;
+  background:#fff;font-size:17px;font-weight:700;color:var(--text);
+  box-shadow:var(--shadow-xs);
+}
+.am-cart-qty input{
+  width:52px;text-align:center;border:0;background:transparent;
+  font-size:15px;font-weight:700;outline:0;
+}
+.am-cart-linewrap{min-width:96px;text-align:right}
+.am-cart-line{display:inline-block;white-space:nowrap}
+
+@media (max-width:900px){
+  .am-cart-row{
+    grid-template-columns:72px minmax(0,1fr) auto;
+    grid-template-areas:'img info del' 'qty qty total';
+    row-gap:12px;
+  }
+  .am-cart-row img{grid-area:img;width:72px;height:72px}
+  .am-cart-info{grid-area:info}
+  .am-cart-qty{grid-area:qty;justify-self:start}
+  .am-cart-linewrap{grid-area:total;text-align:right}
+  .am-cart-del{grid-area:del}
+}
+
+@media (max-width:720px){
+  .am-topbar-row{padding:8px 14px;min-height:0}
+  .am-topbar .am-brand-logo{height:38px !important}
+  .am-topbar .am-socials{display:none !important}
+  .am-tile{padding:16px 14px 20px}
+  .am-secondary-banner{height:clamp(150px,42vw,240px)}
+}

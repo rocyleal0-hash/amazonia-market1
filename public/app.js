@@ -120,6 +120,8 @@ function updateCartBadge() {
   const n = cartCount(); const b = $('#cartBadge');
   const payBtn = document.getElementById('amPayNow');
   if (payBtn) payBtn.style.display = n > 0 ? 'flex' : 'none';
+  const t = document.getElementById('cartTotalTop');
+  if (t) t.textContent = formatPrice(cartTotal());
   if (!b) return;
   if (n > 0) { b.textContent = n; b.hidden = false; } else b.hidden = true;
 }
@@ -156,6 +158,12 @@ function applyTheme() {
   setVar('--tb-search-fg',   s.btn_search_fg);
   setVar('--tb-cart-bg',     s.btn_cart_bg);
   setVar('--tb-cart-fg',     s.btn_cart_fg);
+
+  // Color primario de la marca (botones "Agregar", etc.): usa el azul del logo,
+  // no el color de fondo de la barra (que puede ser negro/imagen).
+  const brandBlue = (s.brand_color || s.cart_add_bg || s.btn_cart_bg || s.btn_menu_bg || s.menu_panel_bg || '#0B3B8F');
+  setVar('--primary', brandBlue);
+  setVar('--brand-blue', brandBlue);
 
   // Menú lateral
   setVar('--menu-bg', s.menu_panel_bg);
@@ -419,8 +427,8 @@ function renderAnunciosBanner(container) {
   const hasCards = _cards.some(c => (c.img_b64 || c.title));
 
   let slides = (ANUNCIOS.banner_slides || [])
-    .map(s => ({ b64: (s.img_b64||'').trim(), url: (s.url||'').trim() }))
-    .filter(s => s.b64);
+    .map(s => ({ b64: (s.img_b64||'').trim(), vid: (s.video_b64||'').trim(), url: (s.url||'').trim() }))
+    .filter(s => s.b64 || s.vid);
   if (!slides.length) {
     const legacy = (ANUNCIOS.banner_img_b64 || '').trim();
     if (legacy) slides.push({ b64: legacy, url:'' });
@@ -435,8 +443,11 @@ function renderAnunciosBanner(container) {
   const slidesHtml = slides.map((s, i) => {
     const href = s.url || '#';
     const target = s.url ? 'target="_blank" rel="noopener"' : '';
+    const media = s.vid
+      ? `<video src="data:video/mp4;base64,${s.vid}" autoplay muted loop playsinline style="filter: brightness(${brt}%) blur(${blur}px);"></video>`
+      : `<img src="data:image/png;base64,${s.b64}" style="filter: brightness(${brt}%) blur(${blur}px);"/>`;
     return `<a class="am-slide ${i===0?'active':''}" data-idx="${i}" href="${escapeAttr(href)}" ${target}>
-      <img src="data:image/png;base64,${s.b64}" style="filter: brightness(${brt}%) blur(${blur}px);"/>
+      ${media}
     </a>`;
   }).join('');
   const heroStyle = `height:${bh}px;`;
@@ -497,8 +508,11 @@ function thinBannerHtml(slides, domId) {
   const slidesHtml = slides.map((s, i) => {
     const href = s.url || '#';
     const target = s.url ? 'target="_blank" rel="noopener"' : '';
+    const media = s.vid
+      ? `<video src="data:video/mp4;base64,${s.vid}" autoplay muted loop playsinline></video>`
+      : `<img src="data:image/png;base64,${s.b64}"/>`;
     return `<a class="am-slide ${i===0?'active':''}" data-idx="${i}" href="${escapeAttr(href)}" ${target}>
-      <img src="data:image/png;base64,${s.b64}"/>
+      ${media}
     </a>`;
   }).join('');
   return `
@@ -512,8 +526,8 @@ function thinBannerHtml(slides, domId) {
 
 function thinBannerSlides(key) {
   return (ANUNCIOS[key] || [])
-    .map(s => ({ b64: (s.img_b64||'').trim(), url: (s.url||'').trim() }))
-    .filter(s => s.b64);
+    .map(s => ({ b64: (s.img_b64||'').trim(), vid: (s.video_b64||'').trim(), url: (s.url||'').trim() }))
+    .filter(s => s.b64 || s.vid);
 }
 
 function renderSecondaryBanner(container) {
@@ -537,8 +551,19 @@ function tertiaryBannerHtml() {
 function cap(s){ s=String(s||''); return s.charAt(0).toUpperCase()+s.slice(1).toLowerCase(); }
 
 /* ---------------- VISTAS ---------------- */
+function moveCatsBelowBanner(main) {
+  const cw = document.getElementById('catsWrap');
+  if (!cw || !main) return;
+  const cards = main.querySelector('.am-ads-cards');
+  const ads = main.querySelector('.am-ads-wrap');
+  if (cards) cards.insertAdjacentElement('beforebegin', cw);
+  else if (ads) ads.insertAdjacentElement('afterend', cw);
+  else main.insertAdjacentElement('afterbegin', cw);
+}
+
 function viewHome(main) {
   renderAnunciosBanner(main);
+  moveCatsBelowBanner(main);
   if (!CATEGORIES.length) {
     main.insertAdjacentHTML('beforeend', `<div class="am-empty">Aún no hay apartados.<br>Crea apartados desde la app de escritorio.</div>`);
     renderSecondaryBanner(main);
@@ -768,14 +793,16 @@ function viewCart(main) {
   const rows = items.map(([name, it]) => `
     <div class="am-cart-row" data-name="${escapeAttr(name)}">
       <img src="${escapeAttr(fixImgSrc(it.imagen))}" alt="${escapeAttr(name)}"/>
-      <div class="am-cart-name">${escapeHtml(name)}</div>
-      <div class="am-cart-price"><span class="am-cart-unit">${escapeHtml(formatPrice(it.precio))}</span></div>
+      <div class="am-cart-info">
+        <div class="am-cart-name">${escapeHtml(name)}</div>
+        <div class="am-cart-price">${escapeHtml(formatPrice(it.precio))} c/u</div>
+      </div>
       <div class="am-cart-qty">
         <button data-op="minus">−</button>
         <input type="number" min="1" value="${it.qty}" data-op="input"/>
         <button data-op="plus">+</button>
       </div>
-      <div><span class="am-cart-line">${escapeHtml(formatPrice(it.precio * it.qty))}</span></div>
+      <div class="am-cart-linewrap"><span class="am-cart-line">${escapeHtml(formatPrice(it.precio * it.qty))}</span></div>
       <button class="am-cart-del" data-op="del" title="Quitar">🗑️</button>
     </div>
   `).join('');
