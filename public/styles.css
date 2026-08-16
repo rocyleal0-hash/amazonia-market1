@@ -1480,3 +1480,89 @@ body{padding-bottom:96px}
 @media (min-width:721px) and (min-height:1100px){
   :root{--hero-h:40vh}
 }
+
+/* =========================================================
+   20. AJUSTE FINAL (SOLO PC / ESCRITORIO)
+   El banner se ve COMPLETO (nada recortado), a TODO EL ANCHO
+   de la pagina y SIN margenes ni deformacion.
+   La altura la calcula la proporcion real de la imagen.
+   El telefono (<=720px) NO se toca.
+   ========================================================= */
+@media (min-width:721px){
+  html body .am-ads-wrap{
+    width:100vw !important;
+    max-width:100vw !important;
+    margin-left:calc(50% - 50vw) !important;
+    margin-right:calc(50% - 50vw) !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+    overflow:visible !important;
+  }
+  html body .am-ads-hero{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 !important;
+    border-radius:0 !important;
+    /* la imagen manda la altura: asi se ve completa */
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    background:transparent !important;
+    display:block !important;
+    overflow:hidden !important;
+    position:relative !important;
+    line-height:0 !important;
+  }
+  /* Solo la slide activa ocupa espacio; las demas van encima */
+  html body .am-ads-hero .am-slide{
+    position:absolute !important;
+    inset:0 !important;
+    opacity:0;
+    display:block !important;
+    line-height:0 !important;
+  }
+  html body .am-ads-hero .am-slide.active{
+    position:relative !important;
+    inset:auto !important;
+    opacity:1;
+    display:block !important;
+  }
+  html body .am-ads-hero .am-slide img,
+  html body .am-ads-hero .am-slide video{
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    /* contain sobre el ancho completo = imagen completa, sin recorte y sin bordes */
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block !important;
+    margin:0 !important;
+  }
+  /* Las slides inactivas se adaptan al area de la activa */
+  html body .am-ads-hero .am-slide:not(.active) img,
+  html body .am-ads-hero .am-slide:not(.active) video{
+    height:100% !important;
+    object-fit:cover !important;
+  }
+
+  /* Menos aire: asi suben los circulos y "Productos destacados" */
+  html body .am-cats-scroll{padding:8px 18px !important}
+  html body .am-featured{padding-top:2px !important;margin-top:0 !important}
+  html body .am-featured-head{margin-bottom:6px !important}
+}
+
+/* 20.b Quitar cualquier tope de altura en las slides (era lo que recortaba) */
+@media (min-width:721px){
+  html body .am-ads-hero,
+  html body .am-ads-hero .am-slide,
+  html body .am-ads-hero .am-slide.active,
+  html body .am-ads-hero .am-slide img,
+  html body .am-ads-hero .am-slide video{
+    max-height:none !important;
+    min-height:0 !important;
+  }
+}
