@@ -2,7 +2,7 @@
   "CONFITERIA": {
     "icon": "🍫",
     "circle_color": "#0000ff",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -10,12 +10,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_CONFITERIA_7891eb16.webp"
+    "image_path": "cat_CONFITERIA_7891eb16.webp",
+    "image_b64": ""
   },
   "VIVERES": {
     "icon": "🌽",
     "circle_color": "#0000ff",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -23,12 +24,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/cat_VIVERES_900fc95a.jpg"
+    "image_path": "cat_images/cat_VIVERES_900fc95a.jpg",
+    "image_b64": ""
   },
   "BEBIDAS": {
     "icon": "🍹",
     "circle_color": "#0000ff",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -36,12 +38,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_BEBIDAS_40ea6f04.jpg"
+    "image_path": "cat_BEBIDAS_40ea6f04.jpg",
+    "image_b64": ""
   },
   "HIGIENE PERSONAL": {
     "icon": "🏷️",
     "circle_color": "#0000ff",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -49,12 +52,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/cat_HIGIENE_PERSONAL_1bade344.jpg"
+    "image_path": "cat_images/cat_HIGIENE_PERSONAL_1bade344.jpg",
+    "image_b64": ""
   },
   "ESCOLAR": {
     "icon": "🏷️",
     "circle_color": "#0000ff",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -62,12 +66,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/cat_ESCOLAR_d8c42de6.jpg"
+    "image_path": "cat_images/cat_ESCOLAR_d8c42de6.jpg",
+    "image_b64": ""
   },
   "ROPA": {
     "icon": "🏷️",
     "circle_color": "#0000ff",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -94,7 +99,7 @@
   "CARNICERIA": {
     "icon": "🏷️",
     "circle_color": "#0000ff",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -102,7 +107,8 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/cat_CARNICERIA_fb435de6.jpg"
+    "image_path": "cat_images/cat_CARNICERIA_fb435de6.jpg",
+    "image_b64": ""
   },
   "VEGETALES Y VERDURAS": {
     "icon": "🥦",
@@ -146,7 +152,7 @@
   "FERRETERIA": {
     "icon": "🏷️",
     "circle_color": "#c0c0c0",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -154,12 +160,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/cat_FERRETERIA_6fa58f6d.jpg"
+    "image_path": "cat_images/cat_FERRETERIA_6fa58f6d.jpg",
+    "image_b64": ""
   },
   "PANADERIA": {
     "icon": "🏷️",
     "circle_color": "#c0c0c0",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -167,12 +174,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_PANADERIA_a20e4a7a.jpg"
+    "image_path": "cat_PANADERIA_a20e4a7a.jpg",
+    "image_b64": ""
   },
   "PAPELERIA": {
     "icon": "🏷️",
     "circle_color": "#c0c0c0",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -180,7 +188,8 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/cat_PAPELERIA_790ec3a4.jpg"
+    "image_path": "cat_images/cat_PAPELERIA_790ec3a4.jpg",
+    "image_b64": ""
   },
   "TELEFONIA": {
     "icon": "🏷️",
@@ -211,7 +220,7 @@
   "CHARCUTERIA": {
     "icon": "🧹",
     "circle_color": "#0000ff",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#000000",
     "label_size": 14,
     "title_color": "#000000",
@@ -219,12 +228,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/cat_CHARCUTERIA_63243315.jpg"
+    "image_path": "cat_images/cat_CHARCUTERIA_63243315.jpg",
+    "image_b64": ""
   },
   "LIMPIEZA": {
     "icon": "🏷️",
     "circle_color": "#0000ff",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -232,7 +242,8 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/cat_LIMPIEZA_4279aea2.jpg"
+    "image_path": "cat_images/cat_LIMPIEZA_4279aea2.jpg",
+    "image_b64": ""
   },
   "vbvb": {
     "icon": "🏷️",
@@ -250,7 +261,7 @@
   "BOLSOS Y CARTERAS": {
     "icon": "🏷️",
     "circle_color": "#0000ff",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -258,12 +269,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/cat_BOLSOS_Y_CARTERAS_b4430cd4.jpeg"
+    "image_path": "cat_images/cat_BOLSOS_Y_CARTERAS_b4430cd4.jpeg",
+    "image_b64": ""
   },
   "QUINCALLERIA": {
     "icon": "🏷️",
     "circle_color": "#0000ff",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -271,12 +283,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/cat_QUINCALLERIA_357d5f1c.jpg"
+    "image_path": "cat_images/cat_QUINCALLERIA_357d5f1c.jpg",
+    "image_b64": ""
   },
   "JUGUETERIA": {
     "icon": "🏷️",
     "circle_color": "#2A2A9C",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -284,12 +297,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_images/JUGUETERIA.jpg"
+    "image_path": "cat_images/JUGUETERIA.jpg",
+    "image_b64": ""
   },
   "HELADO": {
     "icon": "🏷️",
     "circle_color": "#c0c0c0",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -297,12 +311,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_HELADO_9c7966f7.jpg"
+    "image_path": "cat_HELADO_9c7966f7.jpg",
+    "image_b64": ""
   },
   "COSMETICOS": {
     "icon": "🏷️",
     "circle_color": "#c0c0c0",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -310,12 +325,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_COSMETICOS_b404bc97.jpeg"
+    "image_path": "cat_COSMETICOS_b404bc97.jpeg",
+    "image_b64": ""
   },
   "LACTEO": {
     "icon": "🏷️",
     "circle_color": "#c0c0c0",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -323,12 +339,13 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_LACTEO_c2b212b0.jpg"
+    "image_path": "cat_LACTEO_c2b212b0.jpg",
+    "image_b64": ""
   },
   "VEGETALES": {
     "icon": "🏷️",
     "circle_color": "#c0c0c0",
-    "circle_size": 70,
+    "circle_size": 90,
     "label_color": "#0F172A",
     "label_size": 14,
     "title_color": "#000000",
@@ -336,6 +353,7 @@
     "more_bg": "#000000",
     "more_fg": "#000000",
     "use_image": true,
-    "image_path": "cat_VEGETALES_80cecd87.jpg"
+    "image_path": "cat_VEGETALES_80cecd87.jpg",
+    "image_b64": ""
   }
 }
