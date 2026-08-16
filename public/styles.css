@@ -1056,6 +1056,106 @@ button,input{font-family:inherit}
   }
 }
 
+/* =========================================================
+   22. CORRECCION DEFINITIVA PARA TELEFONOS
+   También detecta el teléfono por pantalla táctil. Esto hace
+   que el ajuste funcione aunque la página no tenga configurado
+   correctamente el viewport móvil en el HTML.
+   NO se aplica a computadoras con mouse.
+   ========================================================= */
+@media (max-width:720px), (hover:none) and (pointer:coarse) and (max-device-width:720px){
+  /* El banner toma la proporción real de la imagen y no corta los lados */
+  .am-ads-wrap,
+  .am-full-bleed.am-ads-wrap{
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:0 !important;
+  }
+  .am-ads-hero,
+  .am-ads-wrap .am-ads-hero,
+  #adsHero{
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    border-radius:0 !important;
+    overflow:hidden !important;
+    background:transparent !important;
+  }
+  .am-ads-hero .am-slide,
+  #adsHero .am-slide{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:auto !important;
+    opacity:0 !important;
+  }
+  .am-ads-hero .am-slide.active,
+  #adsHero .am-slide.active{
+    position:relative !important;
+    inset:auto !important;
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    opacity:1 !important;
+    transform:none !important;
+  }
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video,
+  #adsHero .am-slide img,
+  #adsHero .am-slide video{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-width:100% !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    margin:0 !important;
+  }
+
+  /* Círculos y títulos mucho más visibles en teléfonos */
+  .am-cats-scroll{
+    gap:18px !important;
+    padding:20px 16px !important;
+    align-items:flex-start !important;
+  }
+  .am-cat-circle{
+    flex:0 0 122px !important;
+    width:122px !important;
+    gap:10px !important;
+    padding:2px 0 !important;
+  }
+  .am-cat-circle .bubble{
+    display:block !important;
+    width:112px !important;
+    height:112px !important;
+    min-width:112px !important;
+    min-height:112px !important;
+    border-width:4px !important;
+  }
+  .am-cat-circle .bubble img{
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    border-radius:50% !important;
+    object-fit:cover !important;
+  }
+  .am-cat-circle .label{
+    width:122px !important;
+    max-width:122px !important;
+    min-height:2.3em !important;
+    font-size:18px !important;
+    font-weight:900 !important;
+    line-height:1.15 !important;
+    text-align:center !important;
+    white-space:normal !important;
+  }
+}
+
 /* ---------- 14.4 CLICS SIEMPRE ACTIVOS EN LA CABECERA ---------- */
 .am-topbar{position:relative;z-index:60}
 .am-tb-menu,.am-cart-btn{pointer-events:auto;cursor:pointer;-webkit-tap-highlight-color:rgba(255,255,255,.2)}
