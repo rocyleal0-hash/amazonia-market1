@@ -1333,3 +1333,33 @@ body{padding-bottom:96px}
     display:block;
   }
 }
+
+/* =========================================================
+   17. AJUSTE 2026-G (SOLO PC / ESCRITORIO)
+   Banner principal COMPLETO en cualquier resolución de PC:
+   la imagen se ve entera y la altura se ajusta sola al ancho.
+   NO afecta al teléfono (todo lo de <=720px queda igual).
+   ========================================================= */
+@media (min-width:721px){
+  .am-ads-hero{
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    background:transparent !important;
+    overflow:hidden;
+    display:block;
+  }
+  /* Solo la slide activa ocupa espacio y define la altura */
+  .am-ads-hero .am-slide{position:absolute;inset:0;opacity:0}
+  .am-ads-hero .am-slide.active{position:relative;inset:auto;opacity:1;display:block}
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{
+    width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block;
+  }
+}
