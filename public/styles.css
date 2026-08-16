@@ -1491,3 +1491,81 @@ body{padding-bottom:96px}
     margin:0 !important;
   }
 }
+
+/* =========================================================
+   21. AJUSTE 2026-K (SOLO TELÉFONO <=720px)
+   1) Banner principal COMPLETO de lado a lado (sin recortes).
+   2) Apartados circulares (VIVERES, CHARCUTERIA, ...) mas
+      grandes y con letras mas grandes.
+   NO afecta la vista de PC (>=721px).
+   ========================================================= */
+@media (max-width:720px){
+  /* ---------- Banner principal completo ---------- */
+  .am-ads-wrap{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+  .am-ads-wrap .am-ads-hero,
+  #adsHero{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    padding:0 !important;
+    border-radius:0 !important;
+    overflow:hidden !important;
+    background:transparent !important;
+    display:block !important;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide,
+  #adsHero .am-slide{position:absolute !important;inset:0 !important;opacity:0}
+  .am-ads-wrap .am-ads-hero .am-slide.active,
+  #adsHero .am-slide.active{
+    position:relative !important;inset:auto !important;opacity:1 !important;
+    display:block !important;width:100% !important;height:auto !important;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide img,
+  .am-ads-wrap .am-ads-hero .am-slide video,
+  #adsHero .am-slide img,
+  #adsHero .am-slide video{
+    width:100% !important;
+    height:auto !important;
+    max-width:100% !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block !important;
+    margin:0 !important;
+  }
+
+  /* ---------- Apartados circulares mas grandes ---------- */
+  .am-cats-scroll{
+    padding:16px 12px !important;
+    gap:14px !important;
+  }
+  .am-cat-circle{
+    gap:8px !important;
+    padding:2px 2px !important;
+  }
+  .am-cat-circle .bubble{
+    width:96px !important;
+    height:96px !important;
+    border-width:3px !important;
+  }
+  .am-cat-circle .bubble img{
+    width:100% !important;height:100% !important;object-fit:cover !important;
+  }
+  .am-cat-circle .label{
+    font-size:14px !important;
+    font-weight:800 !important;
+    max-width:110px !important;
+    line-height:1.15 !important;
+  }
+}
