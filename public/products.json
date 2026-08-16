@@ -10225,5 +10225,12 @@
     "precio": 9.99,
     "imagen": "product_images/815caf233fd74efab51ba1f5b325868c.jpg",
     "categoria": "ROPA"
+  },
+  {
+    "id": "aa4c6d99f5964e1f872f72d4343c4af8",
+    "nombre": "COMBO DE POLLO",
+    "precio": 15.99,
+    "imagen": "product_images/269ea4b53c764537b014168d8d81e4a3.jpeg",
+    "categoria": "CARNICERIA"
   }
 ]
