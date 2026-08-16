@@ -1363,3 +1363,47 @@ body{padding-bottom:96px}
     display:block;
   }
 }
+
+/* =========================================================
+   18. AJUSTE 2026-H (SOLO PC / ESCRITORIO >=721px)
+   Banner principal completo (sin recortes) pero con altura
+   limitada, para que la fila de apartados y "Productos
+   destacados" se vean en pantallas de 1920x1080.
+   NO toca nada de la vista movil (<=720px).
+   ========================================================= */
+@media (min-width:721px){
+  .am-ads-hero{
+    height:auto !important;
+    min-height:0 !important;
+    max-height:min(50vh,540px) !important;
+    aspect-ratio:auto !important;
+    background:#ffffff !important;
+    overflow:hidden;
+    display:block;
+    text-align:center;
+  }
+  .am-ads-hero .am-slide{position:absolute;inset:0;opacity:0}
+  .am-ads-hero .am-slide.active{position:relative;inset:auto;opacity:1;display:block}
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{
+    width:100% !important;
+    height:auto !important;
+    max-height:min(50vh,540px) !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:#ffffff !important;
+    display:block;
+    margin:0 auto;
+  }
+
+  /* Fila de apartados mas compacta */
+  .am-cats-scroll{padding:10px 18px !important;gap:4px !important}
+  .am-cat-circle{gap:6px !important;padding:2px 6px !important}
+  .am-cat-circle .bubble{width:64px !important;height:64px !important}
+  .am-cat-circle .label{font-size:12px !important;max-width:96px}
+
+  /* Productos destacados pegado al banner */
+  .am-cats-wrap{margin-bottom:0 !important}
+  .am-featured{margin-top:0 !important;padding-top:6px !important}
+  .am-featured-head{margin-bottom:6px !important}
+}
