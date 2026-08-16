@@ -1407,3 +1407,43 @@ body{padding-bottom:96px}
   .am-featured{margin-top:0 !important;padding-top:6px !important}
   .am-featured-head{margin-bottom:6px !important}
 }
+
+/* =========================================================
+   19. AJUSTE 2026-I (SOLO PC / ESCRITORIO >=721px)
+   Banner principal de borde a borde (sin franjas blancas a los
+   lados) manteniendo la MISMA altura que ya tenia.
+   NO toca la vista movil (<=720px).
+   ========================================================= */
+@media (min-width:721px){
+  .am-ads-wrap{
+    width:100vw !important;
+    margin-left:calc(50% - 50vw) !important;
+    margin-right:calc(50% - 50vw) !important;
+    padding-left:0 !important;padding-right:0 !important;
+    max-width:none !important;
+  }
+  .am-ads-hero{
+    width:100% !important;
+    max-width:none !important;
+    height:min(50vh,540px) !important;
+    max-height:min(50vh,540px) !important;
+    padding:0 !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    overflow:hidden;
+    display:block;
+  }
+  .am-ads-hero .am-slide{position:absolute;inset:0;opacity:0}
+  .am-ads-hero .am-slide.active{position:relative;inset:auto;opacity:1;display:block;height:100%}
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{
+    width:100% !important;
+    height:100% !important;
+    max-height:none !important;
+    object-fit:cover !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block;
+    margin:0 !important;
+  }
+}
