@@ -1447,3 +1447,47 @@ body{padding-bottom:96px}
     margin:0 !important;
   }
 }
+
+/* =========================================================
+   20. AJUSTE 2026-J (SOLO TELÉFONO <=720px)
+   Restaura el banner del movil tal cual estaba al inicio:
+   imagen COMPLETA (sin recortes), altura automatica segun el
+   ancho. Va al final para ganarle a cualquier regla anterior
+   y a la altura en linea que pone app.js.
+   NO toca absolutamente nada de la vista PC (>=721px).
+   ========================================================= */
+@media (max-width:720px){
+  .am-ads-wrap{
+    width:auto !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    max-width:100% !important;
+  }
+  .am-ads-wrap .am-ads-hero,
+  #adsHero{
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    padding:0 !important;
+    background:transparent !important;
+    overflow:hidden !important;
+    display:block !important;
+  }
+  #adsHero .am-slide{position:absolute !important;inset:0 !important;opacity:0}
+  #adsHero .am-slide.active{
+    position:relative !important;inset:auto !important;opacity:1;
+    display:block !important;height:auto !important;
+  }
+  #adsHero .am-slide img,
+  #adsHero .am-slide video{
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block !important;
+    margin:0 !important;
+  }
+}
