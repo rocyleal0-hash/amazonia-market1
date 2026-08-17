@@ -1747,3 +1747,67 @@ body{padding-bottom:96px}
   .am-feat-price{font-size:23px !important;font-weight:900 !important}
   .am-feat-add{font-size:16px !important;font-weight:800 !important;padding:12px !important}
 }
+
+/* =========================================================
+   24. AJUSTE 2026-M (SOLO TELÉFONO <=720px)
+   Peticion del cliente: letras MAS GRANDES en todo (apartados
+   circulares, titulos, nombres de productos y precios),
+   imagenes de producto mas grandes y rejillas de 3 por fila.
+   NO toca la vista de PC (>=721px) ni el banner principal.
+   ========================================================= */
+@media (max-width:720px), (hover:none) and (pointer:coarse) and (max-device-width:720px){
+
+  /* ---------- Apartados circulares (VIVERES, CHARCUTERIA, ...) ---------- */
+  .am-cat-circle .label{
+    font-size:21px !important;
+    font-weight:900 !important;
+    line-height:1.2 !important;
+    letter-spacing:.1px !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    display:block !important;
+    -webkit-line-clamp:none !important;
+    max-height:none !important;
+  }
+
+  /* ---------- Titulos de secciones ---------- */
+  .am-tile-title,
+  .am-view-title{font-size:27px !important;font-weight:900 !important;line-height:1.2 !important}
+  .am-featured-head h2{font-size:26px !important;font-weight:900 !important}
+  .am-tile-more{font-size:17px !important;font-weight:800 !important;padding:10px 16px !important}
+  .am-sub-name,.am-subcat-name,.am-tile-name{font-size:19px !important;font-weight:800 !important;line-height:1.2 !important}
+
+  /* ---------- Apartados de abajo (tarjetas de subcategoria) ---------- */
+  .am-quad-grid{grid-template-columns:repeat(3,1fr) !important;gap:12px !important}
+  .am-quad-imgwrap{height:150px !important;padding:8px !important}
+  .am-quad-imgwrap img{width:100% !important;height:100% !important;object-fit:contain !important}
+  .am-quad-name{
+    font-size:17px !important;font-weight:800 !important;
+    line-height:1.25 !important;padding:12px 6px !important;
+    white-space:normal !important;overflow:visible !important;
+    -webkit-line-clamp:3 !important;text-overflow:clip !important;
+  }
+
+  /* ---------- Rejilla de productos: 3 por fila ---------- */
+  .am-grid{grid-template-columns:repeat(3,1fr) !important;gap:12px !important}
+  .am-card{padding:10px !important;gap:8px !important}
+  .am-card>img{aspect-ratio:1/1 !important;width:100% !important;height:auto !important;object-fit:contain !important}
+  .am-name{
+    font-size:17px !important;font-weight:800 !important;
+    line-height:1.25 !important;min-height:3.4em !important;
+    white-space:normal !important;overflow:visible !important;
+    text-overflow:clip !important;-webkit-line-clamp:3 !important;
+  }
+  .am-price{font-size:24px !important;font-weight:900 !important;line-height:1.15 !important}
+  .am-add,.am-add-btn,.am-card button{font-size:16px !important;font-weight:800 !important;padding:11px 8px !important}
+
+  /* ---------- Productos destacados (primera parte de la pagina) ---------- */
+  .am-featured-row{grid-auto-columns:minmax(200px,1fr) !important;gap:12px !important}
+  .am-feat-imgwrap{height:170px !important}
+  .am-feat-imgwrap img{width:100% !important;height:100% !important;object-fit:contain !important}
+  .am-feat-name{font-size:18px !important;font-weight:800 !important;line-height:1.25 !important;min-height:2.6em !important;white-space:normal !important;overflow:visible !important;text-overflow:clip !important}
+  .am-feat-cat{font-size:15px !important}
+  .am-feat-price{font-size:24px !important;font-weight:900 !important}
+  .am-feat-add{font-size:17px !important;font-weight:800 !important;padding:12px !important}
+}
