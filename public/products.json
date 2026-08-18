@@ -10239,5 +10239,12 @@
     "precio": 2.99,
     "imagen": "product_images/b911c41fa061410392b798c0a84625d9.webp",
     "categoria": "CONFITERIA"
+  },
+  {
+    "id": "21ed4aeaa40c4863a2cb54596b516b6f",
+    "nombre": "TOALLAS HUMEDAS AMY SEC X72",
+    "precio": 2.6,
+    "imagen": "product_images/3f66a2093df84ff6a2344f46b657ecf8.webp",
+    "categoria": "HIGIENE PERSONAL"
   }
 ]
