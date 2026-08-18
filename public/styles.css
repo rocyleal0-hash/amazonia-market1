@@ -1869,3 +1869,41 @@ body{padding-bottom:96px}
     max-height:none !important;
   }
 }
+
+/* =========================================================
+   26. AJUSTE 2026-O (SOLO TELEFONO <=720px)
+   Apartados de abajo (VIVERES, CHARCUTERIA, ...): mostrar
+   solo 3 subcategorias por apartado (se oculta la 4a que
+   dejaba el espacio en blanco) con imagenes y letras MAS
+   GRANDES. NO toca la vista de PC (>=721px) ni nada mas.
+   ========================================================= */
+@media (max-width:720px), (hover:none) and (pointer:coarse) and (max-device-width:720px){
+  /* Ocultar el 4to elemento que dejaba la fila incompleta */
+  .am-quad-grid > *:nth-child(n+4){display:none !important}
+
+  .am-quad-grid{
+    grid-template-columns:repeat(3,1fr) !important;
+    gap:10px !important;
+  }
+  .am-quad-item{border-radius:14px !important}
+  .am-quad-imgwrap{
+    height:auto !important;
+    aspect-ratio:1 / 1 !important;
+    padding:6px !important;
+  }
+  .am-quad-imgwrap img{
+    width:100% !important;height:100% !important;
+    object-fit:contain !important;
+  }
+  .am-quad-name{
+    font-size:19px !important;
+    font-weight:900 !important;
+    line-height:1.2 !important;
+    padding:12px 4px !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    -webkit-line-clamp:none !important;
+    overflow-wrap:anywhere !important;
+  }
+}
