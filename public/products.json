@@ -10232,5 +10232,12 @@
     "precio": 15.99,
     "imagen": "product_images/269ea4b53c764537b014168d8d81e4a3.jpeg",
     "categoria": "CARNICERIA"
+  },
+  {
+    "id": "9d47cf12348840bf94425d3dbf6c223f",
+    "nombre": "MINI PIRUETAS 150G",
+    "precio": 2.99,
+    "imagen": "product_images/b911c41fa061410392b798c0a84625d9.webp",
+    "categoria": "CONFITERIA"
   }
 ]
