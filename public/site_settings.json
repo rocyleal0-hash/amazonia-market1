@@ -79,5 +79,11 @@
   "footer_bottom_text": "Todos los derechos reservados.",
   "footer_desc": "Tu supermercado online en Coro. Productos frescos, precios justos y entrega gratis en la ciudad.",
   "footer_bg": "#2A2A9C",
-  "footer_fg": "#FFFFFF"
+  "footer_fg": "#FFFFFF",
+  "fb_wa_side_mv": "right",
+  "fb_wa_size_mv": "70",
+  "fb_pay_side_mv": "left",
+  "fb_pay_size_mv": "16",
+  "fs_cat_label_mv": "19",
+  "fs_prod_cat_mv": "15"
 }
