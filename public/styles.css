@@ -2039,3 +2039,18 @@ body{padding-bottom:96px}
   pointer-events:none !important;
 }
 .am-ads-cashea{pointer-events:none}
+
+/* =========================================================
+   19. BOTONES FLOTANTES CONFIGURABLES DESDE EL PANEL
+   El panel de Python guarda lado y tamano por separado para
+   PC y para movil; app.js inyecta las reglas finales.
+   Aqui solo dejamos la base para que nunca tapen la franja
+   de "Delivery gratis / Pago seguro".
+   ========================================================= */
+.am-wa-float,.am-pay-float{z-index:130 !important}
+.am-wa-float{bottom:104px !important}
+.am-pay-float{bottom:104px !important}
+@media (max-width:900px){
+  .am-wa-float{bottom:126px !important}
+  .am-pay-float{bottom:126px !important}
+}

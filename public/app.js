@@ -247,6 +247,10 @@ function applyTheme() {
   const fmin = intOr(s.featured_min_width, null);
   if (fmin !== null && fmin > 60) root.setProperty('--featured-min', fmin + 'px');
 
+  // Botones flotantes (WhatsApp / Pagar ahora) y tamano de letras,
+  // configurables por separado para PC y para movil desde el panel.
+  applyFloatSettings(s);
+
   // Teléfono de WhatsApp (botón flotante y pie de página)
   const phone = String(s.whatsapp_phone || '').replace(/[^0-9]/g, '');
   if (phone) {
@@ -1407,3 +1411,72 @@ function openShareModal(prod, url, text) {
     }
   }, true);
 })();
+
+/* =========================================================
+   BOTONES FLOTANTES + TAMANO DE LETRAS (panel de Python)
+   Claves de site_settings.json (sufijo _pc = computadora,
+   sufijo _mv = movil):
+     fb_wa_side_pc / fb_wa_side_mv      -> 'left' | 'right'
+     fb_wa_size_pc / fb_wa_size_mv      -> px del icono de WhatsApp
+     fb_pay_side_pc / fb_pay_side_mv    -> 'left' | 'right'
+     fb_pay_size_pc / fb_pay_size_mv    -> px de letra de "Pagar ahora"
+     fs_cat_label_pc / fs_cat_label_mv  -> px letras apartados circulares
+     fs_prod_cat_pc / fs_prod_cat_mv    -> px letras apartado bajo producto
+   Los botones se mantienen SIEMPRE por encima de la franja de
+   "Delivery gratis / Pago seguro" y suben un poco si los agrandas.
+   ========================================================= */
+const FLOAT_DEFAULTS = {
+  pc: { wa_side:'right', wa_size:56, pay_side:'left', pay_size:14, cat:13, prod:12, base:104, edge:18 },
+  mv: { wa_side:'right', wa_size:50, pay_side:'left', pay_size:13, cat:12, prod:11, base:126, edge:14 },
+};
+
+function floatBlock(s, dev) {
+  const d = FLOAT_DEFAULTS[dev];
+  const g = (k, def) => {
+    const v = s[k + '_' + dev];
+    return (v === undefined || v === null || String(v).trim() === '') ? def : v;
+  };
+  const side = (v, def) => (String(v).toLowerCase() === 'left' ? 'left' : (String(v).toLowerCase() === 'right' ? 'right' : def));
+
+  const waSide  = side(g('fb_wa_side', d.wa_side), d.wa_side);
+  const waSize  = Math.max(28, Math.min(160, parseInt(g('fb_wa_size', d.wa_size), 10) || d.wa_size));
+  const paySide = side(g('fb_pay_side', d.pay_side), d.pay_side);
+  const payFs   = Math.max(9, Math.min(40, parseInt(g('fb_pay_size', d.pay_size), 10) || d.pay_size));
+  const catFs   = Math.max(7, Math.min(40, parseInt(g('fs_cat_label', d.cat), 10) || d.cat));
+  const prodFs  = Math.max(7, Math.min(40, parseInt(g('fs_prod_cat', d.prod), 10) || d.prod));
+
+  // Al agrandar el boton se sube un poco para no tapar lo de abajo.
+  const waBottom  = Math.round(d.base + Math.max(0, waSize - d.wa_size) * 0.35);
+  const payHeight = Math.round(payFs * 2.6);
+  const payBottom = Math.round(d.base + Math.max(0, payFs - d.pay_size) * 1.4);
+  const waOther   = waSide === 'left' ? 'right' : 'left';
+  const payOther  = paySide === 'left' ? 'right' : 'left';
+
+  return `
+  body .am-wa-float{
+    width:${waSize}px !important;height:${waSize}px !important;
+    ${waSide}:${d.edge}px !important;${waOther}:auto !important;
+    bottom:${waBottom}px !important;z-index:130 !important;
+  }
+  body .am-wa-float svg{width:${Math.round(waSize * 0.57)}px !important;height:${Math.round(waSize * 0.57)}px !important}
+  body .am-pay-float{
+    font-size:${payFs}px !important;
+    padding:${Math.round(payFs * 0.85)}px ${Math.round(payFs * 1.5)}px !important;
+    min-height:${payHeight}px !important;
+    ${paySide}:${d.edge}px !important;${payOther}:auto !important;
+    bottom:${payBottom}px !important;z-index:130 !important;
+  }
+  .am-cat-circle .label{font-size:${catFs}px !important;max-width:${Math.round(catFs * 8)}px !important}
+  .am-feat-cat{font-size:${prodFs}px !important}
+  `;
+}
+
+function applyFloatSettings(s) {
+  s = s || {};
+  const id = 'am-float-settings';
+  let st = document.getElementById(id);
+  if (!st) { st = document.createElement('style'); st.id = id; document.head.appendChild(st); }
+  st.textContent =
+    '@media (min-width:901px){' + floatBlock(s, 'pc') + '}' +
+    '@media (max-width:900px){' + floatBlock(s, 'mv') + '}';
+}
