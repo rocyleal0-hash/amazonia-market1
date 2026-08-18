@@ -107,36 +107,36 @@
           <div class="m" id="footerMarket">MARKET</div>
         </div>
       </div>
-      <p>Tu supermercado online en Coro. Productos frescos, precios justos y entrega gratis en la ciudad.</p>
+      <p id="footerDesc">Tu supermercado online en Coro. Productos frescos, precios justos y entrega gratis en la ciudad.</p>
       <div class="am-footer-socials" id="footerSocials"></div>
     </div>
 
     <div>
-      <h4>Apartados</h4>
+      <h4 id="footerCatsTitle">Apartados</h4>
       <ul id="footerCats"></ul>
     </div>
 
     <div>
-      <h4>Ayuda</h4>
+      <h4 id="footerHelpTitle">Ayuda</h4>
       <ul>
-        <li><a href="?view=cart">Mi carrito</a></li>
-        <li><a href="./">Cómo comprar</a></li>
-        <li><a href="./">Formas de pago</a></li>
-        <li><a href="./">Zonas de entrega</a></li>
+        <li id="footerHelpLi1"><a id="footerHelp1" href="?view=cart">Mi carrito</a></li>
+        <li id="footerHelpLi2"><a id="footerHelp2" href="./">Cómo comprar</a></li>
+        <li id="footerHelpLi3"><a id="footerHelp3" href="./">Formas de pago</a></li>
+        <li id="footerHelpLi4"><a id="footerHelp4" href="./">Zonas de entrega</a></li>
       </ul>
     </div>
 
     <div>
-      <h4>Contacto</h4>
+      <h4 id="footerContactTitle">Contacto</h4>
       <ul>
         <li><a id="footerWa" href="https://wa.me/584246687700" target="_blank" rel="noopener">WhatsApp: +58 424-6687700</a></li>
-        <li>Santa Ana de Coro, Falcón</li>
-        <li>Lun a Dom · 8:00 am - 8:00 pm</li>
+        <li id="footerAddr">Santa Ana de Coro, Falcón</li>
+        <li id="footerHours">Lun a Dom · 8:00 am - 8:00 pm</li>
       </ul>
     </div>
   </div>
   <div class="am-footer-bottom">
-    © <span id="footerYear"></span> <span id="footerName2">Amazonia MARKET</span> · Todos los derechos reservados.
+    © <span id="footerYear"></span> <span id="footerName2">Amazonia MARKET</span> · <span id="footerBottomText">Todos los derechos reservados.</span>
   </div>
 </footer>
 
@@ -237,6 +237,49 @@
       return '<a href="'+x[0]+'" target="_blank" rel="noopener" title="'+x[2]+'" aria-label="'+x[2]+'">'+x[1]+'</a>';
     }).join('');
     document.getElementById('footerSocials').innerHTML = soc;
+
+    /* ---- Mensaje publicitario editable desde el panel admin ---- */
+    var setTxt = function(id, val){
+      var el = document.getElementById(id);
+      if (!el) return;
+      var v = (val == null) ? '' : String(val).trim();
+      if (v === '') { el.style.display = 'none'; return; }
+      el.textContent = v;
+      el.style.display = '';
+    };
+    setTxt('footerDesc', s.footer_desc);
+    setTxt('footerCatsTitle', s.footer_title_cats);
+    setTxt('footerHelpTitle', s.footer_title_help);
+    setTxt('footerContactTitle', s.footer_title_contact);
+    for (var i = 1; i <= 4; i++) {
+      var val = s['footer_help_' + i];
+      var li = document.getElementById('footerHelpLi' + i);
+      if (val == null) continue;
+      if (String(val).trim() === '') { if (li) li.style.display = 'none'; continue; }
+      if (li) li.style.display = '';
+      setTxt('footerHelp' + i, val);
+    }
+    setTxt('footerAddr', s.footer_contact_line1);
+    setTxt('footerHours', s.footer_contact_line2);
+    setTxt('footerBottomText', s.footer_bottom_text);
+    if (s.footer_contact_wa_text && String(s.footer_contact_wa_text).trim()) {
+      var wa = document.getElementById('footerWa');
+      if (wa) wa.textContent = String(s.footer_contact_wa_text).trim();
+    }
+    if (s.whatsapp_phone && String(s.whatsapp_phone).trim()) {
+      var wa2 = document.getElementById('footerWa');
+      if (wa2) wa2.href = 'https://wa.me/' + String(s.whatsapp_phone).replace(/[^0-9]/g, '');
+    }
+    var footEl = document.querySelector('.am-footer');
+    if (footEl) {
+      if (s.footer_bg && String(s.footer_bg).trim()) {
+        footEl.style.background = String(s.footer_bg).trim();
+      }
+      if (s.footer_fg && String(s.footer_fg).trim()) {
+        footEl.style.color = String(s.footer_fg).trim();
+        footEl.style.setProperty('--am-footer-fg', String(s.footer_fg).trim());
+      }
+    }
   });
 
   get('./public/categories.json').then(function(cats){
