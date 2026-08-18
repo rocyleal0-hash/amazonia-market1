@@ -1907,3 +1907,52 @@ body{padding-bottom:96px}
     overflow-wrap:anywhere !important;
   }
 }
+
+/* =========================================================
+   27. CORRECCION REAL PARA TELEFONO CON VIEWPORT FIJO 1280px
+   La pagina conserva la vista de escritorio escalada en movil,
+   por eso max-width:720px no se activa. Detectamos el telefono
+   por su entrada tactil. Solo modifica VIVERES, CHARCUTERIA, etc.
+   ========================================================= */
+@media (hover: none), (pointer: coarse) {
+  /* Mostrar exactamente tres subcategorias por apartado */
+  .am-tiles-row .am-quad-grid > .am-quad-item:nth-child(n + 4) {
+    display: none !important;
+  }
+
+  .am-tiles-row .am-quad-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+    width: 100% !important;
+  }
+
+  .am-tiles-row .am-quad-item {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .am-tiles-row .am-quad-imgwrap {
+    height: 260px !important;
+    aspect-ratio: auto !important;
+    padding: 10px !important;
+  }
+
+  .am-tiles-row .am-quad-imgwrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .am-tiles-row .am-quad-name {
+    min-height: 62px !important;
+    padding: 14px 8px !important;
+    font-size: 23px !important;
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    -webkit-line-clamp: unset !important;
+  }
+}
