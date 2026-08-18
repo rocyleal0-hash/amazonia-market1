@@ -1958,39 +1958,49 @@ body{padding-bottom:96px}
 }
 
 /* =========================================================
-   28. AJUSTE 2026-P
-   a) Nombres de las subcategorias (apartados de abajo con
-      3 imagenes: ARROZ, ACEITES, SALSAS SOYA, JAMON, QUESO...)
-      AL DOBLE DE TAMANO, SOLO en la vista del telefono.
-      No toca la vista de PC ni ninguna otra parte.
-   b) El pie de pagina (mensaje publicitario) respeta el color
-      de letra elegido en el panel admin.
+   18. AJUSTES 2026-G
+   - Menu de Categorias MUCHO mas grande (solo movil)
+   - WhatsApp a la derecha y "Pagar ahora" a la izquierda (movil y PC)
    ========================================================= */
-@media (hover: none), (pointer: coarse), (max-width: 720px){
-  .am-tiles-row .am-quad-grid > .am-quad-item .am-quad-name,
-  .am-quad-grid .am-quad-name,
-  .am-quad-name{
-    font-size: 46px !important;
-    font-weight: 900 !important;
-    line-height: 1.15 !important;
-    min-height: 0 !important;
-    padding: 16px 6px !important;
-    text-align: center !important;
-    white-space: normal !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-    -webkit-line-clamp: unset !important;
-    overflow-wrap: anywhere !important;
-    word-break: break-word !important;
-    hyphens: auto !important;
+
+/* 18.1 Menu de Categorias grande: SOLO vista movil / tablet pequena */
+@media (max-width:900px){
+  .am-menu-panel{
+    left:3vw !important;
+    right:3vw !important;
+    width:94vw !important;
+    max-width:94vw !important;
+    max-height:82vh !important;
+    padding:14px 12px 20px !important;
+    border-radius:18px !important;
   }
+  .am-menu-head{
+    font-size:16px !important;
+    letter-spacing:.12em !important;
+    opacity:.9 !important;
+    padding:8px 14px 14px !important;
+  }
+  .am-menu-panel a{
+    padding:18px 18px !important;
+    font-size:21px !important;
+    font-weight:700 !important;
+    line-height:1.25 !important;
+    border-radius:14px !important;
+    margin-bottom:6px !important;
+  }
+  .am-menu-panel a:active{background:rgba(255,255,255,.22) !important}
 }
 
-/* Color de letra del mensaje publicitario (pie de pagina) */
-.am-footer[style*="--am-footer-fg"] a,
-.am-footer[style*="--am-footer-fg"] h4,
-.am-footer[style*="--am-footer-fg"] p,
-.am-footer[style*="--am-footer-fg"] li,
-.am-footer[style*="--am-footer-fg"] .am-footer-bottom{
-  color: var(--am-footer-fg) !important;
+/* 18.2 Botones flotantes: WhatsApp a la DERECHA, Pagar ahora a la IZQUIERDA */
+.am-wa-float{
+  left:auto !important;
+  right:18px !important;
+}
+.am-pay-float{
+  right:auto !important;
+  left:18px !important;
+}
+@media (max-width:720px){
+  .am-wa-float{right:14px !important;left:auto !important}
+  .am-pay-float{left:14px !important;right:auto !important}
 }
