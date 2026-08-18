@@ -1963,32 +1963,42 @@ body{padding-bottom:96px}
    - WhatsApp a la derecha y "Pagar ahora" a la izquierda (movil y PC)
    ========================================================= */
 
-/* 18.1 Menu de Categorias grande: SOLO vista movil / tablet pequena */
-@media (max-width:900px){
+/* 18.1 Menu de Categorias grande: SOLO en telefonos / pantallas tactiles
+   NOTA: el sitio usa <meta viewport width=1280>, asi que en el movil el
+   ancho CSS siempre es 1280px y los @media (max-width) NO funcionan.
+   Por eso se usa (pointer:coarse) / (hover:none), que solo aplica a
+   dispositivos tactiles (telefonos y tablets) y nunca a la PC. */
+@media (pointer:coarse), (hover:none){
+  .am-topbar{overflow:visible !important}
   .am-menu-panel{
-    left:3vw !important;
-    right:3vw !important;
-    width:94vw !important;
-    max-width:94vw !important;
-    max-height:82vh !important;
-    padding:14px 12px 20px !important;
-    border-radius:18px !important;
+    left:40px !important;
+    right:auto !important;
+    width:820px !important;
+    max-width:calc(100% - 80px) !important;
+    max-height:86vh !important;
+    padding:26px 22px 34px !important;
+    border-radius:28px !important;
+    box-shadow:0 40px 90px rgba(9,20,45,.45) !important;
   }
   .am-menu-head{
-    font-size:16px !important;
-    letter-spacing:.12em !important;
-    opacity:.9 !important;
-    padding:8px 14px 14px !important;
+    font-size:30px !important;
+    letter-spacing:.14em !important;
+    opacity:.92 !important;
+    color:#fff !important;
+    padding:10px 24px 22px !important;
   }
   .am-menu-panel a{
-    padding:18px 18px !important;
-    font-size:21px !important;
-    font-weight:700 !important;
-    line-height:1.25 !important;
-    border-radius:14px !important;
-    margin-bottom:6px !important;
+    display:block !important;
+    color:#fff !important;
+    padding:26px 28px !important;
+    font-size:44px !important;
+    font-weight:800 !important;
+    line-height:1.2 !important;
+    border-radius:20px !important;
+    margin-bottom:12px !important;
+    white-space:nowrap !important;
   }
-  .am-menu-panel a:active{background:rgba(255,255,255,.22) !important}
+  .am-menu-panel a:active{background:rgba(255,255,255,.24) !important}
 }
 
 /* 18.2 Botones flotantes: WhatsApp a la DERECHA, Pagar ahora a la IZQUIERDA */
