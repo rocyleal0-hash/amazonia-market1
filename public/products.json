@@ -10246,5 +10246,54 @@
     "precio": 2.6,
     "imagen": "product_images/3f66a2093df84ff6a2344f46b657ecf8.webp",
     "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "93fd41e487ab4ca39367e592c7bc7f85",
+    "nombre": "JABON NEUTRO BABY 90G",
+    "precio": 2.9,
+    "imagen": "product_images/c0aa037d8a8b44e68afe4e7d9a2a7746.webp",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "6baefcd2835b440293658c58ea1193b6",
+    "nombre": "PAÑAL CHICCO XG X 20",
+    "precio": 8.99,
+    "imagen": "product_images/98f8db4076ae48858adde686d32bb153.jpeg",
+    "categoria": "HIGIENE PERSONAL"
+  },
+  {
+    "id": "13467a62da7340368281209ac0cd3c70",
+    "nombre": "GALLETA MOKA CHIPS MINI 30G",
+    "precio": 0.56,
+    "imagen": "product_images/392ced7219a84c809a4b397a4270c196.jpg",
+    "categoria": "CONFITERIA"
+  },
+  {
+    "id": "9d993b125bc449dab145e07f29210246",
+    "nombre": "HUEVO SORPRESA GRANDE 18G",
+    "precio": 1.5,
+    "imagen": "product_images/bf8203d48b854f62a6ff221508196818.jpg",
+    "categoria": "CONFITERIA"
+  },
+  {
+    "id": "1be81800c9a5480c95977bcc26b24bfd",
+    "nombre": "CHOCOLATE CRICRI 123G",
+    "precio": 5.7,
+    "imagen": "product_images/25eb9f3b48b44ea6bb806df2b0451c91.webp",
+    "categoria": "CONFITERIA"
+  },
+  {
+    "id": "76aadbaf02de471a8f023357ca7cf8df",
+    "nombre": "CHOCOLATE GALAK 130G",
+    "precio": 5.7,
+    "imagen": "product_images/d884d96fe64b469fa284f81573e63300.jpg",
+    "categoria": "CONFITERIA"
+  },
+  {
+    "id": "bdaf58bca207485998a8f4dc3a06f492",
+    "nombre": "CHOCOLATE RIKITI 130G",
+    "precio": 5.7,
+    "imagen": "product_images/16facfea4d10498483bc53128a57bae5.jpg",
+    "categoria": "CONFITERIA"
   }
 ]
