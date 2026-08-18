@@ -1956,3 +1956,41 @@ body{padding-bottom:96px}
     -webkit-line-clamp: unset !important;
   }
 }
+
+/* =========================================================
+   28. AJUSTE 2026-P
+   a) Nombres de las subcategorias (apartados de abajo con
+      3 imagenes: ARROZ, ACEITES, SALSAS SOYA, JAMON, QUESO...)
+      AL DOBLE DE TAMANO, SOLO en la vista del telefono.
+      No toca la vista de PC ni ninguna otra parte.
+   b) El pie de pagina (mensaje publicitario) respeta el color
+      de letra elegido en el panel admin.
+   ========================================================= */
+@media (hover: none), (pointer: coarse), (max-width: 720px){
+  .am-tiles-row .am-quad-grid > .am-quad-item .am-quad-name,
+  .am-quad-grid .am-quad-name,
+  .am-quad-name{
+    font-size: 46px !important;
+    font-weight: 900 !important;
+    line-height: 1.15 !important;
+    min-height: 0 !important;
+    padding: 16px 6px !important;
+    text-align: center !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    -webkit-line-clamp: unset !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+  }
+}
+
+/* Color de letra del mensaje publicitario (pie de pagina) */
+.am-footer[style*="--am-footer-fg"] a,
+.am-footer[style*="--am-footer-fg"] h4,
+.am-footer[style*="--am-footer-fg"] p,
+.am-footer[style*="--am-footer-fg"] li,
+.am-footer[style*="--am-footer-fg"] .am-footer-bottom{
+  color: var(--am-footer-fg) !important;
+}
