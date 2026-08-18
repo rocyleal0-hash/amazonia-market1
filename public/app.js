@@ -18,6 +18,38 @@ const escapeHtml = s => String(s ?? '')
 const escapeAttr = escapeHtml;
 
 const truthy = v => /^(1|true|yes|si|sí)$/i.test(String(v ?? '').trim());
+/* --- Enlaces de banners: normaliza la URL escrita en el panel admin --- */
+function normalizeAdUrl(u){
+  u = String(u || '').trim();
+  if (!u) return '';
+  if (/^(https?:|mailto:|tel:|#|\/|\?)/i.test(u)) return u;
+  return 'https://' + u.replace(/^\/+/, '');
+}
+/* Cada slide es un <a> apilado; solo el visible debe recibir el clic.
+   Ademas forzamos la navegacion al enlace del slide activo. */
+function bindBannerLinks(root){
+  (root || document).querySelectorAll('#adsHero, .am-secondary-banner').forEach(box => {
+    if (box.__linksBound) return; box.__linksBound = true;
+    const sync = () => {
+      box.querySelectorAll('.am-slide').forEach(a => {
+        const on = a.classList.contains('active');
+        a.style.pointerEvents = on ? 'auto' : 'none';
+        a.tabIndex = on ? 0 : -1;
+      });
+    };
+    sync();
+    new MutationObserver(sync).observe(box, {subtree:true, attributes:true, attributeFilter:['class']});
+    box.addEventListener('click', (ev) => {
+      const active = box.querySelector('.am-slide.active');
+      if (!active) return;
+      const url = active.getAttribute('data-url') || '';
+      ev.preventDefault();
+      ev.stopPropagation();
+      if (url) window.open(url, '_blank', 'noopener');
+    }, true);
+  });
+}
+
 const intOr  = (v, d) => { const n = parseInt(v, 10); return Number.isFinite(n) ? n : d; };
 const numOr  = (v, d) => { const n = parseFloat(v);   return Number.isFinite(n) ? n : d; };
 
@@ -532,12 +564,13 @@ function renderAnunciosBanner(container) {
   const ovr  = intOr(ANUNCIOS.banner_overlay, 0);
 
   const slidesHtml = slides.map((s, i) => {
-    const href = s.url || '#';
-    const target = s.url ? 'target="_blank" rel="noopener"' : '';
+    const url = normalizeAdUrl(s.url);
+    const href = url || 'javascript:void(0)';
+    const target = url ? 'target="_blank" rel="noopener"' : '';
     const media = s.vid
       ? `<video src="data:video/mp4;base64,${s.vid}" autoplay muted loop playsinline style="filter: brightness(${brt}%) blur(${blur}px);"></video>`
       : `<img src="data:image/png;base64,${s.b64}" style="filter: brightness(${brt}%) blur(${blur}px);"/>`;
-    return `<a class="am-slide ${i===0?'active':''}" data-idx="${i}" href="${escapeAttr(href)}" ${target}>
+    return `<a class="am-slide ${i===0?'active':''}" data-idx="${i}" data-url="${escapeAttr(url)}" href="${escapeAttr(href)}" ${target}>
       ${media}
     </a>`;
   }).join('');
@@ -558,6 +591,8 @@ function renderAnunciosBanner(container) {
 
   startHeroCycle(slides);
   bindFeaturedProducts(container);
+  bindBannerLinks(container);
+  setTimeout(() => bindBannerLinks(document), 0);
 }
 
 /* ---------- PRODUCTOS DESTACADOS (uno por apartado) ---------- */
@@ -687,12 +722,13 @@ function startAnunciosTick() {
 
 function thinBannerHtml(slides, domId) {
   const slidesHtml = slides.map((s, i) => {
-    const href = s.url || '#';
-    const target = s.url ? 'target="_blank" rel="noopener"' : '';
+    const url = normalizeAdUrl(s.url);
+    const href = url || 'javascript:void(0)';
+    const target = url ? 'target="_blank" rel="noopener"' : '';
     const media = s.vid
       ? `<video src="data:video/mp4;base64,${s.vid}" autoplay muted loop playsinline></video>`
       : `<img src="data:image/png;base64,${s.b64}"/>`;
-    return `<a class="am-slide ${i===0?'active':''}" data-idx="${i}" href="${escapeAttr(href)}" ${target}>
+    return `<a class="am-slide ${i===0?'active':''}" data-idx="${i}" data-url="${escapeAttr(url)}" href="${escapeAttr(href)}" ${target}>
       ${media}
     </a>`;
   }).join('');
@@ -716,6 +752,7 @@ function renderSecondaryBanner(container) {
   const slides = thinBannerSlides('banner_secundario');
   if (!slides.length) return;
   container.insertAdjacentHTML('beforeend', thinBannerHtml(slides, 'adsSecondary'));
+  bindBannerLinks(container);
   if (slides.length > 1) startAnunciosTick();
 }
 
@@ -726,6 +763,7 @@ function tertiaryBannerHtml() {
   if (!slides.length) slides = thinBannerSlides('banner_secundario');
   if (!slides.length) return '';
   if (slides.length > 1) setTimeout(startAnunciosTick, 0);
+  setTimeout(() => bindBannerLinks(document), 0);
   return thinBannerHtml(slides, 'adsTertiary');
 }
 

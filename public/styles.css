@@ -2014,3 +2014,28 @@ body{padding-bottom:96px}
   .am-wa-float{right:14px !important;left:auto !important}
   .am-pay-float{left:14px !important;right:auto !important}
 }
+
+
+/* =========================================================
+   FIX ENLACES DE BANNERS (principal, secundario y terciario)
+   Los slides estan apilados uno sobre otro; sin esto el ultimo
+   slide del DOM tapaba a los demas y todos los clics iban a su URL.
+   ========================================================= */
+.am-ads-hero .am-slide,
+#adsHero .am-slide,
+.am-secondary-banner .am-slide{
+  pointer-events:none !important;
+}
+.am-ads-hero .am-slide.active,
+#adsHero .am-slide.active,
+.am-secondary-banner .am-slide.active{
+  pointer-events:auto !important;
+  z-index:2;
+}
+.am-ads-hero .am-slide img,
+.am-ads-hero .am-slide video,
+.am-secondary-banner .am-slide img,
+.am-secondary-banner .am-slide video{
+  pointer-events:none !important;
+}
+.am-ads-cashea{pointer-events:none}
