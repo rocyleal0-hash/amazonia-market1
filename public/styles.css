@@ -3285,3 +3285,117 @@ html body .am-feat-add{
   html body .am-tiles-row .am-quad-grid,
   html body .am-quad-grid{gap:5px !important;padding-left:6px !important;padding-right:6px !important}
 }
+
+/* =========================================================
+   35. AJUSTES 2026-M
+   1) PC: banner principal COMPLETO (igual que en el movil):
+      misma anchura, sin recortes, sin franjas laterales.
+   2) Logo Cashea siempre visible sobre TODAS las transiciones.
+   3) Menu hamburguesa de categorias: fondo blanco / texto azul.
+   4) Botones "Agregar al carrito": azul mas bajo de brillo
+      y carrito del icono en blanco.
+   ========================================================= */
+
+/* ---------- 35.1 BANNER PRINCIPAL EN PC: IMAGEN COMPLETA ---------- */
+@media (min-width:721px){
+  .am-ads-wrap .am-ads-hero,
+  #adsHero{
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    padding:0 !important;
+    background:transparent !important;
+    box-shadow:none !important;
+    overflow:visible !important;
+    display:block !important;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide,
+  #adsHero .am-slide{
+    position:absolute !important;inset:0 !important;opacity:0;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide.active,
+  #adsHero .am-slide.active{
+    position:relative !important;inset:auto !important;
+    opacity:1 !important;display:block !important;
+    width:100% !important;height:auto !important;transform:none !important;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide img,
+  .am-ads-wrap .am-ads-hero .am-slide video,
+  #adsHero .am-slide img,
+  #adsHero .am-slide video{
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block !important;
+    border-radius:var(--radius-lg);
+  }
+}
+
+/* ---------- 35.2 LOGO CASHEA SIEMPRE VISIBLE ---------- */
+.am-ads-hero .am-ads-cashea,
+#adsHero .am-ads-cashea{
+  position:absolute !important;
+  right:18px;bottom:18px;
+  z-index:60 !important;
+  height:56px;width:auto;
+  padding:6px 12px;
+  background:#ffffff !important;
+  border:2px solid var(--brand-blue,var(--primary));
+  border-radius:14px;
+  box-shadow:0 10px 26px rgba(9,20,45,.30);
+  opacity:1 !important;
+  animation:amCasheaPulse 2.4s ease-in-out infinite;
+}
+@keyframes amCasheaPulse{
+  0%,100%{transform:scale(1);box-shadow:0 10px 26px rgba(9,20,45,.30)}
+  50%{transform:scale(1.06);box-shadow:0 14px 34px rgba(9,20,45,.42)}
+}
+@media (max-width:720px){
+  .am-ads-hero .am-ads-cashea,
+  #adsHero .am-ads-cashea{height:38px;right:10px;bottom:10px;padding:4px 8px;border-radius:11px}
+}
+
+/* ---------- 35.3 MENU DE CATEGORIAS: BLANCO CON TEXTO AZUL ---------- */
+html body .am-menu-panel{
+  background:#ffffff !important;
+  color:var(--menu-blue,#123B77) !important;
+  border:1px solid #E3E8F2 !important;
+  box-shadow:0 26px 60px rgba(9,20,45,.18) !important;
+}
+html body .am-menu-panel .am-menu-head{
+  color:var(--menu-blue,#123B77) !important;opacity:.7;
+}
+html body .am-menu-panel a{
+  color:var(--menu-blue,#123B77) !important;
+  font-weight:600;
+}
+html body .am-menu-panel a:hover{
+  background:#EEF3FC !important;
+  color:#0E2F60 !important;
+}
+
+/* ---------- 35.4 BOTONES DE CARRITO: AZUL MAS SUAVE ---------- */
+:root{
+  --btn-blue:#2A5CA8;      /* azul menos brillante, armonico con la marca */
+  --btn-blue-hover:#24508F;
+}
+html body .am-add-btn,
+html body .am-feat-add,
+html body .am-btn-primary{
+  background:var(--btn-blue) !important;
+  color:#ffffff !important;
+}
+html body .am-add-btn:hover,
+html body .am-feat-add:hover,
+html body .am-btn-primary:hover{
+  background:var(--btn-blue-hover) !important;
+  filter:none !important;
+}
+html body .am-add-ico{
+  stroke:#ffffff !important;
+  color:#ffffff !important;
+}
