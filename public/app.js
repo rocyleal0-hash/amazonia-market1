@@ -632,7 +632,7 @@ function featuredProductsHtml() {
       <div class="am-feat-name">${escapeHtml(p.nombre||'')}</div>
       <div class="am-feat-cat">${escapeHtml(cap(p.categoria||''))}</div>
       <div class="am-feat-price">${escapeHtml(formatPrice(p.precio))}</div>
-      <button class="am-feat-add" type="button" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>
+      <button class="am-feat-add" type="button" data-add="${escapeAttr(p.nombre||'')}"><svg class="am-add-ico" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 11.2a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.55L21.5 7H6"/></svg> Agregar</button>
     </div>
   `).join('');
   return `
@@ -921,10 +921,10 @@ function renderProductGrid(main, prods) {
     const charc = isCharcuteria(p.categoria);
     const buttons = charc
       ? `<div class="am-btns-row">
-           <button class="am-add-btn am-btn-half" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>
+           <button class="am-add-btn am-btn-half" data-add="${escapeAttr(p.nombre||'')}"><svg class="am-add-ico" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 11.2a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.55L21.5 7H6"/></svg> Agregar</button>
            <button class="am-add-btn am-btn-half am-grams-btn" data-grams="${escapeAttr(p.nombre||'')}">⚖️ Gramos</button>
          </div>`
-      : `<button class="am-add-btn" data-add="${escapeAttr(p.nombre||'')}">🛒 Agregar</button>`;
+      : `<button class="am-add-btn" data-add="${escapeAttr(p.nombre||'')}"><svg class="am-add-ico" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 11.2a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.55L21.5 7H6"/></svg> Agregar</button>`;
     return `
     <div class="am-card" data-cat="${escapeAttr(String(p.categoria||'').toLowerCase())}">
       <img src="${escapeAttr(fixImgSrc(p.imagen))}" alt="${escapeAttr(p.nombre||'')}" loading="lazy" data-zoom="1"/>
@@ -998,6 +998,38 @@ function openImageLightbox(src, alt) {
   document.body.appendChild(box);
 }
 
+/* ---------------- PEDIDO POR WHATSAPP ---------------- */
+function whatsappOrderUrl() {
+  const phone = String(SETTINGS.whatsapp_phone || '').replace(/[^0-9]/g,'') || '584246687700';
+  const items = Object.values(loadCart());
+  const lines = items.map(it => `* ${it.qty}x ${String(it.nombre||'').toUpperCase()} - ${formatPrice(it.precio*it.qty)}`);
+  const CART = '\uD83D\uDED2', MONEY = '\uD83D\uDCB0', BOX = '\uD83D\uDCE6';
+  const msg =
+    CART + ' \u00A1HOLA! QUIERO CONFIRMAR MI PEDIDO:\n\n' +
+    `${lines.join('\n')}\n\n` +
+    MONEY + ` TOTAL A PAGAR: ${formatPrice(cartTotal())}\n\n` +
+    '-----------------------------------\n\n' +
+    'Por favor ind\u00EDquenme los datos para concretar el pago y el env\u00EDo. ' + BOX;
+  return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+}
+
+/* El boton flotante "Pagar ahora" manda el pedido por WhatsApp */
+(function wirePayNow(){
+  function bind(){
+    const btn = document.getElementById('amPayNow');
+    if (!btn || btn.__waBound) return;
+    btn.__waBound = true;
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      if (!cartCount()) { window.location.href = '?view=cart'; return; }
+      window.open(whatsappOrderUrl(), '_blank');
+    }, true);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bind);
+  else bind();
+})();
+
 /* ---------------- CARRITO ---------------- */
 function viewCart(main) {
   const cart = loadCart();
@@ -1062,17 +1094,7 @@ function viewCart(main) {
   const wa = $('#btnCartWhatsapp');
   if (wa) wa.addEventListener('click', (e) => {
     e.preventDefault();
-    const phone = String(SETTINGS.whatsapp_phone || '').replace(/[^0-9]/g,'') || '584246687700';
-    const items = Object.values(loadCart());
-    const lines = items.map(it => `* ${it.qty}x ${String(it.nombre||'').toUpperCase()} - ${formatPrice(it.precio*it.qty)}`);
-    const msg =
-      `🛒 ¡HOLA! QUIERO CONFIRMAR MI PEDIDO:\n\n` +
-      `${lines.join('\n')}\n\n` +
-      `💰 TOTAL A PAGAR: ${formatPrice(cartTotal())}\n\n` +
-      `-----------------------------------\n\n` +
-      `Por favor indíquenme los datos para concretar el pago y el envío. 📦`;
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
+    window.open(whatsappOrderUrl(), '_blank');
   });
 }
 
