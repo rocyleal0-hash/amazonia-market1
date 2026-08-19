@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://TU-DOMINIO.com/sitemap.xml
+Sitemap: https://amazoniamarkett.com/
