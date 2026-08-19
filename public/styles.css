@@ -2556,3 +2556,139 @@ html body .am-feat-card{background:#ffffff !important}
   html body .am-cat-circle .label{font-size:13px !important;font-weight:800 !important}
   html body .am-cats-scroll{gap:12px !important;padding:12px 12px 14px !important}
 }
+
+/* =========================================================
+   30. AJUSTE MÓVIL 2026-Q  (SOLO TELÉFONO <=760px)
+   - Cabecera (logo + buscador) más fina para ganar altura.
+   - Banner un poco más grande y más arriba.
+   - Apartados circulares más pequeños.
+   - Productos destacados: 4 visibles.
+   - Apartados de abajo (víveres, charcutería...): 4 visibles.
+   NO afecta la vista de PC (>=761px).
+   ========================================================= */
+@media (max-width:760px){
+
+  /* ---------- Cabecera fina ---------- */
+  html body .am-delivery-track{font-size:11.5px !important;padding:5px 0 !important}
+
+  html body .am-topbar-row{
+    gap:6px 8px !important;
+    padding:7px 10px 8px !important;
+  }
+  html body .am-brand{gap:6px !important}
+  html body .am-brand-logo{height:40px !important;max-width:46vw !important}
+  html body .am-brand-name{font-size:19px !important;line-height:1.05 !important}
+  html body .am-brand-market{font-size:9.5px !important;letter-spacing:.24em !important}
+
+  html body .am-tb-menu,
+  html body .am-cart-btn{
+    width:40px !important;height:40px !important;border-radius:12px !important;
+  }
+  html body .am-tb-menu-ico,
+  html body .am-cart-ico{font-size:19px !important}
+
+  html body .am-search{
+    height:40px !important;border-radius:12px !important;
+    padding:3px 3px 3px 12px !important;
+    box-shadow:0 4px 12px rgba(9,20,45,.18) !important;
+  }
+  html body .am-search input{font-size:14.5px !important}
+  html body .am-search-btn{width:40px !important;height:34px !important;border-radius:10px !important;font-size:16px !important}
+
+  /* ---------- Banner: pegado arriba y un pelín más ancho ---------- */
+  html body .am-ads-wrap{margin-top:0 !important;padding-top:0 !important}
+  html body .am-ads-wrap .am-ads-hero,
+  html body #adsHero{margin-top:0 !important}
+
+  /* ---------- Apartados circulares más pequeños ---------- */
+  html body .am-cats-wrap{margin-top:0 !important}
+  html body .am-cats-scroll{gap:9px !important;padding:8px 10px 9px !important}
+  html body .am-cats-scroll .am-cat-circle{
+    flex:0 0 68px !important;width:68px !important;
+    min-width:68px !important;max-width:68px !important;
+    gap:5px !important;
+  }
+  html body .am-cats-scroll .am-cat-circle .bubble{
+    width:56px !important;height:56px !important;
+    min-width:56px !important;min-height:56px !important;
+    max-width:56px !important;max-height:56px !important;
+    border-width:2px !important;
+    box-shadow:0 5px 12px rgba(15,23,42,.14) !important;
+  }
+  html body .am-cats-scroll .am-cat-circle .label{
+    width:68px !important;max-width:68px !important;
+    font-size:10.5px !important;font-weight:800 !important;line-height:1.1 !important;
+  }
+
+  /* ---------- Destacados: 4 tarjetas visibles y bloque más arriba ---------- */
+  html body .am-featured{
+    margin:6px 8px 10px !important;
+    padding:8px 8px 10px !important;
+  }
+  html body .am-featured-head{margin-bottom:6px !important}
+  html body .am-featured-head h2{font-size:15.5px !important}
+  html body .am-featured .am-featured-row{
+    grid-auto-columns:calc((100% - 18px)/4) !important;
+    gap:6px !important;
+  }
+  html body .am-featured .am-feat-card{padding:6px !important;border-radius:10px !important}
+  html body .am-featured .am-feat-imgwrap{height:62px !important}
+  html body .am-featured .am-feat-name{font-size:10.5px !important;min-height:2.4em !important}
+  html body .am-featured .am-feat-cat{font-size:9px !important}
+  html body .am-featured .am-feat-price{font-size:12.5px !important}
+  html body .am-featured .am-feat-add{font-size:10px !important;padding:6px 3px !important}
+
+  /* ---------- Apartados de abajo: 4 productos por fila ---------- */
+  html body .am-tiles-row{margin:8px 8px !important}
+  html body .am-tiles-row .am-tile{padding:8px 8px 10px !important;border-radius:12px !important}
+  html body .am-tiles-row .am-tile-head{padding-bottom:6px !important;margin-bottom:8px !important}
+  html body .am-tiles-row .am-tile-title{font-size:15px !important}
+  html body .am-tiles-row .am-tile-more{font-size:10.5px !important;padding:5px 9px !important}
+
+  html body .am-tiles-row .am-quad-grid{
+    display:grid !important;
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+    grid-auto-flow:row !important;
+    gap:6px !important;
+    overflow:visible !important;
+    padding:0 8px 2px !important;
+    width:100% !important;
+  }
+  html body .am-tiles-row .am-quad-grid > .am-quad-item{
+    display:block !important;
+    flex:none !important;width:100% !important;min-width:0 !important;max-width:none !important;
+    border-radius:10px !important;
+  }
+  html body .am-tiles-row .am-quad-grid > .am-quad-item.am-quad-empty{display:none !important}
+  html body .am-tiles-row .am-quad-grid > .am-quad-item:nth-child(n+5){display:none !important}
+  html body .am-tiles-row .am-quad-imgwrap{
+    height:auto !important;aspect-ratio:1/1 !important;padding:4px !important;
+  }
+  html body .am-tiles-row .am-quad-imgwrap img{padding:2px !important;object-fit:contain !important}
+  html body .am-tiles-row .am-quad-name{
+    font-size:10px !important;font-weight:800 !important;
+    line-height:1.15 !important;padding:5px 3px 6px !important;
+    min-height:0 !important;
+  }
+}
+
+/* 30.b  El 4º elemento de cada apartado SÍ se muestra en el teléfono
+   (anula la regla táctil antigua que solo dejaba 3). */
+@media (max-width:760px){
+  html body .am-tiles-row .am-quad-grid > .am-quad-item:nth-child(4){display:block !important}
+  html body .am-tiles-row .am-quad-grid > .am-quad-item:nth-child(n+5){display:none !important}
+  html body .am-tiles-row .am-quad-grid > .am-quad-item.am-quad-empty{display:none !important}
+}
+
+/* 30.c  Nombres de los apartados: máximo 2 líneas, sin desbordes. */
+@media (max-width:760px){
+  html body .am-tiles-row .am-quad-name{
+    display:-webkit-box !important;
+    -webkit-line-clamp:2 !important;
+    -webkit-box-orient:vertical !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+    max-height:2.4em !important;
+    overflow-wrap:anywhere !important;
+  }
+}
