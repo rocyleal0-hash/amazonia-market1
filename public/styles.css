@@ -2312,3 +2312,161 @@ body{padding-bottom:96px}
     width:104px !important;max-width:104px !important;font-size:12.5px !important;
   }
 }
+
+/* =========================================================
+   28. AJUSTE FINAL MÓVIL 2026-P  (SOLO TELÉFONO <=760px)
+   1) Página 100% cubierta: sin franjas grises a los lados y
+      sin desplazamiento horizontal (los antiguos trucos con
+      100vw sumaban el ancho de la barra de scroll y movían
+      todo el contenido hacia un lado).
+   2) Banner principal MÁS GRANDE y COMPLETO, de borde a borde.
+   3) Botón de WhatsApp más abajo, pegado a la franja de
+      "Delivery GRATIS / Pagos seguros".
+   NO afecta la vista de PC (>=761px).
+   ========================================================= */
+@media (max-width:760px){
+
+  /* ---------- 1) Nada se sale de la pantalla ---------- */
+  html,body{
+    max-width:100% !important;
+    overflow-x:hidden !important;
+  }
+  body{background-attachment:scroll}
+
+  /* Ningún bloque puede usar 100vw (incluye la barra de scroll) */
+  .am-wrap,
+  .am-wrap-wide,
+  .am-ads-wrap,
+  .am-ads-cards,
+  .am-featured,
+  .am-cats-wrap,
+  .am-tiles-row,
+  .am-secondary-banner-wrap,
+  .am-full-bleed{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+
+  /* Contenido de borde a borde: sin márgenes grises laterales */
+  .am-wrap,
+  .am-wrap-wide{padding-left:0 !important;padding-right:0 !important}
+
+  main.am-wrap > *{max-width:100% !important}
+
+  /* Las secciones blancas cubren todo el ancho del teléfono */
+  .am-tiles-row{margin-left:0 !important;margin-right:0 !important}
+  .am-tile{
+    border-radius:0 !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    width:100% !important;
+  }
+  .am-tile-head{padding-left:12px !important;padding-right:12px !important}
+  .am-quad-grid{padding-left:12px !important;padding-right:12px !important}
+  .am-grid{padding-left:12px !important;padding-right:12px !important}
+  .am-view-head{padding-left:12px !important;padding-right:12px !important}
+  .am-featured{padding-left:12px !important;padding-right:12px !important}
+  .am-cats-scroll{padding-left:12px !important;padding-right:12px !important}
+  .am-topbar-row{padding-left:12px !important;padding-right:12px !important}
+  .am-cats-wrap{border-radius:0 !important}
+
+  /* ---------- 2) Banner principal completo y grande ---------- */
+  .am-ads-wrap{
+    padding-left:0 !important;
+    padding-right:0 !important;
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+  }
+  .am-ads-wrap .am-ads-hero,
+  #adsHero{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    padding:0 !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    overflow:hidden !important;
+    display:block !important;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide,
+  #adsHero .am-slide{position:absolute !important;inset:0 !important;opacity:0}
+  .am-ads-wrap .am-ads-hero .am-slide.active,
+  #adsHero .am-slide.active{
+    position:relative !important;inset:auto !important;opacity:1 !important;
+    display:block !important;width:100% !important;height:auto !important;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide img,
+  .am-ads-wrap .am-ads-hero .am-slide video,
+  #adsHero .am-slide img,
+  #adsHero .am-slide video{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block !important;
+    margin:0 !important;
+  }
+  /* Banner secundario: también de lado a lado y completo */
+  .am-secondary-banner{
+    width:100% !important;max-width:100% !important;
+    height:auto !important;aspect-ratio:auto !important;
+    border-radius:0 !important;background:transparent !important;
+  }
+  .am-secondary-banner .am-slide{position:absolute !important;inset:0 !important;opacity:0}
+  .am-secondary-banner .am-slide.active{position:relative !important;inset:auto !important;opacity:1;display:block !important;height:auto !important}
+  .am-secondary-banner .am-slide img,
+  .am-secondary-banner .am-slide video{
+    width:100% !important;height:auto !important;object-fit:contain !important;display:block !important;
+  }
+
+  /* ---------- 3) WhatsApp pegado a la franja inferior ---------- */
+  .am-wa-float{
+    right:14px !important;left:auto !important;
+    bottom:calc(66px + env(safe-area-inset-bottom,0px)) !important;
+  }
+  .am-pay-float{
+    left:14px !important;right:auto !important;
+    bottom:calc(66px + env(safe-area-inset-bottom,0px)) !important;
+  }
+}
+
+/* 28.b  Fondo limpio en el teléfono: sin la textura gris que se
+   asomaba a los lados y entre secciones (SOLO móvil <=760px) */
+@media (max-width:760px){
+  body{
+    background-image:none !important;
+    background-color:#ffffff !important;
+  }
+  .am-featured{
+    background:#ffffff !important;
+    padding-top:14px !important;
+    padding-bottom:10px !important;
+  }
+  .am-tiles-row{background:#ffffff !important}
+  .am-tile{background:#ffffff !important;box-shadow:none !important;border:0 !important}
+  .am-tile + .am-tile,
+  .am-tiles-row + .am-tiles-row{border-top:1px solid rgba(15,23,42,.08) !important}
+  main.am-wrap{background:#ffffff !important}
+}
+
+/* 28.c  El botón de WhatsApp (y el de Pagar ahora) quedan pegados a la
+   franja inferior. Se usa alta especificidad para ganarle al estilo que
+   inyecta app.js. SOLO teléfono <=760px. */
+@media (max-width:760px){
+  html body .am-wa-float{
+    right:14px !important;left:auto !important;
+    bottom:calc(66px + env(safe-area-inset-bottom,0px)) !important;
+  }
+  html body .am-pay-float{
+    left:14px !important;right:auto !important;
+    bottom:calc(66px + env(safe-area-inset-bottom,0px)) !important;
+  }
+}
