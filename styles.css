@@ -2708,3 +2708,580 @@ html body .am-feat-card{background:#ffffff !important}
     -webkit-box-orient:vertical !important;overflow:hidden !important;
   }
 }
+
+/* =========================================================
+   31. AJUSTE FINAL MÓVIL 2026-Q  (SOLO TELÉFONO <=760px)
+   1) Barra superior en UNA sola línea fina, igual a la de PC
+      (logo · ☰ Categorías · buscador · carrito).
+   2) Banner principal más alto que esa barra.
+   3) Apartados circulares: 6 visibles.
+   4) Productos destacados: 6 visibles.
+   5) Apartados de abajo (víveres, charcutería...): 4 visibles.
+   NO afecta la vista de PC (>=761px).
+   ========================================================= */
+@media (max-width:760px){
+
+  /* ---------- 1) Barra superior fina, una sola fila ---------- */
+  html body .am-topbar-row{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    gap:6px !important;
+    padding:6px 8px !important;
+    grid-template-columns:none !important;
+    grid-template-areas:none !important;
+  }
+  html body .am-topbar-row > *{grid-area:auto !important}
+  html body .am-brand{
+    flex:0 0 auto !important;min-width:0 !important;
+    justify-content:flex-start !important;gap:4px !important;
+  }
+  html body .am-brand-logo{height:30px !important;max-width:64px !important;width:auto !important}
+  html body .am-brand-name{font-size:14px !important}
+  html body .am-brand-market{font-size:7px !important;letter-spacing:.18em !important}
+
+  html body .am-tb-menu{
+    flex:0 0 auto !important;
+    width:auto !important;height:30px !important;
+    padding:0 8px !important;border-radius:9px !important;
+    display:inline-flex !important;align-items:center !important;gap:4px !important;
+    font-size:10.5px !important;
+  }
+  html body .am-tb-menu-ico{font-size:12px !important}
+  html body .am-tb-menu-txt{display:inline !important;font-size:10.5px !important;font-weight:800 !important;white-space:nowrap !important}
+
+  html body .am-search{
+    flex:1 1 auto !important;min-width:0 !important;
+    height:30px !important;border-radius:9px !important;
+    padding:2px 2px 2px 9px !important;
+    box-shadow:0 2px 8px rgba(9,20,45,.16) !important;
+  }
+  html body .am-search input{font-size:11px !important;min-width:0 !important}
+  html body .am-search-btn{
+    width:26px !important;height:26px !important;
+    border-radius:8px !important;font-size:12px !important;flex:0 0 26px !important;
+  }
+
+  /* En el teléfono no caben ubicación ni redes: se ocultan */
+  html body .am-tb-loc,
+  html body .am-socials{display:none !important}
+
+  html body .am-cart-btn{
+    flex:0 0 auto !important;
+    width:auto !important;height:30px !important;
+    padding:0 8px !important;border-radius:9px !important;
+    display:inline-flex !important;align-items:center !important;gap:5px !important;
+    font-size:11px !important;
+  }
+  html body .am-cart-ico{font-size:13px !important}
+  html body .am-cart-meta{display:flex !important;flex-direction:column !important;line-height:1.05 !important}
+  html body .am-cart-word{font-size:8.5px !important;letter-spacing:.04em !important}
+  html body .am-cart-amount{font-size:10.5px !important;font-weight:900 !important}
+  html body .am-cart-badge{
+    top:-5px !important;right:-5px !important;
+    min-width:15px !important;height:15px !important;font-size:9px !important;
+  }
+  html body .am-delivery-track{font-size:10px !important;padding:3px 0 !important}
+
+  /* ---------- 2) Banner principal más alto que la barra ---------- */
+  html body .am-ads-wrap .am-ads-hero,
+  html body #adsHero{
+    aspect-ratio:auto !important;
+    border-radius:0 !important;
+    min-height:150px !important;
+  }
+  html body #adsHero .am-slide.active img,
+  html body #adsHero .am-slide.active video,
+  html body .am-ads-wrap .am-ads-hero .am-slide.active img,
+  html body .am-ads-wrap .am-ads-hero .am-slide.active video{
+    width:100% !important;height:auto !important;
+    min-height:150px !important;
+    object-fit:cover !important;
+  }
+
+  /* ---------- 3) Apartados circulares: 6 visibles ---------- */
+  html body .am-cats-scroll{
+    display:flex !important;flex-wrap:nowrap !important;
+    align-items:flex-start !important;
+    gap:6px !important;padding:8px 8px 10px !important;
+    overflow-x:auto !important;
+  }
+  html body .am-cats-scroll .am-cat-circle{
+    flex:0 0 calc((100% - 30px)/6) !important;
+    width:calc((100% - 30px)/6) !important;
+    min-width:0 !important;max-width:none !important;
+    gap:4px !important;padding:0 !important;
+    display:flex !important;flex-direction:column !important;align-items:center !important;
+  }
+  html body .am-cats-scroll .am-cat-circle .bubble{
+    width:100% !important;height:auto !important;
+    aspect-ratio:1/1 !important;
+    min-width:0 !important;min-height:0 !important;
+    max-width:none !important;max-height:none !important;
+    border-width:2px !important;
+  }
+  html body .am-cats-scroll .am-cat-circle .bubble img{
+    width:100% !important;height:100% !important;object-fit:cover !important;border-radius:50% !important;
+  }
+  html body .am-cats-scroll .am-cat-circle .label{
+    width:100% !important;max-width:100% !important;
+    font-size:8px !important;font-weight:800 !important;
+    line-height:1.1 !important;text-align:center !important;
+    white-space:normal !important;overflow-wrap:anywhere !important;
+    display:-webkit-box !important;-webkit-line-clamp:2 !important;
+    -webkit-box-orient:vertical !important;overflow:hidden !important;
+  }
+
+  /* ---------- 4) Productos destacados: 6 visibles ---------- */
+  html body .am-featured{margin:8px 8px 12px !important;padding:8px !important}
+  html body .am-featured-head h2{font-size:15px !important}
+  html body .am-featured .am-featured-row{
+    display:grid !important;grid-auto-flow:column !important;
+    grid-auto-columns:calc((100% - 25px)/6) !important;
+    gap:5px !important;overflow-x:auto !important;
+    scroll-snap-type:x mandatory !important;padding-bottom:4px !important;
+  }
+  html body .am-featured .am-feat-card{
+    padding:5px !important;border-radius:9px !important;
+    min-width:0 !important;gap:3px !important;
+  }
+  html body .am-featured .am-feat-imgwrap{height:52px !important}
+  html body .am-featured .am-feat-imgwrap img{width:100% !important;height:100% !important;object-fit:contain !important}
+  html body .am-featured .am-feat-name{
+    font-size:8.5px !important;font-weight:700 !important;
+    line-height:1.15 !important;min-height:2.3em !important;
+    -webkit-line-clamp:2 !important;display:-webkit-box !important;
+    -webkit-box-orient:vertical !important;overflow:hidden !important;
+  }
+  html body .am-featured .am-feat-cat{font-size:7px !important}
+  html body .am-featured .am-feat-price{font-size:10.5px !important;font-weight:900 !important}
+  html body .am-featured .am-feat-add{
+    font-size:8px !important;font-weight:800 !important;
+    padding:5px 2px !important;margin-top:3px !important;
+    display:inline-flex !important;align-items:center !important;
+    justify-content:center !important;gap:3px !important;
+  }
+  html body .am-feat-add .am-add-ico,
+  html body .am-add-btn .am-add-ico{width:11px !important;height:11px !important}
+
+  /* ---------- 5) Apartados de abajo: 4 productos visibles ---------- */
+  html body .am-tiles-row .am-quad-grid > *,
+  html body .am-tiles-row .am-quad-grid > .am-quad-item:nth-child(n+4),
+  html body .am-quad-grid > *:nth-child(n+4){display:block !important}
+  html body .am-tiles-row .am-quad-grid{
+    display:grid !important;
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+    gap:6px !important;overflow:visible !important;
+    padding-left:8px !important;padding-right:8px !important;
+  }
+  html body .am-tiles-row .am-quad-item{
+    border-radius:10px !important;min-width:0 !important;max-width:none !important;
+  }
+  html body .am-tiles-row .am-quad-imgwrap{
+    height:auto !important;aspect-ratio:1/1 !important;padding:5px !important;
+  }
+  html body .am-tiles-row .am-quad-imgwrap img{width:100% !important;height:100% !important;object-fit:contain !important}
+  html body .am-tiles-row .am-quad-name{
+    font-size:9px !important;font-weight:800 !important;
+    line-height:1.15 !important;padding:5px 2px !important;min-height:0 !important;
+    -webkit-line-clamp:2 !important;display:-webkit-box !important;
+    -webkit-box-orient:vertical !important;overflow:hidden !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  /* ---------- Icono de carrito negro en el botón Agregar ---------- */
+  html body .am-add-btn{
+    display:inline-flex !important;align-items:center !important;
+    justify-content:center !important;gap:5px !important;
+  }
+  html body .am-add-ico{stroke:#000 !important;fill:none !important;flex:0 0 auto !important}
+}
+
+/* El dibujito del carrito del botón "Agregar" siempre en negro (PC y móvil) */
+html body .am-add-ico{stroke:#000 !important;fill:none !important}
+html body .am-add-btn,
+html body .am-feat-add{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+}
+
+/* 31.b Refuerzo de especificidad: la barra superior del teléfono gana a las
+   reglas antiguas .am-topbar .am-... (SOLO <=760px). PC sin cambios. */
+@media (max-width:760px){
+  html body .am-topbar .am-topbar-row{
+    display:flex !important;flex-direction:row !important;flex-wrap:nowrap !important;
+    align-items:center !important;gap:6px !important;padding:6px 8px !important;
+    grid-template-columns:none !important;grid-template-areas:none !important;
+    min-height:0 !important;
+  }
+  html body .am-topbar .am-topbar-row > *{grid-area:auto !important;margin:0 !important}
+  html body .am-topbar .am-brand{
+    flex:0 0 auto !important;min-width:0 !important;max-width:74px !important;
+    justify-content:flex-start !important;gap:3px !important;
+    position:static !important;transform:none !important;
+  }
+  html body .am-topbar .am-brand-logo{
+    height:30px !important;max-height:30px !important;min-height:0 !important;
+    max-width:70px !important;width:auto !important;
+    margin:0 !important;filter:none !important;
+  }
+  html body .am-topbar .am-brand-name{font-size:13px !important}
+  html body .am-topbar .am-brand-market{font-size:7px !important;letter-spacing:.16em !important}
+  html body .am-topbar .am-brand-title-block{font-size:12px !important;line-height:1.05 !important}
+
+  html body .am-topbar .am-tb-menu{
+    width:auto !important;height:30px !important;min-width:0 !important;
+    padding:0 8px !important;border-radius:9px !important;font-size:10.5px !important;
+    display:inline-flex !important;align-items:center !important;gap:4px !important;
+  }
+  html body .am-topbar .am-tb-menu-ico{font-size:12px !important}
+  html body .am-topbar .am-tb-menu-txt{display:inline !important;font-size:10.5px !important;font-weight:800 !important;white-space:nowrap !important}
+
+  html body .am-topbar .am-search{
+    flex:1 1 auto !important;min-width:0 !important;width:auto !important;
+    height:30px !important;border-radius:9px !important;padding:2px 2px 2px 9px !important;
+  }
+  html body .am-topbar .am-search input{font-size:11px !important;min-width:0 !important;height:auto !important}
+  html body .am-topbar .am-search-btn{
+    width:26px !important;height:26px !important;min-width:26px !important;
+    flex:0 0 26px !important;border-radius:8px !important;font-size:12px !important;
+  }
+  html body .am-topbar .am-tb-loc,
+  html body .am-topbar .am-socials{display:none !important}
+  html body .am-topbar .am-cart-btn{
+    width:auto !important;height:30px !important;min-width:0 !important;
+    padding:0 8px !important;border-radius:9px !important;font-size:11px !important;
+    display:inline-flex !important;align-items:center !important;gap:5px !important;
+  }
+  html body .am-topbar .am-cart-ico{font-size:13px !important}
+  html body .am-topbar .am-cart-meta{display:flex !important;flex-direction:column !important;line-height:1.05 !important}
+  html body .am-topbar .am-cart-word{font-size:8px !important}
+  html body .am-topbar .am-cart-amount{font-size:10.5px !important;font-weight:900 !important}
+  html body .am-topbar .am-delivery-track{font-size:10px !important;padding:3px 0 !important}
+
+  /* Banner principal: bien alto, mucho más que la barra superior */
+  html body .am-ads-wrap .am-ads-hero,
+  html body #adsHero{min-height:172px !important}
+  html body #adsHero .am-slide.active img,
+  html body #adsHero .am-slide.active video{
+    min-height:172px !important;object-fit:cover !important;object-position:center center !important;
+  }
+}
+
+/* =========================================================
+   32. AJUSTES FINALES SOLO MOVIL (<=760px)
+   - Banner completo, sin recortes (misma presencia/ancho total)
+   - Productos destacados: 4 visibles, legibles y boton "Agregar"
+     con el icono del carrito DENTRO del boton
+   PC no se modifica.
+   ========================================================= */
+@media (max-width:760px){
+
+  /* ---------- Banner principal: imagen COMPLETA, sin recorte ---------- */
+  html body .am-ads-wrap .am-ads-hero,
+  html body .am-ads-hero,
+  html body #adsHero{
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    overflow:visible !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    display:block !important;
+  }
+  html body #adsHero .am-slide,
+  html body .am-ads-hero .am-slide{
+    position:absolute !important;
+    inset:0 !important;
+    opacity:0 !important;
+    height:auto !important;
+  }
+  html body #adsHero .am-slide.active,
+  html body .am-ads-hero .am-slide.active{
+    position:relative !important;
+    inset:auto !important;
+    opacity:1 !important;
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    transform:none !important;
+  }
+  html body #adsHero .am-slide.active img,
+  html body #adsHero .am-slide.active video,
+  html body .am-ads-hero .am-slide.active img,
+  html body .am-ads-hero .am-slide.active video{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    min-height:0 !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    aspect-ratio:auto !important;
+  }
+
+  /* ---------- Productos destacados: 4 visibles y legibles ---------- */
+  html body .am-featured{margin:10px 8px 14px !important;padding:10px !important}
+  html body .am-featured-head h2{font-size:17px !important}
+  html body .am-featured .am-featured-row{
+    display:grid !important;grid-auto-flow:column !important;
+    grid-auto-columns:calc((100% - 24px)/4) !important;
+    gap:8px !important;overflow-x:auto !important;
+    scroll-snap-type:x mandatory !important;padding-bottom:6px !important;
+  }
+  html body .am-featured .am-feat-card{
+    padding:8px !important;border-radius:12px !important;
+    min-width:0 !important;gap:5px !important;
+  }
+  html body .am-featured .am-feat-imgwrap{height:78px !important}
+  html body .am-featured .am-feat-imgwrap img{
+    width:100% !important;height:100% !important;object-fit:contain !important;
+  }
+  html body .am-featured .am-feat-name{
+    font-size:11px !important;font-weight:800 !important;
+    line-height:1.2 !important;min-height:2.4em !important;
+    -webkit-line-clamp:2 !important;display:-webkit-box !important;
+    -webkit-box-orient:vertical !important;overflow:hidden !important;
+  }
+  html body .am-featured .am-feat-cat{font-size:9px !important}
+  html body .am-featured .am-feat-price{font-size:14px !important;font-weight:900 !important}
+
+  /* Boton Agregar: icono + texto SIEMPRE dentro del boton */
+  html body .am-featured .am-feat-add,
+  html body .am-feat-add,
+  html body .am-add-btn{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:4px !important;
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+    padding:7px 4px !important;
+    margin-top:4px !important;
+    font-size:10.5px !important;
+    font-weight:800 !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+  }
+  html body .am-feat-add .am-add-ico,
+  html body .am-add-btn .am-add-ico{
+    width:13px !important;height:13px !important;
+    flex:0 0 13px !important;
+    stroke:#000 !important;fill:none !important;
+  }
+}
+
+/* =========================================================
+   33. AJUSTES FINALES MOVIL (2026-08-19)
+   a) Nombres de productos/subcategorias COMPLETOS (sin cortes)
+   b) Menu "Categorias" con tamano normal (ya no gigante)
+   c) Boton de menu = solo tres rayitas + buscador mas largo/centrado
+   PC (>=761px con mouse) no se modifica.
+   ========================================================= */
+@media (max-width:760px), (pointer:coarse) and (max-width:900px){
+
+  /* ---------- a) NOMBRES COMPLETOS Y LEGIBLES ---------- */
+  html body .am-quad-item,
+  html body .am-tiles-row .am-quad-item{
+    height:auto !important;
+    display:flex !important;flex-direction:column !important;
+  }
+  html body .am-quad-name,
+  html body .am-tiles-row .am-quad-name,
+  html body .am-name,
+  html body .am-card .am-name{
+    display:block !important;
+    -webkit-line-clamp:unset !important;
+    -webkit-box-orient:initial !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    height:auto !important;
+    max-height:none !important;
+    min-height:0 !important;
+    font-size:13px !important;
+    font-weight:800 !important;
+    line-height:1.3 !important;
+    text-align:center !important;
+    overflow-wrap:break-word !important;
+    word-break:break-word !important;
+    hyphens:auto !important;
+    padding:10px 8px 14px !important;
+  }
+  html body .am-card .am-name{text-align:left !important;padding:2px 0 4px !important}
+  html body .am-tiles-row .am-quad-imgwrap{height:120px !important}
+  html body .am-quad-imgwrap{height:120px !important;aspect-ratio:auto !important}
+
+  /* ---------- b) MENU DE CATEGORIAS: TAMANO NORMAL ---------- */
+  html body .am-menu-panel{
+    left:10px !important;
+    right:10px !important;
+    width:auto !important;
+    max-width:calc(100vw - 20px) !important;
+    max-height:70vh !important;
+    overflow-y:auto !important;
+    padding:10px 10px 14px !important;
+    border-radius:16px !important;
+    box-shadow:0 18px 40px rgba(9,20,45,.35) !important;
+  }
+  html body .am-menu-head{
+    font-size:13px !important;
+    letter-spacing:.12em !important;
+    padding:6px 10px 10px !important;
+  }
+  html body .am-menu-panel a{
+    padding:11px 12px !important;
+    font-size:15px !important;
+    font-weight:700 !important;
+    line-height:1.25 !important;
+    border-radius:10px !important;
+    margin-bottom:4px !important;
+    white-space:normal !important;
+  }
+
+  /* ---------- c) BOTON SOLO TRES RAYITAS + BUSCADOR LARGO ---------- */
+  html body .am-tb-menu-txt{display:none !important}
+  html body .am-tb-menu{
+    width:44px !important;height:44px !important;
+    min-width:44px !important;flex:0 0 44px !important;
+    padding:0 !important;
+    justify-content:center !important;
+    border-radius:12px !important;
+  }
+  html body .am-tb-menu-ico{font-size:22px !important}
+  html body .am-search{
+    flex:1 1 auto !important;
+    width:auto !important;
+    max-width:none !important;
+    margin:0 !important;
+  }
+}
+
+/* =========================================================
+   34. AJUSTES MOVIL FINALES (barra superior + apartados)
+   - Boton de categorias: SOLO tres rayitas (sin texto)
+   - Buscador mas grande y centrado
+   - Apartados de abajo: 4 productos cuadrados, imagen grande,
+     nombre completo, pequeno y SIN guiones de corte
+   PC (>=761px con mouse) NO se modifica.
+   ========================================================= */
+@media (max-width:760px), (pointer:coarse) and (max-width:900px){
+
+  /* ---------- BARRA SUPERIOR ---------- */
+  html body .am-topbar .am-tb-menu-txt,
+  html body .am-topbar .am-tb-menu .am-tb-menu-txt{display:none !important}
+  html body .am-topbar .am-tb-menu,
+  html body .am-topbar button.am-tb-menu{
+    width:36px !important;height:36px !important;
+    min-width:36px !important;flex:0 0 36px !important;
+    padding:0 !important;margin:0 !important;gap:0 !important;
+    display:inline-flex !important;
+    justify-content:center !important;align-items:center !important;
+    border-radius:11px !important;
+  }
+  html body .am-topbar .am-tb-menu .am-tb-menu-ico,
+  html body .am-topbar .am-tb-menu-ico{font-size:18px !important;line-height:1 !important}
+  html body .am-topbar .am-search,
+  html body .am-topbar form.am-search{
+    flex:1 1 auto !important;
+    width:auto !important;min-width:0 !important;max-width:none !important;
+    margin:0 !important;
+    height:38px !important;
+    padding:3px 3px 3px 12px !important;
+    border-radius:12px !important;
+    display:flex !important;align-items:center !important;
+  }
+  html body .am-topbar .am-search input{
+    font-size:13.5px !important;
+    padding:6px 0 !important;
+    width:100% !important;min-width:0 !important;height:auto !important;
+  }
+  html body .am-topbar .am-search-btn{
+    width:34px !important;height:32px !important;min-width:34px !important;
+    flex:0 0 34px !important;border-radius:10px !important;font-size:14px !important;
+  }
+
+  /* ---------- APARTADOS: 4 TARJETAS CUADRADAS ---------- */
+  html body .am-tiles-row .am-quad-grid,
+  html body .am-quad-grid{
+    display:grid !important;
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+    gap:6px !important;
+    overflow:visible !important;
+    padding-left:8px !important;padding-right:8px !important;
+    align-items:start !important;
+  }
+  html body .am-tiles-row .am-quad-grid > *,
+  html body .am-quad-grid > *{display:flex !important}
+  html body .am-quad-empty{display:none !important}
+
+  html body .am-quad-item,
+  html body .am-tiles-row .am-quad-item{
+    display:flex !important;flex-direction:column !important;
+    min-width:0 !important;max-width:none !important;width:100% !important;
+    height:auto !important;border-radius:12px !important;
+    overflow:hidden !important;
+  }
+  html body .am-quad-imgwrap,
+  html body .am-tiles-row .am-quad-imgwrap{
+    height:auto !important;
+    aspect-ratio:1 / 1 !important;
+    width:100% !important;
+    padding:4px !important;
+    box-sizing:border-box !important;
+    flex:0 0 auto !important;
+  }
+  html body .am-quad-imgwrap img,
+  html body .am-tiles-row .am-quad-imgwrap img{
+    width:100% !important;height:100% !important;
+    object-fit:contain !important;object-position:center !important;
+  }
+  /* Nombre: completo, corrido, sin guiones ni cortes de palabra */
+  html body .am-quad-name,
+  html body .am-tiles-row .am-quad-name{
+    display:flex !important;
+    align-items:flex-start !important;
+    justify-content:center !important;
+    text-align:center !important;
+    font-size:8.5px !important;
+    font-weight:800 !important;
+    line-height:1.2 !important;
+    letter-spacing:0 !important;
+    padding:5px 3px 7px !important;
+    min-height:30px !important;
+    max-height:none !important;
+    height:auto !important;
+    white-space:normal !important;
+    hyphens:none !important;
+    -webkit-hyphens:none !important;
+    word-break:normal !important;
+    overflow-wrap:normal !important;
+    text-overflow:clip !important;
+    overflow:hidden !important;
+    flex:1 1 auto !important;
+  }
+
+  /* ---------- PRODUCTOS: IMAGEN CUADRADA ---------- */
+  html body .am-card > img,
+  html body .am-feat-card img{
+    aspect-ratio:1 / 1 !important;
+    height:auto !important;
+    width:100% !important;
+    object-fit:contain !important;
+  }
+}
+
+/* Pantallas muy angostas: nombres aun mas compactos */
+@media (max-width:400px){
+  html body .am-quad-name,
+  html body .am-tiles-row .am-quad-name{
+    font-size:7.6px !important;
+    padding:4px 2px 6px !important;
+    min-height:28px !important;
+  }
+  html body .am-tiles-row .am-quad-grid,
+  html body .am-quad-grid{gap:5px !important;padding-left:6px !important;padding-right:6px !important}
+}
