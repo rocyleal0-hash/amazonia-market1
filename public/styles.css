@@ -3159,3 +3159,129 @@ html body .am-feat-add{
     margin:0 !important;
   }
 }
+
+/* =========================================================
+   34. AJUSTES MOVIL FINALES (barra superior + apartados)
+   - Boton de categorias: SOLO tres rayitas (sin texto)
+   - Buscador mas grande y centrado
+   - Apartados de abajo: 4 productos cuadrados, imagen grande,
+     nombre completo, pequeno y SIN guiones de corte
+   PC (>=761px con mouse) NO se modifica.
+   ========================================================= */
+@media (max-width:760px), (pointer:coarse) and (max-width:900px){
+
+  /* ---------- BARRA SUPERIOR ---------- */
+  html body .am-topbar .am-tb-menu-txt,
+  html body .am-topbar .am-tb-menu .am-tb-menu-txt{display:none !important}
+  html body .am-topbar .am-tb-menu,
+  html body .am-topbar button.am-tb-menu{
+    width:36px !important;height:36px !important;
+    min-width:36px !important;flex:0 0 36px !important;
+    padding:0 !important;margin:0 !important;gap:0 !important;
+    display:inline-flex !important;
+    justify-content:center !important;align-items:center !important;
+    border-radius:11px !important;
+  }
+  html body .am-topbar .am-tb-menu .am-tb-menu-ico,
+  html body .am-topbar .am-tb-menu-ico{font-size:18px !important;line-height:1 !important}
+  html body .am-topbar .am-search,
+  html body .am-topbar form.am-search{
+    flex:1 1 auto !important;
+    width:auto !important;min-width:0 !important;max-width:none !important;
+    margin:0 !important;
+    height:38px !important;
+    padding:3px 3px 3px 12px !important;
+    border-radius:12px !important;
+    display:flex !important;align-items:center !important;
+  }
+  html body .am-topbar .am-search input{
+    font-size:13.5px !important;
+    padding:6px 0 !important;
+    width:100% !important;min-width:0 !important;height:auto !important;
+  }
+  html body .am-topbar .am-search-btn{
+    width:34px !important;height:32px !important;min-width:34px !important;
+    flex:0 0 34px !important;border-radius:10px !important;font-size:14px !important;
+  }
+
+  /* ---------- APARTADOS: 4 TARJETAS CUADRADAS ---------- */
+  html body .am-tiles-row .am-quad-grid,
+  html body .am-quad-grid{
+    display:grid !important;
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+    gap:6px !important;
+    overflow:visible !important;
+    padding-left:8px !important;padding-right:8px !important;
+    align-items:start !important;
+  }
+  html body .am-tiles-row .am-quad-grid > *,
+  html body .am-quad-grid > *{display:flex !important}
+  html body .am-quad-empty{display:none !important}
+
+  html body .am-quad-item,
+  html body .am-tiles-row .am-quad-item{
+    display:flex !important;flex-direction:column !important;
+    min-width:0 !important;max-width:none !important;width:100% !important;
+    height:auto !important;border-radius:12px !important;
+    overflow:hidden !important;
+  }
+  html body .am-quad-imgwrap,
+  html body .am-tiles-row .am-quad-imgwrap{
+    height:auto !important;
+    aspect-ratio:1 / 1 !important;
+    width:100% !important;
+    padding:4px !important;
+    box-sizing:border-box !important;
+    flex:0 0 auto !important;
+  }
+  html body .am-quad-imgwrap img,
+  html body .am-tiles-row .am-quad-imgwrap img{
+    width:100% !important;height:100% !important;
+    object-fit:contain !important;object-position:center !important;
+  }
+  /* Nombre: completo, corrido, sin guiones ni cortes de palabra */
+  html body .am-quad-name,
+  html body .am-tiles-row .am-quad-name{
+    display:flex !important;
+    align-items:flex-start !important;
+    justify-content:center !important;
+    text-align:center !important;
+    font-size:8.5px !important;
+    font-weight:800 !important;
+    line-height:1.2 !important;
+    letter-spacing:0 !important;
+    padding:5px 3px 7px !important;
+    min-height:30px !important;
+    max-height:none !important;
+    height:auto !important;
+    white-space:normal !important;
+    hyphens:none !important;
+    -webkit-hyphens:none !important;
+    word-break:normal !important;
+    overflow-wrap:normal !important;
+    text-overflow:clip !important;
+    overflow:hidden !important;
+    flex:1 1 auto !important;
+  }
+
+  /* ---------- PRODUCTOS: IMAGEN CUADRADA ---------- */
+  html body .am-card > img,
+  html body .am-feat-card img{
+    aspect-ratio:1 / 1 !important;
+    height:auto !important;
+    width:100% !important;
+    object-fit:contain !important;
+  }
+}
+
+/* Pantallas muy angostas: nombres aun mas compactos */
+@media (max-width:400px){
+  html body .am-quad-name,
+  html body .am-tiles-row .am-quad-name{
+    font-size:7.6px !important;
+    padding:4px 2px 6px !important;
+    min-height:28px !important;
+  }
+  html body .am-tiles-row .am-quad-grid,
+  html body .am-quad-grid{gap:5px !important;padding-left:6px !important;padding-right:6px !important}
+}
