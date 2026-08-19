@@ -3073,3 +3073,89 @@ html body .am-feat-add{
     stroke:#000 !important;fill:none !important;
   }
 }
+
+/* =========================================================
+   33. AJUSTES FINALES MOVIL (2026-08-19)
+   a) Nombres de productos/subcategorias COMPLETOS (sin cortes)
+   b) Menu "Categorias" con tamano normal (ya no gigante)
+   c) Boton de menu = solo tres rayitas + buscador mas largo/centrado
+   PC (>=761px con mouse) no se modifica.
+   ========================================================= */
+@media (max-width:760px), (pointer:coarse) and (max-width:900px){
+
+  /* ---------- a) NOMBRES COMPLETOS Y LEGIBLES ---------- */
+  html body .am-quad-item,
+  html body .am-tiles-row .am-quad-item{
+    height:auto !important;
+    display:flex !important;flex-direction:column !important;
+  }
+  html body .am-quad-name,
+  html body .am-tiles-row .am-quad-name,
+  html body .am-name,
+  html body .am-card .am-name{
+    display:block !important;
+    -webkit-line-clamp:unset !important;
+    -webkit-box-orient:initial !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    height:auto !important;
+    max-height:none !important;
+    min-height:0 !important;
+    font-size:13px !important;
+    font-weight:800 !important;
+    line-height:1.3 !important;
+    text-align:center !important;
+    overflow-wrap:break-word !important;
+    word-break:break-word !important;
+    hyphens:auto !important;
+    padding:10px 8px 14px !important;
+  }
+  html body .am-card .am-name{text-align:left !important;padding:2px 0 4px !important}
+  html body .am-tiles-row .am-quad-imgwrap{height:120px !important}
+  html body .am-quad-imgwrap{height:120px !important;aspect-ratio:auto !important}
+
+  /* ---------- b) MENU DE CATEGORIAS: TAMANO NORMAL ---------- */
+  html body .am-menu-panel{
+    left:10px !important;
+    right:10px !important;
+    width:auto !important;
+    max-width:calc(100vw - 20px) !important;
+    max-height:70vh !important;
+    overflow-y:auto !important;
+    padding:10px 10px 14px !important;
+    border-radius:16px !important;
+    box-shadow:0 18px 40px rgba(9,20,45,.35) !important;
+  }
+  html body .am-menu-head{
+    font-size:13px !important;
+    letter-spacing:.12em !important;
+    padding:6px 10px 10px !important;
+  }
+  html body .am-menu-panel a{
+    padding:11px 12px !important;
+    font-size:15px !important;
+    font-weight:700 !important;
+    line-height:1.25 !important;
+    border-radius:10px !important;
+    margin-bottom:4px !important;
+    white-space:normal !important;
+  }
+
+  /* ---------- c) BOTON SOLO TRES RAYITAS + BUSCADOR LARGO ---------- */
+  html body .am-tb-menu-txt{display:none !important}
+  html body .am-tb-menu{
+    width:44px !important;height:44px !important;
+    min-width:44px !important;flex:0 0 44px !important;
+    padding:0 !important;
+    justify-content:center !important;
+    border-radius:12px !important;
+  }
+  html body .am-tb-menu-ico{font-size:22px !important}
+  html body .am-search{
+    flex:1 1 auto !important;
+    width:auto !important;
+    max-width:none !important;
+    margin:0 !important;
+  }
+}
