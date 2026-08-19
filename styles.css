@@ -1,0 +1,2710 @@
+/* =========================================================
+   AMAZONIA MARKET — styles.css  (REDISEÑO PROFESIONAL 2026)
+   Mantiene TODAS las variables y clases que usa app.js y
+   agregar_producto_corregido.py (colores, logo, banners...).
+   ========================================================= */
+
+*,*::before,*::after{box-sizing:border-box}
+
+:root{
+  /* Colores de marca (los sobreescribe app.js con tus ajustes) */
+  --tb-bg:#0B3B8F;
+  --tb-delivery-fg:#FFE066;
+  --tb-menu-bg:#0B3B8F;
+  --tb-menu-fg:#ffffff;
+  --tb-search-bg:#F5B301;
+  --tb-search-fg:#10213B;
+  --tb-cart-bg:#0B3B8F;
+  --tb-cart-fg:#ffffff;
+  --menu-bg:#0B3B8F;
+  --menu-fg:#ffffff;
+  --more-bg:#0B3B8F;
+  --more-fg:#0B3B8F;
+
+  --primary:var(--tb-bg);
+  --accent:var(--tb-search-bg);
+  --price:#12823C;
+
+  /* Neutros del sistema de diseño */
+  --text:#0E1726;
+  --muted:#657084;
+  --line:#E6E9F0;
+  --card:#FFFFFF;
+  --bg-gray:#F3F5F9;
+
+  --radius:16px;
+  --radius-sm:12px;
+  --radius-lg:22px;
+  --shadow-xs:0 1px 2px rgba(15,23,42,.06);
+  --shadow-sm:0 2px 10px rgba(15,23,42,.07);
+  --shadow-md:0 10px 28px rgba(15,23,42,.10);
+  --shadow-lg:0 22px 50px rgba(15,23,42,.14);
+
+  --img-border-color:transparent;
+  --img-border-width:0px;
+
+  --cart-card-bg:#ffffff;
+  --cart-name-fg:#0E1726;
+  --cart-unit-fg:#657084;
+  --cart-price-bg:#12823C;
+  --cart-price-fg:#ffffff;
+
+  --brand-justify:flex-start;
+  --brand-offset-x:0px;
+
+  --wrap:1280px;
+  --wrap-wide:1480px;
+}
+
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color:var(--text);
+  background:var(--bg-gray);
+  line-height:1.45;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input{font-family:inherit}
+
+.am-wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 18px}
+.am-wrap-wide{width:100%;max-width:var(--wrap-wide);margin:0 auto;padding:0 18px}
+
+/* =========================================================
+   1. TOPBAR
+   ========================================================= */
+.am-topbar{
+  position:sticky;top:0;z-index:60;
+  background:var(--tb-bg);
+  color:#fff;
+  box-shadow:0 6px 24px rgba(9,20,45,.18);
+}
+
+/* Cinta de delivery */
+.am-delivery-banner{
+  overflow:hidden;
+  background:rgba(0,0,0,.28);
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.am-delivery-track{
+  display:flex;gap:48px;white-space:nowrap;
+  padding:6px 0;
+  font-size:12.5px;font-weight:600;letter-spacing:.04em;
+  color:var(--tb-delivery-fg);
+  animation:am-marquee 34s linear infinite;
+  will-change:transform;
+}
+.am-delivery-track span{padding-right:48px}
+@keyframes am-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.am-topbar-row{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 18px;
+}
+
+.am-tb-menu{
+  flex:0 0 auto;
+  width:42px;height:42px;
+  border:0;border-radius:12px;
+  background:rgba(255,255,255,.14);
+  color:var(--tb-menu-fg);
+  font-size:19px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .18s ease,transform .18s ease;
+}
+.am-tb-menu:hover{background:rgba(255,255,255,.24);transform:translateY(-1px)}
+
+.am-brand{
+  display:flex;align-items:center;gap:10px;
+  justify-content:var(--brand-justify);
+  transform:translateX(var(--brand-offset-x));
+  flex:0 0 auto;
+}
+.am-brand-logo{height:52px;width:auto;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,.28))}
+.am-brand-name{font-family:'Pacifico',cursive;font-size:24px;line-height:1}
+.am-brand-market{font-weight:800;font-size:12px;letter-spacing:.34em;opacity:.92}
+
+/* Buscador */
+.am-search{
+  flex:1 1 auto;min-width:0;
+  display:flex;align-items:center;
+  background:#fff;border-radius:999px;
+  padding:4px 4px 4px 18px;
+  box-shadow:var(--shadow-sm);
+}
+.am-search input{
+  flex:1 1 auto;min-width:0;border:0;outline:0;background:transparent;
+  font-size:14.5px;color:var(--text);padding:9px 0;
+}
+.am-search input::placeholder{color:#9AA3B2}
+.am-search-btn{
+  flex:0 0 auto;border:0;cursor:pointer;
+  width:40px;height:40px;border-radius:999px;
+  background:var(--tb-search-bg);color:var(--tb-search-fg);
+  font-size:16px;display:flex;align-items:center;justify-content:center;
+  transition:filter .18s ease,transform .18s ease;
+}
+.am-search-btn:hover{filter:brightness(1.06);transform:scale(1.04)}
+
+.am-tb-item{display:flex;align-items:center;gap:8px;font-size:12px;flex:0 0 auto}
+.am-tb-icon{font-size:20px}
+.am-tb-sub{display:block;opacity:.8;font-size:11px}
+.am-tb-strong{display:block;font-weight:700;font-size:13px}
+
+.am-socials{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.am-socials a{
+  width:34px;height:34px;display:flex;align-items:center;justify-content:center;
+  transition:transform .18s ease;box-shadow:var(--shadow-xs);
+}
+.am-socials a:hover{transform:translateY(-2px) scale(1.06)}
+
+.am-cart-btn{
+  position:relative;flex:0 0 auto;
+  width:46px;height:46px;border-radius:14px;
+  background:var(--tb-cart-bg);color:var(--tb-cart-fg);
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+  box-shadow:0 6px 16px rgba(0,0,0,.22);
+  border:1px solid rgba(255,255,255,.16);
+  transition:transform .18s ease;
+}
+.am-cart-btn:hover{transform:translateY(-2px)}
+.am-cart-badge{
+  position:absolute;top:-6px;right:-6px;min-width:21px;height:21px;
+  border-radius:999px;background:#E11D48;color:#fff;
+  font-size:11.5px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;padding:0 5px;
+  border:2px solid #fff;
+}
+
+/* Menú lateral */
+.am-menu-panel{
+  position:absolute;top:100%;left:18px;
+  width:min(320px,86vw);max-height:70vh;overflow:auto;
+  background:var(--menu-bg);color:var(--menu-fg);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-lg);
+  padding:8px;z-index:70;
+}
+.am-menu-head{
+  font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  opacity:.78;padding:10px 12px 8px;
+}
+.am-menu-panel a{
+  display:block;padding:11px 12px;border-radius:10px;
+  font-size:14px;font-weight:500;
+  transition:background .16s ease;
+}
+.am-menu-panel a:hover{background:rgba(255,255,255,.16)}
+
+/* =========================================================
+   2. CATEGORÍAS (fila circular)
+   ========================================================= */
+.am-cats-wrap{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  box-shadow:var(--shadow-xs);
+}
+.am-cats-scroll{
+  width:100%;max-width:var(--wrap-wide);margin:0 auto;
+  display:flex;gap:6px;overflow-x:auto;
+  padding:16px 18px;
+  scrollbar-width:thin;
+}
+.am-cats-scroll::-webkit-scrollbar{height:6px}
+.am-cats-scroll::-webkit-scrollbar-thumb{background:#D8DEE9;border-radius:999px}
+.am-cat-circle{
+  flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:8px;
+  padding:4px 6px;border-radius:14px;
+  transition:transform .18s ease;
+}
+.am-cat-circle:hover{transform:translateY(-3px)}
+.am-cat-circle .bubble{
+  border-radius:50%;
+  box-shadow:0 6px 16px rgba(15,23,42,.14);
+  border:3px solid #fff;
+  outline:1px solid var(--line);
+}
+.am-cat-circle .label{
+  font-weight:600;text-align:center;max-width:104px;
+  text-transform:capitalize;line-height:1.2;
+}
+
+/* =========================================================
+   3. BANNERS (hero grande + finos)
+   ========================================================= */
+.am-ads-wrap{margin:22px 0 4px}
+.am-ads-hero{
+  position:relative;overflow:hidden;
+  border-radius:var(--radius-lg);
+  background:#0B1220;
+  box-shadow:var(--shadow-md);
+}
+.am-ads-hero .am-slide{
+  position:absolute;inset:0;
+  opacity:0;transform:scale(1.03);
+  transition:opacity .9s ease,transform 4s ease;
+}
+.am-ads-hero .am-slide.active{opacity:1;transform:scale(1)}
+.am-ads-hero .am-slide img,
+.am-ads-hero .am-slide video{width:100%;height:100%;object-fit:cover}
+.am-ads-hero .ovr{position:absolute;inset:0;pointer-events:none}
+.am-ads-cashea{
+  position:absolute;right:16px;bottom:16px;
+  height:42px;width:auto;border-radius:10px;
+  background:rgba(255,255,255,.92);padding:4px 8px;
+  box-shadow:var(--shadow-sm);
+}
+
+/* Tarjetas de anuncios debajo del hero */
+.am-ads-cards{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  margin-top:16px;
+}
+.am-ads-card{
+  background:var(--card);border-radius:var(--radius);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow-xs);
+  padding:14px;
+  display:flex;flex-direction:column;gap:10px;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.am-ads-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.am-ads-card .t{
+  font-weight:800;font-size:12.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--primary);
+  min-height:2.6em;
+}
+.am-ads-card .imgbox{
+  height:140px;border-radius:var(--radius-sm);overflow:hidden;background:var(--bg-gray);
+  display:flex;align-items:center;justify-content:center;
+}
+.am-ads-card .imgbox img{width:100%;height:100%;object-fit:cover}
+.am-ads-card .lnk{font-size:12.5px;font-weight:700;color:var(--muted)}
+.am-ads-card:hover .lnk{color:var(--primary)}
+
+/* Banners finos */
+.am-secondary-banner-wrap{margin:26px 0}
+.am-secondary-banner{
+  position:relative;overflow:hidden;
+  height:clamp(96px,10vw,150px);
+  border-radius:var(--radius);
+  background:#0B1220;
+  box-shadow:var(--shadow-sm);
+}
+.am-secondary-banner .am-slide{
+  position:absolute;inset:0;opacity:0;transition:opacity .8s ease;
+}
+.am-secondary-banner .am-slide.active{opacity:1}
+.am-secondary-banner .am-slide img,
+.am-secondary-banner .am-slide video{width:100%;height:100%;object-fit:cover}
+
+/* =========================================================
+   4. APARTADOS (tiles del inicio)
+   ========================================================= */
+.am-tiles-row{margin:26px 0}
+.am-tile{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-xs);
+  padding:18px 18px 20px;
+  transition:box-shadow .22s ease;
+}
+.am-tile:hover{box-shadow:var(--shadow-md)}
+.am-tile-head{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding-bottom:14px;margin-bottom:16px;
+  border-bottom:1px solid var(--line);
+}
+.am-tile-title{
+  font-weight:800;letter-spacing:-.01em;
+  position:relative;padding-left:14px;
+  text-transform:capitalize;
+}
+.am-tile-title::before{
+  content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:5px;height:70%;border-radius:999px;background:var(--accent);
+}
+.am-tile-more{
+  font-size:13px;font-weight:700;
+  padding:8px 14px;border-radius:999px;
+  background:var(--bg-gray);
+  white-space:nowrap;
+  transition:background .18s ease,transform .18s ease;
+}
+.am-tile-more:hover{background:#E6EBF5;transform:translateX(2px)}
+
+.am-quad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.am-quad-item{
+  background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.am-quad-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#D5DDEC}
+.am-quad-imgwrap{
+  aspect-ratio:1/1;background:var(--bg-gray);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.am-quad-imgwrap img{width:100%;height:100%;object-fit:contain;transition:transform .35s ease}
+.am-quad-item:hover .am-quad-imgwrap img{transform:none}
+.am-quad-name{
+  padding:11px 12px;font-size:13px;font-weight:600;text-align:center;
+  color:var(--text);text-transform:capitalize;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.am-quad-empty{background:transparent;border:1px dashed var(--line);box-shadow:none}
+.am-quad-empty:hover{transform:none;box-shadow:none}
+
+/* =========================================================
+   5. CABECERA DE VISTA + GRID DE PRODUCTOS
+   ========================================================= */
+.am-view-head{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  margin:26px 0 18px;flex-wrap:wrap;
+}
+.am-view-title{
+  font-size:clamp(20px,2.4vw,28px);font-weight:800;letter-spacing:-.02em;
+  text-transform:capitalize;
+}
+
+.am-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:18px;margin-bottom:36px;
+}
+.am-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:12px;
+  display:flex;flex-direction:column;gap:9px;
+  box-shadow:var(--shadow-xs);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.am-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.am-card>img{
+  width:100%;aspect-ratio:1/1;object-fit:contain;
+  background:#fff;border-radius:var(--radius-sm);
+  border:var(--img-border-width) solid var(--img-border-color);
+  cursor:zoom-in;
+}
+.am-name{
+  font-size:13.5px;font-weight:600;line-height:1.35;min-height:2.7em;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.am-price-row{display:flex;align-items:center;gap:8px;margin-top:auto}
+.am-price{
+  font-size:19px;font-weight:800;color:var(--price);letter-spacing:-.02em;
+}
+.am-share-btn{
+  margin-left:auto;border:1px solid var(--line);background:#fff;
+  width:30px;height:30px;border-radius:9px;cursor:pointer;
+  color:var(--muted);display:flex;align-items:center;justify-content:center;
+  transition:color .16s ease,border-color .16s ease;
+}
+.am-share-btn:hover{color:var(--primary);border-color:var(--primary)}
+.am-cashea-inline{height:18px;width:auto;opacity:.9}
+
+.am-add-btn{
+  width:100%;border:0;cursor:pointer;
+  padding:11px 12px;border-radius:12px;
+  background:var(--primary);color:#fff;
+  font-size:13.5px;font-weight:700;
+  transition:filter .18s ease,transform .18s ease;
+}
+.am-add-btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.am-btns-row{display:flex;gap:8px}
+.am-btn-half{flex:1 1 0;padding:11px 6px;font-size:12.5px}
+.am-grams-btn{background:var(--accent);color:#10213B}
+
+.am-empty{
+  background:#fff;border:1px dashed var(--line);border-radius:var(--radius);
+  padding:40px 20px;text-align:center;color:var(--muted);
+  font-size:14.5px;margin:24px 0;
+}
+
+/* =========================================================
+   6. BOTONES GENÉRICOS
+   ========================================================= */
+.am-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:0;cursor:pointer;
+  padding:11px 18px;border-radius:12px;
+  font-size:13.5px;font-weight:700;
+  transition:filter .18s ease,transform .18s ease;
+}
+.am-btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.am-btn-primary{background:var(--primary);color:#fff}
+.am-btn-success{background:var(--price);color:#fff}
+.am-btn-danger{background:#E11D48;color:#fff}
+.am-btn-ghost{background:#fff;color:var(--text);border:1px solid var(--line)}
+
+/* =========================================================
+   7. CARRITO
+   ========================================================= */
+.am-cart-page{display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
+.am-cart-row{
+  display:grid;grid-template-columns:88px 1fr auto;gap:14px;align-items:center;
+  background:var(--cart-card-bg);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:12px;box-shadow:var(--shadow-xs);
+}
+.am-cart-row img{width:88px;height:88px;object-fit:contain;border-radius:var(--radius-sm);background:#fff}
+.am-cart-name{font-weight:700;font-size:14.5px;color:var(--cart-name-fg)}
+.am-cart-unit{font-size:12.5px;color:var(--cart-unit-fg)}
+.am-cart-price{
+  background:var(--cart-price-bg);color:var(--cart-price-fg);
+  padding:6px 12px;border-radius:999px;font-weight:800;font-size:14px;
+  display:inline-block;
+}
+.am-cart-qty{display:flex;align-items:center;gap:8px}
+.am-cart-line{
+  background:var(--cart-price-bg);color:var(--cart-price-fg);
+  padding:6px 12px;border-radius:10px;font-weight:800;
+}
+.am-cart-del{
+  border:0;cursor:pointer;background:#FEE2E2;color:#B91C1C;
+  width:36px;height:36px;border-radius:10px;font-size:16px;
+}
+.am-cart-total-box{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  flex-wrap:wrap;box-shadow:var(--shadow-sm);
+}
+.am-cart-total-label{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.am-cart-total{font-size:26px;font-weight:900;color:var(--price)}
+.am-cart-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* =========================================================
+   8. MODALES / TOAST / FLOTANTES
+   ========================================================= */
+.am-modal-overlay{
+  position:fixed;inset:0;z-index:120;
+  background:rgba(9,16,32,.62);backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;padding:18px;
+}
+.am-modal{
+  width:min(420px,100%);
+  background:#fff;border-radius:var(--radius-lg);
+  padding:22px;box-shadow:var(--shadow-lg);
+  text-align:center;
+}
+.am-modal-img{width:150px;height:150px;object-fit:contain;margin:0 auto 12px}
+.am-modal-name{font-weight:700;font-size:16px;margin-bottom:4px}
+.am-modal-price{font-size:22px;font-weight:900;color:var(--price);margin-bottom:6px}
+.am-modal-hint{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+.am-qty-row{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0 18px}
+.am-qty-btn{
+  width:44px;height:44px;border-radius:12px;border:1px solid var(--line);
+  background:var(--bg-gray);font-size:20px;cursor:pointer;font-weight:700;
+}
+.am-qty-row input{
+  width:96px;text-align:center;font-size:17px;font-weight:700;
+  padding:11px;border-radius:12px;border:1px solid var(--line);
+}
+.am-grams-unit{font-weight:700;color:var(--muted)}
+.am-modal-actions{display:flex;gap:10px}
+.am-modal-actions .am-btn{flex:1 1 0}
+
+.am-toast{
+  position:fixed;left:50%;bottom:26px;transform:translateX(-50%);
+  z-index:200;background:#0E1726;color:#fff;
+  padding:12px 20px;border-radius:999px;font-size:13.5px;font-weight:600;
+  box-shadow:var(--shadow-lg);
+}
+
+.am-wa-float{
+  position:fixed;left:18px;bottom:18px;z-index:110;
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 26px rgba(37,211,102,.42);
+  transition:transform .2s ease;
+}
+.am-wa-float:hover{transform:scale(1.07)}
+.am-wa-float svg{width:32px;height:32px}
+.am-pay-float{
+  position:fixed;right:18px;bottom:18px;z-index:110;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--price);color:#fff;font-weight:800;font-size:14px;
+  padding:14px 22px;border-radius:999px;
+  box-shadow:0 12px 26px rgba(18,130,60,.4);
+}
+
+.am-lightbox{
+  position:fixed;inset:0;z-index:150;
+  background:rgba(9,16,32,.9);
+  display:flex;align-items:center;justify-content:center;padding:24px;
+}
+.am-lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:var(--radius)}
+.am-lightbox .close{
+  position:absolute;top:18px;right:22px;
+  width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;
+  background:rgba(255,255,255,.16);color:#fff;font-size:26px;
+}
+
+.am-share-modal{
+  width:min(400px,100%);background:#fff;border-radius:var(--radius-lg);
+  padding:22px;box-shadow:var(--shadow-lg);
+}
+.am-share-title{font-weight:800;font-size:16px;margin-bottom:14px}
+.am-share-links{display:flex;flex-direction:column;gap:10px}
+.am-share-link,.am-share-copy,.am-share-close{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px;border-radius:12px;border:1px solid var(--line);
+  background:#fff;font-weight:700;font-size:13.5px;cursor:pointer;
+}
+.am-share-link:hover,.am-share-copy:hover{border-color:var(--primary);color:var(--primary)}
+
+/* =========================================================
+   9. FRANJA DE CONFIANZA + FOOTER
+   ========================================================= */
+.am-trust{
+  background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  margin-top:34px;
+}
+.am-trust-grid{
+  width:100%;max-width:var(--wrap);margin:0 auto;padding:26px 18px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+}
+.am-trust-item{display:flex;align-items:center;gap:12px}
+.am-trust-ico{
+  width:46px;height:46px;flex:0 0 auto;border-radius:14px;
+  background:var(--bg-gray);display:flex;align-items:center;justify-content:center;
+  font-size:22px;
+}
+.am-trust-item b{display:block;font-size:13.5px}
+.am-trust-item span{font-size:12.5px;color:var(--muted)}
+
+.am-footer{background:#0E1726;color:#fff;padding:44px 0 0}
+.am-footer-grid{
+  width:100%;max-width:var(--wrap);margin:0 auto;padding:0 18px 34px;
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:30px;
+}
+.am-footer h4{
+  font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  margin:0 0 14px;opacity:.62;font-weight:800;
+}
+.am-footer a,.am-footer p,.am-footer li{font-size:13.5px;color:rgba(255,255,255,.82)}
+.am-footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.am-footer a:hover{color:#fff}
+.am-footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.am-footer-brand img{height:48px;width:auto}
+.am-footer-brand .n{font-family:'Pacifico',cursive;font-size:22px}
+.am-footer-brand .m{font-size:11px;letter-spacing:.3em;font-weight:800;opacity:.8}
+.am-footer-socials{display:flex;gap:10px;margin-top:14px}
+.am-footer-socials a{
+  width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;font-size:16px;
+}
+.am-footer-socials a:hover{background:rgba(255,255,255,.2)}
+.am-footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  padding:16px 18px;text-align:center;
+  font-size:12.5px;color:rgba(255,255,255,.6);
+}
+
+/* =========================================================
+   10. RESPONSIVE (móvil primero en experiencia)
+   ========================================================= */
+@media (max-width:1080px){
+  .am-ads-cards{grid-template-columns:repeat(2,1fr)}
+  .am-footer-grid{grid-template-columns:1fr 1fr}
+  .am-trust-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width:860px){
+  .am-tb-account{display:none}
+  .am-socials{display:none}
+}
+
+@media (max-width:720px){
+  .am-topbar-row{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    grid-template-areas:'menu brand cart' 'search search search';
+    gap:10px;padding:10px 14px;
+  }
+  .am-tb-menu{grid-area:menu}
+  .am-brand{grid-area:brand;justify-content:center}
+  .am-brand-logo{height:42px}
+  .am-cart-btn{grid-area:cart;width:42px;height:42px;font-size:18px}
+  .am-search{grid-area:search}
+  .am-delivery-track{font-size:11.5px}
+
+  .am-cats-scroll{padding:12px 14px;gap:2px}
+  .am-cat-circle .bubble{width:60px !important;height:60px !important}
+  .am-cat-circle .label{font-size:11px !important;max-width:74px}
+
+  .am-wrap,.am-wrap-wide{padding:0 14px}
+  .am-ads-hero{border-radius:var(--radius);height:auto !important;aspect-ratio:16/9}
+  .am-ads-cards{grid-template-columns:repeat(2,1fr);gap:12px}
+  .am-ads-card .imgbox{height:104px}
+  .am-ads-cashea{height:30px;right:10px;bottom:10px}
+
+  .am-tile{padding:14px;border-radius:var(--radius)}
+  .am-quad-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .am-tile-more{font-size:12px;padding:7px 12px}
+
+  .am-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .am-card{padding:10px}
+  .am-price{font-size:17px}
+  .am-name{font-size:12.5px}
+  .am-btns-row{flex-direction:column}
+
+  .am-cart-row{grid-template-columns:64px 1fr;grid-template-areas:'img info' 'act act';row-gap:10px}
+  .am-cart-row img{grid-area:img;width:64px;height:64px}
+  .am-cart-row>div:nth-child(2){grid-area:info}
+
+  .am-trust-grid{grid-template-columns:1fr;gap:14px;padding:20px 14px}
+  .am-footer-grid{grid-template-columns:1fr;gap:24px}
+  .am-wa-float{width:50px;height:50px}
+  .am-wa-float svg{width:28px;height:28px}
+  .am-pay-float{padding:12px 18px;font-size:13px}
+}
+
+@media (max-width:420px){
+  .am-brand-name{font-size:19px}
+  .am-modal-img{width:120px;height:120px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+
+/* Overlay de compartir (lo crea app.js) */
+.am-share-overlay{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(9,16,32,.62);backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;padding:16px;
+}
+
+/* Respetar el atributo hidden en modales, toast y panel de menú */
+[hidden]{display:none !important}
+
+/* En móvil el banner se muestra completo (sin recortes) */
+@media (max-width:720px){
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{object-fit:contain;background:transparent}
+}
+
+/* =========================================================
+   11. REDISEÑO CABECERA + BANNER FULL WIDTH (2026)
+   Mantiene los colores y el logo de la marca.
+   ========================================================= */
+
+.am-topbar-row{
+  display:flex;align-items:center;gap:16px;
+  padding:10px 22px;
+}
+
+/* Botón "Categorías" tipo pastilla */
+.am-tb-menu{
+  width:auto;height:46px;
+  padding:0 18px;gap:10px;
+  border-radius:12px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.22);
+  font-size:14.5px;font-weight:700;
+  letter-spacing:.01em;
+}
+.am-tb-menu-ico{font-size:17px;line-height:1}
+.am-tb-menu-txt{white-space:nowrap}
+
+/* Buscador más ancho y centrado */
+.am-search{
+  max-width:640px;margin:0 auto;
+  border-radius:12px;
+  padding:3px 3px 3px 16px;
+  box-shadow:0 2px 8px rgba(9,20,45,.14);
+}
+.am-search-btn{border-radius:10px;width:42px;height:40px}
+
+/* Ubicación / Mi cuenta */
+.am-tb-loc,.am-tb-account{
+  gap:8px;font-size:13.5px;font-weight:600;
+  padding:8px 6px;border-radius:10px;cursor:pointer;
+  transition:background .16s ease;
+  white-space:nowrap;
+}
+.am-tb-loc:hover,.am-tb-account:hover{background:rgba(255,255,255,.12)}
+.am-tb-loc .am-tb-strong,.am-tb-account .am-tb-strong{font-size:13.5px;font-weight:600}
+.am-tb-caret{font-size:11px;opacity:.8}
+
+/* Socials fuera de la cabecera (siguen en el footer) */
+.am-topbar .am-socials{display:none !important}
+
+/* Carrito con texto y monto */
+.am-cart-btn{
+  width:auto;height:48px;
+  padding:0 16px;gap:10px;
+  border-radius:12px;
+  font-size:16px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:none;
+}
+.am-cart-btn:hover{background:rgba(255,255,255,.24);transform:translateY(-1px)}
+.am-cart-ico{position:relative;display:flex;align-items:center;font-size:20px}
+.am-cart-meta{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.am-cart-word{font-size:13px;font-weight:600;opacity:.9}
+.am-cart-amount{font-size:13.5px;font-weight:800}
+.am-cart-badge{top:-8px;right:-10px}
+
+/* =============== BANNER A TODO EL ANCHO =============== */
+.am-ads-wrap{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-top:0;margin-bottom:0;
+}
+.am-ads-hero{
+  border-radius:0;
+  box-shadow:0 10px 26px rgba(15,23,42,.12);
+}
+.am-ads-cards{
+  width:100%;max-width:var(--wrap);
+  margin:22px auto 4px;padding:0 18px;
+}
+
+/* Franja blanca de apartados: siempre a todo el ancho, debajo del banner */
+.am-cats-wrap{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  border-top:1px solid var(--line);
+}
+
+@media (max-width:1180px){
+  .am-tb-loc{display:none}
+}
+@media (max-width:980px){
+  .am-tb-menu-txt{display:none}
+  .am-tb-menu{padding:0 14px}
+  .am-cart-meta{display:none}
+}
+@media (max-width:720px){
+  .am-topbar-row{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    grid-template-areas:'menu brand cart' 'search search search';
+    gap:10px;padding:10px 14px;
+  }
+  .am-tb-menu{grid-area:menu;height:42px;width:42px;padding:0;justify-content:center}
+  .am-cart-btn{grid-area:cart;height:42px;width:42px;padding:0;justify-content:center}
+  .am-search{grid-area:search;max-width:none}
+  .am-tb-account{display:none}
+  .am-ads-hero{border-radius:0}
+  .am-ads-cards{padding:0 14px}
+}
+
+/* Si la franja de apartados queda dentro del contenedor del banner, ya es full width */
+.am-ads-wrap > .am-cats-wrap{width:100%;margin-left:0}
+
+/* =========================================================
+   12. AJUSTES 2026-B
+   - Cabecera más fina, con redes sociales (sin "Mi cuenta")
+   - Banners y apartados a todo el ancho
+   - Banners finos con el doble de altura
+   - Botón "Agregar" en azul de marca
+   - Carrito reacomodado
+   ========================================================= */
+
+/* ---------- 12.1 CABECERA MÁS FINA ---------- */
+.am-topbar-row{
+  gap:12px;
+  padding:6px 22px;
+  min-height:58px;
+}
+.am-delivery-track{padding:3px 0;font-size:11.5px}
+.am-topbar .am-brand-logo{
+  height:46px !important;max-height:46px;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.25));
+}
+.am-tb-menu{height:38px;padding:0 14px;font-size:13.5px;border-radius:10px}
+.am-tb-menu-ico{font-size:15px}
+.am-search{max-width:560px;padding:2px 2px 2px 14px;border-radius:10px}
+.am-search input{font-size:13.5px;padding:6px 0}
+.am-search-btn{width:36px;height:34px;border-radius:8px;font-size:14px}
+.am-tb-loc{padding:5px 6px;font-size:12.5px}
+.am-tb-loc .am-tb-icon{font-size:17px}
+.am-tb-loc .am-tb-strong{font-size:12.5px}
+.am-cart-btn{height:40px;padding:0 13px;gap:8px;border-radius:10px}
+.am-cart-ico{font-size:17px}
+.am-cart-word{font-size:11.5px}
+.am-cart-amount{font-size:12.5px}
+
+/* Redes sociales de vuelta en la cabecera (donde estaba "Mi cuenta") */
+.am-topbar .am-socials{display:flex !important;gap:7px}
+.am-topbar .am-socials a{width:30px;height:30px}
+.am-topbar .am-socials svg{width:17px;height:17px}
+.am-tb-account{display:none !important}
+
+/* Panel de categorías: que quepan TODOS los apartados */
+.am-menu-panel{max-height:80vh;width:min(340px,90vw);padding:8px 8px 12px}
+.am-menu-panel a{padding:9px 12px;font-size:13.5px}
+
+/* ---------- 12.2 FULL WIDTH (banners y apartados) ---------- */
+.am-full-bleed,
+.am-tiles-row,
+.am-secondary-banner-wrap{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+}
+.am-tiles-row{margin-top:0;margin-bottom:0}
+.am-tile{
+  border-radius:0;
+  border-left:0;border-right:0;
+  padding:22px clamp(14px,3vw,42px) 28px;
+}
+.am-tile:hover{box-shadow:var(--shadow-xs)}
+.am-quad-grid{gap:clamp(12px,1.6vw,22px)}
+
+/* Banners finos: el doble de altura y a todo el ancho */
+.am-secondary-banner-wrap{margin-top:0;margin-bottom:0}
+.am-secondary-banner{
+  height:clamp(190px,20vw,300px);
+  border-radius:0;
+}
+.am-secondary-banner .am-slide img,
+.am-secondary-banner .am-slide video{width:100%;height:100%;object-fit:cover}
+
+/* Hero: que ocupe todo el ancho sin bordes redondeados */
+.am-ads-hero{border-radius:0}
+
+/* La franja de confianza y las 4 tarjetas de anuncios NO son full width */
+.am-ads-cards{max-width:var(--wrap);margin-left:auto;margin-right:auto}
+
+/* ---------- 12.3 BOTONES EN AZUL DE MARCA ---------- */
+.am-add-btn,
+.am-btn-primary{
+  background:var(--brand-blue,var(--primary));
+  color:#fff;
+}
+.am-add-btn:hover,.am-btn-primary:hover{filter:brightness(1.12)}
+.am-tile-title::before{background:var(--brand-blue,var(--primary))}
+
+/* ---------- 12.4 CARRITO ORDENADO ---------- */
+.am-cart-row{
+  grid-template-columns:88px minmax(0,1fr) auto auto 44px;
+  align-items:center;gap:16px;
+}
+.am-cart-info{display:flex;flex-direction:column;gap:4px;min-width:0}
+.am-cart-name{
+  font-weight:700;font-size:14.5px;color:var(--cart-name-fg);
+  line-height:1.3;word-break:break-word;
+}
+.am-cart-price{
+  background:transparent;color:var(--muted);
+  padding:0;border-radius:0;font-weight:600;font-size:12.5px;
+}
+.am-cart-qty{
+  display:flex;align-items:center;gap:6px;
+  background:var(--bg-gray);border:1px solid var(--line);
+  border-radius:999px;padding:4px;
+}
+.am-cart-qty button{
+  width:32px;height:32px;border:0;border-radius:50%;cursor:pointer;
+  background:#fff;font-size:17px;font-weight:700;color:var(--text);
+  box-shadow:var(--shadow-xs);
+}
+.am-cart-qty input{
+  width:52px;text-align:center;border:0;background:transparent;
+  font-size:15px;font-weight:700;outline:0;
+}
+.am-cart-linewrap{min-width:96px;text-align:right}
+.am-cart-line{display:inline-block;white-space:nowrap}
+
+@media (max-width:900px){
+  .am-cart-row{
+    grid-template-columns:72px minmax(0,1fr) auto;
+    grid-template-areas:'img info del' 'qty qty total';
+    row-gap:12px;
+  }
+  .am-cart-row img{grid-area:img;width:72px;height:72px}
+  .am-cart-info{grid-area:info}
+  .am-cart-qty{grid-area:qty;justify-self:start}
+  .am-cart-linewrap{grid-area:total;text-align:right}
+  .am-cart-del{grid-area:del}
+}
+
+@media (max-width:720px){
+  .am-topbar-row{padding:8px 14px;min-height:0}
+  .am-topbar .am-brand-logo{height:38px !important}
+  .am-topbar .am-socials{display:none !important}
+  .am-tile{padding:16px 14px 20px}
+  .am-secondary-banner{height:clamp(150px,42vw,240px)}
+}
+
+/* =========================================================
+   13. AJUSTES 2026-C
+   - Menú de Categorías desplegable (ya no se recorta)
+   - Separación de ubicación / redes / carrito en la cabecera
+   - Apartados con imágenes más pequeñas (ancho tipo tarjetas)
+   - Textos y "Ver más" de las 4 tarjetas en negro
+   ========================================================= */
+
+/* ---------- 13.1 MENÚ DE CATEGORÍAS ---------- */
+.am-topbar{overflow:visible}
+.am-menu-panel{
+  position:absolute;top:calc(100% + 6px);left:18px;
+  width:min(360px,92vw);max-height:min(78vh,640px);overflow-y:auto;
+  z-index:9999;
+  box-shadow:0 26px 60px rgba(9,20,45,.35);
+  border:1px solid rgba(255,255,255,.14);
+}
+.am-menu-panel[hidden]{display:none}
+.am-menu-backdrop{
+  position:fixed;inset:0;background:rgba(9,20,45,.28);
+  z-index:55;border:0;
+}
+.am-menu-backdrop[hidden]{display:none}
+.am-tb-menu[aria-expanded="true"]{background:rgba(255,255,255,.28)}
+
+/* ---------- 13.2 ESPACIADO DE LA CABECERA ---------- */
+.am-topbar-row{gap:10px}
+.am-tb-loc{margin-left:2px;margin-right:16px}
+.am-topbar .am-socials{margin:0 4px}
+.am-topbar .am-cart-btn{margin-left:20px}
+
+/* ---------- 13.3 APARTADOS: IMÁGENES MÁS PEQUEÑAS Y COMPLETAS ---------- */
+.am-quad-grid{justify-items:center}
+.am-quad-item{width:100%;max-width:300px}
+/* La imagen se muestra COMPLETA (nunca recortada): contain + un poco de aire */
+.am-quad-imgwrap{aspect-ratio:auto;height:190px;padding:10px;box-sizing:border-box;background:#fff}
+.am-quad-imgwrap img{width:100%;height:100%;object-fit:contain;object-position:center}
+.am-quad-name{font-size:12.5px;padding:9px 10px}
+@media (max-width:900px){
+  .am-quad-imgwrap{height:160px;padding:8px}
+}
+@media (max-width:520px){
+  .am-quad-imgwrap{height:130px;padding:6px}
+}
+
+/* ---------- 13.4 TARJETAS DE ANUNCIOS EN NEGRO ---------- */
+.am-ads-card .t{color:#000}
+.am-ads-card .lnk{color:#000}
+.am-ads-card:hover .lnk{color:#000}
+
+/* =========================================================
+   14. AJUSTES 2026-D
+   - Logo mucho más grande (PC y teléfono)
+   - Logo centrado en móvil
+   - Banner principal a pantalla completa en móvil
+   - Botón de menú y carrito siempre clicables
+   ========================================================= */
+
+/* ---------- 14.1 LOGO GRANDE EN COMPUTADORA ---------- */
+.am-topbar-row{min-height:86px}
+.am-topbar .am-brand{flex:0 0 auto}
+.am-topbar .am-brand-logo{
+  height:74px !important;max-height:74px;width:auto;
+  filter:drop-shadow(0 3px 10px rgba(0,0,0,.30));
+}
+@media (min-width:1400px){
+  .am-topbar .am-brand-logo{height:82px !important;max-height:82px}
+}
+
+/* ---------- 14.2 CABECERA MÓVIL: LOGO GRANDE Y CENTRADO ---------- */
+@media (max-width:720px){
+  .am-topbar-row{
+    display:grid;
+    grid-template-columns:46px minmax(0,1fr) 46px;
+    grid-template-areas:
+      'menu brand cart'
+      'search search search';
+    align-items:center;
+    gap:10px;
+    padding:10px 12px 12px;
+    min-height:0;
+  }
+  .am-tb-menu{grid-area:menu;height:44px;width:46px;padding:0;justify-content:center;position:relative;z-index:5}
+  .am-cart-btn{grid-area:cart;height:44px;width:46px;padding:0;justify-content:center;margin-left:0 !important;position:relative;z-index:5}
+  .am-brand{
+    grid-area:brand;
+    justify-content:center !important;
+    transform:none !important;
+    min-width:0;
+  }
+  .am-topbar .am-brand-logo{
+    height:clamp(86px,26vw,132px) !important;
+    max-height:none;
+    max-width:100%;
+    width:auto;
+  }
+  .am-search{grid-area:search;max-width:none}
+}
+
+/* ---------- 14.3 BANNER PRINCIPAL COMPLETO EN MÓVIL ---------- */
+@media (max-width:720px){
+  .am-ads-hero{
+    aspect-ratio:auto !important;
+    height:auto !important;
+    border-radius:0;
+    overflow:hidden;
+    background:transparent !important;
+  }
+  .am-ads-hero .am-slide{position:absolute;inset:0;opacity:0}
+  .am-ads-hero .am-slide.active{position:relative;inset:auto;opacity:1}
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{
+    width:100% !important;height:auto !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
+  }
+}
+
+/* =========================================================
+   22. CORRECCION DEFINITIVA PARA TELEFONOS
+   También detecta el teléfono por pantalla táctil. Esto hace
+   que el ajuste funcione aunque la página no tenga configurado
+   correctamente el viewport móvil en el HTML.
+   NO se aplica a computadoras con mouse.
+   ========================================================= */
+@media (max-width:720px), (hover:none) and (pointer:coarse) and (max-device-width:720px){
+  /* El banner toma la proporción real de la imagen y no corta los lados */
+  .am-ads-wrap,
+  .am-full-bleed.am-ads-wrap{
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:0 !important;
+  }
+  .am-ads-hero,
+  .am-ads-wrap .am-ads-hero,
+  #adsHero{
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    border-radius:0 !important;
+    overflow:hidden !important;
+    background:transparent !important;
+  }
+  .am-ads-hero .am-slide,
+  #adsHero .am-slide{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:auto !important;
+    opacity:0 !important;
+  }
+  .am-ads-hero .am-slide.active,
+  #adsHero .am-slide.active{
+    position:relative !important;
+    inset:auto !important;
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    opacity:1 !important;
+    transform:none !important;
+  }
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video,
+  #adsHero .am-slide img,
+  #adsHero .am-slide video{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-width:100% !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    margin:0 !important;
+  }
+
+  /* Círculos y títulos mucho más visibles en teléfonos */
+  .am-cats-scroll{
+    gap:18px !important;
+    padding:20px 16px !important;
+    align-items:flex-start !important;
+  }
+  .am-cat-circle{
+    flex:0 0 122px !important;
+    width:122px !important;
+    gap:10px !important;
+    padding:2px 0 !important;
+  }
+  .am-cat-circle .bubble{
+    display:block !important;
+    width:112px !important;
+    height:112px !important;
+    min-width:112px !important;
+    min-height:112px !important;
+    border-width:4px !important;
+  }
+  .am-cat-circle .bubble img{
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    border-radius:50% !important;
+    object-fit:cover !important;
+  }
+  .am-cat-circle .label{
+    width:122px !important;
+    max-width:122px !important;
+    min-height:2.3em !important;
+    font-size:18px !important;
+    font-weight:900 !important;
+    line-height:1.15 !important;
+    text-align:center !important;
+    white-space:normal !important;
+  }
+}
+
+/* ---------- 14.4 CLICS SIEMPRE ACTIVOS EN LA CABECERA ---------- */
+.am-topbar{position:relative;z-index:60}
+.am-tb-menu,.am-cart-btn{pointer-events:auto;cursor:pointer;-webkit-tap-highlight-color:rgba(255,255,255,.2)}
+.am-tb-menu *,.am-cart-btn *{pointer-events:none}
+.am-topbar::before{pointer-events:none !important}
+
+/* =========================================================
+   15. AJUSTES 2026-E (SOLO ESCRITORIO)
+   - Barra superior fina otra vez (como antes)
+   - Logo grande, sobresaliendo sin engrosar la barra
+   - Logo más a la izquierda
+   ========================================================= */
+@media (min-width:721px){
+  .am-topbar{overflow:visible}
+  .am-topbar-row{
+    min-height:58px !important;
+    padding:5px 22px 5px 12px !important;
+    align-items:center;
+  }
+  .am-topbar .am-brand{
+    flex:0 0 auto;
+    margin-left:-2px;
+    margin-right:6px;
+    position:relative;
+    z-index:3;
+  }
+  .am-topbar .am-brand-logo{
+    height:78px !important;
+    max-height:none !important;
+    width:auto;
+    margin-top:-11px;
+    margin-bottom:-11px;
+    filter:drop-shadow(0 3px 10px rgba(0,0,0,.30));
+  }
+  @media (min-width:1400px){
+    .am-topbar .am-brand-logo{height:84px !important;margin-top:-14px;margin-bottom:-14px}
+  }
+}
+
+
+/* =========================================================
+   PRODUCTOS DESTACADOS (uno por apartado)
+   ========================================================= */
+.am-featured{
+  max-width:var(--wrap);margin:20px auto 6px;padding:0 18px;
+}
+.am-featured-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.am-featured-head h2{
+  font-size:22px;font-weight:800;letter-spacing:-.01em;color:var(--text,#0E1726);margin:0;
+}
+.am-featured-row{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:minmax(196px,1fr);
+  gap:14px;
+  overflow-x:auto;
+  padding-bottom:8px;
+  scroll-snap-type:x proximity;
+  -webkit-overflow-scrolling:touch;
+}
+.am-featured-row::-webkit-scrollbar{height:8px}
+.am-featured-row::-webkit-scrollbar-thumb{background:#cfd8e6;border-radius:8px}
+.am-feat-card{
+  scroll-snap-align:start;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow-xs);
+  padding:14px;display:flex;flex-direction:column;gap:6px;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.am-feat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.am-feat-imgwrap{
+  height:130px;display:flex;align-items:center;justify-content:center;
+  background:#fff;border-radius:var(--radius-sm);overflow:hidden;
+}
+.am-feat-imgwrap img{max-width:100%;max-height:100%;object-fit:contain}
+.am-feat-name{
+  font-size:13.5px;font-weight:700;line-height:1.3;min-height:2.6em;color:var(--text,#0E1726);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.am-feat-cat{font-size:11.5px;color:var(--muted);text-transform:capitalize}
+.am-feat-price{
+  font-size:19px;font-weight:800;letter-spacing:-.02em;
+  color:var(--brand-blue,var(--primary));margin-top:2px;
+}
+.am-feat-add{
+  margin-top:6px;width:100%;border:0;cursor:pointer;
+  padding:10px 12px;border-radius:12px;
+  background:var(--brand-blue,var(--primary));color:#fff;
+  font-size:13.5px;font-weight:700;
+  transition:filter .18s ease,transform .18s ease;
+}
+.am-feat-add:hover{filter:brightness(1.12);transform:translateY(-1px)}
+
+@media (max-width:640px){
+  .am-featured{padding:0 14px}
+  .am-featured-head h2{font-size:18px}
+  .am-featured-row{grid-auto-columns:minmax(158px,1fr);gap:10px}
+  .am-feat-imgwrap{height:104px}
+  .am-feat-price{font-size:17px}
+}
+
+/* =========================================================
+   FRANJA DE CONFIANZA FLOTANTE (siempre visible; se oculta al hacer scroll)
+   ========================================================= */
+.am-trust.am-trust-float{
+  position:fixed;left:0;right:0;bottom:0;z-index:70;
+  margin-top:0;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:saturate(140%) blur(6px);
+  border-top:1px solid var(--line);
+  box-shadow:0 -8px 24px rgba(9,17,32,.10);
+  transform:translateY(0);opacity:1;
+  transition:transform .32s ease,opacity .32s ease;
+}
+.am-trust.am-trust-float.is-hidden{transform:translateY(115%);opacity:0;pointer-events:none}
+.am-trust.am-trust-float .am-trust-grid{padding:12px 18px}
+.am-trust.am-trust-float .am-trust-ico{width:38px;height:38px;font-size:19px;border-radius:12px}
+body{padding-bottom:96px}
+
+@media (max-width:900px){
+  .am-trust.am-trust-float .am-trust-grid{
+    grid-template-columns:repeat(2,1fr);gap:10px;padding:10px 12px;
+  }
+  .am-trust.am-trust-float .am-trust-item b{font-size:12px}
+  .am-trust.am-trust-float .am-trust-item span{font-size:10.5px}
+  .am-trust.am-trust-float .am-trust-ico{width:32px;height:32px;font-size:16px}
+  body{padding-bottom:120px}
+}
+@media (max-width:520px){
+  .am-trust.am-trust-float .am-trust-item span{display:none}
+  body{padding-bottom:104px}
+}
+
+/* Botones flotantes por encima de la franja de confianza fija */
+.am-wa-float{bottom:104px !important}
+.am-pay-float{bottom:104px !important}
+@media (max-width:900px){
+  .am-wa-float{bottom:126px !important}
+  .am-pay-float{bottom:126px !important}
+}
+
+
+/* =========================================================
+   16. AJUSTES 2026-F
+   - Cinta de delivery mas rapida
+   - Productos destacados a todo el ancho y mas pegados al banner
+   - Logo mas a la izquierda
+   - Boton de WhatsApp mas abajo
+   ========================================================= */
+
+/* 16.1 Cinta superior mas rapida */
+.am-delivery-track{animation:am-marquee 14s linear infinite !important}
+@media (max-width:720px){
+  .am-delivery-track{animation:am-marquee 10s linear infinite !important}
+}
+
+/* 16.2 Productos destacados: full width, mas arriba y en cuadricula */
+.am-cats-wrap{margin-bottom:0}
+.am-featured{
+  max-width:none !important;
+  width:100vw;
+  margin:2px 0 6px calc(50% - 50vw) !important;
+  padding:6px 18px 4px !important;
+}
+.am-featured-head{margin-bottom:8px !important}
+/* Una sola fila que rellena todo el ancho; el resto se desliza */
+.am-featured-row{
+  grid-auto-flow:column !important;
+  grid-auto-columns:minmax(180px,1fr) !important;
+  gap:12px;
+  padding-bottom:4px !important;
+}
+@media (max-width:720px){
+  .am-featured{padding:6px 12px 4px !important}
+  .am-featured-row{grid-auto-columns:minmax(150px,1fr) !important;gap:10px}
+}
+
+/* 16.3 Logo mas hacia la izquierda (menos pegado a Categorias) */
+@media (min-width:721px){
+  .am-topbar-row{padding-left:4px !important}
+  .am-topbar .am-brand{
+    margin-left:-10px !important;
+    margin-right:26px !important;
+  }
+}
+
+/* 16.4 Boton de WhatsApp un poco mas abajo */
+.am-wa-float{bottom:74px !important}
+@media (max-width:900px){
+  .am-wa-float{bottom:96px !important}
+}
+
+/* =========================================================
+   17. AJUSTES CONECTADOS AL PANEL DE ADMINISTRACION (Python)
+   Todas estas variables las escribe app.js leyendo
+   site_settings.json (lo que guardas en el panel).
+   ========================================================= */
+:root{
+  --marquee-dur:14s;
+  --marquee-dur-mobile:10s;
+  --wa-bottom:74px;
+  --wa-bottom-mobile:96px;
+  --featured-min:180px;
+  --cart-page-bg:transparent;
+  --cart-page-pad:0px;
+  --cart-qty-fg:var(--text);
+  --cart-line-bg:var(--cart-price-bg);
+  --cart-line-fg:var(--cart-price-fg);
+  --cart-total-fg:var(--price);
+  --cart-pay-bg:var(--price);
+  --cart-pay-fg:#ffffff;
+  --cart-add-bg:var(--primary);
+  --cart-add-fg:#ffffff;
+  --cart-del-bg:#FEE2E2;
+  --cart-del-fg:#B91C1C;
+}
+
+/* Cinta de delivery: velocidad editable */
+.am-delivery-track{animation:am-marquee var(--marquee-dur) linear infinite !important}
+@media (max-width:720px){
+  .am-delivery-track{animation:am-marquee var(--marquee-dur-mobile) linear infinite !important}
+}
+
+/* Boton flotante de WhatsApp: posicion editable */
+.am-wa-float{bottom:var(--wa-bottom) !important}
+@media (max-width:900px){
+  .am-wa-float{bottom:var(--wa-bottom-mobile) !important}
+}
+
+/* Productos destacados: ancho minimo de cada tarjeta editable */
+.am-featured-row{grid-auto-columns:minmax(var(--featured-min),1fr) !important}
+
+/* Carrito: colores editables desde el panel */
+.am-cart-page{
+  background:var(--cart-page-bg);
+  padding:var(--cart-page-pad);
+  border-radius:var(--radius);
+}
+.am-cart-price{color:var(--cart-unit-fg)}
+.am-cart-qty input,.am-cart-qty button{color:var(--cart-qty-fg)}
+.am-cart-line{background:var(--cart-line-bg);color:var(--cart-line-fg)}
+.am-cart-total{color:var(--cart-total-fg)}
+.am-cart-actions .am-btn-success{background:var(--cart-pay-bg);color:var(--cart-pay-fg)}
+.am-cart-actions .am-btn-primary{background:var(--cart-add-bg);color:var(--cart-add-fg)}
+.am-cart-del{background:var(--cart-del-bg);color:var(--cart-del-fg)}
+
+/* Titulos personalizados de la cabecera (ventana "Titulos y logo") */
+.am-brand-titles .am-brand-title-block{margin:0}
+
+/* =========================================================
+   16. AJUSTE 2026-F (SOLO TELÉFONO)
+   Banner principal COMPLETO: se ve toda la imagen, sin recortes.
+   ========================================================= */
+@media (max-width:720px){
+  .am-ads-hero{
+    aspect-ratio:auto !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    border-radius:0;
+    overflow:hidden;
+    background:transparent !important;
+    display:block;
+  }
+  /* Solo la slide activa define la altura; las demás se superponen ocultas */
+  .am-ads-hero .am-slide{position:absolute;inset:0;opacity:0}
+  .am-ads-hero .am-slide.active{position:relative;inset:auto;opacity:1}
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{
+    width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block;
+  }
+}
+
+/* =========================================================
+   17. AJUSTE 2026-G (SOLO PC / ESCRITORIO)
+   Banner principal COMPLETO en cualquier resolución de PC:
+   la imagen se ve entera y la altura se ajusta sola al ancho.
+   NO afecta al teléfono (todo lo de <=720px queda igual).
+   ========================================================= */
+@media (min-width:721px){
+  .am-ads-hero{
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    background:transparent !important;
+    overflow:hidden;
+    display:block;
+  }
+  /* Solo la slide activa ocupa espacio y define la altura */
+  .am-ads-hero .am-slide{position:absolute;inset:0;opacity:0}
+  .am-ads-hero .am-slide.active{position:relative;inset:auto;opacity:1;display:block}
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{
+    width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block;
+  }
+}
+
+/* =========================================================
+   18. AJUSTE 2026-H (SOLO PC / ESCRITORIO >=721px)
+   Banner principal completo (sin recortes) pero con altura
+   limitada, para que la fila de apartados y "Productos
+   destacados" se vean en pantallas de 1920x1080.
+   NO toca nada de la vista movil (<=720px).
+   ========================================================= */
+@media (min-width:721px){
+  .am-ads-hero{
+    height:auto !important;
+    min-height:0 !important;
+    max-height:min(50vh,540px) !important;
+    aspect-ratio:auto !important;
+    background:#ffffff !important;
+    overflow:hidden;
+    display:block;
+    text-align:center;
+  }
+  .am-ads-hero .am-slide{position:absolute;inset:0;opacity:0}
+  .am-ads-hero .am-slide.active{position:relative;inset:auto;opacity:1;display:block}
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{
+    width:100% !important;
+    height:auto !important;
+    max-height:min(50vh,540px) !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:#ffffff !important;
+    display:block;
+    margin:0 auto;
+  }
+
+  /* Fila de apartados mas compacta */
+  .am-cats-scroll{padding:10px 18px !important;gap:4px !important}
+  .am-cat-circle{gap:6px !important;padding:2px 6px !important}
+  .am-cat-circle .bubble{width:64px !important;height:64px !important}
+  .am-cat-circle .label{font-size:12px !important;max-width:96px}
+
+  /* Productos destacados pegado al banner */
+  .am-cats-wrap{margin-bottom:0 !important}
+  .am-featured{margin-top:0 !important;padding-top:6px !important}
+  .am-featured-head{margin-bottom:6px !important}
+}
+
+/* =========================================================
+   19. AJUSTE 2026-I (SOLO PC / ESCRITORIO >=721px)
+   Banner principal de borde a borde (sin franjas blancas a los
+   lados) manteniendo la MISMA altura que ya tenia.
+   NO toca la vista movil (<=720px).
+   ========================================================= */
+@media (min-width:721px){
+  .am-ads-wrap{
+    width:100vw !important;
+    margin-left:calc(50% - 50vw) !important;
+    margin-right:calc(50% - 50vw) !important;
+    padding-left:0 !important;padding-right:0 !important;
+    max-width:none !important;
+  }
+  .am-ads-hero{
+    width:100% !important;
+    max-width:none !important;
+    height:min(50vh,540px) !important;
+    max-height:min(50vh,540px) !important;
+    padding:0 !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    overflow:hidden;
+    display:block;
+  }
+  .am-ads-hero .am-slide{position:absolute;inset:0;opacity:0}
+  .am-ads-hero .am-slide.active{position:relative;inset:auto;opacity:1;display:block;height:100%}
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{
+    width:100% !important;
+    height:100% !important;
+    max-height:none !important;
+    object-fit:cover !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block;
+    margin:0 !important;
+  }
+}
+
+/* =========================================================
+   20. AJUSTE 2026-J (SOLO TELÉFONO <=720px)
+   Restaura el banner del movil tal cual estaba al inicio:
+   imagen COMPLETA (sin recortes), altura automatica segun el
+   ancho. Va al final para ganarle a cualquier regla anterior
+   y a la altura en linea que pone app.js.
+   NO toca absolutamente nada de la vista PC (>=721px).
+   ========================================================= */
+@media (max-width:720px){
+  .am-ads-wrap{
+    width:auto !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    max-width:100% !important;
+  }
+  .am-ads-wrap .am-ads-hero,
+  #adsHero{
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    padding:0 !important;
+    background:transparent !important;
+    overflow:hidden !important;
+    display:block !important;
+  }
+  #adsHero .am-slide{position:absolute !important;inset:0 !important;opacity:0}
+  #adsHero .am-slide.active{
+    position:relative !important;inset:auto !important;opacity:1;
+    display:block !important;height:auto !important;
+  }
+  #adsHero .am-slide img,
+  #adsHero .am-slide video{
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block !important;
+    margin:0 !important;
+  }
+}
+
+/* =========================================================
+   21. AJUSTE 2026-K (SOLO TELÉFONO <=720px)
+   1) Banner principal COMPLETO de lado a lado (sin recortes).
+   2) Apartados circulares (VIVERES, CHARCUTERIA, ...) mas
+      grandes y con letras mas grandes.
+   NO afecta la vista de PC (>=721px).
+   ========================================================= */
+@media (max-width:720px){
+  /* ---------- Banner principal completo ---------- */
+  .am-ads-wrap{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+  .am-ads-wrap .am-ads-hero,
+  #adsHero{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    padding:0 !important;
+    border-radius:0 !important;
+    overflow:hidden !important;
+    background:transparent !important;
+    display:block !important;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide,
+  #adsHero .am-slide{position:absolute !important;inset:0 !important;opacity:0}
+  .am-ads-wrap .am-ads-hero .am-slide.active,
+  #adsHero .am-slide.active{
+    position:relative !important;inset:auto !important;opacity:1 !important;
+    display:block !important;width:100% !important;height:auto !important;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide img,
+  .am-ads-wrap .am-ads-hero .am-slide video,
+  #adsHero .am-slide img,
+  #adsHero .am-slide video{
+    width:100% !important;
+    height:auto !important;
+    max-width:100% !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block !important;
+    margin:0 !important;
+  }
+
+  /* ---------- Apartados circulares mas grandes ---------- */
+  .am-cats-scroll{
+    padding:16px 12px !important;
+    gap:14px !important;
+  }
+  .am-cat-circle{
+    gap:8px !important;
+    padding:2px 2px !important;
+  }
+  .am-cat-circle .bubble{
+    width:96px !important;
+    height:96px !important;
+    border-width:3px !important;
+  }
+  .am-cat-circle .bubble img{
+    width:100% !important;height:100% !important;object-fit:cover !important;
+  }
+  .am-cat-circle .label{
+    font-size:14px !important;
+    font-weight:800 !important;
+    max-width:110px !important;
+    line-height:1.15 !important;
+  }
+}
+
+/* =========================================================
+   23. AJUSTE 2026-L (SOLO TELÉFONO <=720px)
+   Letras y productos MUCHO más grandes y legibles en móvil.
+   Círculos de apartados a 120px con nombre grande.
+   NO toca la vista de PC (>=721px) ni el banner principal.
+   ========================================================= */
+@media (max-width:720px){
+
+  /* ---------- Apartados circulares (VIVERES, CHARCUTERIA, ...) ---------- */
+  .am-cats-scroll{
+    padding:18px 14px !important;
+    gap:18px !important;
+    align-items:flex-start !important;
+  }
+  .am-cat-circle{
+    flex:0 0 132px !important;
+    width:132px !important;
+    gap:10px !important;
+    padding:2px 0 !important;
+  }
+  .am-cat-circle .bubble{
+    width:120px !important;
+    height:120px !important;
+    min-width:120px !important;
+    min-height:120px !important;
+    border-width:4px !important;
+  }
+  .am-cat-circle .bubble img{
+    width:100% !important;height:100% !important;
+    object-fit:cover !important;border-radius:50% !important;
+  }
+  .am-cat-circle .label{
+    width:132px !important;
+    max-width:132px !important;
+    font-size:19px !important;
+    font-weight:900 !important;
+    line-height:1.15 !important;
+    text-align:center !important;
+    white-space:normal !important;
+  }
+
+  /* ---------- Títulos de secciones ---------- */
+  .am-tile-title{font-size:24px !important;font-weight:900 !important}
+  .am-view-title{font-size:24px !important;font-weight:900 !important}
+  .am-featured-head h2{font-size:23px !important;font-weight:900 !important}
+  .am-tile-more{font-size:15px !important;font-weight:800 !important;padding:9px 15px !important}
+
+  /* ---------- Productos por apartado (2 por fila, imagen grande) ---------- */
+  .am-quad-grid{grid-template-columns:repeat(2,1fr) !important;gap:14px !important}
+  .am-quad-imgwrap{height:190px !important;padding:8px !important}
+  .am-quad-imgwrap img{width:100% !important;height:100% !important;object-fit:contain !important}
+  .am-quad-name{
+    font-size:18px !important;font-weight:800 !important;
+    line-height:1.25 !important;padding:12px 10px !important;
+    -webkit-line-clamp:3 !important;
+  }
+
+  /* ---------- Rejilla general de productos ---------- */
+  .am-grid{grid-template-columns:repeat(2,1fr) !important;gap:14px !important}
+  .am-card{padding:12px !important;gap:10px !important}
+  .am-card>img{aspect-ratio:1/1 !important;width:100% !important}
+  .am-name{
+    font-size:18px !important;font-weight:800 !important;
+    line-height:1.25 !important;min-height:2.5em !important;
+    -webkit-line-clamp:3 !important;
+  }
+  .am-price{font-size:23px !important;font-weight:900 !important}
+  .am-share-btn{width:36px !important;height:36px !important}
+
+  /* ---------- Productos destacados ---------- */
+  .am-featured-row{grid-auto-columns:minmax(210px,1fr) !important;gap:14px !important}
+  .am-feat-imgwrap{height:180px !important}
+  .am-feat-name{font-size:18px !important;font-weight:800 !important;line-height:1.25 !important;min-height:2.5em !important}
+  .am-feat-cat{font-size:14px !important}
+  .am-feat-price{font-size:23px !important;font-weight:900 !important}
+  .am-feat-add{font-size:16px !important;font-weight:800 !important;padding:12px !important}
+}
+
+/* =========================================================
+   24. AJUSTE 2026-M (SOLO TELÉFONO <=720px)
+   Peticion del cliente: letras MAS GRANDES en todo (apartados
+   circulares, titulos, nombres de productos y precios),
+   imagenes de producto mas grandes y rejillas de 3 por fila.
+   NO toca la vista de PC (>=721px) ni el banner principal.
+   ========================================================= */
+@media (max-width:720px), (hover:none) and (pointer:coarse) and (max-device-width:720px){
+
+  /* ---------- Apartados circulares (VIVERES, CHARCUTERIA, ...) ---------- */
+  .am-cat-circle .label{
+    font-size:21px !important;
+    font-weight:900 !important;
+    line-height:1.2 !important;
+    letter-spacing:.1px !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    display:block !important;
+    -webkit-line-clamp:none !important;
+    max-height:none !important;
+  }
+
+  /* ---------- Titulos de secciones ---------- */
+  .am-tile-title,
+  .am-view-title{font-size:27px !important;font-weight:900 !important;line-height:1.2 !important}
+  .am-featured-head h2{font-size:26px !important;font-weight:900 !important}
+  .am-tile-more{font-size:17px !important;font-weight:800 !important;padding:10px 16px !important}
+  .am-sub-name,.am-subcat-name,.am-tile-name{font-size:19px !important;font-weight:800 !important;line-height:1.2 !important}
+
+  /* ---------- Apartados de abajo (tarjetas de subcategoria) ---------- */
+  .am-quad-grid{grid-template-columns:repeat(3,1fr) !important;gap:12px !important}
+  .am-quad-imgwrap{height:150px !important;padding:8px !important}
+  .am-quad-imgwrap img{width:100% !important;height:100% !important;object-fit:contain !important}
+  .am-quad-name{
+    font-size:17px !important;font-weight:800 !important;
+    line-height:1.25 !important;padding:12px 6px !important;
+    white-space:normal !important;overflow:visible !important;
+    -webkit-line-clamp:3 !important;text-overflow:clip !important;
+  }
+
+  /* ---------- Rejilla de productos: 3 por fila ---------- */
+  .am-grid{grid-template-columns:repeat(3,1fr) !important;gap:12px !important}
+  .am-card{padding:10px !important;gap:8px !important}
+  .am-card>img{aspect-ratio:1/1 !important;width:100% !important;height:auto !important;object-fit:contain !important}
+  .am-name{
+    font-size:17px !important;font-weight:800 !important;
+    line-height:1.25 !important;min-height:3.4em !important;
+    white-space:normal !important;overflow:visible !important;
+    text-overflow:clip !important;-webkit-line-clamp:3 !important;
+  }
+  .am-price{font-size:24px !important;font-weight:900 !important;line-height:1.15 !important}
+  .am-add,.am-add-btn,.am-card button{font-size:16px !important;font-weight:800 !important;padding:11px 8px !important}
+
+  /* ---------- Productos destacados (primera parte de la pagina) ---------- */
+  .am-featured-row{grid-auto-columns:minmax(200px,1fr) !important;gap:12px !important}
+  .am-feat-imgwrap{height:170px !important}
+  .am-feat-imgwrap img{width:100% !important;height:100% !important;object-fit:contain !important}
+  .am-feat-name{font-size:18px !important;font-weight:800 !important;line-height:1.25 !important;min-height:2.6em !important;white-space:normal !important;overflow:visible !important;text-overflow:clip !important}
+  .am-feat-cat{font-size:15px !important}
+  .am-feat-price{font-size:24px !important;font-weight:900 !important}
+  .am-feat-add{font-size:17px !important;font-weight:800 !important;padding:12px !important}
+}
+
+/* =========================================================
+   25. AJUSTE 2026-N (SOLO TELÉFONO <=720px)
+   Apartados circulares debajo del banner: 6 por pantalla,
+   mas grandes y con los nombres bien separados entre si
+   (CHARCUTERIA / CARNICERIA, COSMETICOS / VEGETALES).
+   NO toca la vista de PC (>=721px) ni nada mas.
+   ========================================================= */
+@media (max-width:720px), (hover:none) and (pointer:coarse) and (max-device-width:720px){
+  .am-cats-scroll{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    align-items:flex-start !important;
+    gap:16px !important;
+    padding:18px 14px 20px !important;
+  }
+  .am-cat-circle{
+    flex:0 0 calc((100% - 80px) / 6) !important;
+    width:calc((100% - 80px) / 6) !important;
+    min-width:104px !important;
+    max-width:none !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    gap:12px !important;
+    padding:2px 0 !important;
+  }
+  .am-cat-circle .bubble{
+    width:100% !important;
+    height:auto !important;
+    aspect-ratio:1 / 1 !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    max-width:none !important;
+    border-width:4px !important;
+  }
+  .am-cat-circle .bubble img{
+    width:100% !important;height:100% !important;
+    object-fit:cover !important;border-radius:50% !important;
+  }
+  .am-cat-circle .label{
+    width:100% !important;
+    max-width:100% !important;
+    padding:0 2px !important;
+    font-size:16px !important;
+    font-weight:900 !important;
+    line-height:1.2 !important;
+    text-align:center !important;
+    white-space:normal !important;
+    overflow-wrap:anywhere !important;
+    word-break:break-word !important;
+    hyphens:auto !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    -webkit-line-clamp:none !important;
+    max-height:none !important;
+  }
+}
+
+/* =========================================================
+   26. AJUSTE 2026-O (SOLO TELEFONO <=720px)
+   Apartados de abajo (VIVERES, CHARCUTERIA, ...): mostrar
+   solo 3 subcategorias por apartado (se oculta la 4a que
+   dejaba el espacio en blanco) con imagenes y letras MAS
+   GRANDES. NO toca la vista de PC (>=721px) ni nada mas.
+   ========================================================= */
+@media (max-width:720px), (hover:none) and (pointer:coarse) and (max-device-width:720px){
+  /* Ocultar el 4to elemento que dejaba la fila incompleta */
+  .am-quad-grid > *:nth-child(n+4){display:none !important}
+
+  .am-quad-grid{
+    grid-template-columns:repeat(3,1fr) !important;
+    gap:10px !important;
+  }
+  .am-quad-item{border-radius:14px !important}
+  .am-quad-imgwrap{
+    height:auto !important;
+    aspect-ratio:1 / 1 !important;
+    padding:6px !important;
+  }
+  .am-quad-imgwrap img{
+    width:100% !important;height:100% !important;
+    object-fit:contain !important;
+  }
+  .am-quad-name{
+    font-size:19px !important;
+    font-weight:900 !important;
+    line-height:1.2 !important;
+    padding:12px 4px !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    -webkit-line-clamp:none !important;
+    overflow-wrap:anywhere !important;
+  }
+}
+
+/* =========================================================
+   27. CORRECCION REAL PARA TELEFONO CON VIEWPORT FIJO 1280px
+   La pagina conserva la vista de escritorio escalada en movil,
+   por eso max-width:720px no se activa. Detectamos el telefono
+   por su entrada tactil. Solo modifica VIVERES, CHARCUTERIA, etc.
+   ========================================================= */
+@media (hover: none), (pointer: coarse) {
+  /* Mostrar exactamente tres subcategorias por apartado */
+  .am-tiles-row .am-quad-grid > .am-quad-item:nth-child(n + 4) {
+    display: none !important;
+  }
+
+  .am-tiles-row .am-quad-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+    width: 100% !important;
+  }
+
+  .am-tiles-row .am-quad-item {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .am-tiles-row .am-quad-imgwrap {
+    height: 260px !important;
+    aspect-ratio: auto !important;
+    padding: 10px !important;
+  }
+
+  .am-tiles-row .am-quad-imgwrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .am-tiles-row .am-quad-name {
+    min-height: 62px !important;
+    padding: 14px 8px !important;
+    font-size: 23px !important;
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    -webkit-line-clamp: unset !important;
+  }
+}
+
+/* =========================================================
+   18. AJUSTES 2026-G
+   - Menu de Categorias MUCHO mas grande (solo movil)
+   - WhatsApp a la derecha y "Pagar ahora" a la izquierda (movil y PC)
+   ========================================================= */
+
+/* 18.1 Menu de Categorias grande: SOLO en telefonos / pantallas tactiles
+   NOTA: el sitio usa <meta viewport width=1280>, asi que en el movil el
+   ancho CSS siempre es 1280px y los @media (max-width) NO funcionan.
+   Por eso se usa (pointer:coarse) / (hover:none), que solo aplica a
+   dispositivos tactiles (telefonos y tablets) y nunca a la PC. */
+@media (pointer:coarse), (hover:none){
+  .am-topbar{overflow:visible !important}
+  .am-menu-panel{
+    left:40px !important;
+    right:auto !important;
+    width:820px !important;
+    max-width:calc(100% - 80px) !important;
+    max-height:86vh !important;
+    padding:26px 22px 34px !important;
+    border-radius:28px !important;
+    box-shadow:0 40px 90px rgba(9,20,45,.45) !important;
+  }
+  .am-menu-head{
+    font-size:30px !important;
+    letter-spacing:.14em !important;
+    opacity:.92 !important;
+    color:#fff !important;
+    padding:10px 24px 22px !important;
+  }
+  .am-menu-panel a{
+    display:block !important;
+    color:#fff !important;
+    padding:26px 28px !important;
+    font-size:44px !important;
+    font-weight:800 !important;
+    line-height:1.2 !important;
+    border-radius:20px !important;
+    margin-bottom:12px !important;
+    white-space:nowrap !important;
+  }
+  .am-menu-panel a:active{background:rgba(255,255,255,.24) !important}
+}
+
+/* 18.2 Botones flotantes: WhatsApp a la DERECHA, Pagar ahora a la IZQUIERDA */
+.am-wa-float{
+  left:auto !important;
+  right:18px !important;
+}
+.am-pay-float{
+  right:auto !important;
+  left:18px !important;
+}
+@media (max-width:720px){
+  .am-wa-float{right:14px !important;left:auto !important}
+  .am-pay-float{left:14px !important;right:auto !important}
+}
+
+
+/* =========================================================
+   FIX ENLACES DE BANNERS (principal, secundario y terciario)
+   Los slides estan apilados uno sobre otro; sin esto el ultimo
+   slide del DOM tapaba a los demas y todos los clics iban a su URL.
+   ========================================================= */
+.am-ads-hero .am-slide,
+#adsHero .am-slide,
+.am-secondary-banner .am-slide{
+  pointer-events:none !important;
+}
+.am-ads-hero .am-slide.active,
+#adsHero .am-slide.active,
+.am-secondary-banner .am-slide.active{
+  pointer-events:auto !important;
+  z-index:2;
+}
+.am-ads-hero .am-slide img,
+.am-ads-hero .am-slide video,
+.am-secondary-banner .am-slide img,
+.am-secondary-banner .am-slide video{
+  pointer-events:none !important;
+}
+.am-ads-cashea{pointer-events:none}
+
+/* =========================================================
+   19. BOTONES FLOTANTES CONFIGURABLES DESDE EL PANEL
+   El panel de Python guarda lado y tamano por separado para
+   PC y para movil; app.js inyecta las reglas finales.
+   Aqui solo dejamos la base para que nunca tapen la franja
+   de "Delivery gratis / Pago seguro".
+   ========================================================= */
+.am-wa-float,.am-pay-float{z-index:130 !important}
+.am-wa-float{bottom:104px !important}
+.am-pay-float{bottom:104px !important}
+@media (max-width:900px){
+  .am-wa-float{bottom:126px !important}
+  .am-pay-float{bottom:126px !important}
+}
+
+/* =========================================================
+   12. VISTA MÓVIL PROFESIONAL (2026)
+   Todo más grande y cómodo en el teléfono: logo, buscador,
+   menú, carrito, apartados deslizables y banner completo.
+   ========================================================= */
+@media (max-width:760px){
+
+  /* ---------- Base ---------- */
+  body{font-size:15px}
+  .am-wrap,.am-wrap-wide{padding:0 12px}
+
+  /* ---------- Cinta de delivery ---------- */
+  .am-delivery-track{font-size:13px;padding:8px 0;gap:36px}
+
+  /* ---------- Cabecera ---------- */
+  .am-topbar-row{
+    display:grid !important;
+    grid-template-columns:auto 1fr auto;
+    grid-template-areas:'menu brand cart' 'search search search';
+    align-items:center;
+    gap:10px 12px;
+    padding:12px 14px 14px !important;
+  }
+  .am-tb-menu{
+    grid-area:menu;
+    width:52px !important;height:52px !important;padding:0 !important;
+    border-radius:16px;font-size:24px;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.28);
+  }
+  .am-tb-menu-ico{font-size:24px}
+  .am-tb-menu-txt{display:none}
+
+  .am-brand{grid-area:brand;justify-content:center !important;transform:none !important;gap:8px}
+  .am-brand-logo{height:66px !important;max-width:62vw}
+  .am-brand-name{font-size:27px}
+  .am-brand-market{font-size:12px;letter-spacing:.3em}
+
+  .am-cart-btn{
+    grid-area:cart;
+    width:52px !important;height:52px !important;padding:0 !important;
+    border-radius:16px;justify-content:center;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.28);
+  }
+  .am-cart-ico{font-size:24px}
+  .am-cart-meta{display:none}
+  .am-cart-badge{
+    top:-9px;right:-9px;min-width:22px;height:22px;
+    font-size:12px;font-weight:800;
+  }
+
+  .am-search{
+    grid-area:search;
+    max-width:none !important;margin:0 !important;
+    height:54px;border-radius:16px;
+    padding:4px 4px 4px 16px !important;
+    box-shadow:0 6px 18px rgba(9,20,45,.22);
+  }
+  .am-search input{font-size:16px;height:100%}
+  .am-search-btn{width:52px;height:46px;border-radius:13px;font-size:20px}
+
+  /* ---------- Banner: completo, sin recortes ---------- */
+  .am-ads-hero{
+    height:auto !important;
+    aspect-ratio:16/8;
+    border-radius:0;
+    background:var(--tb-bg);
+  }
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{object-fit:contain !important;background:transparent}
+  .am-ads-cashea{height:34px;right:10px;bottom:10px}
+
+  /* Tarjetas destacadas: deslizables hacia un lado */
+  .am-ads-cards{
+    display:flex !important;
+    gap:12px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:16px 12px 4px !important;
+    margin:0 !important;
+    scrollbar-width:none;
+  }
+  .am-ads-cards::-webkit-scrollbar{display:none}
+  .am-ads-card{
+    flex:0 0 62vw;scroll-snap-align:start;
+    border-radius:18px;padding:12px;
+  }
+  .am-ads-card .imgbox{height:38vw}
+  .am-ads-card .t{font-size:13.5px;min-height:0}
+
+  /* ---------- Apartados (círculos) ---------- */
+  .am-cats-scroll{
+    gap:14px;padding:16px 14px;
+    scroll-snap-type:x proximity;
+    scrollbar-width:none;
+  }
+  .am-cats-scroll::-webkit-scrollbar{display:none}
+  .am-cat-circle{
+    min-width:0 !important;width:86px;padding:0;gap:8px;
+    scroll-snap-align:start;
+  }
+  .am-cat-circle .bubble{
+    width:78px !important;height:78px !important;
+    border-width:3px;
+    box-shadow:0 8px 18px rgba(15,23,42,.16);
+  }
+  .am-cat-circle .label{
+    font-size:12px !important;max-width:86px !important;
+    line-height:1.15;font-weight:700;
+  }
+
+  /* ---------- Secciones / mosaicos deslizables ---------- */
+  .am-tiles-row{margin:18px 0}
+  .am-tile{padding:14px 0 16px;border-radius:20px;overflow:hidden}
+  .am-tile-head{padding:0 14px 12px;margin-bottom:14px}
+  .am-tile-title{font-size:19px;padding-left:12px}
+  .am-tile-more{font-size:13px;padding:9px 14px;border-radius:999px}
+
+  .am-quad-grid{
+    display:flex !important;
+    gap:12px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:2px 14px 6px;
+    scrollbar-width:none;
+  }
+  .am-quad-grid::-webkit-scrollbar{display:none}
+  .am-quad-item{
+    flex:0 0 46vw;scroll-snap-align:start;
+    border-radius:18px;
+  }
+  .am-quad-empty{display:none !important}
+  .am-quad-imgwrap{aspect-ratio:1/1}
+  .am-quad-imgwrap img{padding:8px}
+  .am-quad-name{
+    font-size:13.5px;font-weight:700;padding:10px 8px 12px;
+    min-height:0;
+  }
+  .am-empty{font-size:14px;padding:22px 14px;margin:0 14px}
+
+  /* ---------- Grid de productos ---------- */
+  .am-view-head{margin:18px 0 14px}
+  .am-view-title{font-size:22px}
+  .am-grid{grid-template-columns:repeat(2,1fr) !important;gap:12px}
+  .am-card{padding:10px;border-radius:18px;gap:8px}
+  .am-card>img{border-radius:14px}
+  .am-name{font-size:13.5px;min-height:2.7em}
+  .am-price{font-size:19px}
+  .am-share-btn{width:34px;height:34px}
+  .am-add-btn{padding:13px 10px;font-size:14px;border-radius:14px}
+  .am-btns-row{flex-direction:row;gap:8px}
+  .am-btn-half{font-size:12.5px;padding:12px 4px}
+
+  /* ---------- Banners finos ---------- */
+  .am-secondary-banner{height:auto;aspect-ratio:16/6;border-radius:14px}
+  .am-secondary-banner .am-slide img,
+  .am-secondary-banner .am-slide video{object-fit:contain;background:transparent}
+
+  /* ---------- Franja de confianza ---------- */
+  .am-trust-grid{
+    display:flex !important;
+    gap:12px;overflow-x:auto;padding:14px 14px;
+    scroll-snap-type:x proximity;scrollbar-width:none;
+  }
+  .am-trust-grid::-webkit-scrollbar{display:none}
+  .am-trust-item{flex:0 0 auto;scroll-snap-align:start;font-size:12.5px}
+
+  /* ---------- Menú lateral ---------- */
+  .am-menu-panel{width:min(84vw,340px)}
+  .am-menu-panel a{padding:14px 16px;font-size:15.5px}
+
+  /* ---------- Modales ---------- */
+  .am-modal{border-radius:20px;padding:18px}
+  .am-modal-img{width:150px;height:150px}
+  .am-modal-name{font-size:17px}
+  .am-qty-btn{width:46px;height:46px;font-size:22px}
+}
+
+/* Ajuste fino: etiquetas de apartados legibles en móvil (gana a los
+   estilos dinámicos inyectados por app.js) */
+@media (max-width:760px){
+  body .am-cats-scroll .am-cat-circle .label{
+    font-size:12px !important;
+    max-width:86px !important;
+    line-height:1.15 !important;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+}
+
+/* Banner principal a todo el ancho del teléfono (sin márgenes) */
+@media (max-width:760px){
+  .am-ads-wrap{
+    width:100vw !important;
+    margin-left:calc(50% - 50vw) !important;
+    margin-right:calc(50% - 50vw) !important;
+  }
+  .am-ads-cards{width:100vw !important;margin-left:0 !important}
+}
+
+/* =========================================================
+   AJUSTE FINAL MÓVIL: rejilla y apartados sin desbordes
+   ========================================================= */
+@media (max-width:760px){
+  .am-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:12px !important;
+    padding:0 !important;
+  }
+  .am-grid > *{min-width:0 !important;max-width:100% !important}
+  .am-card{
+    min-width:0 !important;width:auto !important;
+    padding:10px !important;border-radius:18px !important;
+  }
+  .am-card > img{
+    aspect-ratio:1/1 !important;height:auto !important;
+    width:100% !important;object-fit:contain !important;
+  }
+  .am-name{
+    font-size:14px !important;line-height:1.25 !important;
+    min-height:0 !important;overflow-wrap:anywhere !important;
+    word-break:break-word !important;
+  }
+  .am-price{font-size:19px !important}
+  .am-add,.am-card button{font-size:15px !important;padding:12px 10px !important;width:100% !important}
+  .am-share-btn{width:32px !important;height:32px !important;flex:0 0 32px !important}
+  .am-card .am-cashea,.am-card img[alt="Cashea"]{max-width:56px !important;height:auto !important}
+
+  /* Apartados circulares: burbuja grande + nombre completo */
+  .am-cat-circle{
+    flex:0 0 92px !important;width:92px !important;
+    min-width:92px !important;max-width:92px !important;
+  }
+  body .am-cats-scroll .am-cat-circle .label{
+    width:92px !important;max-width:92px !important;
+    font-size:12px !important;line-height:1.15 !important;
+    overflow-wrap:anywhere !important;
+  }
+}
+
+@media (max-width:760px){
+  body .am-cats-scroll .am-cat-circle{
+    flex:0 0 104px !important;width:104px !important;
+    min-width:104px !important;max-width:104px !important;
+    align-items:center !important;
+  }
+  body .am-cats-scroll .am-cat-circle .bubble{
+    width:88px !important;height:88px !important;
+    min-width:88px !important;min-height:88px !important;
+    max-width:88px !important;max-height:88px !important;
+  }
+  body .am-cats-scroll .am-cat-circle .label{
+    width:104px !important;max-width:104px !important;font-size:12.5px !important;
+  }
+}
+
+/* =========================================================
+   28. AJUSTE FINAL MÓVIL 2026-P  (SOLO TELÉFONO <=760px)
+   1) Página 100% cubierta: sin franjas grises a los lados y
+      sin desplazamiento horizontal (los antiguos trucos con
+      100vw sumaban el ancho de la barra de scroll y movían
+      todo el contenido hacia un lado).
+   2) Banner principal MÁS GRANDE y COMPLETO, de borde a borde.
+   3) Botón de WhatsApp más abajo, pegado a la franja de
+      "Delivery GRATIS / Pagos seguros".
+   NO afecta la vista de PC (>=761px).
+   ========================================================= */
+@media (max-width:760px){
+
+  /* ---------- 1) Nada se sale de la pantalla ---------- */
+  html,body{
+    max-width:100% !important;
+    overflow-x:hidden !important;
+  }
+  body{background-attachment:scroll}
+
+  /* Ningún bloque puede usar 100vw (incluye la barra de scroll) */
+  .am-wrap,
+  .am-wrap-wide,
+  .am-ads-wrap,
+  .am-ads-cards,
+  .am-featured,
+  .am-cats-wrap,
+  .am-tiles-row,
+  .am-secondary-banner-wrap,
+  .am-full-bleed{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+
+  /* Contenido de borde a borde: sin márgenes grises laterales */
+  .am-wrap,
+  .am-wrap-wide{padding-left:0 !important;padding-right:0 !important}
+
+  main.am-wrap > *{max-width:100% !important}
+
+  /* Las secciones blancas cubren todo el ancho del teléfono */
+  .am-tiles-row{margin-left:0 !important;margin-right:0 !important}
+  .am-tile{
+    border-radius:0 !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    width:100% !important;
+  }
+  .am-tile-head{padding-left:12px !important;padding-right:12px !important}
+  .am-quad-grid{padding-left:12px !important;padding-right:12px !important}
+  .am-grid{padding-left:12px !important;padding-right:12px !important}
+  .am-view-head{padding-left:12px !important;padding-right:12px !important}
+  .am-featured{padding-left:12px !important;padding-right:12px !important}
+  .am-cats-scroll{padding-left:12px !important;padding-right:12px !important}
+  .am-topbar-row{padding-left:12px !important;padding-right:12px !important}
+  .am-cats-wrap{border-radius:0 !important}
+
+  /* ---------- 2) Banner principal completo y grande ---------- */
+  .am-ads-wrap{
+    padding-left:0 !important;
+    padding-right:0 !important;
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+  }
+  .am-ads-wrap .am-ads-hero,
+  #adsHero{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    padding:0 !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    overflow:hidden !important;
+    display:block !important;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide,
+  #adsHero .am-slide{position:absolute !important;inset:0 !important;opacity:0}
+  .am-ads-wrap .am-ads-hero .am-slide.active,
+  #adsHero .am-slide.active{
+    position:relative !important;inset:auto !important;opacity:1 !important;
+    display:block !important;width:100% !important;height:auto !important;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide img,
+  .am-ads-wrap .am-ads-hero .am-slide video,
+  #adsHero .am-slide img,
+  #adsHero .am-slide video{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:transparent !important;
+    display:block !important;
+    margin:0 !important;
+  }
+  /* Banner secundario: también de lado a lado y completo */
+  .am-secondary-banner{
+    width:100% !important;max-width:100% !important;
+    height:auto !important;aspect-ratio:auto !important;
+    border-radius:0 !important;background:transparent !important;
+  }
+  .am-secondary-banner .am-slide{position:absolute !important;inset:0 !important;opacity:0}
+  .am-secondary-banner .am-slide.active{position:relative !important;inset:auto !important;opacity:1;display:block !important;height:auto !important}
+  .am-secondary-banner .am-slide img,
+  .am-secondary-banner .am-slide video{
+    width:100% !important;height:auto !important;object-fit:contain !important;display:block !important;
+  }
+
+  /* ---------- 3) WhatsApp pegado a la franja inferior ---------- */
+  .am-wa-float{
+    right:14px !important;left:auto !important;
+    bottom:calc(66px + env(safe-area-inset-bottom,0px)) !important;
+  }
+  .am-pay-float{
+    left:14px !important;right:auto !important;
+    bottom:calc(66px + env(safe-area-inset-bottom,0px)) !important;
+  }
+}
+
+/* 28.b  Fondo limpio en el teléfono: sin la textura gris que se
+   asomaba a los lados y entre secciones (SOLO móvil <=760px) */
+@media (max-width:760px){
+  body{
+    background-image:none !important;
+    background-color:#ffffff !important;
+  }
+  .am-featured{
+    background:#ffffff !important;
+    padding-top:14px !important;
+    padding-bottom:10px !important;
+  }
+  .am-tiles-row{background:#ffffff !important}
+  .am-tile{background:#ffffff !important;box-shadow:none !important;border:0 !important}
+  .am-tile + .am-tile,
+  .am-tiles-row + .am-tiles-row{border-top:1px solid rgba(15,23,42,.08) !important}
+  main.am-wrap{background:#ffffff !important}
+}
+
+/* 28.c  El botón de WhatsApp (y el de Pagar ahora) quedan pegados a la
+   franja inferior. Se usa alta especificidad para ganarle al estilo que
+   inyecta app.js. SOLO teléfono <=760px. */
+@media (max-width:760px){
+  html body .am-wa-float{
+    right:14px !important;left:auto !important;
+    bottom:calc(66px + env(safe-area-inset-bottom,0px)) !important;
+  }
+  html body .am-pay-float{
+    left:14px !important;right:auto !important;
+    bottom:calc(66px + env(safe-area-inset-bottom,0px)) !important;
+  }
+}
+
+/* =========================================================
+   29. AJUSTE 2026-P
+   a) TODOS los tamaños (PC + móvil): el fondo de cada apartado
+      pasa de blanco a GRIS CLARO para que las tarjetas de
+      producto (blancas) resalten.
+   b) SOLO móvil (<=760px): "Productos destacados" y los
+      apartados de abajo se ven más compactos; en destacados
+      se ven 3 productos por pantalla y el resto se desliza.
+   ========================================================= */
+
+/* ---------- a) Fondo gris claro en cada apartado (PC y móvil) ---------- */
+html body .am-tile{
+  background:#EEF1F6 !important;
+  border:1px solid #E1E6EF !important;
+}
+html body .am-tile-more{background:#ffffff !important}
+html body .am-quad-item{background:#ffffff !important}
+html body .am-quad-imgwrap{background:#ffffff !important}
+html body .am-quad-empty{background:transparent !important}
+html body .am-featured{background:#EEF1F6 !important;border-radius:16px}
+html body .am-feat-card{background:#ffffff !important}
+
+/* ---------- b) Móvil compacto ---------- */
+@media (max-width:760px){
+
+  /* Destacados: bloque más pequeño y 3 tarjetas visibles, resto deslizable */
+  html body .am-featured{
+    margin:10px 10px 14px !important;
+    padding:10px 10px 12px !important;
+  }
+  html body .am-featured-head{margin-bottom:8px !important}
+  html body .am-featured-head h2{font-size:18px !important;font-weight:900 !important}
+  html body .am-featured .am-featured-row{
+    display:grid !important;
+    grid-auto-flow:column !important;
+    grid-auto-columns:calc((100% - 16px)/3) !important;
+    gap:8px !important;
+    overflow-x:auto !important;
+    scroll-snap-type:x mandatory !important;
+    -webkit-overflow-scrolling:touch !important;
+    padding-bottom:6px !important;
+  }
+  html body .am-featured .am-feat-card{
+    scroll-snap-align:start !important;
+    padding:8px !important;
+    border-radius:12px !important;
+  }
+  html body .am-featured .am-feat-imgwrap{height:82px !important}
+  html body .am-featured .am-feat-name{
+    font-size:12px !important;font-weight:700 !important;
+    line-height:1.2 !important;min-height:2.4em !important;
+    -webkit-line-clamp:2 !important;display:-webkit-box !important;
+    -webkit-box-orient:vertical !important;overflow:hidden !important;
+  }
+  html body .am-featured .am-feat-cat{font-size:10px !important}
+  html body .am-featured .am-feat-price{font-size:14px !important;font-weight:900 !important}
+  html body .am-featured .am-feat-add{font-size:11px !important;font-weight:800 !important;padding:7px 4px !important}
+
+  /* Apartados de abajo (víveres, charcutería, carnicería...): más compactos */
+  html body main.am-wrap .am-tiles-row{margin:10px 10px !important;width:auto !important;max-width:none !important;background:transparent !important}
+  html body main.am-wrap .am-featured{width:auto !important;max-width:none !important}
+  html body .am-tiles-row .am-tile{
+    padding:10px 10px 12px !important;
+    border-radius:14px !important;
+    box-shadow:none !important;
+  }
+  html body .am-tile + .am-tile,
+  html body .am-tiles-row + .am-tiles-row{border-top:0 !important}
+  html body .am-tiles-row .am-tile-head{padding-bottom:8px !important;margin-bottom:10px !important}
+  html body .am-tiles-row .am-tile-title{font-size:17px !important;font-weight:900 !important}
+  html body .am-tiles-row .am-tile-more{font-size:11.5px !important;font-weight:800 !important;padding:6px 10px !important}
+  html body .am-tiles-row .am-quad-grid{grid-template-columns:repeat(3,1fr) !important;gap:8px !important}
+  html body .am-tiles-row .am-quad-item{border-radius:12px !important;max-width:none !important}
+  html body .am-tiles-row .am-quad-imgwrap{height:86px !important;padding:6px !important}
+  html body .am-tiles-row .am-quad-name{
+    font-size:11.5px !important;font-weight:700 !important;
+    line-height:1.2 !important;padding:7px 4px !important;
+    -webkit-line-clamp:2 !important;display:-webkit-box !important;
+    -webkit-box-orient:vertical !important;overflow:hidden !important;
+  }
+
+  /* Apartados circulares un poco más discretos */
+  html body .am-cat-circle .label{font-size:13px !important;font-weight:800 !important}
+  html body .am-cats-scroll{gap:12px !important;padding:12px 12px 14px !important}
+}
+
+/* =========================================================
+   30. AJUSTE FINAL MÓVIL 2026-P3
+   - Barra superior más fina, casi como en PC
+   - Banner principal un poco más grande
+   - Apartados circulares pequeños (56 px)
+   - Destacados: 4 productos visibles
+   - Apartados de abajo: 4 productos visibles
+   SOLO teléfono <=760px. PC sin cambios.
+   ========================================================= */
+@media (max-width:760px){
+
+  /* ---------- Barra superior más fina, estilo PC ---------- */
+  .am-topbar-row{
+    gap:8px 10px !important;
+    padding:8px 12px 10px !important;
+  }
+  .am-tb-menu{
+    width:40px !important;height:40px !important;
+    border-radius:12px !important;font-size:18px !important;
+  }
+  .am-tb-menu-ico{font-size:18px !important}
+  .am-brand{gap:6px !important}
+  .am-brand-logo{height:48px !important;max-width:55vw !important}
+  .am-brand-name{font-size:24px !important}
+  .am-brand-market{font-size:10px !important;letter-spacing:.25em !important}
+  .am-cart-btn{
+    width:40px !important;height:40px !important;
+    border-radius:12px !important;font-size:18px !important;
+  }
+  .am-cart-ico{font-size:18px !important}
+  .am-cart-badge{
+    top:-6px !important;right:-6px !important;
+    min-width:18px !important;height:18px !important;
+    font-size:10px !important;
+  }
+  .am-search{
+    height:42px !important;border-radius:12px !important;
+    padding:3px 3px 3px 14px !important;
+    box-shadow:0 4px 12px rgba(9,20,45,.18) !important;
+  }
+  .am-search input{font-size:14px !important}
+  .am-search-btn{
+    width:36px !important;height:36px !important;
+    border-radius:999px !important;font-size:16px !important;
+  }
+
+  /* ---------- Cinta de delivery más compacta ---------- */
+  .am-delivery-track{font-size:12px !important;padding:5px 0 !important;gap:32px !important}
+
+  /* ---------- Banner principal más grande ---------- */
+  .am-ads-hero{
+    aspect-ratio:16/6.5 !important;
+    border-radius:0 !important;
+  }
+  .am-ads-cashea{height:30px !important;right:10px !important;bottom:10px !important}
+
+  /* ---------- Apartados circulares pequeños ---------- */
+  .am-cat-circle{
+    flex:0 0 68px !important;width:68px !important;
+    min-width:68px !important;max-width:68px !important;
+    gap:6px !important;padding:0 !important;
+  }
+  .am-cat-circle .bubble{
+    width:56px !important;height:56px !important;
+    min-width:56px !important;min-height:56px !important;
+    max-width:56px !important;max-height:56px !important;
+    border-width:2px !important;
+    box-shadow:0 4px 10px rgba(15,23,42,.12) !important;
+  }
+  .am-cat-circle .label{
+    width:68px !important;max-width:68px !important;
+    font-size:10.5px !important;line-height:1.1 !important;
+    font-weight:700 !important;
+  }
+
+  /* ---------- Destacados: 4 productos visibles ---------- */
+  html body .am-featured{
+    margin:10px 10px 14px !important;
+    padding:10px 10px 12px !important;
+  }
+  html body .am-featured-head{margin-bottom:8px !important}
+  html body .am-featured-head h2{font-size:18px !important;font-weight:900 !important}
+  html body .am-featured .am-featured-row{
+    display:grid !important;
+    grid-auto-flow:column !important;
+    grid-auto-columns:calc((100% - 24px)/4) !important;
+    gap:8px !important;
+    overflow-x:auto !important;
+    scroll-snap-type:x mandatory !important;
+    -webkit-overflow-scrolling:touch !important;
+    padding-bottom:6px !important;
+  }
+  html body .am-featured .am-feat-card{
+    scroll-snap-align:start !important;
+    padding:8px !important;
+    border-radius:12px !important;
+  }
+  html body .am-featured .am-feat-imgwrap{height:74px !important}
+  html body .am-featured .am-feat-name{
+    font-size:11px !important;font-weight:700 !important;
+    line-height:1.2 !important;min-height:2.4em !important;
+    -webkit-line-clamp:2 !important;display:-webkit-box !important;
+    -webkit-box-orient:vertical !important;overflow:hidden !important;
+  }
+  html body .am-featured .am-feat-cat{font-size:9px !important}
+  html body .am-featured .am-feat-price{font-size:13px !important;font-weight:900 !important}
+  html body .am-featured .am-feat-add{
+    font-size:10px !important;font-weight:800 !important;
+    padding:6px 2px !important;margin-top:4px !important;
+  }
+
+  /* ---------- Apartados de abajo: 4 productos visibles ---------- */
+  html body main.am-wrap .am-tiles-row{
+    margin:10px 10px !important;width:auto !important;
+    max-width:none !important;background:transparent !important;
+  }
+  html body .am-tiles-row .am-tile{
+    padding:10px 10px 12px !important;
+    border-radius:14px !important;box-shadow:none !important;
+  }
+  html body .am-tiles-row .am-tile-head{
+    padding-bottom:8px !important;margin-bottom:10px !important;
+  }
+  html body .am-tiles-row .am-tile-title{
+    font-size:17px !important;font-weight:900 !important;
+  }
+  html body .am-tiles-row .am-tile-more{
+    font-size:11.5px !important;font-weight:800 !important;
+    padding:6px 10px !important;
+  }
+  html body .am-tiles-row .am-quad-grid{
+    display:grid !important;
+    grid-template-columns:repeat(4,1fr) !important;
+    gap:8px !important;
+    overflow-x:auto !important;
+  }
+  html body .am-tiles-row .am-quad-item{
+    border-radius:12px !important;max-width:none !important;
+    min-width:0 !important;
+  }
+  html body .am-tiles-row .am-quad-imgwrap{
+    height:70px !important;padding:6px !important;
+    aspect-ratio:auto !important;
+  }
+  html body .am-tiles-row .am-quad-name{
+    font-size:10.5px !important;font-weight:700 !important;
+    line-height:1.2 !important;padding:6px 3px !important;
+    -webkit-line-clamp:2 !important;display:-webkit-box !important;
+    -webkit-box-orient:vertical !important;overflow:hidden !important;
+  }
+}
