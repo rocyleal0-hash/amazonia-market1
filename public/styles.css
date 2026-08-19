@@ -2054,3 +2054,261 @@ body{padding-bottom:96px}
   .am-wa-float{bottom:126px !important}
   .am-pay-float{bottom:126px !important}
 }
+
+/* =========================================================
+   12. VISTA MÓVIL PROFESIONAL (2026)
+   Todo más grande y cómodo en el teléfono: logo, buscador,
+   menú, carrito, apartados deslizables y banner completo.
+   ========================================================= */
+@media (max-width:760px){
+
+  /* ---------- Base ---------- */
+  body{font-size:15px}
+  .am-wrap,.am-wrap-wide{padding:0 12px}
+
+  /* ---------- Cinta de delivery ---------- */
+  .am-delivery-track{font-size:13px;padding:8px 0;gap:36px}
+
+  /* ---------- Cabecera ---------- */
+  .am-topbar-row{
+    display:grid !important;
+    grid-template-columns:auto 1fr auto;
+    grid-template-areas:'menu brand cart' 'search search search';
+    align-items:center;
+    gap:10px 12px;
+    padding:12px 14px 14px !important;
+  }
+  .am-tb-menu{
+    grid-area:menu;
+    width:52px !important;height:52px !important;padding:0 !important;
+    border-radius:16px;font-size:24px;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.28);
+  }
+  .am-tb-menu-ico{font-size:24px}
+  .am-tb-menu-txt{display:none}
+
+  .am-brand{grid-area:brand;justify-content:center !important;transform:none !important;gap:8px}
+  .am-brand-logo{height:66px !important;max-width:62vw}
+  .am-brand-name{font-size:27px}
+  .am-brand-market{font-size:12px;letter-spacing:.3em}
+
+  .am-cart-btn{
+    grid-area:cart;
+    width:52px !important;height:52px !important;padding:0 !important;
+    border-radius:16px;justify-content:center;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.28);
+  }
+  .am-cart-ico{font-size:24px}
+  .am-cart-meta{display:none}
+  .am-cart-badge{
+    top:-9px;right:-9px;min-width:22px;height:22px;
+    font-size:12px;font-weight:800;
+  }
+
+  .am-search{
+    grid-area:search;
+    max-width:none !important;margin:0 !important;
+    height:54px;border-radius:16px;
+    padding:4px 4px 4px 16px !important;
+    box-shadow:0 6px 18px rgba(9,20,45,.22);
+  }
+  .am-search input{font-size:16px;height:100%}
+  .am-search-btn{width:52px;height:46px;border-radius:13px;font-size:20px}
+
+  /* ---------- Banner: completo, sin recortes ---------- */
+  .am-ads-hero{
+    height:auto !important;
+    aspect-ratio:16/8;
+    border-radius:0;
+    background:var(--tb-bg);
+  }
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{object-fit:contain !important;background:transparent}
+  .am-ads-cashea{height:34px;right:10px;bottom:10px}
+
+  /* Tarjetas destacadas: deslizables hacia un lado */
+  .am-ads-cards{
+    display:flex !important;
+    gap:12px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:16px 12px 4px !important;
+    margin:0 !important;
+    scrollbar-width:none;
+  }
+  .am-ads-cards::-webkit-scrollbar{display:none}
+  .am-ads-card{
+    flex:0 0 62vw;scroll-snap-align:start;
+    border-radius:18px;padding:12px;
+  }
+  .am-ads-card .imgbox{height:38vw}
+  .am-ads-card .t{font-size:13.5px;min-height:0}
+
+  /* ---------- Apartados (círculos) ---------- */
+  .am-cats-scroll{
+    gap:14px;padding:16px 14px;
+    scroll-snap-type:x proximity;
+    scrollbar-width:none;
+  }
+  .am-cats-scroll::-webkit-scrollbar{display:none}
+  .am-cat-circle{
+    min-width:0 !important;width:86px;padding:0;gap:8px;
+    scroll-snap-align:start;
+  }
+  .am-cat-circle .bubble{
+    width:78px !important;height:78px !important;
+    border-width:3px;
+    box-shadow:0 8px 18px rgba(15,23,42,.16);
+  }
+  .am-cat-circle .label{
+    font-size:12px !important;max-width:86px !important;
+    line-height:1.15;font-weight:700;
+  }
+
+  /* ---------- Secciones / mosaicos deslizables ---------- */
+  .am-tiles-row{margin:18px 0}
+  .am-tile{padding:14px 0 16px;border-radius:20px;overflow:hidden}
+  .am-tile-head{padding:0 14px 12px;margin-bottom:14px}
+  .am-tile-title{font-size:19px;padding-left:12px}
+  .am-tile-more{font-size:13px;padding:9px 14px;border-radius:999px}
+
+  .am-quad-grid{
+    display:flex !important;
+    gap:12px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:2px 14px 6px;
+    scrollbar-width:none;
+  }
+  .am-quad-grid::-webkit-scrollbar{display:none}
+  .am-quad-item{
+    flex:0 0 46vw;scroll-snap-align:start;
+    border-radius:18px;
+  }
+  .am-quad-empty{display:none !important}
+  .am-quad-imgwrap{aspect-ratio:1/1}
+  .am-quad-imgwrap img{padding:8px}
+  .am-quad-name{
+    font-size:13.5px;font-weight:700;padding:10px 8px 12px;
+    min-height:0;
+  }
+  .am-empty{font-size:14px;padding:22px 14px;margin:0 14px}
+
+  /* ---------- Grid de productos ---------- */
+  .am-view-head{margin:18px 0 14px}
+  .am-view-title{font-size:22px}
+  .am-grid{grid-template-columns:repeat(2,1fr) !important;gap:12px}
+  .am-card{padding:10px;border-radius:18px;gap:8px}
+  .am-card>img{border-radius:14px}
+  .am-name{font-size:13.5px;min-height:2.7em}
+  .am-price{font-size:19px}
+  .am-share-btn{width:34px;height:34px}
+  .am-add-btn{padding:13px 10px;font-size:14px;border-radius:14px}
+  .am-btns-row{flex-direction:row;gap:8px}
+  .am-btn-half{font-size:12.5px;padding:12px 4px}
+
+  /* ---------- Banners finos ---------- */
+  .am-secondary-banner{height:auto;aspect-ratio:16/6;border-radius:14px}
+  .am-secondary-banner .am-slide img,
+  .am-secondary-banner .am-slide video{object-fit:contain;background:transparent}
+
+  /* ---------- Franja de confianza ---------- */
+  .am-trust-grid{
+    display:flex !important;
+    gap:12px;overflow-x:auto;padding:14px 14px;
+    scroll-snap-type:x proximity;scrollbar-width:none;
+  }
+  .am-trust-grid::-webkit-scrollbar{display:none}
+  .am-trust-item{flex:0 0 auto;scroll-snap-align:start;font-size:12.5px}
+
+  /* ---------- Menú lateral ---------- */
+  .am-menu-panel{width:min(84vw,340px)}
+  .am-menu-panel a{padding:14px 16px;font-size:15.5px}
+
+  /* ---------- Modales ---------- */
+  .am-modal{border-radius:20px;padding:18px}
+  .am-modal-img{width:150px;height:150px}
+  .am-modal-name{font-size:17px}
+  .am-qty-btn{width:46px;height:46px;font-size:22px}
+}
+
+/* Ajuste fino: etiquetas de apartados legibles en móvil (gana a los
+   estilos dinámicos inyectados por app.js) */
+@media (max-width:760px){
+  body .am-cats-scroll .am-cat-circle .label{
+    font-size:12px !important;
+    max-width:86px !important;
+    line-height:1.15 !important;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+}
+
+/* Banner principal a todo el ancho del teléfono (sin márgenes) */
+@media (max-width:760px){
+  .am-ads-wrap{
+    width:100vw !important;
+    margin-left:calc(50% - 50vw) !important;
+    margin-right:calc(50% - 50vw) !important;
+  }
+  .am-ads-cards{width:100vw !important;margin-left:0 !important}
+}
+
+/* =========================================================
+   AJUSTE FINAL MÓVIL: rejilla y apartados sin desbordes
+   ========================================================= */
+@media (max-width:760px){
+  .am-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:12px !important;
+    padding:0 !important;
+  }
+  .am-grid > *{min-width:0 !important;max-width:100% !important}
+  .am-card{
+    min-width:0 !important;width:auto !important;
+    padding:10px !important;border-radius:18px !important;
+  }
+  .am-card > img{
+    aspect-ratio:1/1 !important;height:auto !important;
+    width:100% !important;object-fit:contain !important;
+  }
+  .am-name{
+    font-size:14px !important;line-height:1.25 !important;
+    min-height:0 !important;overflow-wrap:anywhere !important;
+    word-break:break-word !important;
+  }
+  .am-price{font-size:19px !important}
+  .am-add,.am-card button{font-size:15px !important;padding:12px 10px !important;width:100% !important}
+  .am-share-btn{width:32px !important;height:32px !important;flex:0 0 32px !important}
+  .am-card .am-cashea,.am-card img[alt="Cashea"]{max-width:56px !important;height:auto !important}
+
+  /* Apartados circulares: burbuja grande + nombre completo */
+  .am-cat-circle{
+    flex:0 0 92px !important;width:92px !important;
+    min-width:92px !important;max-width:92px !important;
+  }
+  body .am-cats-scroll .am-cat-circle .label{
+    width:92px !important;max-width:92px !important;
+    font-size:12px !important;line-height:1.15 !important;
+    overflow-wrap:anywhere !important;
+  }
+}
+
+@media (max-width:760px){
+  body .am-cats-scroll .am-cat-circle{
+    flex:0 0 104px !important;width:104px !important;
+    min-width:104px !important;max-width:104px !important;
+    align-items:center !important;
+  }
+  body .am-cats-scroll .am-cat-circle .bubble{
+    width:88px !important;height:88px !important;
+    min-width:88px !important;min-height:88px !important;
+    max-width:88px !important;max-height:88px !important;
+  }
+  body .am-cats-scroll .am-cat-circle .label{
+    width:104px !important;max-width:104px !important;font-size:12.5px !important;
+  }
+}
