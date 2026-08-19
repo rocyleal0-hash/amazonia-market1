@@ -3399,3 +3399,40 @@ html body .am-add-ico{
   stroke:#ffffff !important;
   color:#ffffff !important;
 }
+
+/* ==========================================================
+   36) MÓVIL: tarjetas de producto sin botón de compartir
+   Solo queda el PRECIO y el LOGO DE CASHEA, alineados dentro
+   del ancho de la tarjeta (sin sobresalir).
+   ========================================================== */
+@media (max-width: 768px){
+  .am-card .am-share-btn{
+    display:none !important;
+  }
+  .am-card .am-price-row{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:8px !important;
+    width:100% !important;
+    max-width:100% !important;
+    padding:0 2px !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+  }
+  .am-card .am-price{
+    flex:1 1 auto !important;
+    min-width:0 !important;
+    white-space:nowrap !important;
+  }
+  .am-card .am-cashea-inline,
+  .am-card img[alt="Cashea"]{
+    flex:0 0 auto !important;
+    height:20px !important;
+    width:auto !important;
+    max-width:52px !important;
+    object-fit:contain !important;
+    opacity:1 !important;
+    margin:0 !important;
+  }
+}
