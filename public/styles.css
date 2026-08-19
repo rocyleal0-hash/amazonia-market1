@@ -2470,3 +2470,89 @@ body{padding-bottom:96px}
     bottom:calc(66px + env(safe-area-inset-bottom,0px)) !important;
   }
 }
+
+/* =========================================================
+   29. AJUSTE 2026-P
+   a) TODOS los tamaños (PC + móvil): el fondo de cada apartado
+      pasa de blanco a GRIS CLARO para que las tarjetas de
+      producto (blancas) resalten.
+   b) SOLO móvil (<=760px): "Productos destacados" y los
+      apartados de abajo se ven más compactos; en destacados
+      se ven 3 productos por pantalla y el resto se desliza.
+   ========================================================= */
+
+/* ---------- a) Fondo gris claro en cada apartado (PC y móvil) ---------- */
+html body .am-tile{
+  background:#EEF1F6 !important;
+  border:1px solid #E1E6EF !important;
+}
+html body .am-tile-more{background:#ffffff !important}
+html body .am-quad-item{background:#ffffff !important}
+html body .am-quad-imgwrap{background:#ffffff !important}
+html body .am-quad-empty{background:transparent !important}
+html body .am-featured{background:#EEF1F6 !important;border-radius:16px}
+html body .am-feat-card{background:#ffffff !important}
+
+/* ---------- b) Móvil compacto ---------- */
+@media (max-width:760px){
+
+  /* Destacados: bloque más pequeño y 3 tarjetas visibles, resto deslizable */
+  html body .am-featured{
+    margin:10px 10px 14px !important;
+    padding:10px 10px 12px !important;
+  }
+  html body .am-featured-head{margin-bottom:8px !important}
+  html body .am-featured-head h2{font-size:18px !important;font-weight:900 !important}
+  html body .am-featured .am-featured-row{
+    display:grid !important;
+    grid-auto-flow:column !important;
+    grid-auto-columns:calc((100% - 16px)/3) !important;
+    gap:8px !important;
+    overflow-x:auto !important;
+    scroll-snap-type:x mandatory !important;
+    -webkit-overflow-scrolling:touch !important;
+    padding-bottom:6px !important;
+  }
+  html body .am-featured .am-feat-card{
+    scroll-snap-align:start !important;
+    padding:8px !important;
+    border-radius:12px !important;
+  }
+  html body .am-featured .am-feat-imgwrap{height:82px !important}
+  html body .am-featured .am-feat-name{
+    font-size:12px !important;font-weight:700 !important;
+    line-height:1.2 !important;min-height:2.4em !important;
+    -webkit-line-clamp:2 !important;display:-webkit-box !important;
+    -webkit-box-orient:vertical !important;overflow:hidden !important;
+  }
+  html body .am-featured .am-feat-cat{font-size:10px !important}
+  html body .am-featured .am-feat-price{font-size:14px !important;font-weight:900 !important}
+  html body .am-featured .am-feat-add{font-size:11px !important;font-weight:800 !important;padding:7px 4px !important}
+
+  /* Apartados de abajo (víveres, charcutería, carnicería...): más compactos */
+  html body main.am-wrap .am-tiles-row{margin:10px 10px !important;width:auto !important;max-width:none !important;background:transparent !important}
+  html body main.am-wrap .am-featured{width:auto !important;max-width:none !important}
+  html body .am-tiles-row .am-tile{
+    padding:10px 10px 12px !important;
+    border-radius:14px !important;
+    box-shadow:none !important;
+  }
+  html body .am-tile + .am-tile,
+  html body .am-tiles-row + .am-tiles-row{border-top:0 !important}
+  html body .am-tiles-row .am-tile-head{padding-bottom:8px !important;margin-bottom:10px !important}
+  html body .am-tiles-row .am-tile-title{font-size:17px !important;font-weight:900 !important}
+  html body .am-tiles-row .am-tile-more{font-size:11.5px !important;font-weight:800 !important;padding:6px 10px !important}
+  html body .am-tiles-row .am-quad-grid{grid-template-columns:repeat(3,1fr) !important;gap:8px !important}
+  html body .am-tiles-row .am-quad-item{border-radius:12px !important;max-width:none !important}
+  html body .am-tiles-row .am-quad-imgwrap{height:86px !important;padding:6px !important}
+  html body .am-tiles-row .am-quad-name{
+    font-size:11.5px !important;font-weight:700 !important;
+    line-height:1.2 !important;padding:7px 4px !important;
+    -webkit-line-clamp:2 !important;display:-webkit-box !important;
+    -webkit-box-orient:vertical !important;overflow:hidden !important;
+  }
+
+  /* Apartados circulares un poco más discretos */
+  html body .am-cat-circle .label{font-size:13px !important;font-weight:800 !important}
+  html body .am-cats-scroll{gap:12px !important;padding:12px 12px 14px !important}
+}
