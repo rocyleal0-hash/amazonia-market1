@@ -2967,3 +2967,109 @@ html body .am-feat-add{
     min-height:172px !important;object-fit:cover !important;object-position:center center !important;
   }
 }
+
+/* =========================================================
+   32. AJUSTES FINALES SOLO MOVIL (<=760px)
+   - Banner completo, sin recortes (misma presencia/ancho total)
+   - Productos destacados: 4 visibles, legibles y boton "Agregar"
+     con el icono del carrito DENTRO del boton
+   PC no se modifica.
+   ========================================================= */
+@media (max-width:760px){
+
+  /* ---------- Banner principal: imagen COMPLETA, sin recorte ---------- */
+  html body .am-ads-wrap .am-ads-hero,
+  html body .am-ads-hero,
+  html body #adsHero{
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    overflow:visible !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    display:block !important;
+  }
+  html body #adsHero .am-slide,
+  html body .am-ads-hero .am-slide{
+    position:absolute !important;
+    inset:0 !important;
+    opacity:0 !important;
+    height:auto !important;
+  }
+  html body #adsHero .am-slide.active,
+  html body .am-ads-hero .am-slide.active{
+    position:relative !important;
+    inset:auto !important;
+    opacity:1 !important;
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    transform:none !important;
+  }
+  html body #adsHero .am-slide.active img,
+  html body #adsHero .am-slide.active video,
+  html body .am-ads-hero .am-slide.active img,
+  html body .am-ads-hero .am-slide.active video{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    min-height:0 !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    aspect-ratio:auto !important;
+  }
+
+  /* ---------- Productos destacados: 4 visibles y legibles ---------- */
+  html body .am-featured{margin:10px 8px 14px !important;padding:10px !important}
+  html body .am-featured-head h2{font-size:17px !important}
+  html body .am-featured .am-featured-row{
+    display:grid !important;grid-auto-flow:column !important;
+    grid-auto-columns:calc((100% - 24px)/4) !important;
+    gap:8px !important;overflow-x:auto !important;
+    scroll-snap-type:x mandatory !important;padding-bottom:6px !important;
+  }
+  html body .am-featured .am-feat-card{
+    padding:8px !important;border-radius:12px !important;
+    min-width:0 !important;gap:5px !important;
+  }
+  html body .am-featured .am-feat-imgwrap{height:78px !important}
+  html body .am-featured .am-feat-imgwrap img{
+    width:100% !important;height:100% !important;object-fit:contain !important;
+  }
+  html body .am-featured .am-feat-name{
+    font-size:11px !important;font-weight:800 !important;
+    line-height:1.2 !important;min-height:2.4em !important;
+    -webkit-line-clamp:2 !important;display:-webkit-box !important;
+    -webkit-box-orient:vertical !important;overflow:hidden !important;
+  }
+  html body .am-featured .am-feat-cat{font-size:9px !important}
+  html body .am-featured .am-feat-price{font-size:14px !important;font-weight:900 !important}
+
+  /* Boton Agregar: icono + texto SIEMPRE dentro del boton */
+  html body .am-featured .am-feat-add,
+  html body .am-feat-add,
+  html body .am-add-btn{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:4px !important;
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+    padding:7px 4px !important;
+    margin-top:4px !important;
+    font-size:10.5px !important;
+    font-weight:800 !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+  }
+  html body .am-feat-add .am-add-ico,
+  html body .am-add-btn .am-add-ico{
+    width:13px !important;height:13px !important;
+    flex:0 0 13px !important;
+    stroke:#000 !important;fill:none !important;
+  }
+}
