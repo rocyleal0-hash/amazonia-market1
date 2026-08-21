@@ -632,6 +632,7 @@ class ApartadosApp(tk.Tk):
         super().__init__()
         self.title("Amazonia Market · Apartados")
         self.geometry("560x760")
+        self.minsize(520, 420)
         self.configure(bg=COLOR_BG)
         self.resizable(True, True)
         self._logo_ref = None
@@ -644,8 +645,43 @@ class ApartadosApp(tk.Tk):
         self._refresh_cats()
 
     def _build_ui(self):
+        # Toda la pantalla principal vive dentro de este canvas.  De esta
+        # forma la barra de la derecha desplaza también los botones que están
+        # debajo de la lista de apartados, incluso en monitores pequeños.
+        page_canvas = tk.Canvas(self, bg=COLOR_BG, highlightthickness=0)
+        page_scrollbar = ttk.Scrollbar(
+            self, orient="vertical", command=page_canvas.yview
+        )
+        page_canvas.configure(yscrollcommand=page_scrollbar.set)
+        page_scrollbar.pack(side="right", fill="y")
+        page_canvas.pack(side="left", fill="both", expand=True)
+
+        page = tk.Frame(page_canvas, bg=COLOR_BG)
+        page_window = page_canvas.create_window((0, 0), window=page, anchor="nw")
+
+        def _update_page_scrollregion(_event=None):
+            page_canvas.configure(scrollregion=page_canvas.bbox("all"))
+
+        def _fit_page_to_canvas(event):
+            page_canvas.itemconfigure(page_window, width=event.width)
+
+        def _scroll_page(units):
+            page_canvas.yview_scroll(units, "units")
+
+        def _on_mousewheel(event):
+            if event.delta:
+                _scroll_page(-1 if event.delta > 0 else 1)
+            return "break"
+
+        page.bind("<Configure>", _update_page_scrollregion)
+        page_canvas.bind("<Configure>", _fit_page_to_canvas)
+        # La rueda funciona sobre cualquier control de la ventana principal.
+        self.bind("<MouseWheel>", _on_mousewheel)
+        self.bind("<Button-4>", lambda e: (_scroll_page(-1), "break")[1])
+        self.bind("<Button-5>", lambda e: (_scroll_page(1), "break")[1])
+
         # Hero con logo
-        hero = tk.Frame(self, bg=COLOR_PRIMARY, height=160)
+        hero = tk.Frame(page, bg=COLOR_PRIMARY, height=160)
         hero.pack(fill="x")
         hero.pack_propagate(False)
 
@@ -659,8 +695,8 @@ class ApartadosApp(tk.Tk):
             expand=True, pady=10
         )
 
-        card = tk.Frame(self, bg=COLOR_CARD)
-        card.pack(fill="both", expand=True, padx=22, pady=22)
+        card = tk.Frame(page, bg=COLOR_CARD)
+        card.pack(fill="x", padx=22, pady=22)
 
         tk.Label(card, text="Apartados de la tienda",
                  font=("Segoe UI", 16, "bold"),
@@ -694,8 +730,9 @@ class ApartadosApp(tk.Tk):
         self._add_cat_btn = add_cat_btn
 
         # Lista scroll de apartados
-        list_wrap = tk.Frame(card, bg=COLOR_CARD)
-        list_wrap.pack(fill="both", expand=True, padx=12, pady=(0, 10))
+        list_wrap = tk.Frame(card, bg=COLOR_CARD, height=265)
+        list_wrap.pack(fill="x", padx=12, pady=(0, 10))
+        list_wrap.pack_propagate(False)
 
         self.cat_canvas = tk.Canvas(list_wrap, bg=COLOR_CARD, highlightthickness=0)
         sb = ttk.Scrollbar(list_wrap, orient="vertical", command=self.cat_canvas.yview)
@@ -704,7 +741,13 @@ class ApartadosApp(tk.Tk):
             "<Configure>",
             lambda e: self.cat_canvas.configure(scrollregion=self.cat_canvas.bbox("all")),
         )
-        self.cat_canvas.create_window((0, 0), window=self.cat_inner, anchor="nw", width=470)
+        cat_window = self.cat_canvas.create_window(
+            (0, 0), window=self.cat_inner, anchor="nw"
+        )
+        self.cat_canvas.bind(
+            "<Configure>",
+            lambda e: self.cat_canvas.itemconfigure(cat_window, width=e.width),
+        )
         self.cat_canvas.configure(yscrollcommand=sb.set)
         self.cat_canvas.pack(side="left", fill="both", expand=True)
         sb.pack(side="right", fill="y")
@@ -763,6 +806,26 @@ class ApartadosApp(tk.Tk):
                                 font=("Segoe UI", 11, "bold"),
                                 relief="flat", bd=0, cursor="hand2", pady=10)
         subcats_btn.pack(fill="x", padx=20, pady=(0, 8))
+
+        # Botón editar mensaje publicitario (barra azul del final)
+        footer_btn = tk.Button(card, text="📝  Editar mensaje publicitario",
+                               command=lambda: FooterEditorWindow(self),
+                               bg="#DB2777", fg="white",
+                               activebackground="#BE185D", activeforeground="white",
+                               font=("Segoe UI", 11, "bold"),
+                               relief="flat", bd=0, cursor="hand2", pady=10)
+        footer_btn.pack(fill="x", padx=20, pady=(0, 8))
+
+        # Botón: icono de WhatsApp, Pagar ahora y tamaño de letras
+        float_btn = tk.Button(card,
+                              text="📲  Editar icono de WhatsApp, pagar ahora y el tamaño de las letras",
+                              command=lambda: FloatButtonsWindow(self),
+                              bg="#059669", fg="white",
+                              activebackground="#047857", activeforeground="white",
+                              font=("Segoe UI", 11, "bold"),
+                              relief="flat", bd=0, cursor="hand2", pady=10,
+                              wraplength=520, justify="center")
+        float_btn.pack(fill="x", padx=20, pady=(0, 8))
 
         # Botón abrir tienda
         open_btn = tk.Button(card, text="🌐  Abrir la tienda en el navegador",
@@ -2945,6 +3008,187 @@ class CartStyleWindow(tk.Toplevel):
 
 
 # ==========================================================
+# VENTANA: ICONO DE WHATSAPP, PAGAR AHORA Y TAMANO DE LETRAS
+# Permite elegir, por separado para MOVIL y para PC (o para
+# ambos a la vez):
+#   - Lado del boton flotante de WhatsApp (izquierda / derecha)
+#   - Tamano del boton de WhatsApp
+#   - Lado del boton "Pagar ahora" (izquierda / derecha)
+#   - Tamano del boton "Pagar ahora"
+#   - Tamano de letra de los apartados circulares (debajo del banner)
+#   - Tamano de letra del apartado que sale debajo de cada producto
+# Los botones flotantes siempre quedan por encima de la franja
+# de "Delivery gratis / Pago seguro" y, si los agrandas, suben
+# un poco solos para no taparla.
+# ==========================================================
+FLOAT_DEFAULTS = {
+    "fb_wa_side":    "right",
+    "fb_wa_size":    "56",
+    "fb_pay_side":   "left",
+    "fb_pay_size":   "14",
+    "fs_cat_label":  "13",
+    "fs_prod_cat":   "12",
+}
+FLOAT_DEFAULTS_MV = {
+    "fb_wa_side":    "right",
+    "fb_wa_size":    "50",
+    "fb_pay_side":   "left",
+    "fb_pay_size":   "13",
+    "fs_cat_label":  "12",
+    "fs_prod_cat":   "11",
+}
+
+
+class FloatButtonsWindow(tk.Toplevel):
+    KEYS = ("fb_wa_side", "fb_wa_size", "fb_pay_side", "fb_pay_size",
+            "fs_cat_label", "fs_prod_cat")
+
+    def __init__(self, master):
+        super().__init__(master)
+        self.title("Icono de WhatsApp, Pagar ahora y tamaño de letras")
+        self.geometry("620x720")
+        self.configure(bg="white")
+        self.minsize(560, 660)
+
+        pad = tk.Frame(self, bg="white")
+        pad.pack(fill="both", expand=True, padx=22, pady=16)
+
+        tk.Label(pad, text="Botones flotantes y tamaño de letras",
+                 font=("Segoe UI", 15, "bold"), fg="#0F172A", bg="white"
+                 ).pack(anchor="w")
+        tk.Label(pad,
+                 text="1) Elige la visibilidad (dónde se aplican los cambios).\n"
+                      "2) Ajusta lado y tamaño. 3) Pulsa Guardar y sube los JSON a GitHub.",
+                 font=("Segoe UI", 9), fg="#64748B", bg="white", justify="left"
+                 ).pack(anchor="w", pady=(2, 12))
+
+        # ---------- Visibilidad ----------
+        visbox = tk.LabelFrame(pad, text=" Elegir visibilidad ", bg="white",
+                               fg="#0F172A", font=("Segoe UI", 10, "bold"),
+                               relief="solid", bd=1)
+        visbox.pack(fill="x", pady=(0, 12))
+        self.vis_var = tk.StringVar(value="pc")
+        row = tk.Frame(visbox, bg="white"); row.pack(fill="x", padx=10, pady=8)
+        for val, txt in (("mv", "📱  Móvil"), ("pc", "💻  PC"), ("both", "📱💻  Ambos")):
+            tk.Radiobutton(row, text=txt, value=val, variable=self.vis_var,
+                           command=self._on_vis_change, bg="white",
+                           activebackground="white", fg="#0F172A",
+                           font=("Segoe UI", 10, "bold"), selectcolor="#E2E8F0",
+                           indicatoron=True).pack(side="left", expand=True)
+        tk.Label(visbox,
+                 text="Móvil = solo teléfonos · PC = solo computadora · Ambos = los dos a la vez",
+                 font=("Segoe UI", 8, "italic"), fg="#94A3B8", bg="white"
+                 ).pack(anchor="w", padx=12, pady=(0, 8))
+
+        # ---------- WhatsApp ----------
+        wa = tk.LabelFrame(pad, text=" Botón de WhatsApp ", bg="white",
+                           fg="#0F172A", font=("Segoe UI", 10, "bold"),
+                           relief="solid", bd=1)
+        wa.pack(fill="x", pady=(0, 12))
+        self.wa_side = tk.StringVar(value="right")
+        self._side_row(wa, self.wa_side)
+        self.wa_size = self._size_row(wa, "Elegir tamaño del icono", 34, 120, "px")
+
+        # ---------- Pagar ahora ----------
+        pay = tk.LabelFrame(pad, text=" Botón «Pagar ahora» (aparece con el carrito) ",
+                            bg="white", fg="#0F172A",
+                            font=("Segoe UI", 10, "bold"), relief="solid", bd=1)
+        pay.pack(fill="x", pady=(0, 12))
+        self.pay_side = tk.StringVar(value="left")
+        self._side_row(pay, self.pay_side)
+        self.pay_size = self._size_row(pay, "Elegir tamaño del botón", 10, 34, "px de letra")
+
+        # ---------- Tamano de letras ----------
+        fs = tk.LabelFrame(pad, text=" Tamaño de las letras ", bg="white",
+                           fg="#0F172A", font=("Segoe UI", 10, "bold"),
+                           relief="solid", bd=1)
+        fs.pack(fill="x", pady=(0, 12))
+        self.fs_cat = self._size_row(
+            fs, "Apartados circulares (debajo del banner)", 8, 30, "px")
+        self.fs_prod = self._size_row(
+            fs, "Apartado debajo de cada producto", 8, 30, "px")
+
+        tk.Button(pad, text="💾  Guardar cambios", command=self._save,
+                  bg="#16A34A", fg="white", relief="flat", bd=0, cursor="hand2",
+                  font=("Segoe UI", 11, "bold"), pady=10).pack(fill="x", pady=(4, 0))
+
+        self._load_from("pc")
+
+    # ----- helpers de interfaz -----
+    def _side_row(self, parent, var):
+        row = tk.Frame(parent, bg="white")
+        row.pack(fill="x", padx=10, pady=(8, 2))
+        tk.Label(row, text="Posición", font=("Segoe UI", 10, "bold"),
+                 fg="#0F172A", bg="white", width=24, anchor="w").pack(side="left")
+        for val, txt in (("left", "⬅  Izquierda"), ("right", "Derecha  ➡")):
+            tk.Radiobutton(row, text=txt, value=val, variable=var, bg="white",
+                           activebackground="white", fg="#0F172A",
+                           font=("Segoe UI", 10), selectcolor="#E2E8F0"
+                           ).pack(side="left", padx=10)
+        return var
+
+    def _size_row(self, parent, label, minv, maxv, unit):
+        row = tk.Frame(parent, bg="white")
+        row.pack(fill="x", padx=10, pady=(2, 8))
+        tk.Label(row, text=label, font=("Segoe UI", 10, "bold"),
+                 fg="#0F172A", bg="white", width=32, anchor="w").pack(side="left")
+        var = tk.IntVar(value=minv)
+        tk.Spinbox(row, from_=minv, to=maxv, textvariable=var, width=6,
+                   font=("Segoe UI", 10)).pack(side="left", padx=8)
+        tk.Label(row, text=unit, bg="white", fg="#64748B",
+                 font=("Segoe UI", 9)).pack(side="left")
+        return var
+
+    # ----- carga / guardado -----
+    def _defaults(self, dev):
+        return FLOAT_DEFAULTS_MV if dev == "mv" else FLOAT_DEFAULTS
+
+    def _load_from(self, dev):
+        s = load_site_settings()
+        d = self._defaults(dev)
+        g = lambda k: s.get(f"{k}_{dev}", d[k])
+        self.wa_side.set(str(g("fb_wa_side")))
+        self.pay_side.set(str(g("fb_pay_side")))
+        for var, key in ((self.wa_size, "fb_wa_size"),
+                         (self.pay_size, "fb_pay_size"),
+                         (self.fs_cat, "fs_cat_label"),
+                         (self.fs_prod, "fs_prod_cat")):
+            try:
+                var.set(int(float(g(key))))
+            except Exception:
+                var.set(int(float(d[key])))
+
+    def _on_vis_change(self):
+        vis = self.vis_var.get()
+        if vis in ("pc", "mv"):
+            self._load_from(vis)
+
+    def _save(self):
+        vis = self.vis_var.get()
+        devs = ("pc", "mv") if vis == "both" else (vis,)
+        values = {
+            "fb_wa_side":   self.wa_side.get(),
+            "fb_wa_size":   str(int(self.wa_size.get())),
+            "fb_pay_side":  self.pay_side.get(),
+            "fb_pay_size":  str(int(self.pay_size.get())),
+            "fs_cat_label": str(int(self.fs_cat.get())),
+            "fs_prod_cat":  str(int(self.fs_prod.get())),
+        }
+        patch = {}
+        for dev in devs:
+            for k, v in values.items():
+                patch[f"{k}_{dev}"] = v
+        patch_site_settings(**patch)
+        donde = {"pc": "PC", "mv": "móvil", "both": "móvil y PC"}[vis]
+        messagebox.showinfo(
+            "Guardado",
+            f"Cambios guardados para {donde}.\n\n"
+            "Sube site_settings.json (y app.js / styles.css si los cambiaste)\n"
+            "a GitHub y actualiza la tienda con F5.")
+        self.destroy()
+
+
+# ==========================================================
 # VENTANA: MOVIMIENTO, MEDIDAS Y WHATSAPP
 # Controla la velocidad de la cinta de delivery, los segundos
 # del banner principal (imagenes y videos), los productos
@@ -3425,6 +3669,11 @@ class AnunciosWindow(tk.Toplevel):
         self.geometry("780x760")
         self.transient(master)
 
+        self._device = "pc"       # "pc" o "mobile"
+        self._device_ready = False
+        self._btn_mobile = None
+        self._btn_pc = None
+        self._dim_label = None
         self._data = self._load()
         self._card_widgets = []   # lista de dicts con refs por tarjeta
 
@@ -3458,6 +3707,9 @@ class AnunciosWindow(tk.Toplevel):
         def _on_wheel(e):
             canvas.yview_scroll(int(-1 * (e.delta / 120)), "units")
         canvas.bind_all("<MouseWheel>", _on_wheel)
+
+        # -------- Selector MOVIL / PC (aplica a los 3 banners) --------
+        self._build_device_switch(body)
 
         # -------- Banner de fondo (4 imagenes en slideshow) --------
         banner_card = tk.Frame(body, bg="white", bd=0, highlightthickness=1,
@@ -3568,10 +3820,110 @@ class AnunciosWindow(tk.Toplevel):
                   bg="#16A34A", fg="white", relief="flat", bd=0,
                   font=("Segoe UI", 11, "bold"), cursor="hand2", pady=10,
                   command=self._save).pack(side="right")
+        self._device_ready = True
+        self._paint_device_buttons()
+
         tk.Button(actions, text="Cerrar",
                   bg="#E2E8F0", fg="#0F172A", relief="flat", bd=0,
                   font=("Segoe UI", 10), cursor="hand2", pady=8,
                   command=self.destroy).pack(side="right", padx=8)
+
+    # ---------- DISPOSITIVO: MOVIL / PC ----------
+    # Cada banner guarda DOS versiones independientes:
+    #   PC     -> img_b64   / video_b64   / video_dur
+    #   MOVIL  -> img_b64_m / video_b64_m / video_dur_m
+    # La web (app.js) elige automaticamente segun el ancho de pantalla
+    # (720px o menos = movil).
+    DEVICE_DIMS = {
+        "pc": {
+            "hero": "1920 x 600 px",
+            "thin": "1920 x 130 px",
+            "max_hero": (1920, 600),
+            "max_thin": (1920, 200),
+        },
+        "mobile": {
+            "hero": "1080 x 720 px",
+            "thin": "1080 x 260 px",
+            "max_hero": (1080, 720),
+            "max_thin": (1080, 300),
+        },
+    }
+
+    def _ki(self):
+        return "img_b64" if self._device == "pc" else "img_b64_m"
+
+    def _kv(self):
+        return "video_b64" if self._device == "pc" else "video_b64_m"
+
+    def _kd(self):
+        return "video_dur" if self._device == "pc" else "video_dur_m"
+
+    def _max_size(self, kind):
+        return self.DEVICE_DIMS[self._device]["max_" + kind]
+
+    def _dims_text(self):
+        d = self.DEVICE_DIMS[self._device]
+        nombre = "PC / computadora" if self._device == "pc" else "MOVIL / telefono"
+        return ("Estas editando los banners de: " + nombre + "\n"
+                "Banner principal: " + d["hero"] + "   |   "
+                "Banner secundario y tercer banner: " + d["thin"] + "\n"
+                "Usa exactamente esas medidas para que la imagen se vea COMPLETA, "
+                "sin recortes ni franjas.")
+
+    def _set_device(self, device):
+        if device == getattr(self, "_device", "pc") and getattr(self, "_device_ready", False):
+            return
+        self._device = device
+        self._paint_device_buttons()
+        self._rerender_all_previews()
+
+    def _paint_device_buttons(self):
+        on_bg, on_fg = "#2563EB", "white"
+        off_bg, off_fg = "#E2E8F0", "#0F172A"
+        if getattr(self, "_btn_mobile", None):
+            mob = self._device == "mobile"
+            self._btn_mobile.configure(bg=on_bg if mob else off_bg,
+                                       fg=on_fg if mob else off_fg)
+            self._btn_pc.configure(bg=off_bg if mob else on_bg,
+                                   fg=off_fg if mob else on_fg)
+        if getattr(self, "_dim_label", None):
+            self._dim_label.configure(text=self._dims_text())
+
+    def _rerender_all_previews(self):
+        for group in ("banner_slides", "banner_secundario", "banner_tercero"):
+            widgets = getattr(self, self._GROUP_WIDGETS[group], []) or []
+            for i in range(len(widgets)):
+                self._rerender_group(group, i)
+
+    def _build_device_switch(self, parent):
+        box = tk.Frame(parent, bg="white", bd=0, highlightthickness=1,
+                       highlightbackground="#E2E8F0")
+        box.pack(fill="x", pady=(2, 12))
+        tk.Label(box, text="\u00bfPara que pantalla son estos banners?",
+                 font=("Segoe UI", 11, "bold"),
+                 bg="white", fg="#0F172A").pack(anchor="w", padx=14, pady=(12, 2))
+        row = tk.Frame(box, bg="white")
+        row.pack(fill="x", padx=14, pady=(4, 6))
+        self._btn_mobile = tk.Button(
+            row, text="\U0001F4F1  M\u00d3VIL", relief="flat", bd=0,
+            font=("Segoe UI", 11, "bold"), cursor="hand2", pady=8, padx=22,
+            command=lambda: self._set_device("mobile"))
+        self._btn_mobile.pack(side="left")
+        self._btn_pc = tk.Button(
+            row, text="\U0001F4BB  PC", relief="flat", bd=0,
+            font=("Segoe UI", 11, "bold"), cursor="hand2", pady=8, padx=22,
+            command=lambda: self._set_device("pc"))
+        self._btn_pc.pack(side="left", padx=8)
+        self._dim_label = tk.Label(box, text="", font=("Segoe UI", 9),
+                                   bg="white", fg="#2563EB", justify="left")
+        self._dim_label.pack(anchor="w", padx=14, pady=(0, 10))
+        tk.Label(box,
+                 text="Las im\u00e1genes de M\u00d3VIL y las de PC se guardan por separado: "
+                      "cambiar una NO afecta a la otra.\nSi dejas vac\u00eda la de m\u00f3vil, "
+                      "el tel\u00e9fono mostrar\u00e1 la de PC.",
+                 font=("Segoe UI", 9), bg="white", fg="#64748B",
+                 justify="left").pack(anchor="w", padx=14, pady=(0, 12))
+        return box
 
     # ---------- helpers ----------
     def _load(self) -> dict:
@@ -3582,22 +3934,34 @@ class AnunciosWindow(tk.Toplevel):
             "banner_overlay": 0,
             "banner_height": 320,
             "banner_slides": [
-                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0},
-                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0},
-                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0},
-                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0},
+                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0,
+                 "img_b64_m": "", "video_b64_m": "", "video_dur_m": 0},
+                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0,
+                 "img_b64_m": "", "video_b64_m": "", "video_dur_m": 0},
+                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0,
+                 "img_b64_m": "", "video_b64_m": "", "video_dur_m": 0},
+                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0,
+                 "img_b64_m": "", "video_b64_m": "", "video_dur_m": 0},
             ],
             "banner_secundario": [
-                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0},
-                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0},
-                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0},
-                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0},
+                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0,
+                 "img_b64_m": "", "video_b64_m": "", "video_dur_m": 0},
+                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0,
+                 "img_b64_m": "", "video_b64_m": "", "video_dur_m": 0},
+                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0,
+                 "img_b64_m": "", "video_b64_m": "", "video_dur_m": 0},
+                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0,
+                 "img_b64_m": "", "video_b64_m": "", "video_dur_m": 0},
             ],
             "banner_tercero": [
-                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0},
-                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0},
-                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0},
-                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0},
+                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0,
+                 "img_b64_m": "", "video_b64_m": "", "video_dur_m": 0},
+                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0,
+                 "img_b64_m": "", "video_b64_m": "", "video_dur_m": 0},
+                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0,
+                 "img_b64_m": "", "video_b64_m": "", "video_dur_m": 0},
+                {"img_b64": "", "url": "", "video_b64": "", "video_dur": 0,
+                 "img_b64_m": "", "video_b64_m": "", "video_dur_m": 0},
             ],
             "cards": [
                 {"title": "", "img_b64": "", "url": ""},
@@ -3637,6 +4001,10 @@ class AnunciosWindow(tk.Toplevel):
                     for _s in d.get(_k, []):
                         _s.setdefault("video_b64", "")
                         _s.setdefault("video_dur", 0)
+                        # Version MOVIL de cada banner (independiente de la de PC)
+                        _s.setdefault("img_b64_m", "")
+                        _s.setdefault("video_b64_m", "")
+                        _s.setdefault("video_dur_m", 0)
                 return d
             except Exception:
                 pass
@@ -3769,11 +4137,11 @@ class AnunciosWindow(tk.Toplevel):
                     return
             with open(path, "rb") as f:
                 raw = f.read()
-            self._data[group][idx]["video_b64"] = base64.b64encode(raw).decode()
-            self._data[group][idx]["video_dur"] = min(dur or self.MAX_VIDEO_SECONDS,
+            self._data[group][idx][self._kv()] = base64.b64encode(raw).decode()
+            self._data[group][idx][self._kd()] = min(dur or self.MAX_VIDEO_SECONDS,
                                                       self.MAX_VIDEO_SECONDS)
             # El video manda: se quita la imagen de ese slide para no duplicar.
-            self._data[group][idx]["img_b64"] = ""
+            self._data[group][idx][self._ki()] = ""
             self._rerender_group(group, idx)
             messagebox.showinfo(
                 "Video agregado",
@@ -3784,8 +4152,8 @@ class AnunciosWindow(tk.Toplevel):
             messagebox.showerror("Error", f"No se pudo cargar el video:\n{e}")
 
     def _clear_video(self, group, idx):
-        self._data[group][idx]["video_b64"] = ""
-        self._data[group][idx]["video_dur"] = 0
+        self._data[group][idx][self._kv()] = ""
+        self._data[group][idx][self._kd()] = 0
         self._rerender_group(group, idx)
 
     def _video_buttons_row(self, parent, group, idx, bg):
@@ -3806,10 +4174,10 @@ class AnunciosWindow(tk.Toplevel):
     def _show_video_preview(self, group, idx, preview_widget):
         """Si el slide tiene video, pinta el aviso y devuelve True."""
         info = self._data[group][idx]
-        vb64 = (info.get("video_b64") or "").strip()
+        vb64 = (info.get(self._kv()) or "").strip()
         if not vb64:
             return False
-        dur = info.get("video_dur") or 0
+        dur = info.get(self._kd()) or 0
         mb = len(vb64) * 3 / 4 / (1024 * 1024)
         txt = "🎬 VIDEO cargado"
         if dur:
@@ -3864,7 +4232,7 @@ class AnunciosWindow(tk.Toplevel):
         if self._show_video_preview("banner_slides", idx, preview_widget):
             return
         preview_widget.configure(fg="#94A3B8")
-        b64 = self._data["banner_slides"][idx].get("img_b64", "")
+        b64 = self._data["banner_slides"][idx].get(self._ki(), "")
         if not b64:
             preview_widget.configure(image="", text="(Sin imagen)")
             preview_widget.image = None
@@ -3888,18 +4256,18 @@ class AnunciosWindow(tk.Toplevel):
             return
         try:
             img = Image.open(path).convert("RGB")
-            img.thumbnail((1800, 900))
+            img.thumbnail(self._max_size("hero"))
             buf = io.BytesIO()
             img.save(buf, format="JPEG", quality=88)
-            self._data["banner_slides"][idx]["img_b64"] = base64.b64encode(buf.getvalue()).decode()
-            self._data["banner_slides"][idx]["video_b64"] = ""
-            self._data["banner_slides"][idx]["video_dur"] = 0
+            self._data["banner_slides"][idx][self._ki()] = base64.b64encode(buf.getvalue()).decode()
+            self._data["banner_slides"][idx][self._kv()] = ""
+            self._data["banner_slides"][idx][self._kd()] = 0
             self._render_slide_preview(idx, self._slide_widgets[idx]["preview"])
         except Exception as e:
             messagebox.showerror("Error", f"No se pudo cargar la imagen:\n{e}")
 
     def _clear_slide_img(self, idx):
-        self._data["banner_slides"][idx]["img_b64"] = ""
+        self._data["banner_slides"][idx][self._ki()] = ""
         self._render_slide_preview(idx, self._slide_widgets[idx]["preview"])
 
     def _build_sec_slide(self, parent, idx):
@@ -3947,7 +4315,7 @@ class AnunciosWindow(tk.Toplevel):
         if self._show_video_preview("banner_secundario", idx, preview_widget):
             return
         preview_widget.configure(fg="#94A3B8")
-        b64 = self._data["banner_secundario"][idx].get("img_b64", "")
+        b64 = self._data["banner_secundario"][idx].get(self._ki(), "")
         if not b64:
             preview_widget.configure(image="", text="(Sin imagen)")
             preview_widget.image = None
@@ -3971,18 +4339,18 @@ class AnunciosWindow(tk.Toplevel):
             return
         try:
             img = Image.open(path).convert("RGB")
-            img.thumbnail((2000, 500))
+            img.thumbnail(self._max_size("thin"))
             buf = io.BytesIO()
             img.save(buf, format="JPEG", quality=88)
-            self._data["banner_secundario"][idx]["img_b64"] = base64.b64encode(buf.getvalue()).decode()
-            self._data["banner_secundario"][idx]["video_b64"] = ""
-            self._data["banner_secundario"][idx]["video_dur"] = 0
+            self._data["banner_secundario"][idx][self._ki()] = base64.b64encode(buf.getvalue()).decode()
+            self._data["banner_secundario"][idx][self._kv()] = ""
+            self._data["banner_secundario"][idx][self._kd()] = 0
             self._render_sec_preview(idx, self._sec_widgets[idx]["preview"])
         except Exception as e:
             messagebox.showerror("Error", f"No se pudo cargar la imagen:\n{e}")
 
     def _clear_sec_img(self, idx):
-        self._data["banner_secundario"][idx]["img_b64"] = ""
+        self._data["banner_secundario"][idx][self._ki()] = ""
         self._render_sec_preview(idx, self._sec_widgets[idx]["preview"])
 
     # ---------- Tercer banner ----------
@@ -4031,7 +4399,7 @@ class AnunciosWindow(tk.Toplevel):
         if self._show_video_preview("banner_tercero", idx, preview_widget):
             return
         preview_widget.configure(fg="#94A3B8")
-        b64 = self._data["banner_tercero"][idx].get("img_b64", "")
+        b64 = self._data["banner_tercero"][idx].get(self._ki(), "")
         if not b64:
             preview_widget.configure(image="", text="(Sin imagen)")
             preview_widget.image = None
@@ -4055,18 +4423,18 @@ class AnunciosWindow(tk.Toplevel):
             return
         try:
             img = Image.open(path).convert("RGB")
-            img.thumbnail((2000, 500))
+            img.thumbnail(self._max_size("thin"))
             buf = io.BytesIO()
             img.save(buf, format="JPEG", quality=88)
-            self._data["banner_tercero"][idx]["img_b64"] = base64.b64encode(buf.getvalue()).decode()
-            self._data["banner_tercero"][idx]["video_b64"] = ""
-            self._data["banner_tercero"][idx]["video_dur"] = 0
+            self._data["banner_tercero"][idx][self._ki()] = base64.b64encode(buf.getvalue()).decode()
+            self._data["banner_tercero"][idx][self._kv()] = ""
+            self._data["banner_tercero"][idx][self._kd()] = 0
             self._render_ter_preview(idx, self._ter_widgets[idx]["preview"])
         except Exception as e:
             messagebox.showerror("Error", f"No se pudo cargar la imagen:\n{e}")
 
     def _clear_ter_img(self, idx):
-        self._data["banner_tercero"][idx]["img_b64"] = ""
+        self._data["banner_tercero"][idx][self._ki()] = ""
         self._render_ter_preview(idx, self._ter_widgets[idx]["preview"])
 
     def _render_card_preview(self, idx, preview_widget):
@@ -4111,16 +4479,33 @@ class AnunciosWindow(tk.Toplevel):
         self._data["banner_blur"]       = int(self._var_blur.get())
         self._data["banner_overlay"]    = int(self._var_ovr.get())
         self._data["banner_height"]     = int(self._var_h.get())
-        # Guardar URLs de cada slide del banner
-        for i, refs in enumerate(self._slide_widgets):
-            self._data["banner_slides"][i]["url"] = refs["url"].get().strip()
-        for i, refs in enumerate(self._sec_widgets):
-            self._data["banner_secundario"][i]["url"] = refs["url"].get().strip()
-        for i, refs in enumerate(getattr(self, "_ter_widgets", [])):
-            self._data["banner_tercero"][i]["url"] = refs["url"].get().strip()
+        # Guardar URLs de cada slide del banner.
+        # Cada indice (i) guarda SU propia URL: banner 1 -> slide 1, etc.
+        def _norm_url(v):
+            u = str(v or "").strip()
+            if not u:
+                return ""
+            if u.startswith(("http://", "https://", "mailto:", "tel:", "/", "?", "#")):
+                return u
+            return "https://" + u.lstrip("/")
+
+        for group, widgets in (
+            ("banner_slides", self._slide_widgets),
+            ("banner_secundario", self._sec_widgets),
+            ("banner_tercero", getattr(self, "_ter_widgets", [])),
+        ):
+            lista = self._data.setdefault(group, [])
+            while len(lista) < len(widgets):
+                lista.append({"img_b64": "", "url": "", "video_b64": "", "video_dur": 0,
+                              "img_b64_m": "", "video_b64_m": "", "video_dur_m": 0})
+            for i, refs in enumerate(widgets):
+                lista[i]["url"] = _norm_url(refs["url"].get())
+                lista[i].setdefault("img_b64_m", "")
+                lista[i].setdefault("video_b64_m", "")
+                lista[i].setdefault("video_dur_m", 0)
         for i, refs in enumerate(self._card_widgets):
             self._data["cards"][i]["title"] = refs["title"].get().strip()
-            self._data["cards"][i]["url"]   = refs["url"].get().strip()
+            self._data["cards"][i]["url"]   = _norm_url(refs["url"].get())
         try:
             ANUNCIOS_FILE.write_text(
                 json.dumps(self._data, ensure_ascii=False, indent=2),
@@ -4129,6 +4514,144 @@ class AnunciosWindow(tk.Toplevel):
                                 "Anuncios guardados. Refresca la tienda (F5) para verlos.")
         except Exception as e:
             messagebox.showerror("Error", f"No se pudo guardar:\n{e}")
+
+
+# ==========================================================
+# VENTANA: EDITAR MENSAJE PUBLICITARIO (BARRA AZUL DEL FINAL)
+# Permite cambiar el texto que aparece debajo del logo en el
+# pie de pagina, los titulos "Apartados / Ayuda / Contacto",
+# los enlaces de ayuda, los datos de contacto, el texto de
+# derechos reservados y los colores de esa barra.
+# ==========================================================
+class FooterEditorWindow(tk.Toplevel):
+    DEFAULTS = {
+        "footer_desc": "Tu supermercado online en Coro. Productos frescos, "
+                       "precios justos y entrega gratis en la ciudad.",
+        "footer_title_cats": "Apartados",
+        "footer_title_help": "Ayuda",
+        "footer_title_contact": "Contacto",
+        "footer_help_1": "Mi carrito",
+        "footer_help_2": "Cómo comprar",
+        "footer_help_3": "Formas de pago",
+        "footer_help_4": "Zonas de entrega",
+        "footer_contact_wa_text": "WhatsApp: +58 424-6687700",
+        "footer_contact_line1": "Santa Ana de Coro, Falcón",
+        "footer_contact_line2": "Lun a Dom · 8:00 am - 8:00 pm",
+        "footer_bottom_text": "Todos los derechos reservados.",
+        "footer_bg": "#2A2A9C",
+        "footer_fg": "#FFFFFF",
+    }
+
+    def __init__(self, master):
+        super().__init__(master)
+        self.title("Editar mensaje publicitario")
+        self.geometry("640x820")
+        self.configure(bg="white")
+        self.minsize(560, 640)
+        s = load_site_settings()
+
+        # --- Contenedor con scroll (son muchos campos) ---
+        outer = tk.Frame(self, bg="white")
+        outer.pack(fill="both", expand=True)
+        canvas = tk.Canvas(outer, bg="white", highlightthickness=0)
+        sb = ttk.Scrollbar(outer, orient="vertical", command=canvas.yview)
+        pad = tk.Frame(canvas, bg="white")
+        pad.bind("<Configure>",
+                 lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+        canvas.create_window((0, 0), window=pad, anchor="nw", width=600)
+        canvas.configure(yscrollcommand=sb.set)
+        canvas.pack(side="left", fill="both", expand=True, padx=(18, 0), pady=14)
+        sb.pack(side="right", fill="y")
+        canvas.bind_all(
+            "<MouseWheel>",
+            lambda e: canvas.yview_scroll(int(-1 * (e.delta / 120)), "units"))
+
+        tk.Label(pad, text="Mensaje publicitario del final de la página",
+                 font=("Segoe UI", 15, "bold"), fg="#0F172A", bg="white"
+                 ).pack(anchor="w", pady=(0, 2))
+        tk.Label(pad,
+                 text="Es la barra azul que aparece al final de tu tienda, "
+                      "con el logo, el mensaje, las redes y las columnas de "
+                      "Apartados, Ayuda y Contacto.",
+                 font=("Segoe UI", 9), fg="#64748B", bg="white",
+                 wraplength=560, justify="left").pack(anchor="w", pady=(0, 12))
+
+        self.vars = {}
+
+        def _section(title):
+            tk.Label(pad, text=title, font=("Segoe UI", 11, "bold"),
+                     fg="#2A2A9C", bg="white").pack(anchor="w", pady=(12, 4))
+
+        def _entry(label, key, width=64):
+            box = tk.Frame(pad, bg="white")
+            box.pack(fill="x", pady=3)
+            tk.Label(box, text=label, font=("Segoe UI", 9, "bold"),
+                     fg="#0F172A", bg="white", anchor="w").pack(anchor="w")
+            var = tk.StringVar(value=s.get(key, self.DEFAULTS.get(key, "")))
+            tk.Entry(box, textvariable=var, font=("Segoe UI", 10),
+                     relief="solid", bd=1, width=width).pack(fill="x", ipady=4)
+            self.vars[key] = var
+
+        _section("Mensaje debajo del logo")
+        txt_box = tk.Frame(pad, bg="white")
+        txt_box.pack(fill="x", pady=3)
+        self.desc_txt = tk.Text(txt_box, height=4, font=("Segoe UI", 10),
+                                relief="solid", bd=1, wrap="word")
+        self.desc_txt.pack(fill="x")
+        self.desc_txt.insert("1.0", s.get("footer_desc", self.DEFAULTS["footer_desc"]))
+
+        _section("Títulos de las columnas")
+        _entry("Título de la columna de apartados", "footer_title_cats")
+        _entry("Título de la columna de ayuda", "footer_title_help")
+        _entry("Título de la columna de contacto", "footer_title_contact")
+
+        _section("Enlaces de la columna «Ayuda»")
+        _entry("Opción 1", "footer_help_1")
+        _entry("Opción 2", "footer_help_2")
+        _entry("Opción 3", "footer_help_3")
+        _entry("Opción 4", "footer_help_4")
+        tk.Label(pad, text="Deja una opción vacía para que no aparezca.",
+                 font=("Segoe UI", 8, "italic"), fg="#94A3B8", bg="white"
+                 ).pack(anchor="w")
+
+        _section("Columna «Contacto»")
+        _entry("Texto del WhatsApp", "footer_contact_wa_text")
+        _entry("Línea 2 (dirección)", "footer_contact_line1")
+        _entry("Línea 3 (horario)", "footer_contact_line2")
+
+        _section("Texto final (derechos reservados)")
+        _entry("Texto después del año y el nombre", "footer_bottom_text")
+
+        _section("Colores de la barra")
+        colors = tk.Frame(pad, bg="white")
+        colors.pack(fill="x", pady=4)
+        self.ctls = {
+            "footer_bg": _labeled_color(colors, "Color de fondo de la barra",
+                                        s.get("footer_bg", self.DEFAULTS["footer_bg"]),
+                                        None, row=0),
+            "footer_fg": _labeled_color(colors, "Color de la letra",
+                                        s.get("footer_fg", self.DEFAULTS["footer_fg"]),
+                                        None, row=1),
+        }
+
+        tk.Button(pad, text="💾  Guardar mensaje publicitario", command=self._save,
+                  bg="#16A34A", fg="white", relief="flat", bd=0, cursor="hand2",
+                  font=("Segoe UI", 11, "bold"), pady=10
+                  ).pack(fill="x", pady=(18, 20))
+
+    def _save(self):
+        data = {k: (v.get() or "").strip() for k, v in self.vars.items()}
+        data["footer_desc"] = self.desc_txt.get("1.0", "end").strip()
+        for k, c in self.ctls.items():
+            data[k] = c["get"]()
+        # Guardamos siempre (aunque este vacio) para poder borrar textos.
+        patch_site_settings(**{k: (v if v != "" else " ") for k, v in data.items()})
+        messagebox.showinfo(
+            "Guardado",
+            "Mensaje publicitario actualizado.\n\n"
+            "Actualiza la tienda con F5 para verlo.\n"
+            "Recuerda subir site_settings.json a GitHub.")
+        self.destroy()
 
 
 def main():

@@ -3436,3 +3436,97 @@ html body .am-add-ico{
     margin:0 !important;
   }
 }
+
+/* ==========================================================
+   BANNERS: MEDIDAS EXACTAS POR DISPOSITIVO (MOVIL / PC)
+   Cargalos desde el panel (agregar_producto_corregido.py) con
+   los botones "📱 Movil" y "💻 PC" de la seccion de banners.
+
+   MEDIDAS RECOMENDADAS (para que la imagen se vea COMPLETA):
+     Banner principal   ->  PC 1920 x 600 px   |  Movil 1080 x 720 px
+     Banner secundario  ->  PC 1920 x 130 px   |  Movil 1080 x 260 px
+     Tercer banner      ->  PC 1920 x 130 px   |  Movil 1080 x 260 px
+   ========================================================== */
+
+/* ---------- PC / tablet horizontal (721px o mas) ---------- */
+@media (min-width: 721px){
+  .am-ads-wrap .am-ads-hero,
+  .am-ads-hero{
+    height: auto !important;
+    aspect-ratio: 1920 / 600;
+    overflow: hidden;
+  }
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center;
+  }
+  .am-secondary-banner{
+    height: auto !important;
+    aspect-ratio: 1920 / 130;
+    overflow: hidden;
+  }
+  .am-secondary-banner .am-slide img,
+  .am-secondary-banner .am-slide video{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center;
+  }
+}
+
+/* ---------- MOVIL (720px o menos) ---------- */
+@media (max-width: 720px){
+  .am-ads-wrap .am-ads-hero,
+  .am-ads-hero{
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 1080 / 720 !important;
+    overflow: hidden !important;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide,
+  .am-ads-hero .am-slide{
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide.active,
+  .am-ads-hero .am-slide.active{
+    position: absolute !important;
+    inset: 0 !important;
+    opacity: 1 !important;
+  }
+  .am-ads-wrap .am-ads-hero .am-slide img,
+  .am-ads-wrap .am-ads-hero .am-slide video,
+  .am-ads-hero .am-slide img,
+  .am-ads-hero .am-slide video{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    background: transparent !important;
+  }
+  .am-secondary-banner{
+    height: auto !important;
+    aspect-ratio: 1080 / 260 !important;
+    overflow: hidden !important;
+  }
+  .am-secondary-banner .am-slide{
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .am-secondary-banner .am-slide.active{ opacity: 1 !important; }
+  .am-secondary-banner .am-slide img,
+  .am-secondary-banner .am-slide video{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+}
