@@ -3530,3 +3530,30 @@ html body .am-add-ico{
     object-position: center center !important;
   }
 }
+
+/* ==========================================================
+   37) SOLO PC: BANNER SECUNDARIO Y TERCERO AL DOBLE DE ALTO
+   No toca el banner principal ni la vista movil.
+
+   MEDIDAS NUEVAS (subir las imagenes con estas dimensiones):
+     Banner principal  ->  PC 1920 x 600 px   (SIN CAMBIOS)
+     Banner secundario ->  PC 1920 x 260 px   (antes 1920 x 130)
+     Tercer banner     ->  PC 1920 x 260 px   (antes 1920 x 130)
+     Movil (sin cambios): principal 1080 x 720, secundario y tercero 1080 x 260
+   ========================================================== */
+@media (min-width: 721px){
+  html body .am-secondary-banner{
+    height: auto !important;
+    aspect-ratio: 1920 / 260 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+  html body .am-secondary-banner .am-slide img,
+  html body .am-secondary-banner .am-slide video{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+}
