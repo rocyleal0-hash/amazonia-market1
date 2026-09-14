@@ -9,23 +9,26 @@
 <meta property="og:title" content="Amazonia MARKET — Supermercado online"/>
 <meta property="og:description" content="Delivery GRATIS en toda la zona de Coro. Miles de productos con los mejores precios."/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://amazoniamarkett.com/"/>
 <meta name="twitter:card" content="summary_large_image"/>
-
-<!-- Favicons corregidos -->
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="shortcut icon" href="favicon.ico">
-
-<link rel="canonical" href="https://amazoniamarkett.com/"/>
+<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<meta name="theme-color" content="#0a0a0a"/>
+<meta property="og:site_name" content="Amazonia MARKET"/>
+<meta property="og:image" content="/favicon.png"/>
+<meta name="twitter:image" content="/favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 
 <!-- Carga del archivo CSS dentro de public -->
 <link rel="stylesheet" href="public/styles.css"/>
+<link rel="preload" as="fetch" href="public/site_settings.json" crossorigin/>
+<link rel="preload" as="fetch" href="public/products.json" crossorigin/>
+<link rel="preload" as="script" href="public/app.js"/>
+
 </head>
 <body>
 
@@ -68,13 +71,15 @@
     </a>
   </div>
 
+  <!-- Panel menú lateral -->
   <div id="menuPanel" class="am-menu-panel" hidden></div>
 </header>
 
-<!-- =============== CATEGORIAS =============== -->
+<!-- =============== CIRCULOS DE CATEGORIAS (se reubica bajo el banner) =============== -->
 <section class="am-cats-wrap" id="catsWrap">
   <div class="am-cats-scroll" id="catsScroll"></div>
 </section>
+
 
 <!-- =============== CONTENIDO PRINCIPAL =============== -->
 <main class="am-wrap" id="mainContent"></main>
@@ -115,10 +120,12 @@
       <p>Tu supermercado online en Coro. Productos frescos, precios justos y entrega gratis en la ciudad.</p>
       <div class="am-footer-socials" id="footerSocials"></div>
     </div>
+
     <div>
       <h4>Apartados</h4>
       <ul id="footerCats"></ul>
     </div>
+
     <div>
       <h4>Ayuda</h4>
       <ul>
@@ -128,6 +135,7 @@
         <li><a href="./">Zonas de entrega</a></li>
       </ul>
     </div>
+
     <div>
       <h4>Contacto</h4>
       <ul>
@@ -160,7 +168,7 @@
   </div>
 </div>
 
-<!-- =============== MODAL POR GRAMOS =============== -->
+<!-- =============== MODAL POR GRAMOS (charcuteria, carniceria, vegetales) =============== -->
 <div id="gramsModal" class="am-modal-overlay" hidden>
   <div class="am-modal">
     <img id="gramsImg" class="am-modal-img" alt=""/>
@@ -182,7 +190,7 @@
 
 <div id="toast" class="am-toast" hidden></div>
 
-<!-- Botón flotante WhatsApp -->
+<!-- Botón flotante WhatsApp (inferior izquierda) -->
 <a id="amWaFloat" class="am-wa-float"
    href="https://wa.me/584246687700?text=%C2%A1Hola!%20%F0%9F%91%8B%20Quisiera%20realizar%20un%20pedido%2C%20%C2%BFme%20podr%C3%ADa%20ayudar%20por%20favor%3F%20%F0%9F%9B%92"
    target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" title="Escríbenos por WhatsApp">
@@ -191,7 +199,7 @@
   </svg>
 </a>
 
-<!-- Botón flotante Pagar ahora -->
+<!-- Botón flotante "Pagar ahora" (inferior derecha, solo si hay items en el carrito) -->
 <a id="amPayNow" class="am-pay-float" href="?view=cart" style="display:none" aria-label="Pagar ahora">
   Pagar ahora
 </a>
@@ -211,13 +219,13 @@
 </script>
 
 <!-- Carga de Javascript desde la carpeta public -->
-<script src="public/app.js" charset="utf-8"></script>
+<script src="public/app.js" charset="utf-8" defer></script>
 
-<!-- Footer dinámico -->
+<!-- Footer dinámico: usa los MISMOS archivos que el resto de la web -->
 <script>
 (function(){
   document.getElementById('footerYear').textContent = new Date().getFullYear();
-  var get = function(p){ return fetch(p,{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return null;}); };
+  var get = function(p){ return fetch(p).then(function(r){return r.json();}).catch(function(){return null;}); };
 
   get('./public/site_settings.json').then(function(s){
     if(!s) return;
@@ -228,7 +236,9 @@
     document.getElementById('footerName2').textContent = name + ' ' + market;
     if (s.site_logo_b64) {
       var l = document.getElementById('footerLogo');
-      l.src = 'data:image/png;base64,' + String(s.site_logo_b64).trim();
+      var lv = String(s.site_logo_b64||'').trim();
+      l.src = /^(data:|https?:|\.|\/)/.test(lv) ? lv
+            : (/^media\//.test(lv) ? './public/' + lv : 'data:image/png;base64,' + lv);
       l.style.display = 'block';
     }
     var soc = [
