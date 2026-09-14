@@ -97,8 +97,18 @@ function fixImgSrc(path) {
   return c.length ? c[0] : '';
 }
 
+/* --- OPTIMIZACION: las imagenes/videos ahora son archivos reales en public/media/.
+   Esta funcion acepta tanto una ruta de archivo como base64 antiguo. --- */
+function mediaSrc(v, mime){
+  v = String(v || '').trim();
+  if (!v) return '';
+  if (/^(data:|https?:|blob:|\.|\/)/.test(v)) return v;
+  if (/^media\//.test(v)) return './public/' + v;
+  return 'data:' + (mime || 'image/png') + ';base64,' + v;
+}
+
 function fetchJSON(path, fallback) {
-  return fetch(path, { cache: 'no-store' })
+  return fetch(path)
     .then(r => { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
     .catch(e => { console.warn('No se pudo cargar', path, e); return fallback; });
 }
@@ -286,7 +296,7 @@ function applyTheme() {
       .am-topbar { position: relative; isolation: isolate; overflow: visible; }
       .am-topbar::before {
         content:''; position:absolute; inset:0; z-index:-1;
-        background: url('data:image/png;base64,${imgB64}') center/cover no-repeat;
+        background: url('${mediaSrc(imgB64)}') center/cover no-repeat;
         filter: blur(${blur}px) brightness(${bri}%) saturate(${sat}%);
         opacity: ${op.toFixed(2)};
         pointer-events: none;
@@ -346,7 +356,7 @@ function applyTheme() {
     const briPct = Math.max(0, Math.min(200, pct(s.page_bg_brightness ?? s.site_bg_brightness, 100)));
     const opClamp = Math.max(0, Math.min(1, ratio(s.page_bg_opacity ?? s.site_bg_opacity, 100))).toFixed(2);
     const mime = mimeFromB64(pageBg);
-    const imageUrl = pageBg.startsWith('data:') ? pageBg : `data:${mime};base64,${pageBg}`;
+    const imageUrl = mediaSrc(pageBg, mime);
     const blurScale = blur > 0 ? 1.04 : 1;
 
     pst.textContent = `
@@ -418,7 +428,7 @@ function renderBrand() {
   const hideLogo = truthy(SETTINGS.hide_logo);
   if (logoEl) {
     if (logoB64 && !hideLogo) {
-      logoEl.src = 'data:image/png;base64,' + logoB64;
+      logoEl.src = mediaSrc(logoB64);
       logoEl.style.display = 'block';
       const sz = intOr(SETTINGS.logo_size, 54);
       logoEl.style.height = sz + 'px';
@@ -533,7 +543,7 @@ function renderCategoryCircles() {
     let inner, bg;
     if (s.use_image && (s.image_b64 || s.image_path)) {
       const imgSrc = s.image_b64
-        ? ('data:image/png;base64,' + String(s.image_b64).trim())
+        ? mediaSrc(s.image_b64)
         : fixImgSrc(s.image_path);
       inner = `<img src="${escapeAttr(imgSrc)}" alt="${escapeAttr(cat)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"/>
                <span style="display:none;font-size:${Math.round(sz*0.46)}px;">${escapeHtml(icon)}</span>`;
@@ -586,8 +596,8 @@ function bannerMediaHtml(s, styleAttr){
   const m = pickBannerMedia(s);
   const st = styleAttr ? ` style="${styleAttr}"` : '';
   return m.vid
-    ? `<video src="data:video/mp4;base64,${m.vid}" autoplay muted loop playsinline${st}></video>`
-    : `<img src="data:image/png;base64,${m.b64}"${st}/>`;
+    ? `<video src="${escapeAttr(mediaSrc(m.vid,'video/mp4'))}" autoplay muted loop playsinline preload="metadata"${st}></video>`
+    : `<img src="${escapeAttr(mediaSrc(m.b64))}" decoding="async" fetchpriority="high"${st}/>`;
 }
 function bannerSlidesHtml(slides, styleAttr){
   return slides.map((s, i) => {
@@ -872,7 +882,7 @@ function buildHomeTile(cat) {
     let items = subs.map(sub => {
       const nombre = sub.nombre || '';
       const imgSrc = sub.image_b64
-        ? ('data:image/png;base64,' + String(sub.image_b64).trim())
+        ? mediaSrc(sub.image_b64)
         : fixImgSrc(sub.image_path || '');
       const href = `?cat=${encodeURIComponent(cat)}&sub=${encodeURIComponent(nombre)}`;
       const imgHtml = imgSrc
@@ -1363,6 +1373,7 @@ document.addEventListener('error', function (ev) {
   if (!el || el.tagName !== 'IMG') return;
   const src = el.getAttribute('src') || '';
   if (!src || src.startsWith('data:')) return;
+  if (src.indexOf('/media/') !== -1 || src.indexOf('media/') === 0) return; // archivos optimizados: no reintentar
 
   let list = el._imgTry;
   if (!list) {
